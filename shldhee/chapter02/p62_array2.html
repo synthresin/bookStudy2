@@ -8,7 +8,31 @@
 </head>
 <body>
     <script type="text/javascript">
-        
+        var argTemp = [];
+        argTemp[0] = [];
+        argTemp[0][0] = 72;
+        argTemp[0][1] = 52;
+        argTemp[0][2] = 32;
+        argTemp[0][3] = 12;
+        argTemp[0][4] = 52;
+        argTemp[0][5] = 82;
+        argTemp[1] = [];
+        argTemp[1][0] = 15;
+        argTemp[1][1] = 34;
+        argTemp[1][2] = 23;
+        argTemp[1][3] = 68;
+        argTemp[1][4] = 39;
+        argTemp[1][5] = 11;
+
+        function printMatrix(myMatrix) {
+            for (var i = 0; i < myMatrix.length; i++) {
+                for (var j=0; j < myMatrix[i].length; j++) {
+                    console.log(myMatrix[i][j]);
+                }
+            }
+        }
+
+        printMatrix(argTemp);
     </script>
 </body>
 </html>
