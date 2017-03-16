@@ -157,15 +157,69 @@ var t3 = t1.concat(t2);
 
 #### 사용자 정의 정렬
 
+- 원소의 타입과 상관없이 배열은 정렬할수 있으며 함수로 필요에 맞게 정렬 로직을 구현한다.
+
+```javascript
+var friends = [
+  {name:'Jonh', age:34 },
+  {name:'Camila', age:21 },
+  {name:'Jack', age:30 }
+];
+
+function comparePerson(a, b) {
+  if ( a.age < b.age ) {
+    return -1;
+  }
+  if ( a.age > b.age ) {
+    return 1;
+  }
+  return 0;
+}
+console.log( friends.sort(comparePerson) );
+```
+
 
 
 #### 문자열 정렬
+
+```javascript
+var names = ['Ana', 'ana', 'john', 'John'];
+console.log( names.sort() );
+
+// ["Ana", "John", "ana", "john"]
+```
+
+위와 같이 나오는 이유는 A, J, a, j의 아스키 값이 각각 65, 74, 97, 106 이기 때문이다.
+
+[아스키표 참고](http://www.asciitable.com)
+
+```javascript
+// compareFunction : 대소문자 구별 없이 문자를 비교 
+var names = ['Ana', 'ana', 'john', 'John'];
+
+names.sort( function( a, b ) {
+  if ( a.toLowerCase() < b.toLowerCase() ) {
+    return -1;
+  }
+  if ( a.toLowerCase() > b.toLowerCase() ) {
+    return 1;
+  }
+  return 0;
+});
+
+// 악센트 부호가 있을경우에는 localeCompare 메소드를 사용한다.
+var names2 = ['Máeve', 'Maeve']; // 악센트 표기의 유무 차이
+console.log( names2.sort( function(a, b) {
+  return a.localeCompare(b);
+}));
+// ["Maeve", "Máeve"]
+```
 
 
 
 #### 검색
 
-
+- 검색의 첫번째 원소 인덱스는 indexof, 마지막 원소 인덱스는 lastIndexOf로 구할수 있다.
 
 
 
