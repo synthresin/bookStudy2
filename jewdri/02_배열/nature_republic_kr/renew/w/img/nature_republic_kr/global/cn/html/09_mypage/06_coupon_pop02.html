@@ -1,0 +1,305 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/mypage.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery_ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.my_page .info .btn_control').click(function(e){
+		e.preventDefault();
+		$('.my_page .info').toggleClass('open');
+	});
+});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container" class="my_page">
+		<!-- content -->
+		<div id="content">
+			<!-- title -->
+			<div class="w_cont">
+				<!-- sub_navi -->
+				<ol class="sub_navi">
+					<li><a href="#">home</a></li>
+					<li><a href="#">마이페이지</a></li>
+					<li><a href="#">쇼핑혜택</a></li>
+					<li>쿠폰 조회 </li>
+				</ol>
+				<!-- //sub_navi -->
+			</div>
+			<!-- //title -->
+
+			<!-- 2016-06-22//수정(s) -->
+			<!-- lnb -->
+			<div class="section_lnb">
+				<div class="lnb_mypage">
+					<div class="lnb_top">
+						<span class="ico_mypage"></span>My Page
+					</div>
+					<ul>
+						<li>
+							<dl>
+								<dt>주문조회</dt>
+								<dd><a href="#">주문/배송</a></dd>
+								<dd><a href="#">취소/반품/교환</a></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>쇼핑혜택</dt>
+								<dd><a href="#">포인트 조회</a></dd>
+								<dd><a href="#">모바일 상품권 조회</a></dd>
+								<dd><a href="#">쿠폰 조회</a></dd>
+								<dd><a href="#">Shake Box 티켓 조회</a></dd>
+							</dl>
+						</li>
+						<li>
+							<strong><a href="#">위시리스트</a></strong>
+						</li>
+						<li>
+							<dl>
+								<dt>쇼핑활동</dt>
+								<dd><a href="#">리뷰관리</a></dd>
+								<dd><a href="#">1:1 문의내역</a></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>회원정보</dt>
+								<dd><a href="#">배송 주소 관리</a></dd>
+								<dd><a href="#">피부정보 관리</a></dd>
+								<dd><a href="#">개인정보 수정/탈퇴</a></dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //lnb -->
+			<!-- 2016-06-22//수정(e) -->
+
+			<!-- mypage_content -->
+			<div class="mypage_content">
+				<!-- 2016-06-13//수정(s) -->
+				<div class="sub_tit_wrap v2">
+					<h2>쿠폰 조회</h2>
+				</div>
+				<!-- 2016-06-13//수정(e) -->
+				<!-- 쿠폰정보 -->
+				<ul class="coupon_info">
+					<li>
+						<dl>
+							<dt>장바구니 쿠폰</dt>
+							<dd>
+								<p class="num_have small"><a href="#"><span>1</span> 장</a></p>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>상품 쿠폰</dt>
+							<dd>
+								<p class="num_have small"><a href="#"><span>1</span> 장</a></p>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>배송비 쿠폰</dt>
+							<dd>
+								<p class="num_have small"><a href="#"><span>1</span> 장</a></p>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>VIP 쿠폰</dt>
+							<dd>
+								<p class="num_have small"><span>0</span> 장</p>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+				<!-- //쿠폰정보 -->
+
+				<!-- tab -->
+				<ul class="tab_sub2">
+					<li><a href="#">사용 가능 쿠폰</a></li>
+					<li class="active"><a href="#">사용/만료된 쿠폰</a></li>
+				</ul>
+
+				<!--  쿠폰 리스트 -->
+				<div class="coupon_list">
+					<table class="tble_mypage cancle">
+						<caption>쿠폰 리스트</caption>
+						<colgroup>
+							<col width="89px">
+							<col width="131px">
+							<col>
+							<col width="177px">
+							<col width="200px">
+						</colgroup>
+						<thead>
+							<tr>
+							<th>구분</th>	
+							<th>종류</th>
+							<th>쿠폰명</th>
+							<th>사용조건</th>
+							<th>유효기간</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									사용만료
+								</td>
+								<td>
+									장바구니 쿠폰
+								</td>
+								<td class="title">
+									5월 20% 할인 이벤트
+								</td>
+								<td>
+									30,000원 이상 구매 시
+									<a href="#" class="btn_large arrow">적용불가상품<span class="btn_spr"></span></a>
+									</td>
+								<td class="date">
+									2016.05.01~2016.05.15<em>9일 남았습니다</em>
+								</td>
+							</tr>
+							<tr>
+								 <td>
+								 	기한만료
+								 </td>
+								<td>
+									상품 쿠폰
+								</td>
+								<td class="title">
+									5월 한정 5,000원 할인
+								</td>
+								<td>
+									<!-- 2016-06-27//수정(s) -->
+	                              			<a href="#" class="btn_large arrow">적용가능상품<span class="btn_spr"></span></a>
+	                              			<!-- 2016-06-27//수정(e) -->
+								</td>
+								<td class="date">
+									2016.05.01~2016.05.15<em>9일 남았습니다</em>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									기한만료
+								</td>
+								<td>
+									VIP 쿠폰
+								</td>
+								<td class="title">
+									마스크팩 10 +10 사은품 증정
+								</td>
+								<td>
+									-
+								</td>
+								<td class="date">
+									2016.05.01~2016.05.15<em>9일 남았습니다</em>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- page_navi -->
+					<div class="page_nav" style="text-align:center">
+		                    <a href="" class="btn btn_first">처음</a>
+		                    <a href="" class="btn btn_prev3">이전</a>
+		                    <ul>
+		                        <li><strong>1</strong></li>
+		                    </ul>
+		                    <a href="" class="btn btn_next3">다음</a>
+		                    <a href="" class="btn btn_last">마지막</a>
+		                </div>
+					<!-- //page_navi -->
+				</div>
+				
+				<!-- //쿠폰 리스트 -->
+
+				<!-- 2016-06-08//수정(s) -->
+				<!-- 쿠폰 안내 -->
+				<dl class="info_box">
+					<dt class="tit_mypage v2">
+              				<!-- 2016-06-30//아이콘 추가(s) -->
+              				<span class="aside_l"><i class="ico_check"></i>쿠폰 안내</span>
+              				<!-- 2016-06-30//아이콘 추가(e) -->
+<!--               				<span class="aside_r">
+              					<a href="#" class="btn_medium white">배송지변경</a>
+              				</span> -->
+              			</dt>
+					<dd>
+						<ul class="list_type">
+							<li>온라인 쇼핑몰 주문 취소/교환/반품 시 쿠폰은  재발급 되지 않습니다.</li>
+							<li>주문 취소/반품 시 쿠폰 조건에 따라 할인된 금액을 제외하고 반환됩니다.</li>
+							<li>모든 쿠폰에는 유효기간이 있으며, 유효기간이 지나면 자동 소멸됩니다.</li>
+							<li>특가상품, 특별세트상품에는 쿠폰을 적용할 수 없습니다.</li>
+							<li>주문 취소/반품 시 쿠폰이 적용된 상품은 쿠폰에 의해 할인된 금액을 제외하고 반환됩니다.</li>
+						</ul>
+					</dd>
+				</dl>
+				<!-- //쿠폰 안내 -->
+				<!-- 2016-06-08//수정(s) -->
+
+			</div>
+			<!-- //mypage_content -->
+
+		</div>
+		<!-- //content -->
+
+		
+	</div>
+    <!-- //container -->
+
+		<!-- 적용가능상품 팝업 -->
+		<div class="pop_layer open" id="coupon_prod_pop">
+			<div class="bg"></div>
+				<div class="pop_wrap">
+					<div class="pop_header">
+						<h2>적용가능상품</h2>
+					</div>
+					<div class="pop_content">
+						<ul>
+							<li>
+								<div class="img_box">
+									<img src="../../img/tmp/img_product4.jpg" alt="">
+								</div>
+								<dl>
+									<dt>슈퍼 아쿠아 맥스 컴비네이션 수분크림 [복합성용]</dt>
+									<dd>14호 피치 쉐이크</dd>
+								</dl>
+							</li>
+							<li>
+								<div class="img_box">
+									<img src="../../img/tmp/img_product4.jpg" alt="">
+								</div>
+								<dl>
+									<dt>슈퍼 아쿠아 맥스 컴비네이션 수분크림 [복합성용]</dt>
+									<dd>14호 피치 쉐이크</dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+					<a href="#" class="btn_close">닫기</a>
+			</div>
+			</div>
+		</div>
+		<!-- //적용가능상품 -->
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>

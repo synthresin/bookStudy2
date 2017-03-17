@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/community.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//2016-06-03//수정(s)
+		$('.select_worry>.select_tab>li').click(function(){
+			$('.select_worry>.select_tab>li').removeClass('active');
+			$(this).addClass('active');
+		});
+		//2016-06-03//수정(e)
+		$('.select_prod .prod_list>div>ul>li>a').click(function(){
+			$(this).parents('li').toggleClass('active');
+		});
+		//2016-06-08//추가(s)
+		$('.select_prod .prod_list p a').click(function(){
+			$(this).toggleClass('active');
+		});
+
+	});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container">
+
+		<!-- content -->
+		<div id="content">
+
+			<!-- sub_navi -->
+			<ol class="sub_navi">
+				<li><a href="#">home</a></li>
+				<li><a href="#">커뮤니티</a></li>
+				<li>이거 어때</li>
+			</ol>
+			<!-- //sub_navi -->
+			<div class="sub_tit_wrap">
+				<h2>이거 어때 등록</h2>
+			</div>
+
+			<!-- select_worry -->
+			<div class="select_worry">
+				<h3>피부고민을 선택해주세요. (1개 선택)</h3>
+				<ul class="select_tab">
+					<li class="r_first active"><a href="#a">보습/수분</a></li>
+					<li><a href="#a">탄력강화/주름개선</a></li>
+					<li><a href="#a">화이트닝/피부톤개선</a></li>
+					<li><a href="#a">각질제거/피부결개선</a></li>
+					<li class="r_first"><a href="#a">피지/블랙헤드/모공</a></li>
+					<li><a href="#a">트러블/여드름</a></li>
+					<li><a href="#a">피부진정</a></li>
+					<li><a href="#a">자외선차단</a></li>
+				</ul>
+				<div class="form_item">
+					<span class="i_label">내용을 입력해주세요. (최대 200자)</span>
+					<textarea name="" id="temp_input" class="i_text" cols="30" rows="10"></textarea>
+					<span class="i_label v2">0/200자</span>
+				</div>
+			</div>
+			<!-- //select_worry -->
+
+			<!-- select_prod -->
+			<div class="select_prod">
+				<h3>상품을 선택해주세요.</h3>
+				<div class="select_box">
+					<!-- left -->
+					<div class="box_l">
+						<ul class="select_tab">
+							<li class="r_first active"><a href="#a">비교하기</a></li>
+							<li><a href="#a">물어보기</a></li>
+						</ul>
+						<ul class="selected_img">
+							<li class="r_first">
+								<a href="#a" class="remove"></a>
+								<div class="img_box">
+									<img src="../../img/tmp/img_product8.jpg" alt="슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]">
+								</div>
+								<dl>
+									<dt>
+										슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]
+									</dt>
+									<dd class="price">
+										<del>￦31,000</del><span>￦15,500</span>
+									</dd>
+								</dl>
+							</li>
+							<li class="empty">
+								<a href="#a">
+									<img src="../../img/ico_add.png" alt="+">
+								</a>
+								원하는 상품을 선택해주세요.
+							</li>
+						</ul>
+					</div>
+					<!-- //left -->
+
+					<!-- right -->
+					<div class="box_r">
+						<ul class="tab_sub2">
+							<li class="active"><a href="#">상품 검색</a></li>
+							<li><a href="#">최근 본 상품</a></li>
+						</ul>
+						<div>
+							<div class="form_srch">
+								<div class="sel_box v3">
+									<select onchange="alert($(this).val())">
+										<option value="1">전체</option>
+										<option value="2">전체</option>
+										<option value="3">전체</option>
+										<option value="4">전체</option>
+									</select>
+								</div>
+
+								<div class="sel_box v3">
+									<select onchange="alert($(this).val())">
+										<option value="1">전체</option>
+										<option value="2">전체</option>
+										<option value="3">전체</option>
+										<option value="4">전체</option>
+									</select>
+								</div>
+								<div class="form_item">
+									<input type="text" name="" id="temp_input2" class="i_text">
+									<a href="#" class="btn_large srch">검색</a>
+								</div>
+								
+
+							</div>
+
+							<div class="prod_list">
+								<!-- 2016-06-08//수정(s) -->
+								<p><a href="#"><span></span>구매한 제품만 보기</a></p>
+								<!-- 2016-06-08//수정(e) -->
+								<div>
+									<ul>
+										<li>
+											<a href="#a">
+												<div class="img_box">
+													<img src="../../img/tmp/img_order_product01.jpg" alt="크리미 바디워시 - 올리브">
+												</div>
+												<p>크리미 바디워시 - 올리브</p>
+											</a>
+										</li>
+										<li>
+											<a href="#a">
+												<div class="img_box">
+													<img src="../../img/tmp/img_order_product02.jpg" alt="슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]">
+												</div>
+												<p>슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]</p>
+											</a>
+										</li>
+										<li>
+											<a href="#a">
+												<div class="img_box">
+													<img src="../../img/tmp/img_order_product03.jpg" alt="진생 로얄 실크 에센스">
+												</div>
+												<p>진생 로얄 실크 에센스</p>
+											</a>
+										</li>
+										<li>
+											<a href="#a">
+												<div class="img_box">
+													<img src="../../img/tmp/img_order_product01.jpg" alt="크리미 바디워시 - 올리브">
+												</div>
+												<p>크리미 바디워시 - 올리브</p>
+											</a>
+										</li>
+										<li>
+											<a href="#a">
+												<div class="img_box">
+													<img src="../../img/tmp/img_order_product02.jpg" alt="슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]">
+												</div>
+												<p>슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]</p>
+											</a>
+										</li>
+										<li>
+											<a href="#a">
+												<div class="img_box">
+													<img src="../../img/tmp/img_order_product03.jpg" alt="진생 로얄 실크 에센스">
+												</div>
+												<p>진생 로얄 실크 에센스</p>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //right -->
+				</div>
+			</div>
+			<!-- //select_prod -->
+			<div class="btn">
+				<a href="#a" class="btn_cancle">취소</a>
+				<a href="#a" class="btn_enroll">등록</a>
+			</div>
+
+
+		</div>
+		<!-- //content -->
+
+	</div>
+    <!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+
+	<!-- 레이이팝업2 -->
+	<div class="pop_layer" id="pop_type2">
+		<div class="bg"></div>
+		<div class="pop_wrap">
+			<div class="pop_header">
+				<h2>김주하, 황금 케어 지금 시작하세요.</h2>
+				<div class="info">
+					<span class="date">2016.01.30</span>
+					<span><span class="ico_spr hit"></span>32</span>
+				</div>
+			</div>
+			<div class="pop_content">
+				<!-- thum_video -->
+				<div class="vd_player" style="width:736px; height:403px">
+					<a href="#" class="btn_play">
+						<img src="../../img/tmp/img_them_vd.jpg" alt="">
+					</a>
+					<div class="video">
+						<embed src="http://code.d2.co.kr/nature_republic/demo2/pc/vd/vd.mp4" width="100%" height="100%">
+					</div>
+				</div>
+				<!-- //thum_video -->
+				‘진생 로얄 실크’ 라인의 새로운 뮤즈, 김주하 아나운서!<br>
+				그녀의 ‘진생 로얄 실크 워터리 크림’ TV CF 를 공개합니다.<br><br>
+
+				미모와 지성을 겸비한 김주하 아나운서가익숙한 정장 차림을 벗고 아름다운 드레스를 입은 여신으로 대변신 ♥<br><br>
+
+				김주하 아나운서가 우연히 사용해보고 제품력에 반한 것이 브랜드 모델로의 인연까지 이어지게 되었다고 하는데요,<br>그녀가 극찬한 진생 로얄 실크 워터리 크림 TVCF를 지금 만나보세요!^^<br><br>
+
+				“자연의 귀한 원료로 누구보다 빛나는 피부, 황금 케어, 지금 시작하세요!”
+			</div>
+			<a href="#" class="btn_close">닫기</a>
+		</div>
+	</div>
+	<!-- //레이이팝업2 -->
+</div>
+<!-- //wrap  -->
+</body>
+</html>

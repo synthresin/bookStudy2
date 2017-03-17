@@ -1,0 +1,620 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/order.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+
+	$('.saving_pro').flexslider({
+		animation: "slide",
+		itemWidth: 190,
+		move: 1,
+		animationSpeed: 500,
+		itemMargin: 4,
+		minItems: 5,
+		controlNav: false
+	});
+});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container">
+		<!-- content -->
+		<div id="content">
+			<ol class="sub_navi">
+				<li><a href="#">home</a></li>
+				<li>장바구니</li>
+			</ol>
+			<div class="sub_tit_wrap v3">
+				<h2>장바구니</h2>
+				<ol class="flow_sub">
+					<li class="active">
+						<span class="ico_spr bag"></span>
+						<strong>
+							<span>STEP1</span>
+							장바구니
+						</strong>
+					</li>
+					<li>
+						<span class="ico_spr pay"></span>
+						<strong>
+							<span>STEP2</span>
+							주문/결제
+						</strong>
+					</li>
+					<li>
+						<span class="ico_spr pay_end"></span>
+						<strong>
+							<span>STEP3</span>
+							주문완료
+						</strong>
+					</li>
+				</ol>
+			</div>
+			<!-- 2016-06-21//수정(s) -->
+			<div class="title_wrap user_info">
+				<h3 class="tit_sub_02 v2"><em>박지원님</em>의 쇼핑 혜택</h3>
+				<ul class="aside">
+					<li><span class="ico_spr coupon"></span>쿠폰 <strong><em>2</em>장</strong></li>
+					<li><span class="ico_spr m_coup"></span>모바일 상품권 <strong><em>1</em>장</strong></li>
+					<li><span class="ico_spr point"></span>포인트<strong><em>12,000</em>P</strong></li>
+				</ul>
+			</div>
+			<!-- 2016-06-21//수정(e) -->
+
+			<!-- 장바구니리스트 -->
+			<div class="cart_section">
+				<!--
+				<div class="btn_wrap">
+					<span class="aside_l">
+						<a href="#" class="btn_large btn_close">선택상품 삭제하기<span class="btn_spr"></span></a>
+					</span>
+					<span class="aside_r">
+						<a href="#" class="btn_large arrow">구매금액별 사은품<span class="btn_spr"></span></a>
+						<a href="javascript:javascript:pop_layer_view('#pop_card')" class="btn_large arrow">무이자 할부혜택<span class="btn_spr"></span></a>
+					</span>
+				</div>-->
+				
+				<table class="tble_type3">
+					<colgroup>
+						<col width="6%">		
+						<col>
+						<col width="10%">
+						<col width="20%">			
+						<col width="6%">		
+						<col width="11%">	
+						<col width="11%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">
+								<span class="custom_form">
+									<input type="checkbox" id="chk1" name="chk1">
+									<label for="chk1" class="ip_chk">	<em></em></label>
+								</span>
+							</th>
+							<th scope="col">상품정보</th>
+							<th scope="col">판매가격</th>
+							<th scope="col">수량</th>
+							<th scope="col">포인트</th><!-- 2016-06-21//-->
+							<th scope="col">주문금액</th>
+							<th scope="col">주문</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="7" class="null_list">
+								<span class="ico_spr caution"></span>
+								장바구니에 담긴 상품이 없습니다. 
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- 2016-06-21//수정(s) -->
+				<div class="btn_wrap">
+					<span class="aside_r guide_txt">
+						<span>*</span> 카트에 담긴 상품은 최대 30일까지 보관되며 종료되거나 매진될 경우 자동으로 삭제됩니다.
+					</span>
+				</div>
+				<!-- 2016-06-21//수정(e) -->
+				<!--
+				<ul class="total_wrap">
+					<li>
+						<dl>
+							<dt>주문금액</dt>
+							<dd>31,840 원</dd>
+						</dl>
+					</li>
+					<li>
+						<span class="ico_spr plus">+</span>
+						<dl>
+							<dt>
+								배송비 
+								<a href="#">
+									<span class="ico_spr question"></span>
+									<p class="ballon">
+										총 결제금액이 9,900원 미만인 경우 배송비 2,500원 부과
+									</p>
+								</a>
+							</dt>
+							<dd>0 원</dd>
+						</dl>
+					</li>
+					<li>
+						<span class="ico_spr equal">=</span>
+						<dl class="p_total">
+							<dt>예상 결제금액</dt>
+							<dd>
+								<strong>15,500</strong>원
+								<p>(적립 예정 500P)</p>
+							</dd>
+						</dl>
+					</li>
+				</ul>-->
+
+				<div class="btn_wrap">
+					<a href="#" class="btn_big">쇼핑 계속</a><!--
+					<a href="#" class="btn_big">선택상품 주문</a>
+					<a href="#" class="btn_big v2">전체 주문</a>-->
+				</div>
+			</div>
+			<!-- //장바구니리스트 -->
+
+			<!-- 배송비절약상품 -->
+			<div class="cart_section v2">
+				<dl class="saving">
+					<dt><strong>배송비 절약</strong> 상품</dt>
+					<dd>
+						<span  class="disc_mk">잠깐! <em>9,900원</em>을 채우면 배송비를 절약할 수 있어요!</span>
+					</dd>
+					<dd class="saving_pro">
+						<ul class="slides">
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product2.jpg" alt="">
+									</div>
+									<dl>
+										<dt>리얼 네이처 에센스-허니</dt>
+										<dd>
+											<del>￦31,000</del>
+											￦15,500
+										</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product3.jpg" alt="">
+									</div>
+									<dl>
+										<dt>수딩 앤 모이스처 알로에 베라 92% 수딩젤 미스트</dt>
+										<dd>
+											<del>￦31,000</del>
+											￦15,500
+										</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product4.jpg" alt="">
+									</div>
+									<dl>
+										<dt>슈퍼 아쿠아 맥스 수분 토너</dt>
+										<dd>
+											<del>￦31,000</del>
+											￦15,500
+										</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product2.jpg" alt="">
+									</div>
+									<dl>
+										<dt>화이트 비타 퍼스트 에센스</dt>
+										<dd>
+											<del>￦31,000</del>
+											￦15,500
+										</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product6.jpg" alt="">
+									</div>
+									<dl>
+										<dt>비베놈 미스트 에센스 100ml (대용량)</dt>
+										<dd>
+											<del>￦31,000</del>
+											￦15,500
+										</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product5.jpg" alt="">
+									</div>
+									<dl>
+										<dt>리얼 네이처 에센스-허니</dt>
+										<dd>
+											<del>￦31,000</del>
+											￦15,500
+										</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product3.jpg" alt="">
+									</div>
+									<dl>
+										<dt>리얼 네이처 에센스-허니</dt>
+										<dd>
+											<del>￦31,000</del>
+											￦15,500
+										</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product4.jpg" alt="">
+									</div>
+									<dl>
+										<dt>리얼 네이처 에센스-허니</dt>
+										<dd>
+											<del>￦31,000</del>
+											￦15,500
+										</dd>
+									</dl>
+								</a>
+							</li>
+
+						</ul>
+					</dd>
+				</dl>
+			</div>
+			<!-- //배송비절약상품 -->
+			
+			<!-- 다른고객함께구매한상품 -->
+			<div class="cart_section v2">
+				<dl class="recommed_pro">
+					<dt>다른 고객들이 <strong>함께 구매한</strong> 상품</dt>
+					<dd>
+						<dl>
+							<dt>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product2.jpg" alt="">
+									</div>
+									<dl>
+										<dt>리얼 네이처 에센스-허니</dt>
+										<dd>
+											<del>￦31,000</del>
+											￦15,500
+										</dd>
+									</dl>
+								</a>
+							</dt>
+							<dd>
+								<ul>
+									<li>
+										<a href="#">
+											<div class="img_box">
+												<img src="../../img/tmp/img_product3.jpg" alt="">
+											</div>
+											<dl>
+												<dt>수딩 앤 모이스처 알로에 베라 92% 수딩젤 미스트</dt>
+												<dd>
+													<del>￦31,000</del>
+													￦15,500
+												</dd>
+											</dl>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="img_box">
+												<img src="../../img/tmp/img_product4.jpg" alt="">
+											</div>
+											<dl>
+												<dt>슈퍼 아쿠아 맥스 수분 토너</dt>
+												<dd>
+													<del>￦31,000</del>
+													￦15,500
+												</dd>
+											</dl>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="img_box">
+												<img src="../../img/tmp/img_product2.jpg" alt="">
+											</div>
+											<dl>
+												<dt>화이트 비타 퍼스트 에센스</dt>
+												<dd>
+													<del>￦31,000</del>
+													￦15,500
+												</dd>
+											</dl>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="img_box">
+												<img src="../../img/tmp/img_product6.jpg" alt="">
+											</div>
+											<dl>
+												<dt>비베놈 미스트 에센스 100ml (대용량)</dt>
+												<dd>
+													<del>￦31,000</del>
+													￦15,500
+												</dd>
+											</dl>
+										</a>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</dd>
+					<dd>
+						<dl>
+							<dt>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product2.jpg" alt="">
+									</div>
+									<dl>
+										<dt>리얼 네이처 에센스-허니</dt>
+										<dd>
+											<del>￦31,000</del>
+											￦15,500
+										</dd>
+									</dl>
+								</a>
+							</dt>
+							<dd>
+								<ul>
+									<li>
+										<a href="#">
+											<div class="img_box">
+												<img src="../../img/tmp/img_product3.jpg" alt="">
+											</div>
+											<dl>
+												<dt>수딩 앤 모이스처 알로에 베라 92% 수딩젤 미스트</dt>
+												<dd>
+													<del>￦31,000</del>
+													￦15,500
+												</dd>
+											</dl>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="img_box">
+												<img src="../../img/tmp/img_product4.jpg" alt="">
+											</div>
+											<dl>
+												<dt>슈퍼 아쿠아 맥스 수분 토너</dt>
+												<dd>
+													<del>￦31,000</del>
+													￦15,500
+												</dd>
+											</dl>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="img_box">
+												<img src="../../img/tmp/img_product2.jpg" alt="">
+											</div>
+											<dl>
+												<dt>화이트 비타 퍼스트 에센스</dt>
+												<dd>
+													<del>￦31,000</del>
+													￦15,500
+												</dd>
+											</dl>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="img_box">
+												<img src="../../img/tmp/img_product6.jpg" alt="">
+											</div>
+											<dl>
+												<dt>비베놈 미스트 에센스 100ml (대용량)</dt>
+												<dd>
+													<del>￦31,000</del>
+													￦15,500
+												</dd>
+											</dl>
+										</a>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</dd>
+				</dl>
+			</div>
+			<!-- //다른고객함께구매한상품 -->
+
+		</div>
+		<!-- //content -->
+
+		
+	</div>
+    <!-- //container -->
+
+	<!-- 카드 무이자 할부 혜택팝업 -->
+	<div class="pop_layer" id="pop_card">
+		<div class="bg"></div>
+		<div class="pop_wrap">
+			<div class="pop_header">
+				<h2>카드 무이자 할부 혜택</h2>
+			</div>
+			<div class="pop_content">
+				<table class="card_list">
+					<colgroup>
+						<col width="14%">
+						<col width="36%">
+						<col width="14%">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">
+								<img src="../../img/img_card.jpg" alt="삼성카드">
+							</th>
+							<td>
+								<strong>2~5개월 무이자 할부 (5만원 이상 결제 시)</strong>
+								<ul>
+									<li>6개월 (1회차 수수료 고객 부담)</li>
+									<li>10개월 (1~2회차 수수료 고객 부담)</li>
+									<li>12개월 (1~3회차 수수료 고객 부담)</li>
+								</ul>
+							</td>
+							<th scope="row">
+								<img src="../../img/img_card2.jpg" alt="현대카드">
+							</th>
+							<td>
+								<strong>2~5개월 무이자 할부 (5만원 이상 결제 시)</strong>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<img src="../../img/img_card3.jpg" alt="롯데카드">
+							</th>
+							<td>
+								<strong>2~5개월 무이자 할부 (5만원 이상 결제 시)</strong>
+								<ul>
+									<li>6개월 (1회차 수수료 고객 부담)</li>
+									<li>10개월 (1~2회차 수수료 고객 부담)</li>
+								</ul>
+							</td>
+							<th scope="row">
+								<img src="../../img/img_card4.jpg" alt="신한카드">
+							</th>
+							<td>
+								<strong>2~5개월 무이자 할부 (5만원 이상 결제 시)</strong>
+								<ul>
+									<li>6개월 (1회차 수수료 고객 부담)</li>
+									<li>10개월 (1~2회차 수수료 고객 부담)</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<img src="../../img/img_card5.jpg" alt="KB국민카드">
+							</th>
+							<td>
+								<strong>2~5개월 무이자 할부 (5만원 이상 결제 시)</strong>
+								<ul>
+									<li>6개월 (1회차 수수료 고객 부담)</li>
+									<li>10개월 (1~2회차 수수료 고객 부담)</li>
+								</ul>
+							</td>
+							<th scope="row">
+								<img src="../../img/img_card6.jpg" alt="NH농협카드">
+							</th>
+							<td>
+								<strong>2~5개월 무이자 할부 (5만원 이상 결제 시)</strong>
+								<ul>
+									<li>6개월 (1회차 수수료 고객 부담)</li>
+									<li>10개월 (1~2회차 수수료 고객 부담)</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<img src="../../img/img_card7.jpg" alt="하나카드">
+							</th>
+							<td>
+								<strong>2~5개월 무이자 할부 (5만원 이상 결제 시)</strong>
+								<ul>
+									<li>6개월 (1회차 수수료 고객 부담)</li>
+									<li>10개월 (1~2회차 수수료 고객 부담)</li>
+								</ul>
+							</td>
+							<th scope="row">
+								<img src="../../img/img_card6.jpg" alt="BCcard">
+							</th>
+							<td>
+								<strong>2~5개월 무이자 할부 (5만원 이상 결제 시)</strong>
+								<ul>
+									<li>6개월 (1회차 수수료 고객 부담)</li>
+									<li>10개월 (1~2회차 수수료 고객 부담)</li>
+									<li>12개월 (1~3회차 수수료 고객 부담)</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<dl class="guide_box">
+					<dt>카드사별 유의사항</dt>
+					<dd>
+						<ul class="list_type">
+							<li>사업장(법인, 개인), 체크, 선불, 기프트 카드는 행사에서 제외됩니다.</li> 
+							<li>직계약 가맹점 및 상점부담 무이자 가맹점, 특별 제휴 가맹점 등 일부 가맹점은 제외될 수 있습니다. </li> 
+							<li>부분 무이자할부 잔여회차는 해당 카드사에서 부담합니다. </li> 
+							<li>본 행사는 카드사 사정에 따라 변경 또는 중단될 수 있습니다. </li> 
+						</ul>
+					</dd>
+				</dl>
+			</div>
+			<a href="#" class="btn_close">닫기</a>
+		</div>
+	</div>
+	<!-- //카드 무이자 할부 혜택팝업 -->
+
+	<!-- 장바구니 알림팝업 -->
+	<div class="pop_layer" id="pop_caution">
+		<div class="bg"></div>
+		<div class="pop_wrap">
+			<div class="pop_content">
+				<div class="caution_txt">
+					<span class="ico_spr caution"></span>
+					 <p>
+						<strong><em>배쓰 앤 네이처 바디 로션</em>은 세트 행사 상품입니다. </strong><br>
+						현재 선택하신 수량은 세트 할인 행사 적용을 받지 못합니다.<br>
+						계속 진행하시겠습니까?
+					 </p>
+					 <div class="btn_wrap">
+						<a href="#">취소</a>
+						<a href="javascript:pop_layer_view('#pop_caution', 'close')" class="v2">확인</a>
+					 </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //장바구니 알림팝업 -->
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>

@@ -1,0 +1,978 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/brand.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+	// 2016-12-08//이미지 가로 정렬 함수 추가(s)
+	function img_range(obj){
+		var w = obj.width;
+		if(w > 244){
+			var resize_w = w - 244;
+			obj.style.marginLeft = -resize_w/2+'px';
+		}
+	}
+	// 2016-12-08//이미지 가로 정렬 함수 추가(e)
+
+	$(document).ready(function(){
+		$('.material_story .material_slide').flexslider({
+			animation: 'slide',
+			animationSpeed: 1000,
+			slideshowSpeed: 10000, 
+			directionNav: true,
+			controlNav: false
+		});
+
+		// 2016-11-10//연혁js추가(s)
+		var li_list;
+		function hide(){
+			
+			li_list = $('li.active .history_timline').children('li');
+			console.log(li_list.length);
+			if(li_list.length <= 5){
+				$(li_list).parents('ol').siblings('.btn_more').hide();
+			}
+		}
+
+		hide();
+		// 2016-11-10//연혁js추가(e)
+
+
+		$('.brand_visual').addClass('active');
+
+		$('.nature_history .tab_menu .year li a').click(function(e){
+			e.preventDefault();
+			$('.nature_history .tab_menu .year li').removeClass();
+			$(this).parents('li').addClass('active');
+			var idx = $(this).parents('li').index();
+			// alert(idx);
+			$('.tab_content>ol>li').removeClass();
+			$('.tab_content>ol>li').eq(idx).addClass('active');
+			// 2016-11-10//연혁js추가(s)
+			hide();
+			// 2016-11-10//연혁js추가(e)
+		});
+
+		$('.btn_more').click(function(){
+			// alert('more');
+			var lis = $(this).siblings('.history_timline').children('li');
+		});
+
+
+		// 스크롤모션
+
+		$(window).scroll(function(){
+			var h = $(window).scrollTop();
+
+			var obj1_offset = $('.core_value ol li:eq(0)').offset().top-700;
+			var obj2_offset = $('.core_value ol li:eq(1)').offset().top-700;
+			var obj3_offset = $('.core_value ol li:eq(2)').offset().top-700;
+			var obj4_offset = $('.core_value ol li:eq(3)').offset().top-700;
+
+
+			if(h >= obj1_offset) $('.core_value ol li:eq(0)').addClass('active');
+			if(h >= obj2_offset) $('.core_value ol li:eq(1)').addClass('active');
+			if(h >= obj3_offset) $('.core_value ol li:eq(2)').addClass('active');
+			if(h >= obj4_offset) $('.core_value ol li:eq(3)').addClass('active');
+
+		});
+
+		// 2016-11-10//연혁 js수정(s)
+		$('.nature_history .tab_content .btn_more.arrow').click(function(){
+			var li_item = $(this).siblings('.history_timline').children('li');
+			$(li_item).addClass('show');
+			$(this).hide();
+		});
+		// 2016-11-10//연혁 js수정(e)
+
+
+	});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+	<!-- container -->
+
+	<!-- 2016-12-08//구조변경(s) -->
+	<div id="container">
+		<h2 class="blind">브랜드 스토리</h2>
+		<div id="content" class="story">
+			<!-- sub_navi -->
+			<ol class="sub_navi">
+				<li><a href="#">home</a></li>
+				<li><a href="#">브랜드</a></li>
+				<li>브랜드 스토리</li>
+			</ol>
+			<!-- //sub_navi -->
+		</div>
+		<div class="brand_visual">
+			<h1><img src="../../img/brand_logo.png" alt=""></h1>
+			<!-- 2016-12-08//추가(s) -->
+			<!-- 2016-12-20//추가(s) -->
+			<p class="main_title">
+				自然共和國是從世界各地清淨自然中尋找美麗能量，並分享健康與快樂的自然主義品牌。
+			</p>
+			<!-- 2016-12-20//수정(e) -->
+			<!-- 2016-12-08//추가(e) -->
+			<p class="desc">
+				通过从世界各地的清净自然中找到的美丽能量，分享健康和快乐的自然主义品牌<br>在自然共和国，了解地球和生命背后的美丽故事吧。
+			</p>
+			<!-- 2016-12-26//모노그램 삭제(s) -->
+			<!-- <div class="nr_logo"></div> -->
+			<!-- 2016-12-26//모노그램 삭제(e) -->
+		</div>
+		<!-- //brand_visual -->
+		<!-- 2016-12-08//구조변경(e) -->
+
+		<div class="core_value">
+
+			<!-- 2016-12-08//수정(s) -->
+			<div class="brand_subtitle">
+				<h3><strong>Our Promise</strong><span class="sub_title">核心價值</span></h3>
+			</div>
+			<!-- 2016-12-08//수정(e) -->
+
+			<div class="w_cont">
+				<ol>
+					<li class="value_lst01">
+						<div class="value_image"><img src="../../img/value_img01.jpg" alt=""></div>
+						<div class="value_content">
+							<p class="sub_title"><strong>01</strong><em>Pure Nature</em></p>
+							<p class="main_title">分享完整自然的本源</p>
+							<p class="desc">
+								自然共和國相信自然的完美。<br>
+								我們的目標，是前往世界各地的清淨自然，尋找自然饋贈的禮物<br>
+								並盡可能完整地將其價值傳遞給您。
+							</p>
+						</div>
+					</li>
+					<li class="value_lst02">
+						<div class="value_content">
+							<p class="sub_title"><strong>02</strong><em>For Everyone</em></p>
+							<p class="main_title">讓所有人都能分享到</p>
+							<p class="desc">
+								自然共和國一直在您的身邊<br>
+								提供物美價廉的最佳產品。<br>
+								為了讓全世界任何人都可以藉由自然共和國的產品和品牌<br>
+								享受大自然的慷慨饋贈。
+							</p>
+						</div>
+						<div class="value_image"><img src="../../img/value_img02.jpg" alt=""></div>
+					</li>
+					<li class="value_lst03">
+						<div class="value_image"><img src="../../img/value_img03.jpg" alt=""></div>
+						<div class="value_content">
+							<p class="sub_title"><strong>03</strong><em>Originality</em></p>
+							<p class="main_title">卓越的敏感度和自信感</p>
+							<p class="desc">
+								探索清淨自然，把全世界的人當作我們的顧客<br>
+								是我們源源不斷的新靈感之源。<br>
+								我們以自然主義化妝品的先驅姿態<br>
+								不模仿他人、專注於蘊含自然的產品研究。
+							</p>
+						</div>
+					</li>
+					<li class="value_lst04">
+						<div class="value_content">
+							<p class="sub_title"><strong>04</strong><em>Coummunity</em></p>
+							<p class="main_title">用心溝通</p>
+							<p class="desc">
+								自然共和國樂於與顧客及合作夥伴真誠交流<br>
+								堅持為了分享快樂和益處<br>
+								不斷地透過產品和店鋪所積累的經驗基礎進行改善。
+							</p>
+						</div>
+						<div class="value_image"><img src="../../img/value_img04.jpg" alt=""></div>
+					</li>
+				</ol>
+			</div>
+		</div>
+		<!-- //core_value -->
+
+		<div class="material_story">
+
+
+			<!-- 2016-12-08//수정(s) -->
+			<div class="brand_subtitle">
+				<h3><strong>Our Ingredients</strong><span class="sub_title">原料故事</span></h3>
+			</div>
+			<div class="brand_subdesc">
+				<p class="main_desc">
+					了解源自世界<strong>清淨自然的美麗能量</strong>背後的故事</strong>
+				</p>
+				<!-- 2016-12-20//수정(s) -->
+				<p class="sub_desc">
+					庫拉索蘆薈、海洋深層水、蝸牛、金盞花、摩洛哥堅果、猴麵包樹籽、含氧水、乳木果、人蔘、綠茶等，請親自體驗自然共和國的10種天然原料吧！
+				</p>
+				<!-- 2016-12-20//수정(e) -->
+			</div>
+			<!-- 2016-12-08//수정(e) -->
+			<div class="material_story_inner">
+				
+				<div class="w_cont">
+					<!-- 2016-12-08//삭제(s) -->
+					<!-- <h4><img src="../../img/material_story_title.png" alt=""></h4> -->
+					<!-- 2016-12-08//삭제(e) -->
+					<div class="material_slide">
+						<div class="btn_wrap right">
+							<a href="#" class="btn_large arrow">查看全部原料<span class="arrow_right"></span></a>
+						</div>
+
+						<ul class="slides">
+							<li>
+								<ul class="material_list">
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>邂逅加利福尼亚自然馈赠的礼物。</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/aloevera.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<em>Aloe veraAloe veraAloe veraAloe veraAloe veraAloe veraAloe veraAloe veraAloe veraAloe veraAloe vera</em>
+												<strong>芦荟芦荟芦荟芦荟芦荟芦荟芦荟芦荟芦荟芦荟</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>仅盛载最珍贵的</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/ginseng.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<em>Ginseng royal silk</em>
+												<strong>人参蜂王浆</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>隐藏在撒哈拉沙漠中的非洲宝石</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/sheabutter.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<em>Share butter</em>
+												<strong>乳木果油</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>生长在马达加斯加的五千年生命之树</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/baobab.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<em>Baobab</em>
+												<strong>猴面包树</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>对抗紫外线的草本植物</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/calendula.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<em>Calendula</em>
+												<strong>金盏花</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>沐浴清爽的朝阳气息而新鲜生长的嫩绿茶叶</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/green_tea.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<em>Green Tea</em>
+												<strong>绿茶</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>自然之神馈赠给摩洛哥的黄金宝贝</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/argan.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<em>Argan</em>
+												<strong>摩洛哥坚果</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>从清净自然中找到的活力原料</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/snail.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<em>Snail</em>
+												<strong>蜗牛</strong>
+											</p>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<!-- //slide_list -->
+							<li>
+								<ul class="material_list">
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>邂逅加利福尼亚自然馈赠的礼物。</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/aloevera.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<em>Aloe vera</em>
+												<strong>芦荟</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>仅盛载最珍贵的</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/ginseng.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<em>Ginseng royal silk</em>
+												<strong>人参蜂王浆</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>隐藏在撒哈拉沙漠中的非洲宝石</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/sheabutter.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<em>Share butter</em>
+												<strong>乳木果油</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>生长在马达加斯加的五千年生命之树</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/baobab.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<em>Baobab</em>
+												<strong>猴面包树</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>对抗紫外线的草本植物</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/calendula.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<em>Calendula</em>
+												<strong>金盏花</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>沐浴清爽的朝阳气息而新鲜生长的嫩绿茶叶</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/green_tea.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<em>Green Tea</em>
+												<strong>绿茶</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>自然之神馈赠给摩洛哥的黄金宝贝</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/argan.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<em>Argan</em>
+												<strong>摩洛哥坚果</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>从清净自然中找到的活力原料</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/snail.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<em>Snail</em>
+												<strong>蜗牛</strong>
+											</p>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<!-- //slide_list -->
+						</ul>
+						<!-- //slides -->
+					</div>
+					<!-- //material_list -->
+				</div>
+
+			</div>
+			<!-- //material_story_inner -->
+			
+		</div>
+		<!-- //material_story -->
+
+		<div class="nature_history">
+			<div class="brand_subtitle">
+				<h3>自然共和國歷史沿革</h3>
+			</div>
+			<div class="w_cont">
+				<div class="tab_menu">
+					<ol class="year">
+						<li><a href="#">2016</a></li>
+						<li><a href="#">2015</a></li>
+						<li class="active"><a href="#">2014</a></li>
+						<li><a href="#">2013</a></li>
+						<li><a href="#">2012</a></li>
+						<li><a href="#">2011</a></li>
+						<li><a href="#">2010</a></li>
+						<li><a href="#">2009</a></li>
+					</ol>
+				</div>
+				<!-- /tab_menu -->
+
+				<div class="tab_content">
+					<ol>
+						<li>
+							<div class="history_image"><img src="../../img/brand_history_image01.jpg" alt=""></div>
+							<ol class="history_timline">
+								<li class="left show">
+									<div>
+										<p class="date">2016<em>01</em></p>
+										<p class="history_content">새 브랜드 슬로건 ‘자연으로의 여정’ 선포</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2016<em>02</em></p>
+										<p class="history_content"><span class="ico ico_flag01"></span><span>홍콩 1호점 오픈</span></p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2016<em>03</em></p>
+										<p class="history_content">EXO(엑소) 홍콩 팬사인회 개최(몽콕 1호점)</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2016<em>06</em></p>
+										<p class="history_content">
+											중국 온라인 쇼핑몰 ‘알로에베라 92% 수딩젤’ <br>
+											하루 동안 100만 개 판매 기록
+										</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2016<em>08</em></p>
+										<p class="history_content">
+											‘2016 얼루어 뷰티 어워드’<br>헤어 샴푸, 프라이머 부문 위너(WINNER) 2관왕
+											<em>아르간 에센셜 딥케어 샴푸, 보테니컬 그린티 포어 프라이머</em>
+										</p>
+									</div>
+								</li>
+								<!-- //목록 5개까지 보여지기 -->
+
+								<li class="left">
+									<div>
+										<p class="date">2016<em>01</em></p>
+										<p class="history_content">새 브랜드 슬로건 ‘자연으로의 여정’ 선포</p>
+									</div>
+								</li>
+								<li class="right">
+									<div>
+										<p class="date">2016<em>02</em></p>
+										<p class="history_content"><span class="ico ico_flag01"></span>홍콩 1호점 오픈</p>
+									</div>
+								</li>
+								<li class="left">
+									<div>
+										<p class="date">2016<em>03</em></p>
+										<p class="history_content">EXO(엑소) 홍콩 팬사인회 개최(몽콕 1호점)</p>
+									</div>
+								</li>
+								<li class="right">
+									<div>
+										<p class="date">2016<em>06</em></p>
+										<p class="history_content">
+											중국 온라인 쇼핑몰 ‘알로에베라 92% 수딩젤’ <br>
+											하루 동안 100만 개 판매 기록
+										</p>
+									</div>
+								</li>
+								<li class="left">
+									<div>
+										<p class="date">2016<em>08</em></p>
+										<p class="history_content">
+											‘2016 얼루어 뷰티 어워드’<br>헤어 샴푸, 프라이머 부문 위너(WINNER) 2관왕
+											<em>아르간 에센셜 딥케어 샴푸, 보테니컬 그린티 포어 프라이머</em>
+										</p>
+									</div>
+								</li>
+								<!-- //숨기기 -->
+
+								<li class="left">
+									<div>
+										<p class="date">2016<em>01</em></p>
+										<p class="history_content">새 브랜드 슬로건 ‘자연으로의 여정’ 선포</p>
+									</div>
+								</li>
+								<li class="right">
+									<div>
+										<p class="date">2016<em>02</em></p>
+										<p class="history_content"><span class="ico ico_flag01"></span>홍콩 1호점 오픈</p>
+									</div>
+								</li>
+								<li class="left">
+									<div>
+										<p class="date">2016<em>03</em></p>
+										<p class="history_content">EXO(엑소) 홍콩 팬사인회 개최(몽콕 1호점)</p>
+									</div>
+								</li>
+								<li class="right">
+									<div>
+										<p class="date">2016<em>06</em></p>
+										<p class="history_content">
+											중국 온라인 쇼핑몰 ‘알로에베라 92% 수딩젤’ <br>
+											하루 동안 100만 개 판매 기록
+										</p>
+									</div>
+								</li>
+								<li class="left">
+									<div>
+										<p class="date">2016<em>08</em></p>
+										<p class="history_content">
+											‘2016 얼루어 뷰티 어워드’<br>헤어 샴푸, 프라이머 부문 위너(WINNER) 2관왕
+											<em>아르간 에센셜 딥케어 샴푸, 보테니컬 그린티 포어 프라이머</em>
+										</p>
+									</div>
+								</li>
+								<!-- //숨기기 -->
+							</ol>
+							<a href="#a" class="btn_more arrow">查看更多<span></span></a>
+						</li>
+						<!-- //tab_list -->
+						<li>
+							<div class="history_image"><img src="../../img/brand_history_image01.jpg" alt=""></div>
+							<ol class="history_timline">
+								<li class="left show">
+									<div>
+										<p class="date">2015<em>01</em></p>
+										<p class="history_content">在中國最大網上購物商城天貓舉辦的<br>“Golden Beauty Awards”上，<br>“蘆薈舒緩保濕凝膠”獲得最高獎金獎<br>在“The Most Asia-Beauty Awards”上<br>“蘆薈舒緩保濕凝膠”和“摩洛哥堅果精華護理護髮精華”被評為最佳產品（BEST）</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2015<em>04</em></p>
+										<p class="history_content">經營韓國 680 多間店鋪和海外 14 個國家地區（日本、美國、台灣、泰國、菲律賓、柬埔寨、馬來西亞、印度尼西亞、蒙古、越南、緬甸、澳門、香港等）的 120 多間獨立店鋪</p>
+									</div>
+								</li>
+								<!-- 5개까지 보이기: 클래스에 show 추가 -->
+							</ol>
+							<a href="#a" class="btn_more arrow">查看更多<span></span></a>
+						</li>
+						<!-- //tab_list -->
+						<li class="active">
+							<div class="history_image"><img src="../../img/brand_history_image01.jpg" alt=""></div>
+							<ol class="history_timline">
+								<li class="left show">
+									<div>
+										<p class="date">2014<em>01</em></p>
+										<p class="history_content">宣布新品牌口號“自然之旅”</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2014<em>02</em></p>
+										<p class="history_content"><span class="ico ico_flag01"></span><span>香港 1 號店開業</span></p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2014<em>03</em></p>
+										<p class="history_content">舉辦 EXO 香港粉絲簽名會（旺角 1 號店）</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2014<em>06</em></p>
+										<p class="history_content">“蘆薈舒緩保濕凝膠”在中國網上購物商城單日銷售量突破 100 萬個</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2014<em>08</em></p>
+										<p class="history_content">在韓國最權威美容頒獎儀式<br>“2014年 Allure Beauty Award”<br>榮獲洗髮精和護髮精<br>華大獎雙冠王
+											<em>*摩洛哥堅果精華護理洗髮精、<br>草萃清新綠茶控油妝前乳</em>
+										</p>
+									</div>
+								</li>
+								
+								<!-- //목록 5개까지 보여지기 -->
+								<li class="right">
+									<div>
+										<p class="date">2014<em>11</em></p>
+										<p class="history_content">環保旗艦店明洞 UNESCO 店開業<br>將大新證券選為首次公開募股 (IPO) 代表主管公司
+										</p>
+									</div>
+								</li>
+								<li class="left">
+									<div>
+										<p class="date">2014<em>12</em></p>
+										<p class="history_content">榮獲第 51 屆貿易日紀念 1,000 萬美元出口之塔獎<em>*由韓國貿易協會主辦</em></p>
+									</div>
+								</li>
+								<!-- //숨기기 -->
+							</ol>
+							<a href="#a" class="btn_more arrow">查看更多<span></span></a>
+						</li>
+						<!-- //tab_list -->
+						<li>
+							<div class="history_image"><img src="../../img/brand_history_image01.jpg" alt=""></div>
+							<ol class="history_timline">
+								<li class="left show">
+									<div>
+										<p class="date">2013<em>02</em></p>
+										<p class="history_content">2013年榮獲業界內首座德國“iF 設計獎”<br>包裝最高獎項金獎<em>*好朋友護手霜</em></p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2013<em>03</em></p>
+										<p class="history_content">越南 1 號店開業</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2013<em>05</em></p>
+										<p class="history_content">緬甸 1 號店開業</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2013<em>07</em></p>
+										<p class="history_content">榮獲美國“2013年 IDEA(International Design Excellence Awards)”<br>設計大獎<em>*“摩洛哥堅果”系列、“ECO Calendar”</em>
+										</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2013<em>08</em></p>
+										<p class="history_content">榮獲德國“2013年 紅點設計獎 (Red Dot Design Award)”<br>設計大獎<em>*“摩洛哥堅果”系列、<br>“Phyto Origin”系列、<br>“快樂夥伴鞋內除臭劑”系列、<br>“自然香體”系列</em><br>和少女時代泰妍及 EXO 簽訂專屬代言人協議<br><br>實行綠色會員制度
+										</p>
+									</div>
+								</li>
+								<!-- //목록 5개까지 보여지기: 클래스 show추가 -->
+								<li class="right">
+									<div>
+										<p class="date">2013<em>10</em></p>
+										<p class="history_content">榮獲德國“2013年 紅點設計獎 (Red Dot Design Award)”<br>最佳包裝獎<em>*“快樂夥伴鞋內除臭劑”系列</em></p>
+									</div>
+								</li>
+								<li class="left">
+									<div>
+										<p class="date">2013<em>12</em></p>
+										<p class="history_content">舉行 EXO 粉絲簽名會<br>（首爾明洞世界店和大邱東城路露天舞台）</p>
+									</div>
+								</li>
+								<!-- //숨기기 -->
+							</ol>
+							<a href="#a" class="btn_more arrow">查看更多<span></span></a>
+						</li>
+						<!-- //tab_list -->
+						<li>
+							<div class="history_image"><img src="../../img/brand_history_image01.jpg" alt=""></div>
+							<ol class="history_timline">
+								<li class="left show">
+									<div>
+										<p class="date">2012<em>01</em></p>
+										<p class="history_content">榮獲品牌購物商城大獎“Web Award Korea 2012”<br>最優秀專業購物商城獎</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2012<em>04</em></p>
+										<p class="history_content">蒙古 1 號店開業</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2012<em>06</em></p>
+										<p class="history_content">舉行日本上市一周年紀念當地記者招待會<br>東京設立獨立店鋪<br>和申世京簽訂專屬代言人協議</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2012<em>09</em></p>
+										<p class="history_content">美國夏威夷 1 號店開業<br>200 款產品獲得美國 FDA 認證
+										</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2012<em>10</em></p>
+										<p class="history_content">印度尼西亞 1 號店開業</p>
+									</div>
+								</li>
+								<!-- //목록 5개까지 보여지기: show클래스 추가 -->
+
+								<li class="right">
+									<div>
+										<p class="date">2012<em>12</em></p>
+										<p class="history_content">美國紐澤西 2 號店開業<br>榮獲德國“2013年 iF 設計獎<br>(International Forum Design Awards)”<br>最佳包裝獎<em>**“好朋友護手霜”、“Forever Lasting”系列、<br>“Pleasure 男士”系列</em></p>
+									</div>
+								</li>
+								<!-- //숨기기 -->
+							</ol>
+							<a href="#a" class="btn_more arrow">查看更多<span></span></a>
+						</li>
+						<!-- //tab_list -->
+						<li>
+							<div class="history_image"><img src="../../img/brand_history_image01.jpg" alt=""></div>
+							<ol class="history_timline">
+								<li class="left show">
+									<div>
+										<p class="date">2011<em>03</em></p>
+										<p class="history_content">柬埔寨 1 號店開業</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2011<em>04</em></p>
+										<p class="history_content">和張根碩簽訂專屬代言人協議</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2011<em>06</em></p>
+										<p class="history_content">正式進軍亞洲最大的化妝品市場——日本<br>和 KARA 成員具荷拉、<br>樸奎利和姜智英簽訂專屬代言人協議</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2011<em>08</em></p>
+										<p class="history_content">和張根碩在日本舉行售賣紀念感恩回饋大型活動</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2011<em>10</em></p>
+										<p class="history_content">菲律賓 1 號店開業<br><br>入選由知識經濟部主辦、韓國設計振興院承辦的 “2011年 優秀設計 (GD)”獎項<em>“細膚絲婷男士”系列、<br>“膠原夢幻柔膚水”等 5 款產品</em></p>
+									</div>
+								</li>
+								<!-- //목록 5개까지 보여지기: 클래스에 show 추가 -->
+
+								<li class="right">
+									<div>
+										<p class="date">2011<em>12</em></p>
+										<p class="history_content">創立僅兩年即實現盈余<br>和 KARA 成員三人在日本舉行感恩回饋活動</p>
+									</div>
+								</li>
+								<!-- //숨기기 -->
+							</ol>
+							<a href="#a" class="btn_more arrow">查看更多<span></span></a>
+						</li>
+						<!-- //tab_list -->
+						<li>
+							<div class="history_image"><img src="../../img/brand_history_image01.jpg" alt=""></div>
+							<ol class="history_timline">
+								<li class="left show">
+									<div>
+										<p class="date">2010<em>01</em></p>
+										<p class="history_content">馬來西亞 1 號店開業</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2010<em>03</em></p>
+										<p class="history_content">정운호 대표이사 사장 취임</p>
+										<!-- 번역필요 -->
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2010<em>05</em></p>
+										<p class="history_content">韓國國內店鋪突破 100 家</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2010<em>09</em></p>
+										<p class="history_content">和 JYJ（在中、有天、俊秀）簽訂專屬代言人協議</p>
+									</div>
+								</li>
+								<!-- //5개까지 보이기: show클래스 추가 -->
+							</ol>
+							<a href="#a" class="btn_more arrow">查看更多<span></span></a>
+						</li>
+						<!-- //tab_list -->
+						<li>
+							<div class="history_image"><img src="../../img/brand_history_image01.jpg" alt=""></div>
+							<ol class="history_timline">
+								<li class="left show">
+									<div>
+										<p class="date">2009<em>03</em></p>
+										<p class="history_content">隨著明洞店開業，正式成立<br>和 Rain（鄭智薰）簽訂專屬代言人協議</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2009<em>06</em></p>
+										<p class="history_content">台灣 1 號店開業</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2009<em>07</em></p>
+										<p class="history_content">明洞世界店開業<em>*韓國最高公示地價位置</em></p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2009<em>10</em></p>
+										<p class="history_content">泰國 1 號店開業</p>
+									</div>
+								</li>
+								<!-- //목록 5개까지 보여지기: show클래스 추가 -->
+							</ol>
+							<a href="#a" class="btn_more arrow">查看更多<span></span></a>
+						</li>
+						<!-- //tab_list -->
+					</ol>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>

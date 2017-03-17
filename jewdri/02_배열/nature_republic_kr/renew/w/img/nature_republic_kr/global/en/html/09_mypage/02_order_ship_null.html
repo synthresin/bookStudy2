@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/mypage.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery_ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.my_page .info .btn_control').click(function(e){
+		e.preventDefault();
+		$('.my_page .info').toggleClass('open');
+	});
+});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container" class="my_page">
+		<!-- content -->
+		<div id="content">
+			<!-- title -->
+			<div class="w_cont">
+				<!-- sub_navi -->
+				<ol class="sub_navi">
+					<li><a href="#">home</a></li>
+					<li><a href="#">마이페이지</a></li>
+					<li><a href="#">주문조회</a></li>
+					<li>주문/배송</li>
+				</ol>
+				<!-- //sub_navi -->
+			</div>
+			<!-- //title -->
+
+			<!-- 2016-06-22//수정(s) -->
+			<!-- lnb -->
+			<div class="section_lnb">
+				<div class="lnb_mypage">
+					<div class="lnb_top">
+						<span class="ico_mypage"></span>My Page
+					</div>
+					<ul>
+						<li>
+							<dl>
+								<dt>주문조회</dt>
+								<dd><a href="#">주문/배송</a></dd>
+								<dd><a href="#">취소/반품/교환</a></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>쇼핑혜택</dt>
+								<dd><a href="#">포인트 조회</a></dd>
+								<dd><a href="#">모바일 상품권 조회</a></dd>
+								<dd><a href="#">쿠폰 조회</a></dd>
+								<dd><a href="#">Shake Box 티켓 조회</a></dd>
+							</dl>
+						</li>
+						<li>
+							<strong><a href="#">위시리스트</a></strong>
+						</li>
+						<li>
+							<dl>
+								<dt>쇼핑활동</dt>
+								<dd><a href="#">리뷰관리</a></dd>
+								<dd><a href="#">1:1 문의내역</a></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>회원정보</dt>
+								<dd><a href="#">배송 주소 관리</a></dd>
+								<dd><a href="#">피부정보 관리</a></dd>
+								<dd><a href="#">개인정보 수정/탈퇴</a></dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //lnb -->
+			<!-- 2016-06-22//수정(e) -->
+
+			<!-- mypage_content -->
+			<div class="mypage_content">
+				<!-- 2016-06-13//수정(s) -->
+				<div class="sub_tit_wrap v2">
+					<h2>주문/배송</h2>
+				</div>
+				<!-- 2016-06-13//수정(e) -->
+				<!-- 검색폼-->
+				<ul class="search">
+					<li class="filter">
+						<!-- 2016-06-27//수정(s) -->
+						<span class="custom_form ">
+							<input type="radio" id="filter_chk1" name="filter_chk">
+							<label for="filter_chk1" class="ip_rdo checked"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+								<em></em><span>전체</span>
+							</label>
+						</span>
+						<span class="custom_form">
+							<input type="radio" id="filter_chk2" name="filter_chk">
+							<label for="filter_chk2" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+								<em></em><span>입금대기</span>
+							</label>
+						</span>
+						<span class="custom_form">
+							<input type="radio" id="filter_chk3" name="filter_chk">
+							<label for="filter_chk3" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+								<em></em><span>결제완료</span>
+							</label>
+						</span>
+						<span class="custom_form">
+							<input type="radio" id="filter_chk4" name="filter_chk">
+							<label for="filter_chk4" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+								<em></em><span>상품준비중</span>
+							</label>
+						</span>
+						<span class="custom_form">
+							<input type="radio" id="filter_chk5" name="filter_chk">
+							<label for="filter_chk5" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+								<em></em><span>배송완료</span>
+							</label>
+						</span>
+						<!-- 2016-06-27//수정(e) -->
+					</li>
+					<li class="srch_date">
+						<dl>
+							<dt>조회기간</dt>
+							<dd>
+								<ul class="list_date">
+									<li><a href="#" class="btn_black">15일</a></li>
+				                          <li class="active"><a href="#" class="btn_black">1개월</a></li>
+				                          <li><a href="#" class="btn_black">3개월</a></li>
+				                          <li><a href="#" class="btn_black">6개월</a></li>
+				                      </ul>
+								<div class="inquiry_date">
+									<input type="text" id="datepicker" value="2016.02.01" class="ip_txt">
+									<script type="text/javascript">
+										$(document).ready(function(){
+											$( "#datepicker" ).datepicker({
+												showOn: "button",
+												buttonImage: "",
+												buttonImageOnly: false,
+												buttonText: "배송일 변경",
+												dateFormat: 'yy.mm.dd',
+												prevText: '이전 달',
+												nextText: '다음 달',
+												monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+												monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+												dayNames: ['일','월','화','수','목','금','토'],
+												dayNamesShort: ['일','월','화','수','목','금','토'],
+												dayNamesMin: ['일','월','화','수','목','금','토'],
+												showMonthAfterYear: true,
+												yearSuffix: '년',
+												disabled: false
+											});
+										});
+									</script>
+								</div>
+								
+								<span class="txt_hypen">~</span>
+
+								<div class="inquiry_date">
+									<input type="text" id="datepicker2" value="2016.02.29" class="ip_txt">
+									<script type="text/javascript">
+									$(document).ready(function(){
+										$( "#datepicker2" ).datepicker({
+											showOn: "button",
+											buttonImage: "",
+											buttonImageOnly: false,
+											buttonText: "배송일 변경",
+											dateFormat: 'yy.mm.dd',
+											prevText: '이전 달',
+											nextText: '다음 달',
+											monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+											monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+											dayNames: ['일','월','화','수','목','금','토'],
+											dayNamesShort: ['일','월','화','수','목','금','토'],
+											dayNamesMin: ['일','월','화','수','목','금','토'],
+											showMonthAfterYear: true,
+											yearSuffix: '년',
+											disabled: false
+										});
+									});
+									</script>
+								</div>
+							</dd>
+						</dl>
+					</li>
+					<li class="prd_srch">
+						<dl>
+							<dt>상품조회</dt>
+							<dd>
+								<div class="form_srch">
+									<div class="form_item">
+										<label class="i_label" style="position: absolute;">상품명을 입력해주세요.</label>
+										<input type="text" name="" id="temp_input2" class="i_text">
+									</div>
+									<a href="#" class="btn_srch">조회</a>
+								</div>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+				<!-- //검색폼-->
+
+				<!-- 주문 리스트 -->
+				<table class="tble_mypage">
+					<caption>주문 리스트</caption>
+					<colgroup>
+						<col width="163px">
+						<col>
+						<col width="172px">
+					<col width="161px">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>주문일/주문번호</th>
+							<th>주문상품명/상품수</th>
+							<th>총 결제금액</th>
+							<th>진행상태</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="no_list v2">
+							<td colspan="4">
+
+								<div class="list_null">
+									<!-- 2016-06-08//수정(s) -->
+									<span class="ico_spr caution"></span>
+									<!-- 2016-06-08//수정(e) -->
+									<p>주문내역이 없습니다.</p>
+								</div>
+
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="page_nav" style="text-align:center">
+					<a href="" class="btn btn_first">처음</a>
+					<a href="" class="btn btn_prev3">이전</a>
+					<ul>
+						<li><strong>1</strong></li>
+					</ul>
+					<a href="" class="btn btn_next3">다음</a>
+					<a href="" class="btn btn_last">마지막</a>
+	                </div>
+				<!-- //주문 리스트 -->
+
+				<!-- 2016-06-09//수정(s) -->
+				<!-- 주문/배송 안내 -->
+				<dl class="info_box">
+					<!-- 2016-06-30//<i class="ico_check"></i>추가(s) -->
+					<dt class="tit_mypage v2">
+              				<span class="aside_l"><i class="ico_check"></i>주문/배송 안내</span>
+              				<!-- <span class="aside_r">
+              					<a href="#" class="btn_medium white">Shake Box 안내</a>
+              				</span> -->
+              			</dt>
+					<dd>
+						<!-- 2016-06-13//수정(s) -->
+						<ul class="list_type">
+							<li>네이처리퍼블릭 모바일에서도 주문내역을 조회하실 수 있습니다.</li>
+							<li>주문이 정상완료 되지 않으면 내역조회가 되지 않습니다.</li>
+							<li>배송완료일로부터 7일 경과 후, 8일째 포인트가 자동 적립됩니다.</li>
+						</ul>
+						<!-- 2016-06-13//수정(e) -->
+						<ul class="order_process">
+							<li>
+								<dl>
+									<dt>입금대기</dt>
+									<dd>입금전 상태입니다.<br>7일 이내 미입금 시<br>자동 취소됩니다.</dd>
+								</dl>
+							</li> 
+							<li>
+								<dl>
+									<dt>결제완료</dt>
+									<dd>고객님의 결제가<br>완료되었습니다.</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>상품준비중</dt>
+									<dd>주문 확인 후<br>상품을 발송할<br>예정입니다.</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>배송중</dt>
+									<dd>상품이 택배사로 전달<br>되었습니다. 1~2일 후<br>상품이 도착합니다.</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>배송완료</dt>
+									<dd>고객님에게<br>상품 전달이<br>완료되었습니다.</dd>
+								</dl>
+							</li>
+							<!-- 2016-06-13//삭제(s) -->
+							<!-- <li>
+								<dl>
+									<dt>구매확정</dt>
+									<dd>상품수령 후 구매확정을<br>선택하시면 상품 구매가 종료됩니다.</dd>
+								</dl>
+							</li> -->
+							<!-- 2016-06-13//삭제(e) -->
+						</ul>
+					</dd>
+				</dl>
+				<!-- //주문/배송 안내 -->
+				<!-- 2016-06-09//수정(s) -->
+			</div>
+			<!-- //mypage_content -->
+
+		</div>
+		<!-- //content -->
+
+		
+	</div>
+    <!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>

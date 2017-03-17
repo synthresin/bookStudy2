@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/mypage.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery_ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.my_page .info .btn_control').click(function(e){
+		e.preventDefault();
+		$('.my_page .info').toggleClass('open');
+	});
+});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container" class="my_page">
+		<!-- content -->
+		<div id="content">
+			<!-- title -->
+			<div class="w_cont">
+				<!-- sub_navi -->
+				<ol class="sub_navi">
+					<li><a href="#">home</a></li>
+					<li><a href="#">마이페이지</a></li>
+					<li>위시리스트</li>
+				</ol>
+				<!-- //sub_navi -->
+			</div>
+			<!-- //title -->
+
+			<!-- 2016-06-22//수정(s) -->
+			<!-- lnb -->
+			<div class="section_lnb">
+				<div class="lnb_mypage">
+					<div class="lnb_top">
+						<span class="ico_mypage"></span>My Page
+					</div>
+					<ul>
+						<li>
+							<dl>
+								<dt>주문조회</dt>
+								<dd><a href="#">주문/배송</a></dd>
+								<dd><a href="#">취소/반품/교환</a></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>쇼핑혜택</dt>
+								<dd><a href="#">포인트 조회</a></dd>
+								<dd><a href="#">모바일 상품권 조회</a></dd>
+								<dd><a href="#">쿠폰 조회</a></dd>
+								<dd><a href="#">Shake Box 티켓 조회</a></dd>
+							</dl>
+						</li>
+						<li>
+							<strong><a href="#">위시리스트</a></strong>
+						</li>
+						<li>
+							<dl>
+								<dt>쇼핑활동</dt>
+								<dd><a href="#">리뷰관리</a></dd>
+								<dd><a href="#">1:1 문의내역</a></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>회원정보</dt>
+								<dd><a href="#">배송 주소 관리</a></dd>
+								<dd><a href="#">피부정보 관리</a></dd>
+								<dd><a href="#">개인정보 수정/탈퇴</a></dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //lnb -->
+			<!-- 2016-06-22//수정(e) -->
+
+			<!-- mypage_content -->
+			<div class="mypage_content">
+				<!-- 2016-06-13//수정(s) -->
+				<div class="sub_tit_wrap v2">
+					<h2>위시리스트</h2>
+				</div>
+				<!-- 2016-06-13//수정(e) -->
+				<!-- wishlist_section -->
+				<div class="wishlist_section">
+					<table class="tble_type3">
+						<colgroup>
+							<col width="50px">		
+							<col>
+							<col width="131px">
+							<col width="140xp">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">
+									<span class="custom_form">
+										<input type="checkbox" id="chk1" name="chk1">
+										<label for="chk1" class="ip_chk">	<em></em></label>
+									</span>
+								</th>
+								<th scope="col">상품정보</th>
+								<th scope="col">상품금액</th>
+								<th scope="col">주문</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<span class="custom_form">
+										<input type="checkbox" id="chk3" name="chk3">
+										<label for="chk3" class="ip_chk checked"><em></em></label>
+									</span>
+								</td>
+								<td>
+									<div class="pro_thumb">
+										<div class="img_box">
+											<a href="#"><img src="../../img/tmp/img_product2.jpg" alt=""></a>
+										</div>
+										<div class="pro_info">
+											<a href="#">
+												<p class="title">제주 탄산 클렌징 워터</p>
+												<em>플레인</em>
+											</a>
+										</div>
+									</div>
+								</td>
+								<td>
+									<strong>11,000 원</strong>
+								</td>
+								<td>
+									<a href="#" class="btn_medium white">장바구니</a>
+									<a href="#" class="btn_medium white">삭제하기</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="custom_form">
+										<input type="checkbox" id="chk3" name="chk3">
+										<label for="chk3" class="ip_chk checked"><em></em></label>
+									</span>
+								</td>
+								<td>
+									<div class="pro_thumb">
+										<div class="img_box">
+											<a href="#"><img src="../../img/tmp/img_product2.jpg" alt=""></a>
+										</div>
+										<div class="pro_info">
+											<a href="#">
+												<p class="tag"><span class="sale">50%<span class="ico_spr sale2"></span></span></p>
+												<p><em class="sale">50% 세일</em>프로방스 카렌듈라 아이스 퍼프 선 SP-F50+ PA+++</p>
+											</a>
+										</div>
+									</div>
+								</td>
+								<td>
+									<strong>11,000 원</strong>
+								</td>
+								<td>
+									<a href="#" class="btn_medium white">장바구니</a>
+									<a href="#" class="btn_medium white">삭제하기</a>
+								</td>
+							</tr>
+							<tr class="sold_out">
+								<td>
+									<span class="custom_form">
+										<input type="checkbox" id="chk2" name="chk2">
+										<label for="chk2" class="ip_chk disabled"><em></em></label>
+									</span>
+								</td>
+								<td>
+									<div class="pro_thumb">
+										<div class="img_box">
+											<a href="#"><img src="../../img/tmp/img_product2.jpg" alt=""></a>
+										</div>
+										<div class="pro_info">
+											<a href="#">
+												<p class="title">핸드 앤 네이처 클린 핸드 솝 - 망고</p>
+												<em>01 베이비 텐저린 1개</em>
+												<em>02 러블리 핑크 1개</em>
+											</a>
+										</div>
+									</div>
+								</td>
+								<td>
+									<strong><em>11,000 원</em></strong>
+								</td>
+								<td>
+									<a href="#" class="btn_medium grey2">품절</a>
+									<a href="#" class="btn_medium white">삭제하기</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- navi -->
+					<div class="page_nav" style="text-align:center">
+						<a href="" class="btn btn_first">처음</a>
+						<a href="" class="btn btn_prev3">이전</a>
+						<ul>
+						  <li><strong>1</strong></li>
+						</ul>
+						<a href="" class="btn btn_next3">다음</a>
+						<a href="" class="btn btn_last">마지막</a>
+					</div>
+					<!-- //navi -->
+					<!-- button_wrap -->
+					<div class="btn_wrap">
+						<span class="aside_l">
+							<a href="#" class="btn_large btn_close">선택상품 삭제<span class="btn_spr"></span></a>
+							<!-- 2016-06-27//수정(s) -->
+							<a href="#" class="btn_large btn_close">전체상품 삭제<span class="btn_spr"></span></a>
+							<!-- 2016-06-27//수정(e) -->
+						</span>
+						<span class="aside_r">
+							<a href="#" class="btn_large v2">선택상품 장바구니 담기</a>
+							<a href="#" class="btn_large v2">전체상품 장바구니 담기</a>
+						</span>
+					</div>
+					<!-- //button_wrap -->
+				</div>
+				<!-- //wishlist_section -->
+
+			</div>
+			<!-- //mypage_content -->
+
+		</div>
+		<!-- //content -->
+
+		
+	</div>
+    <!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/shopping.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		//상품이미지및썸네일(s)
+		//2016-06-23//수정(s)
+		var thumb_num = $('.thumb_img ul li').length;
+		if(thumb_num > 5){
+			$('.thumb_img').flexslider({
+				animation: "slide",
+				itemWidth: 70,
+				move: 1,
+				animationSpeed: 500,
+				slideshow: false,
+				itemMargin: 10,
+				minItems: 5,
+				controlNav: false
+			});
+		}else{
+			$('<div class="viewport"></div>').css({"overflow": "hidden", "position": "relative"}).appendTo($('.thumb_img')).append($('.thumb_img .slides'));
+			$('.thumb_img .slides').addClass('slides_none');
+		}
+		//2016-06-23//수정(e)
+
+		$('.thumb_img ul li a').click(function(e){
+			e.preventDefault();
+			var idx = $(this).parent().index();
+			$('.thumb_img ul li').removeClass('active');
+			$(this).parent().addClass('active');
+			var img_url = $(this).find('img').attr('src');
+			$(".img_box").children('img').attr("src",img_url);
+		});
+		//상품이미지및썸네일(e)
+
+	});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container">
+		<!-- content -->
+		<div id="content" class="fixed_tab">
+			<div class="w_cont">
+				<ol class="sub_navi">
+					<li><a href="#">home</a></li>
+					<li><a href="#">產品</a></li>
+					<li>Skincare</li>
+				</ol>
+			</div>
+
+			<!-- 상세타이틀 -->
+<!-- 			<div class="sub_tit_wrap tit_pro_view">
+				<em>에센스 50% 추가 할인</em>
+				<h2>슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]</h2>
+				<p>더 깊게, 더 촉촉하게 쉐어버터 스팀보습 고온 스팀공법</p>
+				<div class="info">
+					<ul class="info_l">
+						<li>자외선 차단</li>
+						<li>중건성</li>
+						<li>보습/수분</li>
+						<li>미백</li>
+						<li>탄력강화</li>
+					</ul>
+					<ul class="info_r">
+						<li><a href="#" class="btn_facebook">페이스북</a></li>
+						<li><a href="#" class="btn_kakao">카카오스토리</a></li>
+						<li><a href="#" class="btn_share">링크복사</a></li>
+					</ul>
+				</div>
+			</div> -->
+			<!-- //상세타이틀 -->
+
+			<!-- 상세정보 -->
+			<div class="pro_view_info">
+				<div class="info_img">
+					<!-- 상품이미지 -->
+					<div class="img_box">
+						<img src="../../img/tmp/img_product2.jpg" alt="">
+						<span class="tag">
+							<em class="best">BEST</em>
+							<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+							<em class="event">착한가격</em>
+							<em class="event2">사은품<br>증정</em> <!-- 2016-07-11//추가 -->
+							<em class="plus">10<span>+</span>10</em>
+						</span>
+					</div>
+					<div class="thumb_img">
+						<ul class="slides">
+							<li class="active"><a href="#"><img src="../../img/tmp/img_product2.jpg" alt=""></a></li>
+							<li><a href="#"><img src="../../img/tmp/img_product3.jpg" alt=""></a></li>
+							<li><a href="#"><img src="../../img/tmp/img_product4.jpg" alt=""></a></li>
+							<li><a href="#"><img src="../../img/tmp/img_product5.jpg" alt=""></a></li>
+							<li><a href="#"><img src="../../img/tmp/img_product6.jpg" alt=""></a></li>
+							<li><a href="#"><img src="../../img/tmp/img_product.jpg" alt=""></a></li>
+							<li><a href="#"><img src="../../img/tmp/img_product2.jpg" alt=""></a></li><!--
+							<li><a href="#"><img src="../../img/tmp/img_product3.jpg" alt=""></a></li>-->
+						</ul>
+					</div>
+					<!-- //상품이미지 -->
+
+				</div>
+				<div class="info_prd">
+					<dl class="overview">
+						<dt>乳木果油滋潤保濕乳霜<br>[中乾性肌膚]</dt>
+						<dd class="desc">更深層、更水潤的乳木果蒸汽保濕，蘊含高溫蒸汽工藝</dd>
+						<dd>
+							<ul class="function">
+								<li><em>防曬</em></li>
+								<li>中乾性肌膚</li>
+								<li>保濕／補水</li>
+								<li>美白</li>
+								<li>增\強彈性</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="spec">
+						<dl>
+							<dt>淨含量／容量</dt>
+							<dd>250ml</dd>
+						</dl>
+						<dl>
+							<dt>製造國家</dt>
+							<dd>韓國</dd>
+						</dl>
+					</dl>
+					<ul class="info_r">
+						<li><a href="#" class="btn_facebook">페이스북</a></li>
+						<li><a href="#" class="btn_kakao">카카오스토리</a></li>
+						<li><a href="#" class="btn_share">링크복사</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- //상세정보 -->
+
+			<div class="prd_details">
+				<dl>
+					<dt>
+						Product Details
+					</dt>
+					<dd>test</dd>
+				</dl>
+			</div>
+			<!-- //prd_details -->
+
+
+
+		</div>
+		<!-- //content -->
+	</div>
+
+    <!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>

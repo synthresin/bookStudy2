@@ -1,0 +1,1315 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/shopping.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+//main visual
+	$('.main_visual .slide_wrap').flexslider({
+		animation: 'fade',
+		animationSpeed: 1000,
+		slideshowSpeed: 3000, 
+		directionNav: false,
+		pausePlay: true
+	});
+//bestseller(s)
+	var num_best = 0;
+	var max_best = $('.best > li').length-1;
+
+	$('.best_seller .btn_slide li a').click(function(e){
+		e.preventDefault();
+		var idx = $(this).parent().index();
+		num_best = idx;
+		best_seller_control();
+	});
+
+	$('.btn_direct').click(function(e){
+		e.preventDefault();
+		var idx = $(this).attr('class').substring(11);
+		
+		if( idx == 'prev'){
+			num_best --;
+			if(num_best < 0)  num_best = max_best;
+		}else{
+			num_best++;
+			if(num_best > max_best) num_best = 0;
+		}
+		best_seller_control();
+	});
+
+	function best_seller_control(){
+		$('.best_seller .btn_slide li').removeClass('active');
+		$('.best_seller .best > li').removeClass('active');		
+		$('.best_seller .btn_slide li').eq(num_best).addClass('active');
+		$('.best_seller .best > li').eq(num_best).addClass('active');
+	}
+//bestseller(e)
+
+//event, tag(s)
+	$('.br_event .br_area:eq(0)').flexslider({
+		animation: 'fade',		
+		animationSpeed: 500,
+		slideshowSpeed: 3000, 
+		directionNav: false
+	});
+
+	$('.br_event .br_area:eq(1)').flexslider({
+		animation: 'fade',
+		animationSpeed: 500,
+		slideshowSpeed: 3000, 
+		directionNav: false
+	});
+/*
+	$('.br_event .btn_slide li a').bind('mouseover focus',function(e){
+		e.preventDefault();
+		var br_area = $(this).closest('.br_area');
+		var idx = $(this).parent().index();
+		br_event_control(idx, br_area)
+	});
+
+	function br_event_control(n, box){
+		var st = box.find('.br_list li').eq(n).hasClass('active');
+		if(st) return false;
+		box.find('.br_list li').fadeOut().removeClass('active');
+		box.find('.btn_slide li').removeClass('active');
+		box.find('.br_list li').eq(n).fadeIn().addClass('active');
+		box.find('.btn_slide li').eq(n).addClass('active');
+	}*/
+//event, tag(e)
+
+//beauty talk//수정(s)
+		$('.recomm_list li > dl > .id .user_info').hover(function(){
+			$(this).siblings('span').children('span').removeClass('active');
+			$(this).children('span').toggleClass('active');
+		});
+
+		$('.recomm_list li > dl > .id .sns_share').mouseenter(function(){
+			$(this).siblings('span').children('span').removeClass('active');
+			$(this).children('span').addClass('active');
+		});
+
+		$('.recomm_list li > dl > .id .sns_share .detail').mouseleave(function(){
+			$(this).removeClass('active');
+		});
+//beauty talk//수정(e)
+});
+
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+	<!-- 2016-09-19//팝업(s) -->
+	<div class="pop_adver">
+		<img src="../../img/pop_layer.jpg" alt=""usemap="#adver_map" />
+		<map name="adver_map" id="adver_map">
+			<area alt="닫기" href="javascript:pop_adver_close('.pop_adver')" shape="rect" coords="348,12,387,52" >
+			<area alt="다시보지않기" title="" href="#" shape="rect" coords="11,516,134,535" >
+			<area alt="닫기" title="" href="javascript:pop_adver_close('.pop_adver')" shape="rect" coords="372,517,397,539">
+		</map>
+	</div>
+
+	<div class="pop_floating">
+		<img src="../../img/pop_floating.png" alt=""usemap="#float_map" />
+		<map name="float_map" id="float_map">
+			<area alt="닫기" href="javascript:pop_adver_close('.pop_floating')" shape="rect" coords="236,6,265,28">
+			<area alt="" title="" href="#" shape="rect" coords="7,31,263,164">
+		</map>
+	</div>
+	<script type="text/javascript">
+	function pop_adver_close(pop_up){
+		$(pop_up).addClass('closed');
+	}
+	window.open("00_main_pop.html","팝업","left=0, top=100, width=360,height=529")
+	</script>
+	<!-- 2016-09-19//팝업(e) -->
+    <!-- container -->
+	<div id="container">
+		<h3 class="blind">프로모션</h3>
+		<!-- 상단탑배너(s) -->
+		<div class="top_br_area" style="background:#545fa3">
+			<div class="w_cont">
+				<a href="#"><img src="../../img/br_top_shopping.jpg" alt=""></a>
+				<a href="#" class="btn_close">
+					<span class="btn_spr"></span>
+					<span>CLOSE</span>
+				</a>
+			</div>						
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.top_br_area .btn_close').click(function(e){
+					e.preventDefault();
+					$('.top_br_area').addClass('hidden');
+				});
+			});
+		</script>
+		<!-- 상단탑배너(e) -->
+		<div class="main_visual">
+			<div class="slide_wrap">
+				<ul class="slides">
+					<li class="active">
+						<a href="http://www.naver.com">
+							<img src="../../img/tmp/main_visual_01.jpg" alt="">
+							<!-- 2016-06-24//메인비쥬얼배너 텍스트추가(s) -->
+							<dl>
+								<dt>
+									피부 온도 쿨링 효과<br><strong>아이스 퍼프 선 1+1</strong>
+								</dt>
+								<dd>대한 피부 과학 연구소 시험 -5˚C 쿨링 효과</dd>
+								<dd class="btn">
+									<span>프로방스 카렌듈라 라인 보기</span>
+								</dd>
+							</dl>
+							<!-- 2016-06-24//메인비쥬얼배너 텍스트추가(e) -->
+						</a>
+					</li>
+					<li><a href="#"><img src="../../img/tmp/main_visual_02.jpg" alt=""></a></li>
+					<li>
+						<a href="#">
+							<img src="../../img/tmp/main_visual_01.jpg" alt="">
+							<!-- 2016-06-24//메인비쥬얼배너 텍스트추가(s) -->
+							<dl>
+								<dt>
+									피부 온도 쿨링 효과<br><strong>아이스 퍼프 선 1+1</strong>
+								</dt>
+								<dd>대한 피부 과학 연구소 시험 -5˚C 쿨링 효과</dd>
+								<dd class="btn">
+									<span>프로방스 카렌듈라 라인 보기</span>
+								</dd>
+							</dl>
+							<!-- 2016-06-24//메인비쥬얼배너 텍스트추가(e) -->
+						</a>
+					</li>
+					<li><a href="#"><img src="../../img/tmp/main_visual_02.jpg" alt=""></a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<!-- best_seller -->
+		
+		<!-- 2016-06-22//수정(s) -->
+		<div class="best_seller" style="background:#f7f7f7 url(../../img/tmp/bg_best_seller.jpg) no-repeat 50% 0">
+			<div class="w_cont">
+				<!--2016-06-24//삭제//h3>Best Seller</h3-->			
+				<ul class="best">
+					<li class="active">
+						<h3>Best Seller</h3><!--2016-06-24//추가 -->			
+						<h4>
+							환절기 피부 관리
+							<em>예민한 피부 잠재워 줄 <strong>진정, 보습 제품</strong></em>
+						</h4>
+						<div class="row1">
+							<ul class="product_list bs_cont"> <!-- 2016-07-21//베스트셀러 들어가는 요소 부모박스에 클래스추가 : bs_cont-->
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product2.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+							</ul>
+							<div class="br_type bs_cont">
+								<a href="#">
+									<img src="../../img/tmp/br_best.jpg" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="row2">							
+							<!-- 2016-07-21//동영상썸네일없는타입(s) -->
+							<div class="br_type v3 vd_player bs_cont">
+								<div class="video" style="display:block">
+									<iframe width="100%" height="100%" src="http://www.youtube.com/embed/bUi-sojiTPM?enablejsapi=1&rel=0&showinfo=0&autohide=1&modestbranding=1&wmode=opaque&autoplay=0" frameborder="0" allowfullscreen></iframe>
+								</div>
+							</div>
+							<!-- 2016-07-21//동영상썸네일없는타입(e) -->
+							<ul class="product_list bs_cont">
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product3.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="../../img/img_award2.png" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+							</ul>
+							<div class="br_type v3 bs_cont"><!-- 2016-06-24//클래스변경 -->
+								<a href="#">
+									<img src="../../img/tmp/br_best2.jpg" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="row3">
+							<div class="br_type v2 bs_cont"><!-- 2016-06-24//클래스변경 -->
+								<a href="#">
+									<img src="../../img/tmp/br_best3.jpg" alt="">
+								</a>
+							</div>
+							<ul class="product_list bs_cont">
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product4.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product5.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product2.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product6.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<h3>New Arrival</h3><!--2016-06-24//추가 -->			
+						<h4>
+							예민한 피부 잠재워
+							<em>예민한 피부 잠재워 줄 <strong>진정, 보습 222</strong></em>
+						</h4>
+						<div class="row1">
+							<ul class="product_list bs_cont">
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product2.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product2.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+							</ul>
+							<div class="br_type bs_cont">
+								<a href="#">
+									<img src="../../img/tmp/br_best.jpg" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="row2">		
+							<ul class="product_list bs_cont">
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product2.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="../../img/img_award2.png" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product2.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="../../img/img_award2.png" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product2.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="../../img/img_award2.png" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+							</ul>
+							<div class="br_type v3 bs_cont"><!-- 2016-06-24//클래스변경 -->
+								<a href="#">
+									<img src="../../img/tmp/br_best2.jpg" alt="">
+								</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<h3>Best Seller</h3><!--2016-06-24//추가 -->			
+						<h4>
+							예민한 피부 
+							<em>예민한 피부 잠재워 줄 <strong>진정, 보습 333</strong></em>
+						</h4>
+						<div class="row1">
+							<ul class="product_list bs_cont">
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product5.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product3.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+							</ul>
+							<div class="br_type bs_cont">
+								<a href="#">
+									<img src="../../img/tmp/br_best.jpg" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="row2">		
+							<!-- 2016-07-21//동영상썸네일있는타입(s) -->
+							<div class="br_type v3 vd_player bs_cont">
+								<a href="#" class="btn_play">
+									<img src="../../img/tmp/img_them_vd.jpg" alt="">
+								</a>
+								<div class="video">
+									<iframe width="100%" height="100%" src="https://www.youtube.com/embed/A9-GU3dcrHM?enablejsapi=1&rel=0&showinfo=0&autohide=1&modestbranding=1&wmode=opaque&autoplay=0" frameborder="0" allowfullscreen ></iframe>
+								</div>
+							</div>
+							<!-- 2016-07-21//동영상썸네일있는타입(e) -->
+							<ul class="product_list bs_cont">
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product2.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="../../img/img_award2.png" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+							</ul>
+							<div class="br_type v3 bs_cont"><!-- 2016-06-24//클래스변경 -->
+								<a href="#">
+									<img src="../../img/tmp/br_best2.jpg" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="row3">
+							<div class="br_type v2 bs_cont">
+								<a href="#">
+									<img src="../../img/tmp/br_best3.jpg" alt="">
+								</a>
+							</div>
+							<ul class="product_list bs_cont">
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product2.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product4.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product2.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product4.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<h3>New Arrival</h3><!--2016-06-24//추가 -->			
+						<h4>
+							진정, 보습
+							<em>예민한 피부 잠재워 줄 <strong>진정, 보습 444</strong></em>
+						</h4>
+						<div class="row1">
+							<ul class="product_list bs_cont">
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product7.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product6.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+							</ul>
+							<div class="br_type bs_cont">
+								<a href="#">
+									<img src="../../img/tmp/br_best.jpg" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="row2">			
+							<!-- 2016-07-21//동영상썸네일있는타입(s) -->
+							<div class="br_type v3 vd_player bs_cont">
+								<a href="#" class="btn_play">
+									<img src="../../img/tmp/img_them_vd.jpg" alt="">
+								</a>
+								<div class="video">
+									<iframe width="100%" height="100%" src="https://www.youtube.com/embed/A9-GU3dcrHM?enablejsapi=1&rel=0&showinfo=0&autohide=1&modestbranding=1&wmode=opaque&autoplay=0" frameborder="0" allowfullscreen ></iframe>
+								</div>
+							</div>
+							<!-- 2016-07-21//동영상썸네일있는타입(e) -->
+							<ul class="product_list bs_cont">
+								<li>
+									<a href="#">
+										<div class="img_box">
+											<img src="../../img/tmp/img_product2.jpg" alt="">
+										</div>
+										<dl>
+											<dt>
+												쉐어버터 스팀크림 모이스트[중건성용]
+											</dt>
+											<dd class="price">
+												<del>￦28,000</del>￦14,000
+											</dd>
+											<dd class="tag">
+												<em class="best">BEST</em>
+												<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+												<em class="event">착한가격</em>
+											</dd>
+											<dd class="award">
+												<img src="../../img/img_award2.png" alt="">
+											</dd>
+										</dl>
+									</a>
+								</li>
+							</ul>
+							<div class="br_type v3 bs_cont"><!-- 2016-06-24//클래스변경 -->
+								<a href="#">
+									<img src="../../img/tmp/br_best2.jpg" alt="">
+								</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="btn_slide">
+					<ul>
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+					</ul>
+				</div>
+				<a href="#" class="btn_direct prev">prev</a>
+				<a href="#" class="btn_direct next">next</a>
+			</div>
+		</div>
+		<!-- 2016-06-22//수정(e) -->
+		<!-- //best_seller -->
+
+		<!-- 유튜브동영상(s) -->
+		<script type="text/javascript">
+			
+			var brow_ver = navigator.appVersion;
+			var is_ie8 = false;
+			
+			var agent = navigator.userAgent.toLowerCase();
+			if ( (navigator.appName == 'Netscape' && agent.indexOf('trident') != -1) || (agent.indexOf("msie") != -1)) {
+				 if(brow_ver.indexOf('8.0') != -1) is_ie8 = true;
+			}else{
+				 // ie가 아닐 경우
+			}
+
+			if(!is_ie8){
+					var tag = document.createElement('script');
+					tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+					var $videoElement = $('.vd_player .video > iframe');
+					var player = {};
+
+					function onYouTubePlayerAPIReady() {
+						for (var i = 0; i < $videoElement.length; i++) {
+							$videoElement.eq(i).attr('id', 'player'+i);
+						}
+						for(var i = 0; i < $videoElement.length;i++) {
+						  player[ $videoElement.eq(i).attr('id') ] = new YT.Player($videoElement.eq(i).attr('id'));
+						}
+					}
+
+					function videoPlay( target ){
+						target.playVideo();
+					}
+
+					function videoStop( target ){
+						target.pauseVideo();
+					}
+			}
+
+			//media(s)
+			$(document).ready(function(){
+				$('.btn_slide ul li a').click(function(e){
+					e.preventDefault();
+					for(var i = 0; i < $videoElement.length;i++) {
+					  videoStop( player[ 'player'+i ] );
+					}
+				});
+
+				$('.vd_player .btn_play').click(function(e){
+					e.preventDefault();
+					vd_control($(this));
+				});
+				
+				function vd_control(btn, st){
+					var vd = btn.next().children('iframe').attr('id');
+					if(st != 'stop'){
+						btn.fadeOut();
+						btn.next().fadeIn();
+						if(!is_ie8){
+							for(var i = 0; i < $videoElement.length;i++) {
+							  if(player[ vd ] != player[ 'player'+i ]) videoStop( player[ 'player'+i ] );
+							}
+							videoPlay( player[ vd ] );
+						}
+					}else{
+						btn.fadeIn();
+						btn.next().fadeOut();
+
+					}
+				}
+			});
+			/*
+			var vd = li.eq(idx).find('iframe').attr('id');
+			videoStop(  player[ vd ] );*/
+
+			//media(e)
+
+		</script>
+		<!-- 유튜브동영상(e) -->
+
+		<!-- br_event -->
+		<div class="br_event">
+			<div class="w_cont">
+				<div class="br_area">
+					<ul class="br_list slides">
+						<li class="active">
+							<a href="#a">
+								<img src="../../img/tmp/br_event.jpg" alt="">
+								<p>
+									화이트 비타 플로랄
+									<strong>정품 아이크림 증정 </strong>
+								</p>
+							</a>
+						</li>
+						<li>
+							<a href="#a">
+								<img src="../../img/tmp/br_event2.jpg" alt="">
+								<p>
+									화이트 비타 플로랄2
+									<strong>정품 아이크림 증정222 </strong>
+								</p>
+							</a>
+						</li>
+						<li>
+							<a href="#a">
+								<img src="../../img/tmp/br_event.jpg" alt="">
+								<p>
+									화이트 비타 3333
+									<strong>정품 아이크림 증정 333</strong>
+								</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="br_area">
+					<ul class="br_list slides">
+						<li class="active">
+							<a href="#a">
+								<img src="../../img/tmp/br_tag.jpg" alt="">
+								<p>
+									매직스텝아이즈와 태연의 로맨틱한 만남 
+									<em>#태연_수채화메이크업</em>
+								</p>
+							</a>
+						</li>
+						<li>
+							<a href="#a">
+								<img src="../../img/tmp/br_tag2.jpg" alt="">
+								<p>
+									매직스텝아이즈와 태연의 로맨틱한 만남 22
+									<em>#기울임체도 BO에서가능?</em>
+								</p>
+							</a>
+						</li>
+						<li>
+							<a href="#a">
+								<img src="../../img/tmp/br_tag.jpg" alt="">
+								<p>
+									매직스텝아이즈와 태연의 로맨틱한 만남 333
+									<em>#태연_수채화메이크업333</em>
+								</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../../img/tmp/br_tag2.jpg" alt="">
+								<p>
+									매직스텝아이즈와 태연의 로맨틱한 만남 4444
+									<em>#기울임체도 BO에서가능?</em>
+								</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //br_event -->
+
+		<!-- beauty_talk -->
+		<div class="beauty_talk">
+			<div class="w_cont">
+				<h3>
+					<img src="../../img/tit/tit_beauty_talk.gif" alt="Beauty Talk">
+					<strong>이거 <em>어때</em>?</strong>
+				</h3>
+				<!-- 2016-06-08//이거어때수정반영(s) -->
+				<ul class="recomm_list">
+					<li class="r_first recomm_vs">
+						<dl>
+							<dt>
+								<strong class="reomm_q">Q</strong>수분 부족형 지성 피부라서, 오후 시간만 되면 기름이 번지르르 합니다ㅠㅠ
+								불가리안 로즈 모이스처 수분크림 후기가 좋아서 이 참에 갈아타보려고 하는데 제 피부에도 맞을까요?
+							</dt>
+							<dd class="id">
+								<em>ar3****</em>
+								<span class="user_info">
+									<span class="detail">
+										<dl class="type">
+											<dt>피부타입</dt>
+											<dd>20대</dd>
+											<dd>여</dd>
+											<dd>모든타입</dd>
+										</dl>
+										<dl class="worry">
+											<dt>피부고민</dt>
+											<dd>화이트닝/피부톤개선</dd>
+										</dl>
+									</span>
+								</span>
+								<span href="#" class="sns_share">
+									<!-- 2016-06-03//수정(s) -->
+									<span class="detail">
+										<dl>
+											<dt>공유하기</dt>
+											<dd><a href="#a" class="btn_facebook">facebook</a></dd>
+											<dd><a href="#a" class="btn_kakao">kakao</a></dd>
+											<dd><a href="#a" class="btn_share">link</a></dd>
+										</dl>
+									</span>
+									<!-- 2016-06-03//수정(e) -->
+								</span>
+							</dd>
+							<!-- 2016-05-27//수정(s) -->
+							<dd class="adjust">
+								<a href="#a" class="modify">수정</a>
+								<a href="#a" class="delete">삭제</a>
+							</dd>
+							<!-- 2016-05-27//수정(e) -->
+							<dd class="contents">
+								<a href="#">
+									<img src="../../img/tmp/recomm_prd1.jpg" alt="">
+									<dl>
+										<dt>네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++</dt>
+										<dd><span class="ico_spr like_it2"></span><span>26</span><span class="recomm">추천</span></dd>
+									</dl>
+									<!--2016-06-03/삭제//div class="like_text">
+										<span class="bg"></span>
+										<em>
+											네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++에 투표하시겠습니까?
+											<span class="ico_spr check"></span>
+											<strong>좋아요!</strong>
+										</em>
+									</div-->
+								</a>
+								<span class="ico_spr vs"><span class="blind">VS</span></span>
+								<a href="#">
+									<img src="../../img/tmp/recomm_prd1.jpg" alt="">
+									<dl>
+										<dt>네이처 오리진 씨씨 틴티드 SPF30 PA++</dt>
+										<dd><span class="ico_spr like_it"></span><span>9</span><span class="recomm">추천</span></dd>
+									</dl>
+									<!--2016-06-03/삭제//div class="like_text">
+										<span class="bg"></span>
+										<em>
+											네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++에 투표하시겠습니까?
+											<span class="ico_spr check"></span>
+											<strong>좋아요!</strong>
+										</em>
+									</div-->
+								</a>
+							</dd>
+						</dl>	
+					</li>
+					<li class="recomm_sub">
+						<dl>
+							<dt>
+								<strong class="reomm_q">Q</strong>수분 부족형 지성피부인데 리얼 스퀴즈 앰플 도움이 될까요? 
+							</dt>
+							<dd class="id"><em>ar3****</em>
+								<span class="user_info">
+									<span class="detail">
+										<dl class="type">
+											<dt>피부타입</dt>
+											<dd>20대</dd>
+											<dd>여</dd>
+											<dd>모든타입</dd>
+										</dl>
+										<dl class="worry">
+											<dt>피부고민</dt>
+											<dd>화이트닝/피부톤개선</dd>
+										</dl>
+									</span>
+								</span>
+								<span href="#" class="sns_share">
+									<!-- 2016-06-03//수정(s) -->
+									<span class="detail">
+										<dl>
+											<dt>공유하기</dt>
+											<dd><a href="#a" class="btn_facebook">facebook</a></dd>
+											<dd><a href="#a" class="btn_kakao">kakao</a></dd>
+											<dd><a href="#a" class="btn_share">link</a></dd>
+										</dl>
+									</span>
+									<!-- 2016-06-03//수정(e) -->
+								</span>
+							</dd>
+							<!-- 2016-05-27//수정(s) -->
+							<dd class="adjust">
+								<a href="#a" class="modify">수정</a>
+								<a href="#a" class="delete">삭제</a>
+							</dd>
+							<!-- 2016-05-27//수정(e) -->
+							<dd class="contents">
+								<img src="../../img/tmp/recomm_prd2.jpg" alt="">
+								<dl>
+									<dt>슈퍼 아쿠아 맥스 프레시 수분 크림 [지성용]</dt>
+									<dd class="r_first"><span class="ico_spr like_it"></span><span>18</span><a href="#a" class="recomm">추천</a></dd>
+									<dd><span class="ico_spr like_it"></span><span>5</span><a href="#a" class="recomm no">비추천</a></dd>
+								</dl>
+							</dd>
+						</dl>
+					</li>
+					<li class="recomm_sub">
+						<dl>
+							<dt>
+								<strong class="reomm_q">Q</strong>수분 부족형 지성피부인데 리얼 스퀴즈 앰플 도움이 될까요? 
+							</dt>
+							<dd class="id"><em>ar3****</em>
+								<span class="user_info">
+									<span class="detail">
+										<dl class="type">
+											<dt>피부타입</dt>
+											<dd>20대</dd>
+											<dd>여</dd>
+											<dd>모든타입</dd>
+										</dl>
+										<dl class="worry">
+											<dt>피부고민</dt>
+											<dd>화이트닝/피부톤개선</dd>
+										</dl>
+									</span>
+								</span>
+								<span href="#" class="sns_share">
+									<!-- 2016-06-03//수정(s) -->
+									<span class="detail">
+										<dl>
+											<dt>공유하기</dt>
+											<dd><a href="#a" class="btn_facebook">facebook</a></dd>
+											<dd><a href="#a" class="btn_kakao">kakao</a></dd>
+											<dd><a href="#a" class="btn_share">link</a></dd>
+										</dl>
+									</span>
+									<!-- 2016-06-03//수정(e) -->
+								</span>
+							</dd>
+							<dd class="contents">
+								<img src="../../img/tmp/recomm_prd2.jpg" alt="">
+								<dl>
+									<dt>슈퍼 아쿠아 맥스 프레시 수분 크림 [지성용]</dt>
+									<dd class="r_first"><span class="ico_spr like_it"></span><span>18</span><a href="#a" class="recomm">추천</a></dd>
+									<dd><span class="ico_spr like_it"></span><span>5</span><a href="#a" class="recomm no">비추천</a></dd>
+								</dl>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+				<!-- 2016-06-08//이거어때수정반영(e) -->
+			</div>
+		</div>
+		<!-- //beauty_talk -->
+
+		<!-- best_review -->
+		<div class="best_review">
+			<div class="w_cont">
+				<h3>Best <strong>Review</strong></h3>
+				<ol>
+					<li>
+						<a href="#">
+							<div class="img_box">
+								<img src="../../img/tmp/img_review.jpg" alt="">
+							</div>
+							<dl>
+								<dt>너무 좋아요~</dt>
+								<dd class="txt">
+									<span class="star_rating star_rating_list">
+										 <span style="width: 40%;" class="score">4점</span>  <!-- 2점 > width:20%;  4점 > width:40%;  6점 > width:60%;  8점 > width:80%;  10점 > width:100%-->
+									</span>
+									수딩젤을 처음 사보는데 만족스럽네요^^ 냄새도 독하지 않고 정말 산뜻하고 상쾌해요. 얼굴 뿐만 아니라 바디용으로 수딩젤을 처음 사보는데 만족스럽네요^^ 냄새도 독하지 않고 정말 산뜻하고 상쾌해요. 얼굴 뿐만 아니라 바디용으로 수딩젤을 처음 사보는데 만족스럽네요^^ 냄새도 독하지 않고 정말 산뜻하고 상쾌해요. 얼굴 뿐만 아니라 바디용으로 수딩젤을 처음 사보는데 만족스럽네요^^ 냄새도 독하지 않고 정말 산뜻하고 상쾌해요. 얼굴 뿐만 아니라 바디용으로 수딩젤을 처음 사보는데 만족스럽네요^^ 냄새도 독하지 않고 정말 산뜻하고 상쾌해요. 얼굴 뿐만 아니라 바디용으로 
+								</dd>
+								<dd class="user">as******</dd>
+								<dd class="pro_name">수딩 앤 모이스처 알로에베라 92% 수딩젤</dd>
+							</dl>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="img_box">
+								<img src="../../img/tmp/br_best2.jpg" alt="">
+							</div>
+							<dl>
+								<dt>여기 텍스트길어지면 일단 잘림여기 텍스트길어지면 일단 잘림여기 텍스트길어지면 일단 잘림</dt>
+								<dd class="txt">
+									<span class="star_rating star_rating_list">
+										 <span style="width: 60%;" class="score">8점</span>  <!-- 2점 > width:20%;  4점 > width:40%;  6점 > width:60%;  8점 > width:80%;  10점 > width:100%-->
+									</span>
+									여기 텍스트길어지면 일단 잘림// 이미지 사이즈 등록할때 정사각형으로 등록하나요? 아닐때 처리 어떻게??????
+								</dd>
+								<dd class="user">we*****</dd>
+								<dd class="pro_name">수딩 앤 모이스처 알로에베라 92% 수딩젤</dd>
+							</dl>
+						</a>
+					</li>
+				</ol>
+				<ul>
+					<li>
+						<a href="#">
+							<div class="img_box">
+								<img src="../../img/tmp/img_product4.jpg" alt="">
+							</div>
+							<!-- 2016-06-08//타이틀삭제(s) -->
+							<div class="review">
+								<strong class="txt">
+									피부색과 가깝게 발려져 좀 더 자연스러워 보입니다.
+								</strong>
+								<p class="user">as******</dd>
+								<p class="pro_name">네이처 오리진 씨씨 틴티드 SPF30 PA++</p>
+							</div>
+							<!-- 2016-06-08//타이틀삭제(e) -->
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="img_box">
+								<img src="../../img/tmp/img_product6.jpg" alt="">
+							</div>
+							<!-- 2016-06-08//타이틀삭제(s) -->
+							<div class="review">
+								<strong class="txt">
+									피부색과 가깝게 발려져 좀 더 자연스러워 보입니다.피부색과 가깝게 발려져 좀 더 자연스러워 보입니다.피부색과 가깝게 발려져 좀 더 자연스러워 보입니다.피부색과 가깝게 발려져 좀 더 자연스러워 보입니다.피부색과 가깝게 발려져 좀 더 자연스러워 보입니다.피부색과 가깝게 발려져 좀 더 자연스러워 보입니다.피부색과 가깝게 발려져 좀 더 자연스러워 보입니다.피부색과 가깝게 발려져 좀 더 자연스러워 보입니다.
+								</strong>
+								<p class="user">as******</dd>
+								<p class="pro_name">네이처 오리진 씨씨 틴티드 SPF30 PA++</p>
+							</div>
+							<!-- 2016-06-08//타이틀삭제(e) -->
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="img_box">
+								<img src="../../img/tmp/img_product7.jpg" alt="">
+							</div>
+							<!-- 2016-06-08//타이틀삭제(s) -->
+							<div class="review">
+								<strong class="txt">
+									피부색과 가깝게 발려져 좀 더 자연스러워 보입니다.피부색과 가깝게 발려져 좀 더 자연스러워 보입니다.피부색과 가깝게 발려져 좀 더 자연스러워 보입니다.피부색과 가깝게 발려져 좀 더 자연스러워 보입니다.피부색과 가깝게 발려져 좀 더 자연스러워 보입니다.피부색과 가깝게 발려져 좀 더 자연스러워 보입니다.피부색과 가깝게 발려져 좀 더 자연스러워 보입니다.피부색과 가깝게 발려져 좀 더 자연스러워 보입니다.
+								</strong>
+								<p class="user">as******</dd>
+								<p class="pro_name">네이처 오리진 씨씨 틴티드 SPF30 PA++</p>
+							</div>
+							<!-- 2016-06-08//타이틀삭제(e) -->
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //best_review -->
+
+	</div>
+    <!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>

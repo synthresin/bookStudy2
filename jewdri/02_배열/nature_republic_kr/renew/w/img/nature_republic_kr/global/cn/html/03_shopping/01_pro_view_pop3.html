@@ -1,0 +1,1212 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/shopping.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		var v_top = $(window).scrollTop();
+		var tab_top = $('.tab_pro_view').offset().top;
+		tab_control(top);
+
+		$(window).scroll(function(){
+			var t = $(window).scrollTop();
+			tab_control(t);		
+		});
+
+		function tab_control(top){
+			if( top > tab_top){
+				$('#wrap').addClass('fix_tab_top');
+			}
+			else{
+				$('#wrap').removeClass('fix_tab_top');
+			}
+		}
+
+		$('.tab_pro_view li a').click(function(){
+			var idx = $(this).parent().index();
+			$('.tab_pro_view li').removeClass('active');
+			$(this).parent().addClass('active');
+			$('.tab_content').removeClass('active');
+			$('.tab_content#cont_0'+(idx+1)).addClass('active');
+		});
+
+		$('.promotion dd').flexslider({
+			animation: 'fade',		
+			animationSpeed: 500,
+			slideshowSpeed: 3000, 
+			directionNav: false
+		});
+
+		$('.with_buy dd').flexslider({
+			animation: 'slide',
+			animationSpeed: 1000,
+			slideshowSpeed: 3000, 
+			itemWidth: 150,
+			itemMargin:10, 
+			move:3,
+			directionNav: false,
+			minItems: 3
+		});
+
+		$('.with_buy_item dd').flexslider({
+			animation: "slide",
+			itemWidth: 190,
+			move: 1,
+			animationSpeed: 500,
+			itemMargin: 4,
+			minItems: 5,
+			controlNav: false
+		});
+	});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container">
+		<!-- content -->
+		<div id="content" class="fixed_tab">
+			<div class="w_cont">
+				<ol class="sub_navi">
+					<li><a href="#">home</a></li>
+					<li><a href="#">카테고리</a></li>
+					<li>스킨케어</li>
+				</ol>
+			</div>
+
+			<!-- 상세타이틀 -->
+			<div class="sub_tit_wrap tit_pro_view">
+				<em>에센스 50% 추가 할인</em>
+				<h2>슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]</h2>
+				<p>더 깊게, 더 촉촉하게 쉐어버터 스팀보습 고온 스팀공법</p>
+				<div class="info">
+					<ul class="info_l">
+						<li>자외선 차단</li>
+						<li>중건성</li>
+						<li>보습/수분</li>
+						<li>미백</li>
+						<li>탄력강화</li>
+					</ul>
+					<ul class="info_r">
+						<li><a href="#" class="btn_facebook">페이스북</a></li>
+						<li><a href="#" class="btn_kakao">카카오스토리</a></li>
+						<li><a href="#" class="btn_share">링크복사</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- //상세타이틀 -->
+
+			<!-- 상세정보 -->
+			<div class="pro_view_info">
+				<div class="info_img">
+					<!-- 상품이미지 -->
+					<div class="img_box">
+						<img src="../../img/tmp/img_product2.jpg" alt="">
+						<span class="tag">
+							<em class="best">BEST</em>
+							<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+							<em class="event">고품질<br>착한가격</em>
+							<em class="plus">10<span>+</span>10</em>
+						</span>
+					</div>
+					<div class="thumb_img">
+						<div>
+							<ul>
+								<li><a href="#"><img src="../../img/tmp/img_product2.jpg" alt=""></a></li>
+								<li><a href="#"><img src="../../img/tmp/img_product3.jpg" alt=""></a></li>
+								<li><a href="#"><img src="../../img/tmp/img_product4.jpg" alt=""></a></li>
+								<li><a href="#"><img src="../../img/tmp/img_product5.jpg" alt=""></a></li>
+								<li><a href="#"><img src="../../img/tmp/img_product6.jpg" alt=""></a></li>
+								<li><a href="#"><img src="../../img/tmp/img_product.jpg" alt=""></a></li>
+								<li><a href="#"><img src="../../img/tmp/img_product2.jpg" alt=""></a></li>
+								<li><a href="#"><img src="../../img/tmp/img_product3.jpg" alt=""></a></li>
+							</ul>
+						</div>
+						<a href="#" class="btn_direct prev">이전</a>
+						<a href="#" class="btn_direct prev">다음</a>
+					</div>
+					<!-- //상품이미지 -->
+
+					<div class="total_review">
+						<ul>
+							<li><em><span></span>포토리뷰</em><span>33 건</span></li>
+							<li><em><span></span>사용리뷰</em><span>218 건</span></li>
+							<li><em><span></span>상품만족도</em><span>별점</span></li>
+						</ul>
+						<dl>
+							<dt>Beauty <strong>Trend</strong></dt>
+							<dd>
+								<ul>
+									<li># 필수아이템 짐승젤</li>
+									<li># 촉촉한 수분</li>
+									<li># 탱탱한 피부를 위한 크림</li>
+									<li># 필수아이템 짐승젤</li>
+									<li># 촉촉한 수분</li>
+									<li># 탱탱한 피부를 위한 크림</li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="info_pay"></div>
+			</div>
+			<!-- //상세정보 -->
+
+			<!-- 추천제품및프로모션 -->
+			<div class="shopping_br_area">
+				<dl class="promotion">
+					<dt>관련 <strong>프로모션</strong></dt>
+					<dd>
+						<ul class="br_list slides">
+							<li class="active">
+								<a href="#a">
+									<img src="../../img/tmp/br_event.jpg" alt="">
+									<p>
+										화이트 비타 플로랄
+										<strong>정품 아이크림 증정 </strong>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="#a">
+									<img src="../../img/tmp/br_event2.jpg" alt="">
+									<p>
+										화이트 비타 플로랄2
+										<strong>정품 아이크림 증정222 </strong>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="#a">
+									<img src="../../img/tmp/br_event.jpg" alt="">
+									<p>
+										화이트 비타 3333
+										<strong>정품 아이크림 증정 333</strong>
+									</p>
+								</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+
+				<dl class="with_buy">
+					<dt>이 상품과 <strong>함께 구매한 상품</strong></dt>
+					<dd>
+						<ul class="slides">
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product4.jpg" alt="">
+									</div>
+									<dl>
+										<dt>수딩 앤 모이스처 알로에 베라 92% 수딩젤 미스트수딩 앤 모이스처 알로에 베라 92% 수딩젤 미스트</dt>
+										<dd>￦5,500</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product5.jpg" alt="">
+									</div>
+									<dl>
+										<dt>수딩 앤 모이스처 알로에 베라 92% 수딩젤 미스트</dt>
+										<dd>￦5,500</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product2.jpg" alt="">
+									</div>
+									<dl>
+										<dt>수딩 앤 모이스처 알로에 베라 92% 수딩젤 미스트</dt>
+										<dd>￦5,500</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product4.jpg" alt="">
+									</div>
+									<dl>
+										<dt>수딩 앤 모이스처 알로에 베라 92% 수딩젤 미스트</dt>
+										<dd>￦5,500</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product5.jpg" alt="">
+									</div>
+									<dl>
+										<dt>수딩 앤 모이스처 알로에 베라 92% 수딩젤 미스트</dt>
+										<dd>￦5,500</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product2.jpg" alt="">
+									</div>
+									<dl>
+										<dt>수딩 앤 모이스처 알로에 베라 92% 수딩젤 미스트</dt>
+										<dd>￦5,500</dd>
+									</dl>
+								</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+			</div>
+			<!-- //추천제품및프로모션 -->
+
+			<!-- 상세탭메뉴 -->
+			<div class="tab_pro_view">
+				<ul>
+					<li class="active"><a href="#cont_01">상품상세정보</a></li>
+					<li><a href="#cont_02">포토리뷰<em>(10)</em> / 간단리뷰<em>(12)</em></a></li>
+					<li><a href="#cont_03">상품정보제공고시</a></li>
+					<li><a href="#cont_04">구매시 유의사항</a></li>
+				</ul>
+			</div>
+			<!-- //상세탭메뉴 -->
+
+			<!-- 상품상세정보 -->
+			<div class="tab_content active" id="cont_01">
+				<h3 class="blind">상세정보</h3>
+				<div class="detail_editer">
+					<!-- 에디터등록영역 -->
+					<img src="../../img/tmp/img_pro_detail.jpg" alt="">
+
+					<div class="vd_player" style="width:500px; height:294px; position:absolute; bottom:20px; left:92px">
+						<a href="#" class="btn_play">
+							<img src="../../img/tmp/img_them_vd.jpg" alt="">
+						</a>
+						<div class="video">
+							<iframe width="100%" height="100%" src="https://www.youtube.com/embed/2cFjxwfDLeY?feature=player_detailpage;autoplay=1" frameborder="0" allowfullscreen=""></iframe>
+						</div>
+					</div>
+					<!-- //에디터등록영역 -->
+				</div>
+
+				<!-- 함께구매하면좋은상품 -->
+				<dl class="with_buy_item">
+					<dt><strong>함께 구매하면</strong> 좋은 상품</dt>
+					<dd>
+						<ul class="slides">
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product2.jpg" alt="">
+									</div>
+									<dl>
+										<dt>리얼 네이처 에센스-허니</dt>
+										<dd>
+											<del>￦31,000</del>
+											￦15,500
+										</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product3.jpg" alt="">
+									</div>
+									<dl>
+										<dt>수딩 앤 모이스처 알로에 베라 92% 수딩젤 미스트</dt>
+										<dd>
+											<del>￦31,000</del>
+											￦15,500
+										</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product4.jpg" alt="">
+									</div>
+									<dl>
+										<dt>슈퍼 아쿠아 맥스 수분 토너</dt>
+										<dd>
+											<del>￦31,000</del>
+											￦15,500
+										</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product2.jpg" alt="">
+									</div>
+									<dl>
+										<dt>화이트 비타 퍼스트 에센스</dt>
+										<dd>
+											<del>￦31,000</del>
+											￦15,500
+										</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product6.jpg" alt="">
+									</div>
+									<dl>
+										<dt>비베놈 미스트 에센스 100ml (대용량)</dt>
+										<dd>
+											<del>￦31,000</del>
+											￦15,500
+										</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product5.jpg" alt="">
+									</div>
+									<dl>
+										<dt>리얼 네이처 에센스-허니</dt>
+										<dd>
+											<del>￦31,000</del>
+											￦15,500
+										</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product3.jpg" alt="">
+									</div>
+									<dl>
+										<dt>리얼 네이처 에센스-허니</dt>
+										<dd>
+											<del>￦31,000</del>
+											￦15,500
+										</dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/tmp/img_product4.jpg" alt="">
+									</div>
+									<dl>
+										<dt>리얼 네이처 에센스-허니</dt>
+										<dd>
+											<del>￦31,000</del>
+											￦15,500
+										</dd>
+									</dl>
+								</a>
+							</li>
+
+						</ul>
+					</dd>
+				</dl>
+				<!-- //함께구매하면좋은상품 -->
+				
+
+				<div></div>
+			</div>
+			<!-- //상품상세정보 -->
+
+			<!-- 리뷰 -->
+			<div class="tab_content" id="cont_02">
+				<!-- 포토리뷰 -->
+				<div class="title_wrap">
+					<h3 class="tit_sub_02">포토 리뷰 <em>(12)</em></h3>
+					<span class="aside">
+						<a href="#" class="btn_large">작성하기</a>
+						<a href="javascript:pop_layer_view('#pop_review_guide');" class="btn_large arrow">포토 리뷰 리워드 정책<span class="btn_spr"></span></a>
+					</span>
+				</div>
+				<div class="review_list">
+					<div class="btn_wrap">
+						<span class="aside_l">
+							<a href="#" class="active">최신순<span class="arrow"></span></a>
+							<a href="#">관심순<span class="arrow"></span></a>
+							<a href="#"><span class="best"></span>베스트 보기</a>
+						</span>
+					</div>
+					<!-- list -->
+					<ul class="article_list v2">
+						<li>
+							<a href="javascript:pop_layer_view('#pop_type2');">
+								<div class="img_box">
+									<img src="../../img/tmp/review_list01.jpg" alt="">
+								</div>
+								<dl>
+									<dt>
+										로얄젤리랑 아사이베리 둘 다 좋아요~ 로얄젤리랑 아사이베리 둘 다 좋아요~로얄젤리랑 아사이베리 둘 다 좋아요~로얄젤리랑 아사이베리 둘 다 좋아요~
+									</dt>
+									<dd class="id"><em>ca3*****</em>  (20대 / 여 / 모든피부)</dd>
+									<dd class="info">
+										<div class="info_l">
+											<span class="star_rating star_rating_list">
+												<span style="width: 80%;" class="score">4점</span>
+											</span>	
+										</div>
+										<div class="info_r">
+											<span><span class="ico_spr hit"></span>32</span>
+										</div>
+									</dd>
+									<dd class="prd">
+										<div class="prd_box">
+											<img src="../../img/tmp/img_review1.jpg" alt="리얼 프레시 마스크 시트- 블루베리">
+										</div>
+										<p>리얼 프레시 마스크 시트- 블루베리리얼 프레시 마스크 시트- 블루베리리얼 프레시 마스크 시트- 블루베리</p>
+									</dd>
+									<dd class="category v1"></dd>
+								</dl>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:pop_layer_view('#pop_type2');">
+								<div class="img_box">
+									<img src="../../img/tmp/review_list02.jpg" alt="">
+								</div>
+								<dl>
+									<dt>
+										7일 사용후기예요.
+									</dt>
+									<dd class="id"><em>qwe*****</em> (20대 / 여 / 모든피부)</dd>
+									<dd class="info">
+										<div class="info_l">
+											<span class="star_rating star_rating_list">
+												<span style="width: 80%;" class="score">4점</span>
+											</span>
+										</div>
+										<div class="info_r">
+											<span><span class="ico_spr hit"></span>32</span>
+										</div>
+									</dd>
+									<dd class="prd">
+										<div class="prd_box">
+											<img src="../../img/tmp/img_review1.jpg" alt="아르간 에센셜 딥 케어 헤어팩">
+										</div>
+										<p>아르간 에센셜 딥 케어 헤어팩</p>
+									</dd>
+									<dd class="category v1"></dd>
+								</dl>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:pop_layer_view('#pop_type2');">
+								<div class="img_box">
+									<img src="../../img/tmp/review_list03.jpg" alt="">
+								</div>
+								<dl>
+									<dt>
+										자연의 꾸밈 헤어 마사지 브러쉬
+									</dt>
+									<dd class="id">ar3*****  (20대 / 여 / 모든피부)</dd>
+									<dd class="info">
+										<div class="info_l">
+											<span class="star_rating star_rating_list">
+												<span style="width: 80%;" class="score">4점</span>
+											</span>
+										</div>
+										<div class="info_r">
+											<span><span class="ico_spr hit"></span>32</span>
+										</div>
+									</dd>
+									<dd class="prd">
+										<div class="prd_box">
+											<img src="../../img/tmp/img_review1.jpg" alt="크리미 바디워시 - 올리브">
+										</div>
+										<p>크리미 바디워시 - 올리브</p>
+									</dd>
+								</dl>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:pop_layer_view('#pop_type2');">
+								<div class="img_box">
+									<img src="../../img/tmp/review_list04.jpg" alt="">
+								</div>
+								<dl>
+									<dt>
+										오일 에센스 애용중!
+									</dt>
+									<dd class="id"><em>fgh*****</em>  (20대 / 여 / 모든피부)</dd>
+									<dd class="info">
+										<div class="info_l">
+											<span class="star_rating star_rating_list">
+												<span style="width: 80%;" class="score">4점</span>
+											</span>
+										</div>
+										<div class="info_r">
+											<span><span class="ico_spr hit"></span>32</span>
+										</div>
+									</dd>
+									<dd class="prd">
+										<div class="prd_box">
+											<img src="../../img/tmp/img_review1.jpg" alt="리얼 프레시 마스크 시트- 블루베리">
+										</div>
+										<p>리얼 프레시 마스크 시트- 블루베리</p>
+									</dd>
+								</dl>
+							</a>
+						</li>
+						<li class="r_first">
+							<a href="javascript:pop_layer_view('#pop_type2');">
+								<div class="img_box">
+									<img src="../../img/tmp/review_list05.jpg" alt="">
+								</div>
+								<dl>
+									<dt>
+										로얄젤리랑 아사이베리 둘 다 좋아요~
+									</dt>
+									<dd class="id"><em>vbn***** </em> (20대 / 여 / 모든피부)</dd>
+									<dd class="info">
+										<div class="info_l">
+											<span class="star_rating star_rating_list">
+												<span style="width: 80%;" class="score">4점</span>
+											</span>
+										</div>
+										<div class="info_r">
+											<span><span class="ico_spr hit"></span>32</span>
+										</div>
+									</dd>
+									<dd class="prd">
+										<div class="prd_box">
+											<img src="../../img/tmp/img_review1.jpg" alt="리얼 프레시 마스크 시트- 블루베리">
+										</div>
+										<p>리얼 프레시 마스크 시트-블루베리</p>
+									</dd>
+								</dl>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:pop_layer_view('#pop_type2');">
+								<div class="img_box">
+									<img src="../../img/tmp/review_list06.jpg" alt="">
+								</div>
+								<dl>
+									<dt>
+										금가루 가득! 진짜가 나타났다!
+									</dt>
+									<dd class="id"><em>zxc*****</em> (20대 / 여 / 모든피부)</dd>
+									<dd class="info">
+										<div class="info_l">
+											<span class="star_rating star_rating_list">
+												<span style="width: 80%;" class="score">4점</span>
+											</span>
+										</div>
+										<div class="info_r">
+											<span><span class="ico_spr hit"></span>32</span>
+										</div>
+									</dd>
+									<dd class="prd">
+										<div class="prd_box">
+											<img src="../../img/tmp/img_review1.jpg" alt="아르간 에센셜 딥 케어 헤어팩 ">
+										</div>
+										<p>아르간 에센셜 딥 케어 헤어팩</p>
+									</dd>
+								</dl>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:pop_layer_view('#pop_type2');">
+								<div class="img_box">
+									<img src="../../img/tmp/review_list07.jpg" alt="">
+								</div>
+								<dl>
+									<dt>
+										드디어 인생템 발견!
+									</dt>
+									<dd class="id"><em>mnb*****</em> (20대 / 여 / 모든피부)</dd>
+									<dd class="info">
+										<div class="info_l">
+											<span class="star_rating star_rating_list">
+												<span style="width: 80%;" class="score">4점</span>
+											</span>
+										</div>
+										<div class="info_r">
+											<span><span class="ico_spr hit"></span>32</span>
+										</div>
+									</dd>
+									<dd class="prd">
+										<div class="prd_box">
+											<img src="../../img/tmp/img_review1.jpg" alt="리얼 프레시 마스크 시트-블루">
+										</div>
+										<p>리얼 프레시 마스크 시트-블루</p>
+										
+									</dd>
+								</dl>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:pop_layer_view('#pop_type2');">
+								<div class="img_box">
+									<img src="../../img/tmp/review_list08.jpg" alt="">
+								</div>
+								<dl>
+									<dt>
+										코코아같은 따뜻하고 그윽한 눈매♥
+									</dt>
+									<dd class="id"><em>r3*****</em> (20대 / 여 / 모든피부)</dd>
+									<dd class="info">
+										<div class="info_l">
+											<span class="star_rating star_rating_list">
+												<span style="width: 80%;" class="score">4점</span>
+											</span>
+										</div>
+										<div class="info_r">
+											<span><span class="ico_spr hit"></span>32</span>
+										</div>
+									</dd>
+									<dd class="prd">
+										<div class="prd_box">
+											<img src="../../img/tmp/img_review1.jpg" alt="리얼 프레시 마스크 시트-블루">
+										</div>
+										<p>리얼 프레시 마스크 시트-블루</p>
+										
+									</dd>
+								</dl>
+							</a>
+						</li>
+					</ul>
+					<!-- //list -->
+					<a href="#a" class="btn_more arrow">더보기<span></span></a>
+				</div>
+				<!-- //포토리뷰 -->
+
+				<!-- 사용리뷰 -->
+				<div class="title_wrap">
+					<h3 class="tit_sub_02">사용 리뷰 <em>(56)</em></h3>
+					<span class="aside">
+						<a href="#" class="btn_large">작성하기</a>
+						<a href="javascript:pop_layer_view('#pop_review_guide');" class="btn_large arrow">사용 리뷰 리워드 정책<span class="btn_spr"></span></a>
+					</span>
+				</div>
+
+				<div class="txt_review">
+					<ul>
+						<li>
+							<dl>
+								<dt>
+									<em>aar****<span>(20대/여/모든피부)</span></em>
+									<p>
+										<strong>
+											상품 
+											<span class="star_rating star_rating_list">
+												<span style="width: 40%;" class="score">4점</span>
+											</span>
+										</strong>
+										<strong>
+											배송
+											<span class="txt_rating">만족해요</span>
+										</strong>
+									</p>
+									<span>2016.03.03</span>
+								</dt>
+								<dd>
+									제형은 꾸덕꾸덕하지는 않아요. 네이처리퍼블릭의 스팀크림보다는 묽고 가벼운 느낌이 있었어요. 
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>
+									<em>ksold****<span>(20대/여/모든피부)</span></em>
+									<p>
+										<strong>
+											상품 
+											<span class="star_rating star_rating_list">
+												<span style="width: 40%;" class="score">4점</span>
+											</span>
+										</strong>
+										<strong>
+											배송
+											<span class="txt_rating">보통이예요</span>
+										</strong>
+									</p>
+									<span>2016.03.03</span>
+								</dt>
+								<dd>
+									제형은 꾸덕꾸덕하지는 않아요. 네이처리퍼블릭의 스팀크림보다는 묽고 가벼운 느낌이 있었어요. 제가 이 제품이 가장 마음에 들었던 이유는 향과 전반적인 밸런스에 있어요.
+									스팀크림보다는 묽고 가벼운 느낌이 있었어요. 제가 이 제품이 가장 마음에 들었던 이유는 향과 전반적인 밸런스에 있어요.제형은 꾸덕꾸덕하지는 않아요. 네이처리퍼블릭의 스팀크림보다는 묽고 가벼운 느낌이 있었어요. 제가 이 제품이 가장 마음에 들었던 이유는 향과 전반적인 밸런스에 있어요.
+									스팀크림보다는 묽고 가벼운 느낌이 있었어요. 제가 이 제품이 가장 마음에 들었던 이유는 향과 전반적인 밸런스에 있어요.
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>
+									<em>ksold****<span>(20대/여/모든피부)</span></em>
+									<p>
+										<strong>
+											상품 
+											<span class="star_rating star_rating_list">
+												<span style="width: 40%;" class="score">4점</span>
+											</span>
+										</strong>
+										<strong>
+											배송
+											<span class="txt_rating">아쉬워요</span>
+										</strong>
+									</p>
+									<span>2016.03.03</span>
+								</dt>
+								<dd>
+									제형은 꾸덕꾸덕하지는 않아요. 네이처리퍼블릭의 스팀크림보다는 묽고 가벼운 느낌이 있었어요. 제가 이 제품이 가장 마음에 들었던 이유는 향과 전반적인 밸런스에 있어요.
+									스팀크림보다는 묽고 가벼운 느낌이 있었어요. 제가 이 제품이 가장 마음에 들었던 이유는 향과 전반적인 밸런스에 있어요.제형은 꾸덕꾸덕하지는 않아요. 네이처리퍼블릭의 스팀크림보다는 묽고 가벼운 느낌이 있었어요. 제가 이 제품이 가장 마음에 들었던 이유는 향과 전반적인 밸런스에 있어요.
+									스팀크림보다는 묽고 가벼운 느낌이 있었어요. 제가 이 제품이 가장 마음에 들었던 이유는 향과 전반적인 밸런스에 있어요.
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>
+									<em>aar****<span>(20대/여/모든피부)</span></em>
+									<p>
+										<strong>
+											상품 
+											<span class="star_rating star_rating_list">
+												<span style="width: 40%;" class="score">4점</span>
+											</span>
+										</strong>
+										<strong>
+											배송
+											<span class="txt_rating">만족해요</span>
+										</strong>
+									</p>
+									<span>2016.03.03</span>
+								</dt>
+								<dd>
+									제형은 꾸덕꾸덕하지는 않아요. 네이처리퍼블릭의 스팀크림보다는 묽고 가벼운 느낌이 있었어요. 제가 이 제품이 가장 마음에 들었던 이유는 향과 전반적인 밸런스에 있어요.
+									스팀크림보다는 묽고 가벼운 느낌이 있었어요. 제가 이 제품이 가장 마음에 들었던 이유는 향과 전반적인 밸런스에 있어요.
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>
+									<em>aar****<span>(20대/여/모든피부)</span></em>
+									<p>
+										<strong>
+											상품 
+											<span class="star_rating star_rating_list">
+												<span style="width: 40%;" class="score">4점</span>
+											</span>
+										</strong>
+										<strong>
+											배송
+											<span class="txt_rating">만족해요</span>
+										</strong>
+									</p>
+									<span>2016.03.03</span>
+								</dt>
+								<dd>
+									제형은 꾸덕꾸덕하지는 않아요. 네이처리퍼블릭의 스팀크림보다는 묽고 가벼운 느낌이 있었어요. 제가 이 제품이 가장 마음에 들었던 이유는 향과 전반적인 밸런스에 있어요.
+									스팀크림보다는 묽고 가벼운 느낌이 있었어요. 제가 이 제품이 가장 마음에 들었던 이유는 향과 전반적인 밸런스에 있어요.
+								</dd>
+							</dl>
+						</li>
+					</ul>
+					<a href="#a" class="btn_more arrow">더보기<span></span></a>
+				</div>
+				<!-- //사용리뷰 -->
+			</div>
+			<!-- //리뷰 -->
+
+			<!-- 상품정보제공고시 -->
+			<div class="tab_content" id="cont_03">
+				<h3 class="tit_sub_02">제품요약정보</h3>
+				<table class="tble_type">
+					<colgroup>
+						<col width="21%">
+						<col width="29%">
+						<col width="21%">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">제품명 </th>
+							<td colspan="3">[10+10 / 10종 중 택 2 ] 리얼 네이처 마스크 시트</td>
+						</tr>
+						<tr>
+							<th scope="row">사용기한 또는 개봉 후 사용기간 </th>
+							<td colspan="3">
+								2016년 10월까지(1호, 2호, 3호)  2017년 02월까지(4호, 5호, 6호) 
+								<p><a href="javascript:pop_layer_view('#pop_use_terms');" class="btn_large arrow">제품사용기간 상세보기<span class="btn_spr"></span></a></p>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">피부타입 </th>
+							<td>모든피부</td>
+							<th scope="row">용량 </th>
+							<td>23ml</td>
+						</tr>
+						<tr>
+							<th scope="row">제조국 </th>
+							<td colspan="3">[한국(2호, 3호, 4호), 중국 OEM(1호, 5호, 6호)</td>
+						</tr>
+						<tr>
+							<th scope="row">제조사 </th>
+							<td colspan="3">이미인(1호, 2호, 3호), 네이처(4호, 5호, 6호)</td>
+						</tr>
+						<tr>
+							<th scope="row">식품의약품안전청 심사 유무<br>(미백, 주름개선, 자외선차단 등) </th>
+							<td colspan="3">해당없음</td>
+						</tr>
+						<tr>
+							<th scope="row">전성분 </th>
+							<td><a href="javascript:pop_layer_view('#pop_ingredient');" class="btn_large arrow">전성분 상세보기<span class="btn_spr"></span></a></td>
+							<th scope="row">사용상 주의사항 </th>
+							<td><a href="javascript:pop_layer_view('#pop_use_caution');" class="btn_large arrow">주의사항 상세보기<span class="btn_spr"></span></a></td>
+						</tr>
+						<tr>
+							<th scope="row">품질보증기준</th>
+							<td colspan="3">본 제품에 이상이 있을 경우 공정거래위원회 고시 소비자분쟁해결기준에 의거하여 보상해 드립니다.</td>
+						</tr>
+						
+						<tr>
+							<th scope="row">소비자상담관련 전화번호</th>
+							<td colspan="3">네이처리퍼블릭 고객센터  <strong>☎ 080-890-6000</strong> </td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //상품정보제공고시 -->
+
+			<!-- 구매시 유의사항 -->
+			<div class="tab_content" id="cont_04">
+				<h3 class="tit_sub_02">구매시 유의사항</h3>
+				<table class="tble_type">
+					<colgroup>
+						<col width="21%">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">배송지역 </th>
+							<td> 전국 (일부 군부대 제외) </td>
+						</tr>
+						<tr>
+							<th scope="row">배송기간 </th>
+							<td>
+								<ul class="list_type3">
+									<li>입금확인 후 2~3 일 소요 (공휴일 제외)</li>
+									<li>연휴, 일부 도서지역의 경우 3~5일 정도 소요됩니다.</li>
+									<li>특별 행사기간에는 다소 지연될 수 있습니다. </li>
+									<li>우체국 택배로 출고되며, 출고 익일 “배송조회”가 가능합니다.</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">배송비용 </th>
+							<td>
+								<ul class="list_type3">
+									<li>9,900원 이상 주문 시 무료 배송(최종 결제 금액 기준). 그외 2,500원 </li>
+									<li>도서, 산간, 오지 일부지역, 등은 배송비가 추가될 수 있습니다. </li>
+									<li>회원님의 단순변심으로 인한 교환, 환불이 이루어질 경우 왕복 배송비는 회원님 부담입니다. </li>
+									<li>(신한은행 140-008-479281 / ㈜네이처리퍼블릭) </li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">상품의 교환/환불/반품 </th>
+							<td>
+								고객님께서 상품을 사용하지 않았거나 상품을 공급받은 날부터 7일 이내에만 교환, 환불, 반품이 가능합니다.<br>
+								그러나 상품의 내용이 표시ㆍ광고 내용과 다르거나 계약내용과 다르게 이행된 때에는 상품을 공급받은 날부터 3월이내,<br>
+								그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내에 청약철회 등을 할 수 있습니다.<br>
+								(배송비는 회원님 부담입니다.)
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">교환/반품 불가 </th>
+							<td>
+								<ul class="list_type3">
+									<li>상품 등을 케이스 훼손, 비닐포장 손상, 스티커 부착 손상된 경우 </li>
+									<li>사용 또는 일부 소비에 의하여 상품의 가치가 현저히 감소한 경우 </li>
+									<li>시간이 지나 다시 판매하기 곤란할 정도로 상품가치가 현저히 감소한 경우 </li>
+								</ul>
+								<p>
+									교환/반품 접수 절차 없이 임의로 반송할 경우, 환불이 지연되거나 환불이 되지 않을 수 있습니다.<br>
+									반드시 홈페이지의 고객상담 1:1 게시판 또는 네이처리퍼블릭 고객상담실(080-890-6000)을 통해 교환/반품 접수해주세요.
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //구매시 유의사항 -->
+
+
+
+		</div>
+		<!-- //content -->
+	</div>
+
+	<!-- 전성분팝업 -->
+	<div class="pop_layer" id="pop_ingredient">
+		<div class="bg"></div>
+		<div class="pop_wrap">
+			<div class="pop_header">
+				<h2>전성분</h2>
+			</div>
+			<div class="pop_content">
+				<div class="pro_detail_txt">
+					<dl>
+						<dt>컬러 왈츠 BL506 밀키 스카이</dt>
+						<dd>
+							부틸아세테이트 · 에칠아세테이트 · 나이트로셀룰로오스 · 아세틸트리부틸시트레이트 · 아디픽애씨드/
+							네오펜틸글라이콜/트리멜리틱안하이드라이드코폴리머 · 이소프로필알코올 · 아크릴레이트코폴리머
+							스테아랄코니움벤토나이트 · n-부틸알코올 · 스타이렌/아크릴레이트코폴리머 · 변성알코올 · 옥토크릴렌
+							트리메칠펜탄디일디벤조에이트 · 폴리비닐부틸알 · 티타늄디옥사이드(CI 77891) · 청색404호(CI 74160)
+							황색401호(CI 11680) · 카본블랙
+						</dd>
+					</dl>
+					<dl>
+						<dt>컬러 왈츠 BL507 민트 스카이</dt>
+						<dd>
+							부틸아세테이트 · 에칠아세테이트 · 나이트로셀룰로오스 · 아세틸트리부틸시트레이트 · 아디픽애씨드/
+							네오펜틸글라이콜/트리멜리틱안하이드라이드코폴리머 · 이소프로필알코올 · 아크릴레이트코폴리머 
+							스테아랄코니움벤토나이트 · n-부틸알코올 · 스타이렌/아크릴레이트코폴리머 · 변성알코올 · 옥토크릴렌
+							트리메칠펜탄디일디벤조에이트 · 폴리비닐부틸알 · 티타늄디옥사이드(CI 77891) · 청색404호(CI 74160)
+							황색401호(CI 11680) 
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<a href="#" class="btn_close">닫기</a>
+		</div>
+	</div>
+	<!-- //전성분팝업 -->
+
+	<!-- 사용상 주의사항팝업 -->
+	<div class="pop_layer" id="pop_use_caution">
+		<div class="bg"></div>
+		<div class="pop_wrap">
+			<div class="pop_header">
+				<h2>사용상 주의사항</h2>
+			</div>
+			<div class="pop_content">
+				<div class="pro_detail_txt">
+					<dl>
+						<dt>컬러 왈츠 BL506 밀키 스카이</dt>
+						<dd>
+							<ul class="list_type3">
+								<li>
+									화장품을 사용하여 다음과 같은 이상이 있는 경우에는 사용을 중지하여 하며, 계속 사용하면 증상이 악화되므로 피부과 전문의 등에게 상담하시기 바랍니다.
+									<ul class="list_type">
+										<li>사용 중 붉은 반점, 부어오름, 가려움증, 자극 등의 이상이 있는 경우</li>
+										<li>적용 부위가 직사광선에 의하여 위와 같은 이상이 있는 경우</li>
+									</ul>
+								</li>
+								<li>상처가 있는 부위, 습진 및 피부염 등의 이상이 있는 부위에는 사용하지 마시기 바랍니다.</li>
+								<li>
+									보관 및 취급 시 주의사항
+									<ul class="list_type">
+										<li>사용 후에는 반드시 마개를 닫아둘 것</li>
+										<li>유아 · 소아의 손이 닿지 않는 곳에 보관할 것</li>
+										<li>고온 또는 저온의 장소 미 직사광선이 닿는 곳에는 보관하지 말 것</li>
+									</ul>
+								</li>
+								<li>눈 주위를 피해 사용하시기 바랍니다.</li>
+								<li>개봉 후에 제품이 건조되므로 즉시 사용하고, 한번 사용한 제품을 다시 사용하지 마시기 바랍니다.</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt>컬러 왈츠 BL507 민트 스카이</dt>
+						<dd>
+							<ul class="list_type3">
+								<li>
+									화장품을 사용하여 다음과 같은 이상이 있는 경우에는 사용을 중지하여 하며, 계속 사용하면 증상이 악화되므로 피부과 전문의 등에게 상담하시기 바랍니다.
+									<ul class="list_type">
+										<li>사용 중 붉은 반점, 부어오름, 가려움증, 자극 등의 이상이 있는 경우</li>
+										<li>적용 부위가 직사광선에 의하여 위와 같은 이상이 있는 경우</li>
+									</ul>
+								</li>
+								<li>상처가 있는 부위, 습진 및 피부염 등의 이상이 있는 부위에는 사용하지 마시기 바랍니다.</li>
+								<li>
+									보관 및 취급 시 주의사항
+									<ul class="list_type">
+										<li>사용 후에는 반드시 마개를 닫아둘 것</li>
+										<li>유아 · 소아의 손이 닿지 않는 곳에 보관할 것</li>
+										<li>고온 또는 저온의 장소 미 직사광선이 닿는 곳에는 보관하지 말 것</li>
+									</ul>
+								</li>
+								<li>눈 주위를 피해 사용하시기 바랍니다.</li>
+								<li>개봉 후에 제품이 건조되므로 즉시 사용하고, 한번 사용한 제품을 다시 사용하지 마시기 바랍니다.</li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<a href="#" class="btn_close">닫기</a>
+		</div>
+	</div>
+	<!-- //사용상 주의사항팝업 -->
+
+	<!-- 제품사용기간팝업 -->
+	<div class="pop_layer open" id="pop_use_terms">
+		<div class="bg"></div>
+		<div class="pop_wrap">
+			<div class="pop_header">
+				<h2>제품사용기간</h2>
+			</div>
+			<div class="pop_content">
+				<div class="pro_detail_txt">
+					<table class="tble_type2">
+						<colgroup>
+							<col>
+							<col width="23%">
+							<col width="26%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">제품군</th>
+								<th scope="col">개봉 후 사용기간</th>
+								<th scope="col">제품군</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">
+									토너/에멀전/에센스/세럼/크림류/오일류/클렌징크림,오일류
+								</th>
+								<td>30개월</td>
+								<td>12개월</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									팩(필오프팩, 클레이마스크)
+								</th>
+								<td>24개월</td>
+								<td>12개월</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									클렌징 폼류
+								</th>
+								<td>24개월</td>
+								<td>12개월</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									파우더류/팩트류/블러셔류/아이새도우류
+								</th>
+								<td>24개월</td>
+								<td>12개월</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									아이라이너류/마스카라류
+								</th>
+								<td>24개월</td>
+								<td>12개월</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									자외선차단제류
+								</th>
+								<td>24개월</td>
+								<td>12개월</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									팩류
+								</th>
+								<td>24개월</td>
+								<td>12개월</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									클렌징 젤류
+								</th>
+								<td>24개월</td>
+								<td>12개월</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									프라이머류/베이스류/파운데이션류/비비크림류/컨실러류
+								<td>24개월</td>
+								<td>12개월</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									립 메이크업류
+								<td>24개월</td>
+								<td>12개월</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									마스크시트(하이드로겔)
+								<td>24개월</td>
+								<td>12개월</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									헤어제품류(삼푸, 린스, 헤어에센스, 헤어팩, 헤어세팅제류)
+
+								<td>24개월</td>
+								<td>12개월</td>
+							</tr>
+						</tbody>
+					</table>
+					<ul class="list_type3">
+						<li>통상적인 사용기간이며 제품에 따라 일부 다를 수도 있으므로 반드시 제품사용 설명서를 확인해주세요.</li>
+						<li>보다 정확한 사용기간은 <strong>1:1고객문의 게시판</strong>에 남겨주시면 빠른 답변 드리도록 하겠습니다.</li>
+					</ul>
+				</div>
+			</div>
+			<a href="#" class="btn_close">닫기</a>
+		</div>
+	</div>
+	<!-- //제품사용기간팝업 -->
+
+	<!-- 리뷰정책팝업 -->
+	<div class="pop_layer" id="pop_review_guide">
+		<div class="bg"></div>
+		<div class="pop_wrap">
+			<div class="pop_header">
+				<h2>리뷰정책</h2>
+			</div>
+			<div class="pop_content">
+				<div class="pro_detail_txt">
+					<ul class="list_type3">
+						<li>구매 후 포토리뷰/사용리뷰는 구매확정일로부터 90일 이내 작성이 가능합니다.</li>
+						<li>구매 후 리뷰를 작성하시면 포인트를 적립해 드립니다. <em>(포토리뷰 200P 적립 / 사용리뷰 50P적립)</em></li>
+						<li>리뷰는 동일상품 1회만 작성 가능합니다.</li>
+						<li>리뷰에 적합하지 않은 내용, 동일문자 반복, 욕설 등 부적합한 내용일 경우에는 통보없이 삭제 및 지급된 포인트가 회수 될 수 있습니다. </li>
+						<li>등록 된 리뷰는 메인페이지, 상품페이지 등에 노출될 수 있습니다.</li>
+					</ul>
+				</div>
+			</div>
+			<a href="#" class="btn_close">닫기</a>
+		</div>
+	</div>
+	<!-- //리뷰정책팝업 -->
+
+    <!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>

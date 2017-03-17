@@ -1,0 +1,811 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/main.css">
+<!-- 2017-01-06//파비콘 추가(s) -->
+<link rel="shortcut icon" href="../../img/favicon.ico">
+<!-- 2017-01-06//파비콘 추가(e) -->
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript" src="../../js/parallax.js"></script>
+<!-- 2016-06-27//js파일 추가(s) -->
+<script type="text/javascript" src="../../js/jquery.mousewheel.js"></script>
+<!-- 2016-06-27//js파일 추가(e) -->
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.ingredients_slide dd').flexslider({
+			animation: "slide",
+			itemWidth: 190,
+			move: 1,
+			animationSpeed: 1000,
+			itemMargin: 4,
+			minItems: 5,
+			controlNav: false
+		});
+	});
+
+	$(document).ready(function() {
+		$('.best_product_list').flexslider({
+			animation: "slide",
+			itemWidth: 259,
+			minItems: 4,
+			animationSpeed: 1000,
+			directionNav: false,
+			controlNav: true
+		});
+	});
+</script>
+</head>
+<body>
+<!-- 2017-01-06//로딩(s)-->
+<!-- <div class="loading">
+	<img src="../../img/img_loading.gif" alt="">
+</div>  -->
+<!-- 2017-01-06//로딩(e) -->
+<!-- main_slide{s} -->
+<div class="main_visual">
+	<!-- B.O에서 관리하는 시네마 그래프 슬라이드 이미지{s} -->
+	<!-- 2017-01-06//메인에 시네마 그래프 슬라이드가 먼저 보여질 경우 stroy_list 뒤에 active클래스 추가(s) -->
+	<ul class="hidden story_list active">
+		<li>
+			<img src="../../img/tmp/main_img_visual00.jpg" alt="">
+		</li>
+		<li>
+			<img src="http://s3.ap-northeast-2.amazonaws.com/nrimage/03/cm/bndBnr/BNR1__1481879328914.jpg" alt="">
+		</li>
+		<li>
+			<img src="../../img/tmp/main_img_visual02.jpg" alt="">
+		</li>
+	</ul>
+	<!-- 2017-01-06//메인에 시네마 그래프 슬라이드가 먼저 보여질 경우 stroy_list 뒤에 active클래스 추가(s) -->
+	<!-- B.O에서 관리하는 시네마 그래프 슬라이드 이미지{e} -->
+	<!-- B.O에서 관리하는 프로모션 페이지 슬라이드 이미지{s} -->
+	<!-- 2017-01-06//메인에 프로모션 슬라이드가 먼저 보여질 경우 promo_list 뒤에 active클래스 추가(s) -->
+	<ul class="hidden promo_list">
+		<li>
+			<img src="../../img/tmp/promotion_visual00.jpg" alt="">
+		</li>
+		<li>
+			<img src="../../img/tmp/main_video.jpg" alt="">
+		</li>
+		<li>
+			<img src="http://s3.ap-northeast-2.amazonaws.com/nrimage/01/cm/bndBnr/BNR2__1482733476473.jpg" alt="">
+		</li>
+		<li>
+			<img src="../../img/tmp/promotion_visual02.jpg" alt="">
+		</li>
+	</ul>
+	<!-- 2017-01-06//메인에 프로모션 슬라이드가 먼저 보여질 경우 promo_list 뒤에 active클래스 추가(e) -->
+	<!-- B.O에서 관리하는 프로모션 페이지 슬라이드 이미지{e} -->
+	<div class="parallax-window" data-parallax="scroll" data-image-src="../../img/tmp/main_img_visual00.jpg"></div>
+
+	<!-- 슬라이드 컨텐츠{s} -->
+	<div class="slide_content">
+		<!-- 시네마그래프 컨텐츠//슬라이드 개수에 맞게 li 개수 설정{s} -->
+		<!-- 2016-07-04//li마다 idx값 추가//시네마그래프, 프로모션 각각 매칭되는 페이지는 idx값을 일치시킨다. 0부터 시작해서 1,2,3 ... 독립적인 시네마 그래프 및 프로모션은 idx값을 주지 않는다.(s)  -->
+		<ul class="txt story_content">
+			<!-- 2016-08-19//메인카피(원료 이름)이 2줄이상 넘어갈 경우 li 에 v2추가(s) -->
+			<li class="v2 active" idx="0">
+				<dl>
+					<dt>Deep ocean water</dt>
+					<dd>Heaven-sent golden Moroccan argan <em>has been protecting Moroccan women's skin</em></dd>
+					<!-- 2017-01-06//수정(s) -->
+					<dd><a href="#" class="more_btn">See product details</a></dd>
+				</dl>
+				<a href="#" class="slide_btn story">제품보기</a>
+				<!-- 2017-01-06//수정(e) -->
+			</li>
+			<!-- 2016-08-19//메인카피(원료 이름)이 2줄이상 넘어갈 경우 li 에 v2추가(e) -->
+			<li idx="1">
+				<!-- 2016-08-19//원료이름 아래 설명 카피가 1줄 이내로 끝날 경우 dl태그에 v2 클래스 추가(s) -->
+				<!-- 2017-01-06//v2클래스 제거(s) -->
+				<dl>
+					<dt>calendula</dt>
+					<dd>Moroccan women's skin</em></dd>
+					<!-- 2017-01-06//수정(s) -->
+					<dd><a href="#" class="more_btn">See product details</a></dd>
+				</dl>
+				<!-- 2017-01-06//v2클래스 제거(e) -->
+				<!-- 2016-08-19//원료이름 아래 설명 카피가 2줄이상 넘어갈 경우 dl태그에 v2 클래스 추가(e) -->
+				<a href="#" class="slide_btn story">제품보기</a>
+				<!-- 2017-01-06//수정(e) -->
+			</li>
+			<li>
+				<dl>
+					<dt>Argan3</dt>
+					<dd>Heaven-sent golden Moroccan argan <em>has been protecting Moroccan women's skin</em></dd>
+					<!-- 2017-01-06//수정(s) -->
+					<dd><a href="#" class="more_btn">See product details</a></dd>
+					<!-- 2017-01-06//수정(e) -->
+				</dl>
+			</li>
+		</ul>
+		<!-- 2016-07-04//li마다 idx값 추가//시네마그래프, 프로모션 각각 매칭되는 페이지는 idx값을 일치시킨다. 0부터 시작해서 1,2,3 ... 독립적인 시네마 그래프 및 프로모션은 idx값을 주지 않는다.(e)  -->
+		<!-- 시네마그래프 컨텐츠//슬라이드 개수에 맞게 li 개수 설정{e} -->
+		<!-- 프로모션 페이지 컨텐츠//슬라이드 개수에 맞게 li 개수 설정{s} -->
+		<!-- 2016-07-04//li마다 idx값 추가//시네마그래프, 프로모션 각각 매칭되는 페이지는 idx값을 일치시킨다. 0부터 시작해서 1,2,3 ... 독립적인 시네마 그래프 및 프로모션은 idx값을 주지 않는다.(s)  -->
+		<ul class="txt promo_content">
+			<!-- 2017-01-06//idx값 삭제(s) -->
+			<li>
+			</li>
+			<li class="video">
+			<!-- 2017-01-06//idx값 삭제(e) -->
+				<div class="vd_player" style="position:relative;width:100%; height:100%">
+					<!-- 2017-01-06//동영상 썸네일 생성(s) -->
+					<a href="#" class="btn_play">
+						<img src="../../img/tmp/main_video.jpg" alt="" id="video_img">
+					</a>
+					<div class="video">
+						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/2cFjxwfDLeY?enablejsapi=1&rel=0&showinfo=0&autohide=1&modestbranding=1&wmode=opaque&autoplay=0" frameborder="0" allowfullscreen=""></iframe>
+					</div>
+					<!-- 2017-01-06//동영상 썸네일 생성(e) -->
+				</div>
+			</li>
+			<li idx="1">
+				<div class="promo_wrapper">
+					<dl class="promo_desc">
+						<dt>프로방스 카렌듈라 아이스 퍼프 선 SPF50+ PA+++<p>더위 먹은 피부 온도<strong>-5˚C 쿨링 효과</strong></p></dt>
+						<dd>미백, 주름개선, 자외선 차단 3종 기능성 화장품</dd>
+						<!-- 2017-01-06//수정(s) -->
+						<dd><a href="#" class="more_btn">성분보기</a></dd>
+					</dl>
+				</div>
+				<a href="#" class="nav_brand" idx="">원료보기</a>
+				<!-- 2017-01-06//수정(e) -->
+			</li>
+			<!-- 2017-01-06//idx값 추가(s) -->
+			<li class="video" idx="0">
+			<!-- 2017-01-06//idx값 추가(e) -->
+				<!-- 2017-01-06//추가(s) -->
+				 <div class="promo_title">
+				 	<p>진생 로얄 실크 워터리 크림</p>
+				 	<em><strong>황금케어</strong>, 써보니까 이거다 싶어요</em>
+				 	<a href="#" class="more_btn">자세히 보기</a>
+				 </div>
+				 <!-- 2017-01-06//추가(e) -->
+				<div class="vd_player v2">
+					<!-- 2017-01-06//동영상 썸네일 생성(s) -->
+					<a href="#" class="btn_play">
+						<img src="../../img/tmp/main_video_02.jpg" alt="">
+					</a>
+					<div class="video">
+						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/2cFjxwfDLeY?enablejsapi=1&rel=0&showinfo=0&autohide=1&modestbranding=1&wmode=opaque&autoplay=0" frameborder="0" allowfullscreen=""></iframe>
+					</div>
+					<!-- 2017-01-06//동영상 썸네일 생성(e) -->
+				</div>
+				<!-- 2017-01-06//수정(s) -->
+				<a href="#" class="nav_brand" idx="">원료보기</a>
+				<!-- 2017-01-06//수정(e) -->
+			</li>
+		</ul>
+		<!-- 2016-07-04//li마다 idx값 추가//시네마그래프, 프로모션 각각 매칭되는 페이지는 idx값을 일치시킨다. 0부터 시작해서 1,2,3 ... 독립적인 시네마 그래프 및 프로모션은 idx값을 주지 않는다.(e)  -->
+		<!-- 프로모션 페이지 컨텐츠//슬라이드 개수에 맞게 li 개수 설정{e} -->
+
+		<!-- 2017-01-06//유튜브동영상 전체 수정(s) -->
+		<script type="text/javascript">
+
+			var cross_test = 1234;
+
+			var brow_ver = navigator.appVersion;
+			var is_ie8 = null;
+
+			var agent = navigator.userAgent.toLowerCase();
+			if ( (navigator.appName == 'Netscape' && agent.indexOf('trident') != -1) || (agent.indexOf("msie") != -1)) {
+				 if(brow_ver.indexOf('8.0') != -1) is_ie8 = true;
+			}else{
+				 // ie가 아닐 경우
+			}
+
+			if(!is_ie8){
+					var tag = document.createElement('script');
+					tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+					var $videoElement = $('.vd_player .video > iframe');
+					var player = {};
+
+					function onYouTubePlayerAPIReady() {
+						for (var i = 0; i < $videoElement.length; i++) {
+							$videoElement.eq(i).attr('id', 'player'+i);
+						}
+						for(var i = 0; i < $videoElement.length;i++) {
+						  player[ $videoElement.eq(i).attr('id') ] = new YT.Player($videoElement.eq(i).attr('id'));
+						}
+					}
+
+					function videoPlay( target ){
+						target.playVideo();
+					}
+
+					function videoStop( target ){
+						target.pauseVideo();
+					}
+			}
+
+			//media(s)
+			$(document).ready(function(){
+
+
+
+				var video_index;
+				var li_active;
+				var now_video;
+				
+				$('.vd_player .btn_play').click(function(e){
+					e.preventDefault();
+					now_video = $(this).parents('li');
+					video_index = $(this).parents('li').index();
+					li_active = $('.promo_content .active').index();
+					vd_control($(this));
+
+
+				});
+
+
+				$('.btn_slide.promo').click(function(){
+					var object = $('.promo_content li.active');
+					var vd = object.find('iframe').attr('id');
+					 videoStop( player[ vd ] );
+				});
+				$('.navi a').click(function(){
+					var object = $('.promo_content li.active');
+					var vd = object.find('iframe').attr('id');
+					 videoStop( player[ vd ] );
+				});
+
+
+
+				function vd_control(btn, st){
+					var object = $('.promo_content li.active');
+					var vd = object.find('iframe').attr('id');
+					if(st != 'stop'){
+						btn.fadeOut();
+						btn.next().fadeIn();
+						if(!is_ie8){
+							for(var i = 0; i < $videoElement.length;i++) {
+							  if(player[ vd ] != player[ 'player'+i ]) videoStop( player[ 'player'+i ] );
+							}
+
+							videoPlay( player[ vd ] );
+						}
+					}else{
+						btn.fadeIn();
+						btn.next().fadeOut();
+
+					}
+
+					if(object.hasClass('active')){
+						// alert('test');
+					}
+				}
+			});
+
+			//media(e)
+
+          </script>
+		<!-- 2017-01-06//유튜브동영상 전체 수정(e) -->
+
+		<script type="text/javascript" src="../../js/front.js"></script>
+		<h1><a href="#"><img src="../../img/h1_logo_02.png"></a></h1>
+
+		<!-- 2017-01-06//스크롤js 추가(s) -->
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var scroll_position = $('.main_visual .scrolling').css('background-position-x');
+				var scroll_num = Number(scroll_position.replace('px',''));
+				// console.log(scroll_num);
+
+				function scroll_auto(){
+
+					if ( scroll_num >= -1885 ) { 
+
+						var position_auto = setInterval(function(){
+
+							scroll_num -= 65;
+							$('.scrolling').css('background-position-x' , scroll_num + 'px');
+							if(scroll_num<-1885){
+								scroll_num = 0;
+							}
+
+						},50)
+
+					}
+
+
+				}
+			// scroll_auto
+			
+			scroll_auto();
+			});
+		</script>
+		<!-- 2017-01-06//스크롤js 추가(e) -->
+
+		<!-- 2017-01-06//스크롤버튼 수정(s) -->
+		<a href="#wrap" class="scrolling"></a>
+		<!-- 2017-01-06//스크롤버튼 수정(s) -->
+
+		<!-- BRAND//SHOP BUTTON{s} -->
+		<!-- 2017-01-06//수정(s) -->
+		<ul class="navi">
+			<li class="left_nav_brand">
+				<a href="#">
+					<img src="../../img/btn/btn_nav_brand.png" alt="">
+				</a>
+			</li><!-- 2016-07-14//텍스트수정 -->
+			<li class="nav_shop">
+				<a href="#">
+					<img src="../../img/btn/btn_nav_shop.png" alt="">
+				</a>
+			</li>
+		</ul>
+		<!-- 2017-01-06//수정(e) -->
+		<!-- BRAND//SHOP BUTTON{e} -->
+
+	</div>
+	<!-- 슬라이드 컨텐츠{e} -->
+	<!-- 시네마그래프 슬라이드 버튼//슬라이드 갯수에 맞춰서 li 개수 설정{s} -->
+	<div class="btn_slide story">
+		<ul>
+			<li class="active"><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+		</ul>
+		<a href="#" class="btn_play">Pause</a>
+	</div>
+	<!-- 시네마그래프 슬라이드 버튼//슬라이드 갯수에 맞춰서 li 개수 설정{s} -->
+	<!-- 프로모션 페이지 슬라이드 버튼//슬라이드 갯수에 맞춰서 li 개수 설정{s} -->
+	<div class="btn_slide promo">
+		<ul>
+			<li class="active"><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+		</ul>
+		<a href="#" class="btn_play">Pause</a>
+	</div>
+	<!-- 프로모션 페이지 슬라이드 버튼//슬라이드 갯수에 맞춰서 li 개수 설정{e} -->
+</div>
+<!-- //main_slide{e} -->
+
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container">
+		<!-- main_section -->
+		<div class="main_section">
+			<!-- w_cton -->
+			<div class="w_cont">
+				<!-- main_news -->
+				<h3 class="blind">메인 뉴스</h3>
+				<ul class="news_area">
+					<li>
+						<a href="#a">
+							<img src="../../img/main_news01.jpg" alt="네이처리퍼블릭, 김주하 앵커 프리미엄 라인 뮤즈로 발탁">
+							<div></div>
+							<dl>
+								<dt>
+									<em>News</em>
+									<strong>Anchor Kim Juha is recruited as a muse for the premium line</strong>
+								</dt>
+								<dd>
+									네이처리퍼블릭은 프리미언 제품인 '진생 로얄 실크'라인의 뮤즈로 김주하 앵커를 발탁하고, TV CF 방영을 시작했다.
+									네이처리퍼블릭은 프리미언 제품인 '진생 로얄 실크'라인의 뮤즈로 김주하 앵커를 발탁하고, TV CF 방영을 시작했다.
+									네이처리퍼블릭은 프리미언 제품인 '진생 로얄 실크'라인의 뮤즈로 김주하 앵커를 발탁하고, TV CF 방영을 시작했다.
+								</dd>
+							</dl>
+						</a>
+					</li>
+					<li class="news_02">
+						<a href="#a">
+							<img src="../../img/main_news02.jpg" alt="세계 최고 권위의 ‘If 디자인 어워드’ 본상 수상">
+							<dl>
+								<dt>
+									<em>Naturecast</em>
+									<strong>Received an award at the world’s most prestigious ‘iF Design Award’</strong>
+								</dt>
+								<dd>
+									세계 청정 자연에서 찾은 뷰티 에너지를 전하는 네이처리퍼블릭은 세계 3대 디자인세계 청정 자연에서 찾은 뷰티 에너지를 전하는 네이처리퍼블릭은 세계 3대 디자인세계 청정 자연에서 찾은 뷰티 에너지를 전하는 네이처리퍼블릭은 세계 3대 디자인세계 청정 자연에서 찾은 뷰티 에너지를 전하는 네이처리퍼블릭은 세계 3대 디자인
+								</dd>
+							</dl>
+							<span><span class="blind">more</span></span>
+						</a>
+					</li>
+					<li class="news_03">
+						<a href="#a">
+							<dl>
+								<dt>
+									<em>New Product</em>
+									<strong>Ice Puff Sun containing Calendula, also called the “Sun Flower,” is launched</strong>
+								</dt>
+								<dd>
+									프로방스의 카렌듈라 추출물과 하와의 코나 해양 심층수 성분을 함유해 자외선으로부터 피부...
+								</dd>
+							</dl>
+							<img src="../../img/main_news03.jpg" alt="태양의 꽃’ 카렌듈라 성분이 함유된 아이스 퍼프 선 출시">
+							<span><span class="blind">more</span></span>
+						</a>
+					</li>
+				</ul>
+				<!-- //main_newws -->
+
+				<!-- ingredients_area -->
+				<dl class="ingredients_slide">
+					<dt>
+						Nature Republic <strong>Ingredients</strong>
+					</dt>
+					<dd>
+						<ul class="slides">
+							<li class="up">
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/ingredients_01.png" alt="Aloe Vera">
+									</div>
+									<dl>
+										<dt>Aloe Vera</dt>
+										<dd class="sub_tit">Aloe Vera</dd>
+										<dd class="desc">Skin soothing/moisturizing</dd>
+									</dl>
+								</a>
+							</li>
+							<li class="down">
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/ingredients_02.png" alt="Argan">
+									</div>
+									<dl>
+										<dt>Argan</dt>
+										<dd class="sub_tit">Argan</dd>
+										<dd class="desc">Nourishment/Elasticity</dd>
+									</dl>
+								</a>
+							</li>
+							<li class="up">
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/ingredients_03.png" alt="Hibiscus">
+									</div>
+									<dl>
+										<dt>Hibiscus</dt>
+										<dd class="sub_tit">Hibiscus</dd>
+										<dd class="desc">Moisture/sebum care</dd>
+									</dl>
+								</a>
+							</li>
+							<li class="down">
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/ingredients_04.png" alt="Green tea">
+									</div>
+									<dl>
+										<dt>Green tea</dt>
+										<dd class="sub_tit">Green tea</dd>
+										<dd class="desc">Skin soothing/moisturizing</dd>
+									</dl>
+								</a>
+							</li>
+							<li class="up">
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/ingredients_05.png" alt="Shea butter">
+									</div>
+									<dl>
+										<dt>Shea butter</dt>
+										<dd class="sub_tit">Shea butter</dd>
+										<dd class="desc">Nourishing/moisturizing</dd>
+									</dl>
+								</a>
+							</li>
+							<li class="down">
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/ingredients_01.png" alt="Aloe Vera">
+									</div>
+									<dl>
+										<dt>Aloe Vera</dt>
+										<dd class="sub_tit">Aloe Vera</dd>
+										<dd class="desc">Skin soothing/moisturizing</dd>
+									</dl>
+								</a>
+							</li>
+							<li class="up">
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/ingredients_02.png" alt="Argan">
+									</div>
+									<dl>
+										<dt>Argan</dt>
+										<dd class="sub_tit">Argan</dd>
+										<dd class="desc">Nourishment/Elasticity</dd>
+									</dl>
+								</a>
+							</li>
+							<li class="down">
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/ingredients_03.png" alt="Hibiscus">
+									</div>
+									<dl>
+										<dt>Hibiscus</dt>
+										<dd class="sub_tit">Hibiscus</dd>
+										<dd class="desc">Moisture/sebum care</dd>
+									</dl>
+								</a>
+							</li>
+							<li class="up">
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/ingredients_04.png" alt="Green tea">
+									</div>
+									<dl>
+										<dt>Green tea</dt>
+										<dd class="sub_tit">Green tea</dd>
+										<dd class="desc">Skin soothing/moisturizing</dd>
+									</dl>
+								</a>
+							</li>
+							<li class="down">
+								<a href="#">
+									<div class="img_box">
+										<img src="../../img/ingredients_05.png" alt="Shea butter">
+									</div>
+									<dl>
+										<dt>Shea butter</dt>
+										<dd class="sub_tit">Shea butter</dd>
+										<dd class="desc">Nourishing/moisturizing</dd>
+									</dl>
+								</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<!-- //ingredients_area -->
+
+
+			</div>
+			<!-- //w_cont -->
+		</div>
+		<!-- //main_section -->
+
+		<!-- best_product -->
+		<div class="best_product">
+			<!-- w_cont -->
+			<div class="w_cont">
+				<h3 class="best_product_title"><strong>Best</strong> Product</h3>
+				<div class="best_product_list">
+					<ul class="product_list slides">
+						<li class="r_first"> <!-- -li의 1, 5, 9, 12 ....에 클래스추가 : r_first -->
+							<a href="#">
+								<div class="img_box">
+									<img src="../../img/tmp/img_product2.jpg" alt="">
+								</div>
+								<dl>
+									<dt>
+										<em>- 아이 브라트너 증정 - </em>
+										쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]
+									</dt>
+									<dd class="price">
+										<del>￦28,000</del>￦14,000
+									</dd>
+									<dd class="tag">
+										<em class="best">BEST</em>
+										<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+										<em class="event">고품질<br>착한가격</em>
+										<em class="plus">10<span>+</span>10</em>
+									</dd>
+									<dd class="award">
+										<img src="../../img/img_award.png" alt="">
+									</dd>
+									<dd class="state">
+										<em>품절</em>
+									</dd>
+								</dl>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="img_box">
+									<img src="../../img/tmp/img_product3.jpg" alt="">
+								</div>
+								<dl>
+									<dt>
+										쉐어버터 스팀크림 모이스트[중건성용]
+									</dt>
+									<dd class="price">
+										<del>￦28,000</del>￦14,000
+									</dd>
+									<dd class="tag">
+										<em class="new">NEW</em>
+										<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+										<em class="event">고품질<br>착한가격</em>
+									</dd>
+									<dd class="award">
+										<img src="../../img/img_award.png" alt="">
+										<img src="../../img/img_award2.png" alt="">
+									</dd>
+									<dd class="state">
+										<span>품절예정</span>
+									</dd>
+								</dl>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="img_box">
+									<img src="../../img/tmp/img_product4.jpg" alt="">
+								</div>
+								<dl>
+									<dt>
+										쉐어버터 스팀크림 모이스트[중건성용]
+									</dt>
+									<dd class="price">
+										<del>￦28,000</del>￦14,000
+									</dd>
+									<dd class="tag">
+										<em class="plus">1<span>+</span>1</em>
+									</dd>
+									<dd class="award">
+										<img src="../../img/img_award3.png" alt="">
+										<img src="../../img/img_award2.png" alt="">
+									</dd>
+									<dd class="state">
+										<span>품절예정</span>
+									</dd>
+								</dl>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="img_box">
+									<img src="../../img/tmp/img_product5.jpg" alt="">
+								</div>
+								<dl>
+									<dt>
+										쉐어버터 스팀크림 모이스트[중건성용]
+									</dt>
+									<dd class="price">
+										<del>￦28,000</del>￦14,000
+									</dd>
+									<dd class="tag">
+										<em class="best">BEST</em>
+										<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+										<em class="event">고품질<br>착한가격</em>
+									</dd>
+									<dd class="award">
+										<img src="" alt="">
+									</dd>
+									<dd class="state">
+										<em>품절</em>
+									</dd>
+								</dl>
+							</a>
+						</li>
+
+
+
+						<li class="r_first"> <!-- -li의 1, 5, 9, 12 ....에 클래스추가 : r_first -->
+							<a href="#">
+								<div class="img_box">
+									<img src="../../img/tmp/img_product2.jpg" alt="">
+								</div>
+								<dl>
+									<dt>
+										<em>- 아이 브라트너 증정 - </em>
+										쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]
+									</dt>
+									<dd class="price">
+										<del>￦28,000</del>￦14,000
+									</dd>
+									<dd class="tag">
+										<em class="best">BEST</em>
+										<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+										<em class="event">고품질<br>착한가격</em>
+										<em class="plus">10<span>+</span>10</em>
+									</dd>
+									<dd class="award">
+										<img src="../../img/img_award.png" alt="">
+									</dd>
+									<dd class="state">
+										<em>품절</em>
+									</dd>
+								</dl>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="img_box">
+									<img src="../../img/tmp/img_product3.jpg" alt="">
+								</div>
+								<dl>
+									<dt>
+										쉐어버터 스팀크림 모이스트[중건성용]
+									</dt>
+									<dd class="price">
+										<del>￦28,000</del>￦14,000
+									</dd>
+									<dd class="tag">
+										<em class="new">NEW</em>
+										<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+										<em class="event">고품질<br>착한가격</em>
+									</dd>
+									<dd class="award">
+										<img src="../../img/img_award.png" alt="">
+										<img src="../../img/img_award2.png" alt="">
+									</dd>
+									<dd class="state">
+										<span>품절예정</span>
+									</dd>
+								</dl>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="img_box">
+									<img src="../../img/tmp/img_product4.jpg" alt="">
+								</div>
+								<dl>
+									<dt>
+										쉐어버터 스팀크림 모이스트[중건성용]
+									</dt>
+									<dd class="price">
+										<del>￦28,000</del>￦14,000
+									</dd>
+									<dd class="tag">
+										<em class="plus">1<span>+</span>1</em>
+									</dd>
+									<dd class="award">
+										<img src="../../img/img_award3.png" alt="">
+										<img src="../../img/img_award2.png" alt="">
+									</dd>
+									<dd class="state">
+										<span>품절예정</span>
+									</dd>
+								</dl>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="img_box">
+									<img src="../../img/tmp/img_product5.jpg" alt="">
+								</div>
+								<dl>
+									<dt>
+										쉐어버터 스팀크림 모이스트[중건성용]
+									</dt>
+									<dd class="price">
+										<del>￦28,000</del>￦14,000
+									</dd>
+									<dd class="tag">
+										<em class="best">BEST</em>
+										<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+										<em class="event">고품질<br>착한가격</em>
+									</dd>
+									<dd class="award">
+										<img src="" alt="">
+									</dd>
+									<dd class="state">
+										<em>품절</em>
+									</dd>
+								</dl>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //w_cont -->
+		</div>
+		<!-- //best_product -->
+
+	</div>
+    <!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>
