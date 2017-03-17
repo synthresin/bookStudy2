@@ -1,0 +1,935 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/shopping.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//2016-05-27수정(s)
+		var item_w = 0;
+		var mv_w = 0;
+		$('.op_img_list').each(function(){
+			var list = $(this).find('ul');
+			var size = list.children('li').length;
+			item_w = $('.product_list > li .pro_over .option .op_img_list ul li span').css('width');
+			item_w = parseInt(item_w);
+			mv_w = item_w*5;
+			var w = item_w*size;
+		});		
+
+		$('.product_list > li').bind('mouseover focus',function(){
+			$('.product_list > li').removeClass('active');
+			$(this).addClass('active');
+		});
+
+		$('.product_list > li').bind('mouseleave blur',function(){
+			$('.product_list > li').removeClass('active');
+		});
+
+		$('.pro_over .op_img_list li span').click(function(e){
+			e.preventDefault();
+			var op_list = $(this).closest('.op_img_list');
+			var idx = $(this).parent().index();
+			op_list.find('li').removeClass('active');
+			op_list.find('li').eq(idx).addClass('active');
+			op_list.next().find('li').removeClass('active');
+			op_list.next().find('li').eq(idx).addClass('active');
+		});
+
+		$('.pro_over .btn_direct').click(function(e){
+			e.preventDefault();
+			var direct = $(this).hasClass('prev');
+			var list = $(this).closest('.option').find('.op_img_list ul');
+			if(direct){
+				if(list.css('left') == '0px') return false;
+				list.animate({'left':'+='+mv_w+'px'},150);
+			}else{
+				var size = list.children('li').length;
+				var w = Math.ceil(size/5);
+				w = w-1;
+				if(list.css('left') ==  -(mv_w*w)+'px') return false;
+				list.animate({'left':'-='+mv_w+'px'},150);
+			}
+		});		
+		//2016-05-27수정(e)
+	});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container">
+		<!-- content -->
+		<div id="content">
+			<ol class="sub_navi">
+				<li><a href="#">home</a></li>
+				<li><a href="#">카테고리</a></li>
+				<li>신제품</li>
+			</ol>
+			<div class="sub_tit_wrap v2">
+				<h2>신제품</h2>
+			</div>
+			
+			<!-- 상품리스트 -->
+			<ul class="product_list">
+				<li class="r_first"> <!-- -li의 1, 5, 9, 12 ....에 클래스추가 : r_first -->
+					<a href="#">
+						<div class="img_box">
+							<img src="../../img/tmp/img_product2.jpg" alt="">
+						</div>
+						<dl>
+							<dt>
+								<em>- 아이 브라트너 증정 - </em>
+								쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]
+							</dt>
+							<dd class="price">
+								<del>￦28,000</del>￦14,000
+							</dd>
+							<dd class="tag">
+								<em class="best">BEST</em>
+								<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+								<em class="event">착한가격</em> <!-- 2016-06-21//고품질삭제 -->
+								<em class="plus">10<span>+</span>10</em>
+							</dd>
+							<dd class="award">
+								<img src="../../img/img_award.png" alt="">
+							</dd>
+							<dd class="state">
+								<em>품절</em>
+							</dd>
+						</dl>
+					</a>
+					<!-- 마우스오버 -->
+					<a href="#"class="pro_over">
+						<div class="title">
+							<em>- 아이 브라트너 증정 - </em>
+							<strong>매트 립스틱매트 립스틱매트 립스틱매트 립스틱</strong>
+							<p class="txt">잠자는 동안 수분을 피부 가득</p>
+						</div>						
+						<div class="option">
+							<div class="op_img_list">
+								<ul>
+									<li><span><img src="../../img/tmp/img_color_01.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_02.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_03.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_04.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_05.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_01.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_02.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_03.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_04.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_05.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_04.png" alt=""></span></li>
+								</ul>
+							</div>
+							<ul class="op_txt_list">
+								<li>01 핑크캐럿</li>
+								<li>02 핑크캐럿 <em>품절-입고예정</em></li>
+								<li>03 핑크캐럿 <em>품절</em></li>
+								<li>04 레드</li>
+								<li>05 오렌지</li>
+								<li>06 엘로우</li>
+								<li>07 그린</li>
+								<li>08 블루</li>
+								<li>09 다크블루</li>
+								<li>10 바이올렛</li>
+							</ul>
+							<span href="#" class="btn_direct prev">이전</span>
+							<span href="#" class="btn_direct next">다음</span>
+						</div>
+						<p class="option_txt">
+							<span>!</span>옵션상품을 선택해주세요.
+						</p>		
+					</a>
+					<div class="btns">
+						<a href="#" class="btn_cart"><span></span>장바구니</a>
+						<a href="#" class="btn_like"><span></span>위시리스트</a>
+					</div>
+					<!-- //마우스오버 -->
+				</li>
+				<li>
+					<a href="#">
+						<div class="img_box">
+							<img src="../../img/tmp/img_product3.jpg" alt="">
+						</div>
+						<dl>
+							<dt>
+								쉐어버터 스팀크림 모이스트[중건성용]
+							</dt>
+							<dd class="price">
+								<del>￦28,000</del>￦14,000
+							</dd>
+							<dd class="tag">
+								<em class="new">NEW</em>
+								<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+								<em class="event">착한가격</em> <!-- 2016-06-21//고품질삭제 -->
+							</dd>
+							<dd class="award">
+								<img src="../../img/img_award.png" alt="">
+								<img src="../../img/img_award2.png" alt="">
+							</dd>
+							<dd class="state">
+								<span>품절예정</span>
+							</dd>
+						</dl>
+					</a>
+					<!-- 마우스오버 -->
+					<a href="#"class="pro_over">
+						<div class="title">
+							<strong>매트 립스틱매트 립스틱매트 립스틱매트 립스틱</strong>
+						</div>	
+					</a>
+					<div class="btns">
+						<a href="#" class="btn_cart"><span></span>장바구니</a>
+						<a href="#" class="btn_like"><span></span>위시리스트</a>
+					</div>
+					<!-- //마우스오버 -->
+				</li>
+				<li>
+					<a href="#">
+						<div class="img_box">
+							<img src="../../img/tmp/img_product4.jpg" alt="">
+						</div>
+						<dl>
+							<dt>
+								쉐어버터 스팀크림 모이스트[중건성용]
+							</dt>
+							<dd class="price">
+								<del>￦28,000</del>￦14,000
+							</dd>
+							<dd class="tag">
+								<em class="plus">1<span>+</span>1</em>
+							</dd>
+							<dd class="award">
+								<img src="../../img/img_award3.png" alt="">
+								<img src="../../img/img_award2.png" alt="">
+							</dd>
+							<dd class="state">
+								<span>품절예정</span>
+							</dd>
+						</dl>
+					</a>					
+					<!-- 마우스오버 -->
+					<a href="#"class="pro_over">
+						<div class="title">
+							<em>- 아이 브라트너 증정 - </em>
+							<strong>매트 립스틱매트 립스틱매트 립스틱매트 립스틱</strong>
+							<p class="txt">잠자는 동안 수분을 피부 가득</p>
+						</div>		
+					</a>
+					<div class="btns">
+						<a href="#" class="btn_cart"><span></span>장바구니</a>
+						<a href="#" class="btn_like"><span></span>위시리스트</a>
+					</div>
+					<!-- //마우스오버 -->
+				</li>
+				<li>
+					<a href="#">
+						<div class="img_box">
+							<img src="../../img/tmp/img_product5.jpg" alt="">
+						</div>
+						<dl>
+							<dt>
+								쉐어버터 스팀크림 모이스트[중건성용]
+							</dt>
+							<dd class="price">
+								<del>￦28,000</del>￦14,000
+							</dd>
+							<dd class="tag">
+								<em class="best">BEST</em>
+								<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+								<em class="event">착한가격</em> <!-- 2016-06-21//고품질삭제 -->
+							</dd>
+							<dd class="award">
+								<img src="" alt="">
+							</dd>
+							<dd class="state">
+								<em>품절</em>
+							</dd>
+						</dl>
+					</a>
+					<!-- 마우스오버 -->
+					<a href="#"class="pro_over">
+						<div class="title">
+							<strong>매트 립스틱매트 립스틱매트 립스틱매트 립스틱</strong>
+						</div>						
+						<div class="option">
+							<div class="op_img_list">
+								<ul>
+									<li><span><img src="../../img/tmp/img_color_01.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_02.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_03.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_04.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_05.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_01.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_02.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_03.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_04.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_05.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_04.png" alt=""></span></li>
+								</ul>
+							</div>
+							<ul class="op_txt_list">
+								<li>01 핑크캐럿</li>
+								<li>02 핑크캐럿 <em>품절-입고예정</em></li>
+								<li>03 핑크캐럿 <em>품절</em></li>
+								<li>04 레드</li>
+								<li>05 오렌지</li>
+								<li>06 엘로우</li>
+								<li>07 그린</li>
+								<li>08 블루</li>
+								<li>09 다크블루</li>
+								<li>10 바이올렛</li>
+							</ul>
+							<span href="#" class="btn_direct prev">이전</span>
+							<span href="#" class="btn_direct next">다음</span>
+						</div>
+						<p class="option_txt">
+							<span>!</span>옵션상품을 선택해주세요.
+						</p>		
+					</a>
+					<div class="btns">
+						<a href="#" class="btn_cart"><span></span>장바구니</a>
+						<a href="#" class="btn_like"><span></span>위시리스트</a>
+					</div>
+					<!-- //마우스오버 -->
+				</li>
+				<li class="r_first"> <!-- -li의 1, 5, 9, 12 ....에 클래스추가 : r_first -->
+					<a href="#">
+						<div class="img_box">
+							<img src="../../img/tmp/img_product2.jpg" alt="">
+						</div>
+						<dl>
+							<dt>
+								<em>- 아이 브라트너 증정 - </em>
+								쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]
+							</dt>
+							<dd class="price">
+								<del>￦28,000</del>￦14,000
+							</dd>
+							<dd class="tag">
+								<em class="best">BEST</em>
+								<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+								<em class="event">착한가격</em> <!-- 2016-06-21//고품질삭제 -->
+								<em class="plus">10<span>+</span>10</em>
+							</dd>
+							<dd class="award">
+								<img src="../../img/img_award.png" alt="">
+							</dd>
+							<dd class="state">
+								<em>품절</em>
+							</dd>
+						</dl>
+					</a>
+					<!-- 마우스오버 -->
+					<a href="#"class="pro_over">
+						<div class="title">
+							<em>- 아이 브라트너 증정 - </em>
+							<strong>매트 립스틱매트 립스틱매트 립스틱매트 립스틱</strong>
+							<p class="txt">잠자는 동안 수분을 피부 가득</p>
+						</div>						
+						<div class="option">
+							<div class="op_img_list">
+								<ul>
+									<li><span><img src="../../img/tmp/img_color_01.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_02.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_03.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_04.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_05.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_01.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_02.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_03.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_04.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_05.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_04.png" alt=""></span></li>
+								</ul>
+							</div>
+							<ul class="op_txt_list">
+								<li>01 핑크캐럿</li>
+								<li>02 핑크캐럿 <em>품절-입고예정</em></li>
+								<li>03 핑크캐럿 <em>품절</em></li>
+								<li>04 레드</li>
+								<li>05 오렌지</li>
+								<li>06 엘로우</li>
+								<li>07 그린</li>
+								<li>08 블루</li>
+								<li>09 다크블루</li>
+								<li>10 바이올렛</li>
+							</ul>
+							<span href="#" class="btn_direct prev">이전</span>
+							<span href="#" class="btn_direct next">다음</span>
+						</div>
+						<p class="option_txt">
+							<span>!</span>옵션상품을 선택해주세요.
+						</p>		
+					</a>
+					<div class="btns">
+						<a href="#" class="btn_cart"><span></span>장바구니</a>
+						<a href="#" class="btn_like"><span></span>위시리스트</a>
+					</div>
+					<!-- //마우스오버 -->
+				</li>
+				<li>
+					<a href="#">
+						<div class="img_box">
+							<img src="../../img/tmp/img_product3.jpg" alt="">
+						</div>
+						<dl>
+							<dt>
+								쉐어버터 스팀크림 모이스트[중건성용]
+							</dt>
+							<dd class="price">
+								<del>￦28,000</del>￦14,000
+							</dd>
+							<dd class="tag">
+								<em class="new">NEW</em>
+								<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+								<em class="event">착한가격</em> <!-- 2016-06-21//고품질삭제 -->
+							</dd>
+							<dd class="award">
+								<img src="../../img/img_award.png" alt="">
+								<img src="../../img/img_award2.png" alt="">
+							</dd>
+							<dd class="state">
+								<span>품절예정</span>
+							</dd>
+						</dl>
+					</a>
+					<!-- 마우스오버 -->
+					<a href="#"class="pro_over">
+						<div class="title">
+							<strong>매트 립스틱매트 립스틱매트 립스틱매트 립스틱</strong>
+						</div>	
+					</a>
+					<div class="btns">
+						<a href="#" class="btn_cart"><span></span>장바구니</a>
+						<a href="#" class="btn_like"><span></span>위시리스트</a>
+					</div>
+					<!-- //마우스오버 -->
+				</li>
+				<li>
+					<a href="#">
+						<div class="img_box">
+							<img src="../../img/tmp/img_product4.jpg" alt="">
+						</div>
+						<dl>
+							<dt>
+								쉐어버터 스팀크림 모이스트[중건성용]
+							</dt>
+							<dd class="price">
+								<del>￦28,000</del>￦14,000
+							</dd>
+							<dd class="tag">
+								<em class="plus">1<span>+</span>1</em>
+							</dd>
+							<dd class="award">
+								<img src="../../img/img_award3.png" alt="">
+								<img src="../../img/img_award2.png" alt="">
+							</dd>
+							<dd class="state">
+								<span>품절예정</span>
+							</dd>
+						</dl>
+					</a>					
+					<!-- 마우스오버 -->
+					<a href="#"class="pro_over">
+						<div class="title">
+							<em>- 아이 브라트너 증정 - </em>
+							<strong>매트 립스틱매트 립스틱매트 립스틱매트 립스틱</strong>
+							<p class="txt">잠자는 동안 수분을 피부 가득</p>
+						</div>		
+					</a>
+					<div class="btns">
+						<a href="#" class="btn_cart"><span></span>장바구니</a>
+						<a href="#" class="btn_like"><span></span>위시리스트</a>
+					</div>
+					<!-- //마우스오버 -->
+				</li>
+				<li>
+					<a href="#">
+						<div class="img_box">
+							<img src="../../img/tmp/img_product5.jpg" alt="">
+						</div>
+						<dl>
+							<dt>
+								쉐어버터 스팀크림 모이스트[중건성용]
+							</dt>
+							<dd class="price">
+								<del>￦28,000</del>￦14,000
+							</dd>
+							<dd class="tag">
+								<em class="best">BEST</em>
+								<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+								<em class="event">착한가격</em> <!-- 2016-06-21//고품질삭제 -->
+							</dd>
+							<dd class="award">
+								<img src="" alt="">
+							</dd>
+							<dd class="state">
+								<em>품절</em>
+							</dd>
+						</dl>
+					</a>
+					<!-- 마우스오버 -->
+					<a href="#"class="pro_over">
+						<div class="title">
+							<strong>매트 립스틱매트 립스틱매트 립스틱매트 립스틱</strong>
+						</div>						
+						<div class="option">
+							<div class="op_img_list">
+								<ul>
+									<li><span><img src="../../img/tmp/img_color_01.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_02.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_03.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_04.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_05.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_01.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_02.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_03.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_04.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_05.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_04.png" alt=""></span></li>
+								</ul>
+							</div>
+							<ul class="op_txt_list">
+								<li>01 핑크캐럿</li>
+								<li>02 핑크캐럿 <em>품절-입고예정</em></li>
+								<li>03 핑크캐럿 <em>품절</em></li>
+								<li>04 레드</li>
+								<li>05 오렌지</li>
+								<li>06 엘로우</li>
+								<li>07 그린</li>
+								<li>08 블루</li>
+								<li>09 다크블루</li>
+								<li>10 바이올렛</li>
+							</ul>
+							<span href="#" class="btn_direct prev">이전</span>
+							<span href="#" class="btn_direct next">다음</span>
+						</div>
+						<p class="option_txt">
+							<span>!</span>옵션상품을 선택해주세요.
+						</p>		
+					</a>
+					<div class="btns">
+						<a href="#" class="btn_cart"><span></span>장바구니</a>
+						<a href="#" class="btn_like"><span></span>위시리스트</a>
+					</div>
+					<!-- //마우스오버 -->
+				</li>
+				<li class="r_first"> <!-- -li의 1, 5, 9, 12 ....에 클래스추가 : r_first -->
+					<a href="#">
+						<div class="img_box">
+							<img src="../../img/tmp/img_product2.jpg" alt="">
+						</div>
+						<dl>
+							<dt>
+								<em>- 아이 브라트너 증정 - </em>
+								쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]
+							</dt>
+							<dd class="price">
+								<del>￦28,000</del>￦14,000
+							</dd>
+							<dd class="tag">
+								<em class="best">BEST</em>
+								<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+								<em class="event">착한가격</em> <!-- 2016-06-21//고품질삭제 -->
+								<em class="plus">10<span>+</span>10</em>
+							</dd>
+							<dd class="award">
+								<img src="../../img/img_award.png" alt="">
+							</dd>
+							<dd class="state">
+								<em>품절</em>
+							</dd>
+						</dl>
+					</a>
+					<!-- 마우스오버 -->
+					<a href="#"class="pro_over">
+						<div class="title">
+							<em>- 아이 브라트너 증정 - </em>
+							<strong>매트 립스틱매트 립스틱매트 립스틱매트 립스틱</strong>
+							<p class="txt">잠자는 동안 수분을 피부 가득</p>
+						</div>						
+						<div class="option">
+							<div class="op_img_list">
+								<ul>
+									<li><span><img src="../../img/tmp/img_color_01.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_02.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_03.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_04.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_05.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_01.png" alt=""></span></li>
+								</ul>
+							</div>
+							<ul class="op_txt_list">
+								<li>01 핑크캐럿</li>
+								<li>02 핑크캐럿 <em>품절-입고예정</em></li>
+								<li>03 핑크캐럿 <em>품절</em></li>
+								<li>04 레드</li>
+								<li>05 오렌지</li>
+								<li>06 엘로우</li>
+							</ul>
+							<span href="#" class="btn_direct prev">이전</span>
+							<span href="#" class="btn_direct next">다음</span>
+						</div>
+						<p class="option_txt">
+							<span>!</span>옵션상품을 선택해주세요.
+						</p>		
+					</a>
+					<div class="btns">
+						<a href="#" class="btn_cart"><span></span>장바구니</a>
+						<a href="#" class="btn_like"><span></span>위시리스트</a>
+					</div>
+					<!-- //마우스오버 -->
+				</li>
+				<li>
+					<a href="#">
+						<div class="img_box">
+							<img src="../../img/tmp/img_product3.jpg" alt="">
+						</div>
+						<dl>
+							<dt>
+								쉐어버터 스팀크림 모이스트[중건성용]
+							</dt>
+							<dd class="price">
+								<del>￦28,000</del>￦14,000
+							</dd>
+							<dd class="tag">
+								<em class="new">NEW</em>
+								<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+								<em class="event">착한가격</em> <!-- 2016-06-21//고품질삭제 -->
+							</dd>
+							<dd class="award">
+								<img src="../../img/img_award.png" alt="">
+								<img src="../../img/img_award2.png" alt="">
+							</dd>
+							<dd class="state">
+								<span>품절예정</span>
+							</dd>
+						</dl>
+					</a>
+					<!-- 마우스오버 -->
+					<a href="#"class="pro_over">
+						<div class="title">
+							<strong>매트 립스틱매트 립스틱매트 립스틱매트 립스틱</strong>
+						</div>	
+					</a>
+					<div class="btns">
+						<a href="#" class="btn_cart"><span></span>장바구니</a>
+						<a href="#" class="btn_like"><span></span>위시리스트</a>
+					</div>
+					<!-- //마우스오버 -->
+				</li>
+				<li>
+					<a href="#">
+						<div class="img_box">
+							<img src="../../img/tmp/img_product4.jpg" alt="">
+						</div>
+						<dl>
+							<dt>
+								쉐어버터 스팀크림 모이스트[중건성용]
+							</dt>
+							<dd class="price">
+								<del>￦28,000</del>￦14,000
+							</dd>
+							<dd class="tag">
+								<em class="plus">1<span>+</span>1</em>
+							</dd>
+							<dd class="award">
+								<img src="../../img/img_award3.png" alt="">
+								<img src="../../img/img_award2.png" alt="">
+							</dd>
+							<dd class="state">
+								<span>품절예정</span>
+							</dd>
+						</dl>
+					</a>					
+					<!-- 마우스오버 -->
+					<a href="#"class="pro_over">
+						<div class="title">
+							<em>- 아이 브라트너 증정 - </em>
+							<strong>매트 립스틱매트 립스틱매트 립스틱매트 립스틱</strong>
+							<p class="txt">잠자는 동안 수분을 피부 가득</p>
+						</div>		
+					</a>
+					<div class="btns">
+						<a href="#" class="btn_cart"><span></span>장바구니</a>
+						<a href="#" class="btn_like"><span></span>위시리스트</a>
+					</div>
+					<!-- //마우스오버 -->
+				</li>
+				<li>
+					<a href="#">
+						<div class="img_box">
+							<img src="../../img/tmp/img_product5.jpg" alt="">
+						</div>
+						<dl>
+							<dt>
+								쉐어버터 스팀크림 모이스트[중건성용]
+							</dt>
+							<dd class="price">
+								<del>￦28,000</del>￦14,000
+							</dd>
+							<dd class="tag">
+								<em class="best">BEST</em>
+								<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+								<em class="event">착한가격</em> <!-- 2016-06-21//고품질삭제 -->
+							</dd>
+							<dd class="award">
+								<img src="" alt="">
+							</dd>
+							<dd class="state">
+								<em>품절</em>
+							</dd>
+						</dl>
+					</a>
+					<!-- 마우스오버 -->
+					<a href="#"class="pro_over">
+						<div class="title">
+							<strong>매트 립스틱매트 립스틱매트 립스틱매트 립스틱</strong>
+						</div>						
+						<div class="option">
+							<div class="op_img_list">
+								<ul>
+									<li><span><img src="../../img/tmp/img_color_01.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_02.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_03.png" alt=""></span></li>
+							</div>
+							<ul class="op_txt_list">
+								<li>01 핑크캐럿</li>
+								<li>02 핑크캐럿 <em>품절-입고예정</em></li>
+								<li>03 핑크캐럿 <em>품절</em></li>
+							</ul>
+							<span href="#" class="btn_direct prev">이전</span>
+							<span href="#" class="btn_direct next">다음</span>
+						</div>
+						<p class="option_txt">
+							<span>!</span>옵션상품을 선택해주세요.
+						</p>		
+					</a>
+					<div class="btns">
+						<a href="#" class="btn_cart"><span></span>장바구니</a>
+						<a href="#" class="btn_like"><span></span>위시리스트</a>
+					</div>
+					<!-- //마우스오버 -->
+				</li>
+				<li class="r_first"> <!-- -li의 1, 5, 9, 12 ....에 클래스추가 : r_first -->
+					<a href="#">
+						<div class="img_box">
+							<img src="../../img/tmp/img_product2.jpg" alt="">
+						</div>
+						<dl>
+							<dt>
+								<em>- 아이 브라트너 증정 - </em>
+								쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]쉐어버터 스팀크림 모이스트[중건성용]
+							</dt>
+							<dd class="price">
+								<del>￦28,000</del>￦14,000
+							</dd>
+							<dd class="tag">
+								<em class="best">BEST</em>
+								<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+								<em class="event">착한가격</em> <!-- 2016-06-21//고품질삭제 -->
+								<em class="plus">10<span>+</span>10</em>
+							</dd>
+							<dd class="award">
+								<img src="../../img/img_award.png" alt="">
+							</dd>
+							<dd class="state">
+								<em>품절</em>
+							</dd>
+						</dl>
+					</a>
+					<!-- 마우스오버 -->
+					<a href="#"class="pro_over">
+						<div class="title">
+							<em>- 아이 브라트너 증정 - </em>
+							<strong>매트 립스틱매트 립스틱매트 립스틱매트 립스틱</strong>
+							<p class="txt">잠자는 동안 수분을 피부 가득</p>
+						</div>						
+						<div class="option">
+							<div class="op_img_list">
+								<ul>
+									<li><span><img src="../../img/tmp/img_color_01.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_02.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_03.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_04.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_05.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_01.png" alt=""></span></li>
+								</ul>
+							</div>
+							<ul class="op_txt_list">
+								<li>01 핑크캐럿</li>
+								<li>02 핑크캐럿 <em>품절-입고예정</em></li>
+								<li>03 핑크캐럿 <em>품절</em></li>
+								<li>04 레드</li>
+								<li>05 오렌지</li>
+								<li>06 엘로우</li>
+							</ul>
+							<span href="#" class="btn_direct prev">이전</span>
+							<span href="#" class="btn_direct next">다음</span>
+						</div>
+						<p class="option_txt">
+							<span>!</span>옵션상품을 선택해주세요.
+						</p>		
+					</a>
+					<div class="btns">
+						<a href="#" class="btn_cart"><span></span>장바구니</a>
+						<a href="#" class="btn_like"><span></span>위시리스트</a>
+					</div>
+					<!-- //마우스오버 -->
+				</li>
+				<li>
+					<a href="#">
+						<div class="img_box">
+							<img src="../../img/tmp/img_product3.jpg" alt="">
+						</div>
+						<dl>
+							<dt>
+								쉐어버터 스팀크림 모이스트[중건성용]
+							</dt>
+							<dd class="price">
+								<del>￦28,000</del>￦14,000
+							</dd>
+							<dd class="tag">
+								<em class="new">NEW</em>
+								<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+								<em class="event">착한가격</em> <!-- 2016-06-21//고품질삭제 -->
+							</dd>
+							<dd class="award">
+								<img src="../../img/img_award.png" alt="">
+								<img src="../../img/img_award2.png" alt="">
+							</dd>
+							<dd class="state">
+								<span>품절예정</span>
+							</dd>
+						</dl>
+					</a>
+					<!-- 마우스오버 -->
+					<a href="#"class="pro_over">
+						<div class="title">
+							<strong>매트 립스틱매트 립스틱매트 립스틱매트 립스틱</strong>
+						</div>	
+					</a>
+					<div class="btns">
+						<a href="#" class="btn_cart"><span></span>장바구니</a>
+						<a href="#" class="btn_like"><span></span>위시리스트</a>
+					</div>
+					<!-- //마우스오버 -->
+				</li>
+				<li>
+					<a href="#">
+						<div class="img_box">
+							<img src="../../img/tmp/img_product4.jpg" alt="">
+						</div>
+						<dl>
+							<dt>
+								쉐어버터 스팀크림 모이스트[중건성용]
+							</dt>
+							<dd class="price">
+								<del>￦28,000</del>￦14,000
+							</dd>
+							<dd class="tag">
+								<em class="plus">1<span>+</span>1</em>
+							</dd>
+							<dd class="award">
+								<img src="../../img/img_award3.png" alt="">
+								<img src="../../img/img_award2.png" alt="">
+							</dd>
+							<dd class="state">
+								<span>품절예정</span>
+							</dd>
+						</dl>
+					</a>					
+					<!-- 마우스오버 -->
+					<a href="#"class="pro_over">
+						<div class="title">
+							<em>- 아이 브라트너 증정 - </em>
+							<strong>매트 립스틱매트 립스틱매트 립스틱매트 립스틱</strong>
+							<p class="txt">잠자는 동안 수분을 피부 가득</p>
+						</div>		
+					</a>
+					<div class="btns">
+						<a href="#" class="btn_cart"><span></span>장바구니</a>
+						<a href="#" class="btn_like"><span></span>위시리스트</a>
+					</div>
+					<!-- //마우스오버 -->
+				</li>
+				<li>
+					<a href="#">
+						<div class="img_box">
+							<img src="../../img/tmp/img_product5.jpg" alt="">
+						</div>
+						<dl>
+							<dt>
+								쉐어버터 스팀크림 모이스트[중건성용]
+							</dt>
+							<dd class="price">
+								<del>￦28,000</del>￦14,000
+							</dd>
+							<dd class="tag">
+								<em class="best">BEST</em>
+								<em class="sale"><span class="ico_spr"></span><strong>50</strong>%</em>
+								<em class="event">착한가격</em> <!-- 2016-06-21//고품질삭제 -->
+							</dd>
+							<dd class="award">
+								<img src="" alt="">
+							</dd>
+							<dd class="state">
+								<em>품절</em>
+							</dd>
+						</dl>
+					</a>
+					<!-- 마우스오버 -->
+					<a href="#"class="pro_over">
+						<div class="title">
+							<strong>매트 립스틱매트 립스틱매트 립스틱매트 립스틱</strong>
+						</div>						
+						<div class="option">
+							<div class="op_img_list">
+								<ul>
+									<li><span><img src="../../img/tmp/img_color_01.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_02.png" alt=""></span></li>
+									<li><span><img src="../../img/tmp/img_color_03.png" alt=""></span></li>
+							</div>
+							<ul class="op_txt_list">
+								<li>01 핑크캐럿</li>
+								<li>02 핑크캐럿 <em>품절-입고예정</em></li>
+								<li>03 핑크캐럿 <em>품절</em></li>
+							</ul>
+							<span href="#" class="btn_direct prev">이전</span>
+							<span href="#" class="btn_direct next">다음</span>
+						</div>
+						<p class="option_txt">
+							<span>!</span>옵션상품을 선택해주세요.
+						</p>		
+					</a>
+					<div class="btns">
+						<a href="#" class="btn_cart"><span></span>장바구니</a>
+						<a href="#" class="btn_like"><span></span>위시리스트</a>
+					</div>
+					<!-- //마우스오버 -->
+				</li>
+			</ul>
+			<!-- //상품리스트 -->
+
+			<a href="#a" class="btn_more arrow">더보기<span></span></a>
+
+
+		</div>
+		<!-- //content -->
+	</div>
+    <!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>

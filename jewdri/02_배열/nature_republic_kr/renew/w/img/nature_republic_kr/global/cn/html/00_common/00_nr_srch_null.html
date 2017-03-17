@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/common.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.op_img_list').each(function(){
+		var list = $(this).find('ul');
+		var size = list.children('li').length;
+		var w = 30*size;
+		list.css('width',w+'px');
+		//list.prepend(list.children('li:last-child'));
+		//list.css('left','-30px');
+	});
+
+	$('.pro_over .op_img_list li span').click(function(e){
+		e.preventDefault();
+		var op_list = $(this).closest('.op_img_list');
+		var idx = $(this).parent().index();
+		op_list.find('li').removeClass('active');
+		op_list.find('li').eq(idx).addClass('active');
+		op_list.next().find('li').removeClass('active');
+		op_list.next().find('li').eq(idx).addClass('active');
+	});
+
+	$('.pro_over .btn_direct').click(function(e){
+		e.preventDefault();
+		var direct = $(this).hasClass('prev');
+		var list = $(this).closest('.option').find('.op_img_list ul');
+		if(direct){
+			if(list.css('left') == '0px') return false;
+			list.animate({'left':'+=150px'},150);
+		}else{
+			var size = list.children('li').length;
+			var w = Math.ceil(size/5);
+			w = w-1;
+			if(list.css('left') ==  -(150*w)+'px') return false;
+			list.animate({'left':'-=150px'},150);
+		}
+	});
+
+	$('.list_sorting .sel_btns li a').click(function(e){
+		e.preventDefault();
+		var type = $(this).hasClass('btn_chk_list');
+		if(type){
+			$(this).parent().toggleClass('active');
+		}else{
+			$('.list_sorting .sel_btns li').removeClass('active');
+			$(this).parent().addClass('active');
+		}
+	});
+
+	$('.best_seller dd').flexslider({
+		animation: "slide",
+		itemWidth: 190,
+		move: 5,
+		animationSpeed: 500,
+		itemMargin: 4,
+		minItems: 5,
+		controlNav: true
+	});
+});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container">
+		<!-- content -->
+		<div id="content">
+			<ol class="sub_navi">
+				<li><a href="#">home</a></li>
+				<li>搜索结果</li>
+			</ol>
+			<div class="sub_tit_wrap">
+				<h2>搜索结果</h2>
+			</div>
+
+
+			<div class="nr_srch">
+
+
+				<div class="srch_top">
+					<div class="srch_box null">
+						<div class="form_srch">
+							<div class="form_item">
+								<label class="i_label visible" style="position: absolute;">스팀크림</label>
+								<input type="text" name="" id="temp_input2" class="i_text">
+							</div>
+							<a href="#" class="btn_srch">搜尋</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="list_srch">
+					<div class="list_sorting">
+						<p class="txt_srch">搜尋到<strong>25</strong>件符合要求的商品。</p>
+					</div>
+					<div class="no_srch">
+						<span class="ico_spr caution"></span><p>搜尋結果不存在。</p>
+					</div>
+
+				</div>
+
+
+
+
+			</div>
+		</div>
+		<!-- //content -->
+	</div>
+    <!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>

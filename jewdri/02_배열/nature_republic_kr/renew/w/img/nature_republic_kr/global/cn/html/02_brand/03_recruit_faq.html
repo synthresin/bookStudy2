@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/brand.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.faq_type .list_title .title a').click(function(e){
+		e.preventDefault();
+		var title = $(this).closest('.list_title');
+		var st = title.hasClass('active');
+		if(!st){
+			$('.faq_type .list_title').removeClass('active');
+			$('.faq_type .list_view').removeClass('active');
+			title.addClass('active');
+			title.next().addClass('active');
+		}else{
+			title.removeClass('active');
+			title.next().removeClass('active');
+		}
+	});
+
+});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container">
+		<!-- content -->
+		<div id="content">
+			<ol class="sub_navi">
+				<li><a href="#">home</a></li>
+				<li><a href="#">브랜드</a></li>
+				<li><a href="#">인재채용</a></li>
+				<li>채용 FAQ</li>
+			</ol>
+			<div class="sub_tit_wrap v2">
+				<h2>채용 FAQ</h2>
+				<!-- 2016-06-28//탭추가(s) -->
+				<ul class="tab_sub2">
+					<li><a href="#">채용안내</a></li>
+					<li><a href="#">채용공고</a></li>
+					<li class="active"><a href="#">채용 FAQ</a></li>
+				</ul>
+				<!-- 2016-06-28//탭추가(e) -->
+			</div>
+
+			<table class="faq_type tble_type4 recruit_faq"> <!-- 2016-06-28//클래스추가 -->
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="list_title active">
+						<td class="title"><span></span><a href="#">입사지원은 어떻게 하나요?</a></td>
+					</tr>
+					<tr class="list_view faq active">
+						<td>
+							<p>잡코리아, 사람인 공고를 통해 온라인 지원하시기 바랍니다.</p>
+						</td>
+					</tr>
+					<tr class="list_title">
+						<td class="title"><span></span><a href="#">동시에 진행하는 여러 전형에 중복 지원이 가능한가요?</a></td>
+					</tr>
+					<tr class="list_view faq">
+						<td>
+							<p>자격 요건이 충족된다면, 중복 지원이 가능합니다.</p>
+						</td>
+					</tr>
+					<tr class="list_title">
+						<td class="title"><span></span><a href="#">합격자 발표는 어떻게 이루어 지나요?</a></td>
+					</tr>
+					<tr class="list_view faq">
+						<td>
+							<p>서류합격: 합격자에 한해 개별 유선연락 및 문자 발송합니다.<br>
+							면접합격(1, 2차): 합격자는 유선연락, 불합격자에게는 문자 발송합니다.</p>
+						</td>
+					</tr>
+					<!-- list -->
+					<tr class="list_title">
+						<td class="title"><span></span><a href="#">면접 일자 변경이 가능한가요</a></td>
+					</tr>
+					<tr class="list_view faq">
+						<td>
+							<p>多:多 그룹면접이라 개인적인 면접시간 조정은 조금 어렵습니다. 양해부탁드립니다.</p>
+						</td>
+					</tr>
+					<!-- //list -->
+					<!-- list -->
+					<tr class="list_title">
+						<td class="title"><span></span><a href="#">증빙서류는 언제 제출하나요</a></td>
+					</tr>
+					<tr class="list_view faq">
+						<td>
+							<p>최종합격자에 한해 구비서류를 필요로하며, 허위사실 기재가 확인될 시에는 입사 후에는 불이익(입사 취소 등)을 받을 수 있습니다.</p>
+						</td>
+					</tr>
+					<!-- //list -->
+					<!-- list -->
+					<tr class="list_title">
+						<td class="title"><span></span><a href="#">최종 합격 후 일정이 궁금합니다.</a></td>
+					</tr>
+					<tr class="list_view faq">
+						<td>
+							<p>
+							최종합격 후 신입사원의 경우 약 1주일 내 입사 예정입니다.<br>경력사원의 경우 협의를 거쳐 2~3주 내 입사 예정입니다.</p>
+						</td>
+					</tr>
+					<!-- //list -->
+					<!-- list -->
+					<tr class="list_title">
+						<td class="title"><span></span><a href="#">외국어 면접은 진행이 되나요?</a></td>
+					</tr>
+					<tr class="list_view faq">
+						<td>
+							<p>필요한 직무일 경우 실시 될 수 있습니다.</p>
+						</td>
+					</tr>
+					<!-- //list -->
+					<!-- list -->
+					<tr class="list_title">
+						<td class="title"><span></span><a href="#">지원서 작성시에 내용을 잘못 입력하였습니다. 서류전형은 합격하였는데 불이익이 있나요?</a></td>
+					</tr>
+					<tr class="list_view faq">
+						<td>
+							<p>서류전형시에 기재된 내용이 사실과 다를 경우 불이익이 있으며, 결과에 대한 책임은 지원자에 있습니다.<br>담당자에게 문의주시기 바랍니다</p>
+						</td>
+					</tr>
+					<!-- //list -->
+					<!-- list -->
+					<tr class="list_title">
+						<td class="title"><span></span><a href="#">1차면접/2차면접은 어떤 형태로 진행되나요?</a></td>
+					</tr>
+					<tr class="list_view faq">
+						<td>
+							<p>1차/2차 모두 多:多 면접으로 진행되며 구술로 진행됩니다. 하지만 직무에 따라 어학테스트(필기/실기), <br>실기테스트가 진행되기도 합니다.</p>
+						</td>
+					</tr>
+					<!-- //list -->
+					<!-- list -->
+					<tr class="list_title">
+						<td class="title"><span></span><a href="#">학교 일정 불참으로 면접 참석 확인서/입사 확인서가 필요합니다.</a></td>
+					</tr>
+					<tr class="list_view faq">
+						<td>
+							<p>면접 시, 요청 하시는 분에 한해 면접확인서를 발급해드립니다. 사전 요청 부탁드립니다.</p>
+						</td>
+					</tr>
+					<!-- //list -->
+					<!-- list -->
+					<tr class="list_title">
+						<td class="title"><span></span><a href="#">급여 및 복리후생에 대해서 알고 싶습니다.</a></td>
+					</tr>
+					<tr class="list_view faq">
+						<td>
+							<p>급여 및 복리후생은 회사가 정한 내규에 따라 진행 되며, 입사 후 급여와 복리후생에 대한 교육을 실시합니다.</p>
+						</td>
+					</tr>
+					<!-- //list -->
+				</tbody>
+			</table>
+	
+
+		</div>
+		<!-- //content -->
+	</div>
+    <!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>

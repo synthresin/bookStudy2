@@ -1,0 +1,364 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/mypage.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery_ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.change_prod_list .order_prod>dl>dd>ul>li').click(function(e){
+		e.preventDefault();
+		$(this).toggleClass('active');
+	});
+});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container" class="my_page">
+		<!-- content -->
+		<div id="content">
+			<!-- title -->
+			<div class="w_cont">
+				<!-- sub_navi -->
+				<ol class="sub_navi">
+					<li><a href="#">home</a></li>
+					<li><a href="#">마이페이지</a></li>
+					<li><a href="#">주문조회</a></li>
+					<li><a href="#">주문/배송</a></li>
+					<li>교환신청</li>
+				</ol>
+				<!-- //sub_navi -->
+			</div>
+			<!-- //title -->
+
+			<!-- 2016-06-22//수정(s) -->
+			<!-- lnb -->
+			<div class="section_lnb">
+				<div class="lnb_mypage">
+					<div class="lnb_top">
+						<span class="ico_mypage"></span>My Page
+					</div>
+					<ul>
+						<li>
+							<dl>
+								<dt>주문조회</dt>
+								<dd><a href="#">주문/배송</a></dd>
+								<dd><a href="#">취소/반품/교환</a></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>쇼핑혜택</dt>
+								<dd><a href="#">포인트 조회</a></dd>
+								<dd><a href="#">모바일 상품권 조회</a></dd>
+								<dd><a href="#">쿠폰 조회</a></dd>
+								<dd><a href="#">Shake Box 티켓 조회</a></dd>
+							</dl>
+						</li>
+						<li>
+							<strong><a href="#">위시리스트</a></strong>
+						</li>
+						<li>
+							<dl>
+								<dt>쇼핑활동</dt>
+								<dd><a href="#">리뷰관리</a></dd>
+								<dd><a href="#">1:1 문의내역</a></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>회원정보</dt>
+								<dd><a href="#">배송 주소 관리</a></dd>
+								<dd><a href="#">피부정보 관리</a></dd>
+								<dd><a href="#">개인정보 수정/탈퇴</a></dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //lnb -->
+			<!-- 2016-06-22//수정(e) -->
+
+			<!-- mypage_content -->
+			<div class="mypage_content">
+				<!-- 2016-06-13//수정(s) -->
+				<div class="sub_tit_wrap v2">
+					<h2>교환신청</h2>
+				</div>
+				<!-- 2016-06-13//수정(e) -->
+				<!-- 주문번호 -->
+				<dl class="order_number_box">
+					<dt>주문번호</dt>
+					<dd>201603181635512116</dd>
+				</dl>
+				<!-- //주문번호 -->
+
+				<!-- 상품리스트 -->
+				<ul class="change_prod_list">
+					<!-- 주문상품 -->
+					<li class="order_prod">
+						<dl>
+							<dt>주문상품</dt>
+							<dd>
+								<ul>
+									<li class="active">
+										<a href="#">
+											<div class="img_box">
+												<img src="../../img/tmp/img_order_product01.jpg" alt="크리미 바디워시 - 올리브">
+											</div>
+											<p class="prod_title">그릭 요거트 팩<em>플레인</em></p>
+											<div class="sel_box">
+												<select onchange="alert($(this).val())">
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+												</select>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="img_box">
+												<img src="../../img/tmp/img_order_product02.jpg" alt="슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]">
+											</div>
+											<p class="prod_title">슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]</p>
+											<p class="prod_num">100개</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="img_box">
+												<img src="../../img/tmp/img_order_product03.jpg" alt="진생 로얄 실크 에센스">
+											</div>
+											<p class="prod_title">진생 로얄 실크 에센스</p>
+											<p class="prod_num">1개</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="img_box">
+												<img src="../../img/tmp/img_order_product01.jpg" alt="크리미 바디워시 - 올리브">
+											</div>
+											<p class="prod_title">그릭 요거트 팩<em>플레인</em></p>
+											<p class="prod_num">1개</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="img_box">
+												<img src="../../img/tmp/img_order_product02.jpg" alt="슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]">
+											</div>
+											<p class="prod_title">슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]</p>
+											<p class="prod_num">1개</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="img_box">
+												<img src="../../img/tmp/img_order_product03.jpg" alt="진생 로얄 실크 에센스">
+											</div>
+											<p class="prod_title">진생 로얄 실크 에센스</p>
+											<p class="prod_num">1개</p>
+										</a>
+									</li>
+								</ul>
+								<a href="#" class="check_green_btn">
+									<span class="ico_chk"></span>교환할 상품 선택 후 적용
+								</a>
+							</dd>
+						</dl>
+					</li>
+					<!-- //주문상품 -->
+					<!-- 교환상품 -->
+					<li class="change_prod">
+						<dl>
+							<dt>교환상품</dt>
+							<dd class="prod_null">
+								<div>
+									<span class="ico_change"></span>
+									교환할 상품을 선택해주세요.
+								</div>
+							</dd>
+						</dl>
+					</li>
+					<!-- //교환상품 -->
+				</ul>
+				<!-- /상품리스트 -->
+
+				<!-- 교환사유 -->
+				<dl class="reason_cancle">
+					<dt class="tit_mypage">교환사유</dt>
+					<dl class="reason_form v2">
+						<dt>교환사유 선택 </dt>
+						<dd>
+							<div class="sel_box v3">
+								<select onchange="alert($(this).val())">
+									<option value="1">선택해주세요</option>
+									<option value="2">선택해주세요</option>
+									<option value="3">선택해주세요</option>
+									<option value="4">선택해주세요</option>
+								</select>
+							</div>
+							<div class="form_item">
+								<span class="i_label" style="position: absolute;">교환상세사유</span>
+								<textarea name="" id="temp_input" class="i_text area" cols="30" rows="10"></textarea>
+								<span class="limit"><strong>500</strong>/500</span>
+							</div>
+						</dd>
+						<!-- 2016-06-27//수정(s) -->
+						<dd class="img">
+							책임사유에 해당 이미지를 업로드 하시면 교환신청을 빠르게 진행하실 수 있습니다.
+							<em>* 파일크기는 5MB이하, JPG, PNG 또는 GIF형식 의 파일만 가능합니다.</em>
+							<div class="form_srch">
+								<div class="form_item file">
+									<input type="text" name="" id="file_input" class="i_text">
+								</div>
+								<label for="file_add" class="ip_file btn_srch"><input type="file" id="file_add" name="file_add">이미지 업로드</label>
+							</div>
+						</dd>
+					</dl>
+					<span>* 회원님의 단순변심으로 인한 교환일 경우 교환 배송비 5,000원(왕복)을 부담해주셔야 가능합니다.<br>(신한은행/ 140-008-479281 / ㈜네이처리퍼블릭)</span>
+					<!-- 2016-06-27//수정(e) -->
+				</dl>
+				<!-- //반품사유 -->
+
+				<!-- 수거방법 및 수거지 주소  -->
+				<dl class="pickup change">
+					<dt class="tit_mypage">
+              				<span class="aside_l">수거방법 및 수거지 주소 </span>
+              				<span class="aside_r">
+              					<a href="#" class="btn_medium grey">수령지 변경</a>
+              				</span>
+              			</dt>
+              			<dd>
+              				<table class="tble_mypage">
+                                    <caption>수거방법 및 수거지 주소 </caption>
+                                    <colgroup>
+                                        <col width="185px">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>지정택배</th>
+                                            <th>수거지 주소</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        		<td>
+                                        			<span class="ico_postoffice"></span>
+                                        			우체국택배
+                                        		</td>
+                                        		<td class="post_info">
+                                        			<strong>회사(김수산나)</strong>
+                                        			010-1234-1234<br>
+										(우) 123-123  서울시 용산구 한남동 657-133<br>디투빌딩 2층<br>
+										배송 전 연락주세요.
+                                        		</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- 2016-06-27//수정(s) -->
+                                <ul class="list_type">
+							<li>교환접수 후 2-3일 내에 택배기사님이 직접 방문하여 상품을 수거합니다.</li>
+							<li>직접 상품을 반송하신 경우 1:1문의 또는 고객센터로 연락 주시기 바랍니다.</li>
+							<li>수거지시 이후에는 교환철회를 하실 수 없습니다.</li>
+							<li>주소불명, 고객부재 등의 사유로 수거가 이뤄지지 못한 경우 교환신청이 취소될 수 있습니다.</li>
+						</ul>
+						 <!-- 2016-06-27//수정(e) -->
+              			</dd>
+				</dl>
+				<!-- //수거방법 및 수거지 주소  -->
+
+				<!-- 교환상품 받으실 주소  -->
+				<dl class="change_address">
+					<dt class="tit_mypage">
+              				<span class="aside_l">교환상품 받으실 주소</span>
+              				<span class="aside_r">
+              					<a href="#" class="btn_medium grey">수령지 변경</a>
+              				</span>
+              			</dt>
+              			<dd>
+              				<table class="tble_mypage">
+                                    <caption>수거방법 및 수거지 주소 </caption>
+                                    <thead>
+                                        <tr>
+                                            <th>수령지 주소</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        		<td class="post_info">
+                                        			<strong>회사(김수산나)</strong>
+                                        			010-1234-1234<br>
+										(우) 123-123  서울시 용산구 한남동 657-133  디투빌딩 2층<br>
+										배송 전 연락주세요.
+                                        		</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+              			</dd>
+				</dl>
+				<!-- //교환상품 받으실 주소  -->
+
+				<!-- 교환절차 -->
+				<dl class="return_process">
+					<dt class="tit_mypage">
+						<!-- 2016-06-30//아이콘 변경(s) -->
+						<i class="ico_check"></i>교환절차
+						<!-- 2016-06-30//아이콘 변경(e) -->
+					</dt>
+					<dd>
+						<ul class="order_process v2">
+							<li>
+								<dl>
+									<dt>교환접수</dt>
+									<dd>교환신청을 하신 후, 교환하실 상품을 받으신<br>상태로 재포장해주세요.</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>택배기사 방문</dt>
+									<dd>교환접수 후 2-3일 내에  택배기사님이<br>방문하여 상품을 수거합니다.</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>교환상품 발송</dt>
+									<dd>상품 인수기간 2~3일 소요되며, 상품 확인 후<br>교환 상품을 발송해 드립니다.</dd>
+								</dl>
+							</li>
+						</ul>
+						<div class="center_btn">
+							<a href="#" class="c_button v2">교환신청</a>
+							<a href="#" class="c_button v1">취소</a>
+						</div>
+					</dd>
+				</dl>
+				<!-- //교환절차 -->
+
+			</div>
+			<!-- //mypage_content -->
+
+		</div>
+		<!-- //content -->
+
+		
+	</div>
+    <!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>

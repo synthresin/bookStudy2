@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/cs_center.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery_ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.faq_type .list_title .title a').click(function(e){
+			e.preventDefault();
+			var title = $(this).closest('.list_title');
+			var st = title.hasClass('active');
+			if(!st){
+				$('.faq_type .list_title').removeClass('active');
+				$('.faq_type .list_view').removeClass('active');
+				title.addClass('active');
+				title.next().addClass('active');
+			}else{
+				title.removeClass('active');
+				title.next().removeClass('active');
+			}
+		});
+
+		// 2016-07-05// js수정(s)
+		$('.product_lst li a').click(function(){
+			$(this).parent('li').toggleClass('active');
+			$(this).parent('li').siblings('li').removeClass('active');
+		});
+		// 2016-07-05// js수정(e)
+	});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container">
+
+		<!-- content -->
+		<div id="content">
+
+			<!-- sub_navi -->
+			<ol class="sub_navi">
+				<li><a href="#">home</a></li>
+				<li><a href="#">고객센터</a></li>
+				<li>1:1 고객문의</li>
+			</ol>
+			<!-- //sub_navi -->
+
+			<div class="sub_tit_wrap">
+				<h2>1:1 고객문의</h2>
+			</div>
+
+			<!-- customer_help{s} -->
+			<div class="customer_help">
+				<table class="tble_customer">
+					<thead>
+						<tr>
+							<th scope="col">
+
+								<span class="custom_form">
+									<input type="radio" id="radio_customer" name="radio_customer">
+									<label for="radio_customer" class="ip_rdo checked"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+										<em></em><span>쇼핑몰 문의하기</span> 
+									</label>
+								</span>
+								<span class="custom_form">
+									<input type="radio" id="radio_customer" name="radio_customer">
+									<label for="radio_customer" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+										<em></em><span>매장 문의하기</span> 
+									</label>
+								</span>
+								<span class="custom_form">
+									<input type="radio" id="radio_customer" name="radio_customer">
+									<label for="radio_customer" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+										<em></em><span>제품 문의 및 기타</span> 
+									</label>
+								</span>
+
+							</th>
+						</tr>
+						<tr>
+							<th scope="col">
+								<span class="custom_form">
+									<input type="radio" id="radio_customer" name="radio_customer">
+									<label for="radio_customer" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+										<em></em><span>주문/결제</span> 
+									</label>
+								</span>
+								<span class="custom_form">
+									<input type="radio" id="radio_customer" name="radio_customer">
+									<label for="radio_customer" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+										<em></em><span>취소/반품/교환</span> 
+									</label>
+								</span>
+								<span class="custom_form">
+									<input type="radio" id="radio_customer" name="radio_customer">
+									<label for="radio_customer" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+										<em></em><span>배송</span> 
+									</label>
+								</span>
+								<span class="custom_form">
+									<input type="radio" id="radio_customer" name="radio_customer">
+									<label for="radio_customer" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+										<em></em><span>쿠폰/상품권</span> 
+									</label>
+								</span>
+								<span class="custom_form">
+									<input type="radio" id="radio_customer" name="radio_customer">
+									<label for="radio_customer" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+										<em></em><span>멤버십</span> 
+									</label>
+								</span>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<div class="form_item" style="height:58px">
+									<label for="temp_input" class="i_label" style="position: absolute;">제목을 입력해주세요. (최대30자)</label>
+									<input type="text" name="" id="temp_input" class="i_text" style="width:883px; height:28px;">
+									<span class="i_label" style="position: absolute;top:35px;left:845px">0/30자</span>
+								</div>
+								<div class="form_item" style="height:161px">
+									<span class="i_label" style="position: absolute;">내용을 입력해주세요. (최대2,000자)</span>
+									<textarea name="" id="temp_input" class="i_text" cols="30" rows="10" style="width:883px; height:138px;"></textarea>
+									<span class="i_label" style="position: absolute;top:145px;left:827px">0/2,000자</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="form_srch">
+									<div class="form_item">
+										<label class="i_label" style="position: absolute;">주문 정보 또는 상품을 선택하세요. (선택사항)</label>
+										<input type="text" name="" id="file_input" class="i_text">
+									</div><a href="javascript:pop_layer_view('#pop_type');" class="btn_srch">조회</a>
+								</div>
+
+								<div class="srch_list">
+									<div class="form_item">
+										<label class="i_label" style="position: absolute;z-index:1;">20160521020705  진생 로얄 실크 워터리 크림 외 2개</label>
+										<input type="text" name="" id="file_input" class="i_text disabled">
+										<a href="#a"><span></span></a>
+									</div>
+									<div class="form_item">
+										<label class="i_label" style="position: absolute;z-index:1;">20160521020705  진생 로얄 실크 워터리 크림 외 2개</label>
+										<input type="text" name="" id="file_input" class="i_text disabled">
+										<a href="#a"><span></span></a>
+									</div>
+								</div>	
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="form_srch">
+									<div class="form_item">
+										<label class="i_label" style="position: absolute;">이미지를 등록해주세요. (10MB 미만으로 업로드 됩니다.)</label>
+										<input type="text" name="" id="file_input" class="i_text">
+									</div>
+									<label for="file_add3" class="ip_file btn_srch"><input type="file" id="file_add3" name="file_add">찾기</label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<em>이메일로 답변을 받으실래요?</em>
+								<div class="email_form">
+									<input type="text" name="" id="file_input" class="i_text" style="width:192px;height:28px;"> @ <input type="text" name="" id="file_input" class="i_text" style="width:192px;height:28px;">
+
+									<div class="sel_box v3">
+										<select onchange="alert($(this).val())">
+											<option value="1">옵션1</option>
+											<option value="2">옵션2</option>
+											<option value="3">옵션3</option>
+											<option value="4">옵션4</option>
+										</select>
+									</div>
+									
+
+									<div class="form_item">
+										<span class="custom_form">
+											<input type="radio" id="radio_email" name="radio_email">
+											<label for="radio_email" class="ip_rdo checked"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+												<em></em><span>받을래요</span> 
+											</label>
+										</span>
+										<span class="custom_form">
+											<input type="radio" id="radio_email" name="radio_email">
+											<label for="radio_email" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+												<em></em><span>안받을래요</span> 
+											</label>
+										</span>
+									</div>
+								</div>
+
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="btn">
+					<a href="#a" class="btn_cancle">취소</a>
+					<a href="#a" class="btn_enroll">등록</a>
+				</div>
+
+			</div>
+
+			<!-- customer_help{e} -->
+		</div>
+		<!-- //content -->
+
+	</div>
+    <!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+
+	<!-- 주문 번호/상품 검색 팝업 -->
+	<div class="pop_layer open cs_help" id="pop_type">
+		<div class="bg"></div>
+		<div class="pop_wrap">
+			<div class="pop_header">
+				<!-- 2016-07-05//텍스트 수정(s) -->
+				<h2>주문 번호/상품 검색</h2>
+				<!-- 2016-07-05//텍스트 수정(e) -->
+			</div>
+			<div class="pop_content">
+				<!-- tab_menu{s} -->
+				<ul class="tab_sub2">
+					<li><a href="#">주문 번호</a></li>
+					<li class="active"><a href="#">상품 검색</a></li>
+				</ul>
+
+				<!-- pro_srch{s} -->
+				<div class="pro_srch">
+					<!-- search_box{s} -->
+					<div class="search_box">
+						<div class="sel_box v3">
+							<select onchange="alert($(this).val())">
+								<option value="1">전체</option>
+								<option value="2">전체</option>
+								<option value="3">전체</option>
+								<option value="4">전체</option>
+							</select>
+						</div>
+						<div class="sel_box v3">
+							<select onchange="alert($(this).val())">
+								<option value="1">전체</option>
+								<option value="2">전체</option>
+								<option value="3">전체</option>
+								<option value="4">전체</option>
+							</select>
+						</div>
+						<input type="text">
+						<a href="#" class="btn_srch">검색</a>
+					</div>
+					<!-- search_box{e} -->
+				</div>
+				<!-- pro_srch{e} -->
+				<p>검색된 상품</p>
+				<!-- srch_result{s} -->
+				<div class="srch_result">
+					<!-- product_lst -->
+					<ul class="product_lst v2">
+						<li class="r_first">
+							<a href="#">
+								<div class="img_box">
+									<img src="../../img/tmp/img_order_product01.jpg">
+								</div>
+								<p>크리미 바디워시 - 올리브</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="img_box">
+									<img src="../../img/tmp/img_order_product01.jpg">
+								</div>
+								<p>슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]</p>
+							</a>
+						</li>
+						<li class="r_first">
+							<a href="#">
+								<div class="img_box">
+									<img src="../../img/tmp/img_order_product01.jpg">
+								</div>
+								<p>크리미 바디워시 - 올리브</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="img_box">
+									<img src="../../img/tmp/img_order_product01.jpg">
+								</div>
+								<p>슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]</p>
+							</a>
+						</li>
+						<li class="r_first">
+							<a href="#">
+								<div class="img_box">
+									<img src="../../img/tmp/img_order_product01.jpg">
+								</div>
+								<p>크리미 바디워시 - 올리브</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="img_box">
+									<img src="../../img/tmp/img_order_product01.jpg">
+								</div>
+								<p>슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]</p>
+							</a>
+						</li>
+						<li class="r_first">
+							<a href="#">
+								<div class="img_box">
+									<img src="../../img/tmp/img_order_product01.jpg">
+								</div>
+								<p>크리미 바디워시 - 올리브</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="img_box">
+									<img src="../../img/tmp/img_order_product01.jpg">
+								</div>
+								<p>슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- srch_result{e} -->
+			</div>
+			<!-- //pop_content{e} -->
+			<a href="#" class="btn_close">닫기</a>
+		</div>
+	</div>
+	<!-- //주문 번호/상품 검색 팝업 -->
+</div>
+<!-- //wrap  -->
+</body>
+</html>

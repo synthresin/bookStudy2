@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/mypage.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery_ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.my_page .info .btn_control').click(function(e){
+		e.preventDefault();
+		$('.my_page .info').toggleClass('open');
+	});
+});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container" class="my_page">
+		<!-- content -->
+		<div id="content">
+			<!-- title -->
+			<div class="w_cont">
+				<!-- sub_navi -->
+				<ol class="sub_navi">
+					<li><a href="#">home</a></li>
+					<li><a href="#">마이페이지</a></li>
+					<li><a href="#">쇼핑혜택</a></li>
+					<li>Shake Box 티켓 조회</li>
+				</ol>
+				<!-- //sub_navi -->
+			</div>
+			<!-- //title -->
+
+			<!-- 2016-06-22//수정(s) -->
+			<!-- lnb -->
+			<div class="section_lnb">
+				<div class="lnb_mypage">
+					<div class="lnb_top">
+						<span class="ico_mypage"></span>My Page
+					</div>
+					<ul>
+						<li>
+							<dl>
+								<dt>주문조회</dt>
+								<dd><a href="#">주문/배송</a></dd>
+								<dd><a href="#">취소/반품/교환</a></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>쇼핑혜택</dt>
+								<dd><a href="#">포인트 조회</a></dd>
+								<dd><a href="#">모바일 상품권 조회</a></dd>
+								<dd><a href="#">쿠폰 조회</a></dd>
+								<dd><a href="#">Shake Box 티켓 조회</a></dd>
+							</dl>
+						</li>
+						<li>
+							<strong><a href="#">위시리스트</a></strong>
+						</li>
+						<li>
+							<dl>
+								<dt>쇼핑활동</dt>
+								<dd><a href="#">리뷰관리</a></dd>
+								<dd><a href="#">1:1 문의내역</a></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>회원정보</dt>
+								<dd><a href="#">배송 주소 관리</a></dd>
+								<dd><a href="#">피부정보 관리</a></dd>
+								<dd><a href="#">개인정보 수정/탈퇴</a></dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //lnb -->
+			<!-- 2016-06-22//수정(e) -->
+
+			<!-- mypage_content -->
+			<div class="mypage_content">
+				<!-- 2016-06-13//수정(s) -->
+				<div class="sub_tit_wrap v2">
+					<h2>Shake Box 티켓 조회</h2>
+				</div>
+				<!-- 2016-06-13//수정(e) -->
+				<!-- 쉐이크박스 정보 -->
+				<dl class="shake_box_info">
+					<dt>사용 가능 Shake Box 티켓</dt>
+					<dd>
+						<p class="num_have small"><a href="#"><span>2</span> 장</a></p>
+					</dd>
+					<dd class="txt_r">
+						매월 15일, 30일 네이처리퍼블릭 APP에서 사용 가능
+					</dd>
+				</dl>
+				<!-- //쉐이크박스 정보 -->
+				<!-- tab -->
+				<ul class="tab_sub2">
+					<li class="active"><a href="#">사용 가능 Shake Box 티켓</a></li>
+					<li><a href="#">사용된 Shake Box 티켓</a></li>
+				</ul>
+				<!-- 검색폼-->
+				<ul class="search v2">
+					<li class="srch_date">
+						<dl>
+							<dt>조회기간</dt>
+							<dd>
+								<ul class="list_date">
+									<li><a href="#" class="btn_black">15일</a></li>
+				                          <li class="active"><a href="#" class="btn_black">1개월</a></li>
+				                          <li><a href="#" class="btn_black">3개월</a></li>
+				                          <li><a href="#" class="btn_black">6개월</a></li>
+				                      </ul>
+								<div class="inquiry_date">
+									<input type="text" id="datepicker" value="2016.02.01" class="ip_txt">
+									<script type="text/javascript">
+										$(document).ready(function(){
+											$( "#datepicker" ).datepicker({
+												showOn: "button",
+												buttonImage: "",
+												buttonImageOnly: false,
+												buttonText: "배송일 변경",
+												dateFormat: 'yy.mm.dd',
+												prevText: '이전 달',
+												nextText: '다음 달',
+												monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+												monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+												dayNames: ['일','월','화','수','목','금','토'],
+												dayNamesShort: ['일','월','화','수','목','금','토'],
+												dayNamesMin: ['일','월','화','수','목','금','토'],
+												showMonthAfterYear: true,
+												yearSuffix: '년',
+												disabled: false
+											});
+										});
+									</script>
+								</div>
+								
+								<span class="txt_hypen">~</span>
+
+								<div class="inquiry_date">
+									<input type="text" id="datepicker2" value="2016.02.29" class="ip_txt">
+									<script type="text/javascript">
+									$(document).ready(function(){
+										$( "#datepicker2" ).datepicker({
+											showOn: "button",
+											buttonImage: "",
+											buttonImageOnly: false,
+											buttonText: "배송일 변경",
+											dateFormat: 'yy.mm.dd',
+											prevText: '이전 달',
+											nextText: '다음 달',
+											monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+											monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+											dayNames: ['일','월','화','수','목','금','토'],
+											dayNamesShort: ['일','월','화','수','목','금','토'],
+											dayNamesMin: ['일','월','화','수','목','금','토'],
+											showMonthAfterYear: true,
+											yearSuffix: '년',
+											disabled: false
+										});
+									});
+									</script>
+								</div>
+								<a href="#" class="btn_srch02">조회</a>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+				<!-- //검색폼-->
+
+				<!--  쉐이크박스 티켓 리스트 -->
+				<table class="tble_mypage mb">
+                          <caption>쉐이크박스 티켓 리스트</caption>
+                          <colgroup>
+                              <col width="181px">
+                              <col>
+                              <col width="218px">
+                          </colgroup>
+                          <thead>
+                              <tr>
+                                  <th>적립일</th>
+                                  <th>내용</th>
+                                  <th>지급티켓</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                              		<td colspan="3">
+                              			<div class="list_null v2">
+                              				<!-- 2016-06-08//수정(s) -->
+									<span class="ico_spr caution"></span>
+									<p>Shake Box 티켓 내역이 없습니다.</p>
+									<!-- 2016-06-08//수정(e) -->
+								</div>
+                              		</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                      <div class="page_nav" style="text-align:center">
+	                    <a href="" class="btn btn_first">처음</a>
+	                    <a href="" class="btn btn_prev3">이전</a>
+	                    <ul>
+	                        <li><strong>1</strong></li>
+	                    </ul>
+	                    <a href="" class="btn btn_next3">다음</a>
+	                    <a href="" class="btn btn_last">마지막</a>
+	                </div>
+				<!-- //쉐이크박스 티켓 리스트 -->
+
+				<!-- 2016-06-08//수정(s) -->
+				<!-- 쉐이크박스티켓 안내 -->
+				<dl class="info_box">
+					<dt class="tit_mypage v2">
+              				<!-- 2016-06-30//아이콘 추가(s) -->
+              				<span class="aside_l"><i class="ico_check"></i>Shake Box 티켓 안내</span>
+              				<!-- 2016-06-30//아이콘 추가(e) -->
+              				<span class="aside_r">
+              					<a href="#" class="btn_medium white">Shake Box 안내</a>
+              				</span>
+              			</dt>
+					<dd>
+						<ul class="list_type">
+							<li>Shake Box란 네이처리퍼블릭이 직접 구성한 특가 패키지 상품입니다.</li>
+							<li>지급받으신 Shake Box 티켓을 사용하여 Shake Box를 구매하실 수 있습니다.</li>
+							<li>Shake Box 이벤트는 매월 15일, 30일 네이처리퍼블릭 모바일 APP에서만 진행됩니다.</li>
+							<li>Shake Day는 본사 사정에 따라 예고없이 변경될 수 있습니다.</li>
+							<li>자세한 참여방법은 Shake Box 안내 페이지를 참고해주세요.</li>
+						</ul>
+					</dd>
+				</dl>
+				<!-- //쉐이크박스티켓 안내 -->
+				<!-- 2016-06-08//수정(s) -->
+
+			</div>
+			<!-- //mypage_content -->
+
+		</div>
+		<!-- //content -->
+
+		
+	</div>
+    <!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>

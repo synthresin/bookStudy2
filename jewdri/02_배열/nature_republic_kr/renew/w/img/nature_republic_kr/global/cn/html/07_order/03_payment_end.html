@@ -1,0 +1,525 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/order.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.free_gift .btn_control').click(function(e){
+		e.preventDefault();
+		$('.free_gift').toggleClass('open');
+	});
+});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container">
+		<!-- content -->
+		<div id="content">
+			<ol class="sub_navi">
+				<li><a href="#">home</a></li>
+				<li><a href="#">장바구니</a></li>
+				<li>주문결제</li>
+			</ol>
+			<div class="sub_tit_wrap v3">
+				<h2>주문완료</h2>
+				<ol class="flow_sub">
+					<li>
+						<span class="ico_spr bag"></span>
+						<strong>
+							<span>STEP1</span>
+							장바구니
+						</strong>
+					</li>
+					<li>
+						<span class="ico_spr pay"></span>
+						<strong>
+							<span>STEP2</span>
+							주문/결제
+						</strong>
+					</li>
+					<li class="active">
+						<span class="ico_spr pay_end"></span>
+						<strong>
+							<span>STEP3</span>
+							주문완료
+						</strong>
+					</li>
+				</ol>
+			</div>
+
+			<div class="pay_end_wrap">
+				<span class="ico_spr end_chk"></span>
+				<strong>주문이 정상적으로 완료되었습니다.</strong>
+				<p>
+					주문/배송에 대한 확인은 <em>[마이페이지 &gt; 주문조회 &gt; 주문/배송]</em> 메뉴에서 확인 가능합니다.<!-- 2016-06-21//텍스트수정 -->
+				</p>
+				<ul>
+					<li>
+						주문번호<em>201603181635512116</em>
+					</li>
+					<li>
+						최종 결제금액<em>42,000원</em>
+					</li>
+				</ul>
+			</div>
+
+			<div class="title_wrap">
+				<h3 class="tit_sub_02">주문상품</h3>
+			</div>
+
+			<div class="payment_section">
+				<table class="tble_type3">
+					<colgroup>
+						<col>
+						<col width="10%">
+						<col width="10%">			
+						<col width="10%">		
+						<col width="15%">	
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">상품정보</th>
+							<th scope="col">판매가격</th>
+							<th scope="col">수량</th>
+							<th scope="col">적립금</th>
+							<th scope="col">주문금액</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<div class="pro_thumb">
+									<div class="img_box">
+										<a href="#"><img src="../../img/tmp/img_product2.jpg" alt=""></a>
+									</div>
+									<div class="pro_info">
+										<a href="#">
+											<p>프로방스 카렌듈라 아이스 퍼프 선 SP-F50+ PA+++</p>
+										</a>
+									</div>
+								</div>
+							</td>
+							<td>
+								<strong>5,500 원</strong>
+							</td>
+							<td>
+								1
+							</td>
+							<td>200P</td>
+							<td>
+								<strong><em>11,000 원</em></strong>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="pro_thumb">
+									<div class="img_box">
+										<a href="#"><img src="../../img/tmp/img_product2.jpg" alt=""></a>
+									</div>
+									<div class="pro_info">
+										<a href="#">
+											<p class="tag"><span class="sale">50%<span class="ico_spr sale2"></span></span></p>
+											<p><em>50% 세일</em>프로방스 카렌듈라 아이스 퍼프 선 SP-F50+ PA+++</p>
+										</a>
+										<ul class="option">
+											<li>14호 피치 쉐이크</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+							<td>
+								<strong>5,500 원</strong>
+							</td>
+							<td>2</td>
+							<td>200P</td>
+							<td>
+								<strong><em>11,000 원</em></strong>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="pro_thumb">
+									<div class="img_box">
+										<a href="#"><img src="../../img/tmp/img_product2.jpg" alt=""></a>
+									</div>
+									<div class="pro_info">
+										<a href="#">
+											<p class="tag"><span class="sale">50%<span class="ico_spr sale2"></span></span></p>
+											<p><em>50% 세일</em>프로방스 카렌듈라 아이스 퍼프 선 SP-F50+ PA+++</p>
+										</a>
+									</div>
+								</div>
+							</td>
+							<td>
+								<strong>5,500 원</strong>
+							</td>
+							<td>3</td>
+							<td>200P</td>
+							<td>
+								<strong><em>11,000 원</em></strong>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<!-- 사은품 -->
+			<!-- 2016-06-21//수정(s) -->
+			<div class="payment_section v2">				
+				<h3 class="tit_sub_02">구매금액별 사은품</h3>
+				<table class="sel_gift_list">
+					<tr class="plus_product">
+						<td>
+							<ul>
+								<li>
+									<div class="img_box">
+										<img src="../../img/tmp/img_product2.jpg" alt="">
+									</div>
+									<dl>
+										<dt>사은품</dt>
+										<dd>제주 탄산 클렌징 티슈 5매입제주 탄산 클렌징 티슈 5매입</dd>
+										<dd>1개</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="img_box">
+										<img src="../../img/tmp/img_product2.jpg" alt="">
+									</div>
+									<dl>
+										<dt>사은품</dt>
+										<dd>제주 탄산 클렌징 티슈 5매입</dd>
+										<dd>1개</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="img_box">
+										<img src="../../img/tmp/img_product2.jpg" alt="">
+									</div>
+									<dl>
+										<dt>사은품</dt>
+										<dd>제주 탄산 클렌징 티슈 5매입</dd>
+										<dd>1개</dd>
+									</dl>
+								</li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="payment_section v2">				
+				<h3 class="tit_sub_02">쿠폰/특별 사은품</h3>
+				<table class="sel_gift_list">
+					<tr class="plus_product">
+						<td>
+							<ul>
+								<li>
+									<div class="img_box">
+										<img src="../../img/tmp/img_product2.jpg" alt="">
+									</div>
+									<dl>
+										<dt>정품</dt>
+										<dd>제주 탄산 클렌징 티슈 5매입제주 탄산 클렌징 티슈 5매입</dd>
+										<dd>1개</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="img_box">
+										<img src="../../img/tmp/img_product2.jpg" alt="">
+									</div>
+									<dl>
+										<dt>사은품</dt>
+										<dd>제주 탄산 클렌징 티슈 5매입</dd>
+										<dd>1개</dd>
+									</dl>
+								</li>
+								<li>
+									<div class="img_box">
+										<img src="../../img/tmp/img_product2.jpg" alt="">
+									</div>
+									<dl>
+										<dt>사은품</dt>
+										<dd>제주 탄산 클렌징 티슈 5매입</dd>
+										<dd>1개</dd>
+									</dl>
+								</li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!-- 2016-06-21//수정(e) -->
+			<!-- // 사은품 -->
+
+
+			<!-- 결제정보 -->
+			<div class="payment_section v2">
+				<div class="pay_info">
+					<h3 class="tit_sub_02">주문고객/배송지정보</h3>
+					<table class="tble_type3 pay_tble">
+						<colgroup>
+							<col width="23%">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">주문고객 정보</th>
+								<td>
+									김수산나 /  010-1234-1234 / susanna.kim@gmail.com
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">받으시는 분</th>
+								<td>
+									김수산나 /  010-1234-1234 / (우) 123-123<br>
+									서울시 용산구 한남동 657-133 디투빌딩 2층
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">배송 시 요청사항</th>
+								<td>
+									배송 전 연락주세요.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<div class="payment_section v2">
+						<h3 class="tit_sub_02">결제정보 (<em>신용카드</em>)</h3>
+						<table class="tble_type3 pay_tble pay_end_info">
+							<colgroup>
+								<col width="23%">
+								<col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">최종 결제금액</th>
+									<td>
+										<strong>42,000원</strong>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">결제정보</th>
+									<td>
+										<ul>
+											<li><em>결제카드</em><span>현대카드 (일시불)</span></li>
+											<li><em>결제자 성명</em><span>김수산나</span></li>
+											<li><em>결제승인일시</em><span>2016.04.01  12:35:32</span></li>
+										</ul>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="pay_total end">
+					<h3 class="tit_sub_02">총 결제 금액</h3>
+					<dl>
+						<dt>
+							<strong>총 주문금액</strong>
+							<span>58,000 원</span>
+						</dt>
+						<dd>
+							<ul>
+								<li>
+									<strong>배송비</strong>
+									<span>0 원</span>
+								</li>
+								<li>
+									<strong>쿠폰 할인금액</strong>
+									<span><em>-10,000</em> 원</span>
+								</li>
+								<li>
+									<strong>상품권 사용금액</strong>
+									<span><em>-10,000</em> 원</span>
+								</li>
+								<li>
+									<strong>포인트 사용금액</strong>
+									<span><em>-10,000</em> 원</span>
+								</li>
+								<!--2016-06-21//삭제//li>
+									<strong>적립예정 포인트</strong>
+									<span>500 P</span>
+								</li-->
+							</ul>
+						</dd>
+					</dl>
+					<div class="pay_end_area">
+						<dl>
+							<dt>최종 결제금액</dt>
+							<dd>
+								<strong><em>42,000</em> 원</strong>
+								<p>(500P 적립 예정)</p>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+			<!-- //결제정보 -->
+						
+			
+
+		</div>
+		<!-- //content -->
+
+		
+	</div>
+    <!-- //container -->
+
+	<!-- 카드 무이자 할부 혜택팝업 -->
+	<div class="pop_layer" id="pop_card">
+		<div class="bg"></div>
+		<div class="pop_wrap">
+			<div class="pop_header">
+				<h2>카드 무이자 할부 혜택</h2>
+			</div>
+			<div class="pop_content">
+				<table class="card_list">
+					<colgroup>
+						<col width="14%">
+						<col width="36%">
+						<col width="14%">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">
+								<img src="../../img/img_card.jpg" alt="삼성카드">
+							</th>
+							<td>
+								<strong>2~5개월 무이자 할부 (5만원 이상 결제 시)</strong>
+								<ul>
+									<li>6개월 (1회차 수수료 고객 부담)</li>
+									<li>10개월 (1~2회차 수수료 고객 부담)</li>
+									<li>12개월 (1~3회차 수수료 고객 부담)</li>
+								</ul>
+							</td>
+							<th scope="row">
+								<img src="../../img/img_card2.jpg" alt="현대카드">
+							</th>
+							<td>
+								<strong>2~5개월 무이자 할부 (5만원 이상 결제 시)</strong>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<img src="../../img/img_card3.jpg" alt="롯데카드">
+							</th>
+							<td>
+								<strong>2~5개월 무이자 할부 (5만원 이상 결제 시)</strong>
+								<ul>
+									<li>6개월 (1회차 수수료 고객 부담)</li>
+									<li>10개월 (1~2회차 수수료 고객 부담)</li>
+								</ul>
+							</td>
+							<th scope="row">
+								<img src="../../img/img_card4.jpg" alt="신한카드">
+							</th>
+							<td>
+								<strong>2~5개월 무이자 할부 (5만원 이상 결제 시)</strong>
+								<ul>
+									<li>6개월 (1회차 수수료 고객 부담)</li>
+									<li>10개월 (1~2회차 수수료 고객 부담)</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<img src="../../img/img_card5.jpg" alt="KB국민카드">
+							</th>
+							<td>
+								<strong>2~5개월 무이자 할부 (5만원 이상 결제 시)</strong>
+								<ul>
+									<li>6개월 (1회차 수수료 고객 부담)</li>
+									<li>10개월 (1~2회차 수수료 고객 부담)</li>
+								</ul>
+							</td>
+							<th scope="row">
+								<img src="../../img/img_card6.jpg" alt="NH농협카드">
+							</th>
+							<td>
+								<strong>2~5개월 무이자 할부 (5만원 이상 결제 시)</strong>
+								<ul>
+									<li>6개월 (1회차 수수료 고객 부담)</li>
+									<li>10개월 (1~2회차 수수료 고객 부담)</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<img src="../../img/img_card7.jpg" alt="하나카드">
+							</th>
+							<td>
+								<strong>2~5개월 무이자 할부 (5만원 이상 결제 시)</strong>
+								<ul>
+									<li>6개월 (1회차 수수료 고객 부담)</li>
+									<li>10개월 (1~2회차 수수료 고객 부담)</li>
+								</ul>
+							</td>
+							<th scope="row">
+								<img src="../../img/img_card6.jpg" alt="BCcard">
+							</th>
+							<td>
+								<strong>2~5개월 무이자 할부 (5만원 이상 결제 시)</strong>
+								<ul>
+									<li>6개월 (1회차 수수료 고객 부담)</li>
+									<li>10개월 (1~2회차 수수료 고객 부담)</li>
+									<li>12개월 (1~3회차 수수료 고객 부담)</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<dl class="guide_box">
+					<dt>카드사별 유의사항</dt>
+					<dd>
+						<ul class="list_type">
+							<li>사업장(법인, 개인), 체크, 선불, 기프트 카드는 행사에서 제외됩니다.</li> 
+							<li>직계약 가맹점 및 상점부담 무이자 가맹점, 특별 제휴 가맹점 등 일부 가맹점은 제외될 수 있습니다. </li> 
+							<li>부분 무이자할부 잔여회차는 해당 카드사에서 부담합니다. </li> 
+							<li>본 행사는 카드사 사정에 따라 변경 또는 중단될 수 있습니다. </li> 
+						</ul>
+					</dd>
+				</dl>
+			</div>
+			<a href="#" class="btn_close">닫기</a>
+		</div>
+	</div>
+	<!-- //카드 무이자 할부 혜택팝업 -->
+
+	<!-- 장바구니 알림팝업 -->
+	<div class="pop_layer" id="pop_caution">
+		<div class="bg"></div>
+		<div class="pop_wrap">
+			<div class="pop_content">
+				<div class="caution_txt">
+					<span class="ico_spr caution"></span>
+					 <p>
+						<strong><em>배쓰 앤 네이처 바디 로션</em>은 세트 행사 상품입니다. </strong><br>
+						현재 선택하신 수량은 세트 할인 행사 적용을 받지 못합니다.<br>
+						계속 진행하시겠습니까?
+					 </p>
+					 <div class="btn_wrap">
+						<a href="#">취소</a>
+						<a href="javascript:pop_layer_view('#pop_caution', 'close')" class="v2">확인</a>
+					 </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //장바구니 알림팝업 -->
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>

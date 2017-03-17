@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/cs_center.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.faq_type .list_title .title a').click(function(e){
+			e.preventDefault();
+			var title = $(this).closest('.list_title');
+			var st = title.hasClass('active');
+			if(!st){
+				$('.faq_type .list_title').removeClass('active');
+				$('.faq_type .list_view').removeClass('active');
+				title.addClass('active');
+				title.next().addClass('active');
+			}else{
+				title.removeClass('active');
+				title.next().removeClass('active');
+			}
+		});
+	});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container">
+
+		<!-- content -->
+		<div id="content">
+
+			<!-- sub_navi -->
+			<ol class="sub_navi">
+				<li><a href="#">home</a></li>
+				<li>客服中心</li>
+			</ol>
+			<!-- //sub_navi -->
+			<div class="sub_tit_wrap">
+				<h2>客服中心</h2>
+			</div>
+
+			<!-- cs_center_area{s} -->
+
+			<div class="cs_center_area">
+				<!-- cs_center_top{s} -->
+				<div class="cs_center_top">
+					<!-- notice{s} -->
+					<div class="notice">
+						<div class="title">
+							<h3>公告事項</h3>
+							<a href="#a" class="more">more</a>
+						</div>
+						<table class="tble_type4 line1">
+							<colgroup>
+								<col width="70px">
+								<col>
+								<col width="150px">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">編號</th>
+									<th scope="col">主題</th>
+									<th scope="col">上傳日期</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="fix">
+									<td>
+										<span class="ico_spr notice_stiky"></span>
+									</td>
+									<td class="title"><a href="#">서버점검안내</a></td>
+									<td>2016.01.25</td>
+								</tr>
+								<tr>
+									<td>
+										373
+									</td>
+									<td class="title"><a href="#">진생로얄실크워터리크림 7일 샘플 체험단 모집진생로얄실크워터리크림 7일 샘플 체험단 모집진생로얄실크워터리크림 7일 샘플 체험단 모집진생로얄실크워터리크림 7일 샘플 체험단 모집진생로얄실크워터리크림 7일 샘플 체험단 모집</a><span class="new">NEW</span></td>
+									<td>2016.01.25</td>
+								</tr>
+								<tr>
+									<td>
+										372
+									</td>
+									<td class="title"><a href="#">개인정보 유효기간 제도 안내</a></td>
+									<td>2016.01.25</td>
+								</tr>
+								<tr>
+									<td>
+										371
+									</td>
+									<td class="title"><a href="#">네이처리퍼블릭 ’수딩 앤 모이스처 알로에베라’</a></td>
+									<td>2016.01.25</td>
+								</tr>
+								<tr>
+									<td>
+										364
+									</td>
+									<td class="title"><a href="#">서버점검안내</a></td>
+									<td>2016.01.16</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- //notice{s} -->
+
+					<!-- banner{s} -->
+					<ul class="banner">
+						<li class="inquiry">
+							<a href="#">
+								<span class="ico_inquiry"></span>1:1客戶諮詢
+							</a>
+						</li>
+						<li class="center">
+							<ul>
+								<li class="consulting">
+									<span class="ico_consulting"></span>
+									<dl>
+										<dt>客服中心</dt>
+										<dd><a href="#">+82-2-3496-2792</a></dd>
+									</dl>
+
+								</li>
+								<li class="biz_hours">
+									<dl>
+										<dt>諮詢時間</dt>
+										<dd>
+											<ul>
+												<li><strong>週一~週五</strong>09:00 ~ 18:00 </li>
+												<li><strong>午休時間</strong>12:00 ~ 13:00</li>
+											</ul>
+										</dd>
+									</dl>
+								</li>
+								<li class="closed">
+									<p>諮詢時間以韓國時間為準<span>(週末、節日及假日休息）</span></p>
+								</li>
+							</ul>
+							<!-- <span></span><a href="#">고객 감동센터<em>080-890-6000</em></a>
+							<p>평일 월~금요일 09:00 ~ 18:00<br>점심시간 12:00 ~ 13:00 (주말, 공휴일 휴무)</p> -->
+						</li>
+					</ul>
+					<!-- banner{e} -->
+
+				</div>
+				<!-- cs_center_top{e} -->
+
+			</div>
+
+			<!-- cs_center_area{e} -->
+		</div>
+		<!-- //content -->
+
+	</div>
+    <!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+
+	<!-- 레이이팝업2 -->
+	<div class="pop_layer" id="pop_type2">
+		<div class="bg"></div>
+		<div class="pop_wrap">
+			<div class="pop_header">
+				<h2>김주하, 황금 케어 지금 시작하세요.</h2>
+				<div class="info">
+					<span class="date">2016.01.30</span>
+					<span><span class="ico_spr hit"></span>32</span>
+				</div>
+			</div>
+			<div class="pop_content">
+				<!-- thum_video -->
+				<div class="vd_player" style="width:736px; height:403px">
+					<a href="#" class="btn_play">
+						<img src="../../img/tmp/img_them_vd.jpg" alt="">
+					</a>
+					<div class="video">
+						<embed src="http://code.d2.co.kr/nature_republic/demo2/pc/vd/vd.mp4" width="100%" height="100%">
+					</div>
+				</div>
+				<!-- //thum_video -->
+				‘진생 로얄 실크’ 라인의 새로운 뮤즈, 김주하 아나운서!<br>
+				그녀의 ‘진생 로얄 실크 워터리 크림’ TV CF 를 공개합니다.<br><br>
+
+				미모와 지성을 겸비한 김주하 아나운서가익숙한 정장 차림을 벗고 아름다운 드레스를 입은 여신으로 대변신 ♥<br><br>
+
+				김주하 아나운서가 우연히 사용해보고 제품력에 반한 것이 브랜드 모델로의 인연까지 이어지게 되었다고 하는데요,<br>그녀가 극찬한 진생 로얄 실크 워터리 크림 TVCF를 지금 만나보세요!^^<br><br>
+
+				“자연의 귀한 원료로 누구보다 빛나는 피부, 황금 케어, 지금 시작하세요!”
+			</div>
+			<a href="#" class="btn_close">닫기</a>
+		</div>
+	</div>
+	<!-- //레이이팝업2 -->
+</div>
+<!-- //wrap  -->
+</body>
+</html>

@@ -1,0 +1,31 @@
+ 1.피보나치 20번쨰 원소까지 
+
+ 2. 배열 맨뒤에 원소 추가 
+
+push 
+ 3. 배열 앞부분에 원소추가 하기  ->  unshift 와의 차이점 
+ 4. unshift  / poo
+push / pop / unshift
+
+ ex> 	 push / pop -> 스택
+         shift / unshift -> 큐
+
+5.  배열 앞부분의 원소 지우기 3번과 반대 ->  shift 와의 차이점
+ 
+6. splice / 
+
+7. 2, 3차원 배열 => *메뉴구조 2 depth 까지 
+
+8. 여러배열 합치기 
+
+9. 반복자 함수 
+ every, some, forEach, map, filter, reduse 
+
+10, 검색과 정렬
+  reverse, sort
+
+ >사용자정의정렬
+ > 문자열정렬
+ > 검색
+ > 배열을 문자열로 변환
+ 
