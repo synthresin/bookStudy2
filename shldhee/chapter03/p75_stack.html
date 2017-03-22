@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stack</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function Stack() {
+
+            var items = [];
+
+            // 스택 꼭대기에 element 추가
+            this.push = function(element) {
+                items.push(element);
+            };
+
+            // Stack 꼭대기 element 반환하고 Stack에서 삭제
+            this.pop = function() {
+                return items.pop();
+            };
+
+            // Stack 꼭대기에 있는 element 반환하되 Stack은 변경하지 않는다.(element 삭제 하지 않는다.)
+            this.peek = function() {
+                return items[items.length-1];
+            };
+
+            // Stack에 element가 하나도 없으면 true, Stack의 크기가 0보다 크면 false를 반환한다.
+            this.isEmpty = function() {
+                return items.length == 0;
+            };
+
+            // Stack의 개수를 반환
+            this.size = function() {
+                return items.length;
+            };
+
+            // Stack 모든 element를 삭제
+            this.clear = function() {
+                items = [];
+            };
+
+            this.print = function() {
+                console.log(items.toString());
+            };
+        }
+
+        function divideBy2(decNumber) {
+
+            var remStack = new Stack(),
+                rem,
+                binaryString = '';
+
+            while (decNumber > 0) {
+                rem = Math.floor(decNumber % 2);
+                console.log("rem",rem);
+                remStack.push(rem);
+                remStack.print();
+                decNumber = Math.floor(decNumber/2);
+            }
+
+            while (!remStack.isEmpty()) {
+                binaryString += remStack.pop();
+                console.log(binaryString);
+            }
+
+            return binaryString;
+        }
+
+        function baseConverter(decNumber, base) {
+
+            var remStack = new Stack(),
+                rem,
+                baseString = '',
+                digits = '0123456789ABCDEF';
+
+            while (decNumber > 0) {
+                rem = Math.floor(decNumber % base);
+                remStack.push(rem);
+                decNumber = Math.floor(decNumber / base);
+            }
+
+            while (!remStack.isEmpty()) {
+                baseString += digits[remStack.pop()];
+                console.log(baseString);
+            }
+
+            return baseString;
+        }
+
+
+    </script>
+</body>
+</html>
