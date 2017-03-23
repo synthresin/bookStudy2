@@ -1,0 +1,421 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/cs_center.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery_ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.faq_type .list_title .title a').click(function(e){
+			e.preventDefault();
+			var title = $(this).closest('.list_title');
+			var st = title.hasClass('active');
+			if(!st){
+				$('.faq_type .list_title').removeClass('active');
+				$('.faq_type .list_view').removeClass('active');
+				title.addClass('active');
+				title.next().addClass('active');
+			}else{
+				title.removeClass('active');
+				title.next().removeClass('active');
+			}
+		});
+
+		var box = null;
+
+		$('.btn_medium.prd').click(function(){
+
+			var idx = $(this).closest('tr').index();
+			if(box == idx){
+				$('.pop_layer.cs_help .contents').removeClass('active');
+				$(this).removeClass('active');
+				box = null;
+			}else{
+				$('.tble_type3 .prd').removeClass('active');
+				$(this).addClass('active');
+				$('.pop_layer.cs_help .contents').addClass('active');
+				box = idx;
+			}
+
+		});
+
+		$('.product_lst li a').click(function(){
+			$(this).parent('li').toggleClass('active');
+		});
+
+	});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container">
+
+		<!-- content -->
+		<div id="content">
+
+			<!-- sub_navi -->
+			<ol class="sub_navi">
+				<li><a href="#">home</a></li>
+				<li><a href="#">고객센터</a></li>
+				<li>1:1 고객문의</li>
+			</ol>
+			<!-- //sub_navi -->
+
+			<div class="sub_tit_wrap">
+				<h2>1:1 고객문의</h2>
+			</div>
+
+			<!-- customer_help{s} -->
+
+			<div class="customer_help">
+				<table class="tble_customer">
+					<thead>
+						<tr>
+							<th scope="col">
+
+								<span class="custom_form">
+									<input type="radio" id="radio_customer" name="radio_customer">
+									<label for="radio_customer" class="ip_rdo checked"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+										<em></em><span>쇼핑몰 문의하기</span> 
+									</label>
+								</span>
+								<span class="custom_form">
+									<input type="radio" id="radio_customer" name="radio_customer">
+									<label for="radio_customer" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+										<em></em><span>매장 문의하기</span> 
+									</label>
+								</span>
+								<span class="custom_form">
+									<input type="radio" id="radio_customer" name="radio_customer">
+									<label for="radio_customer" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+										<em></em><span>제품 문의 및 기타</span> 
+									</label>
+								</span>
+
+							</th>
+						</tr>
+						<tr>
+							<th scope="col">
+								<span class="custom_form">
+									<input type="radio" id="radio_customer" name="radio_customer">
+									<label for="radio_customer" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+										<em></em><span>주문/결제</span> 
+									</label>
+								</span>
+								<span class="custom_form">
+									<input type="radio" id="radio_customer" name="radio_customer">
+									<label for="radio_customer" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+										<em></em><span>취소/반품/교환</span> 
+									</label>
+								</span>
+								<span class="custom_form">
+									<input type="radio" id="radio_customer" name="radio_customer">
+									<label for="radio_customer" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+										<em></em><span>배송</span> 
+									</label>
+								</span>
+								<span class="custom_form">
+									<input type="radio" id="radio_customer" name="radio_customer">
+									<label for="radio_customer" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+										<em></em><span>쿠폰/상품권</span> 
+									</label>
+								</span>
+								<span class="custom_form">
+									<input type="radio" id="radio_customer" name="radio_customer">
+									<label for="radio_customer" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+										<em></em><span>멤버십</span> 
+									</label>
+								</span>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<div class="form_item" style="height:58px">
+									<label for="temp_input" class="i_label" style="position: absolute;">제목을 입력해주세요. (최대30자)</label>
+									<input type="text" name="" id="temp_input" class="i_text" style="width:883px; height:28px;">
+									<span class="i_label" style="position: absolute;top:35px;left:845px">0/30자</span>
+								</div>
+								<div class="form_item" style="height:161px">
+									<span class="i_label" style="position: absolute;">내용을 입력해주세요. (최대2,000자)</span>
+									<textarea name="" id="temp_input" class="i_text" cols="30" rows="10" style="width:883px; height:138px;"></textarea>
+									<span class="i_label" style="position: absolute;top:145px;left:827px">0/2,000자</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="narrow_p">
+								<div class="form_srch">
+									<div class="form_item">
+										<label class="i_label" style="position: absolute;">주문 정보 또는 상품을 선택하세요. (선택사항)</label>
+										<input type="text" name="" id="file_input" class="i_text">
+									</div><a href="javascript:pop_layer_view('#pop_type');" class="btn_srch">조회</a>
+								</div>
+
+								<div class="srch_list">
+									<div class="prd_name">
+										20160521020705  진생 로얄 실크 워터리 크림 외 2개
+										<a href="#"><span class="ico_remove"></span></a>
+									</div>
+								</div>	
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="form_srch">
+									<div class="form_item">
+										<label class="i_label" style="position: absolute;">이미지를 등록해주세요. (10MB 미만으로 업로드 됩니다.)</label>
+										<input type="text" name="" id="file_input" class="i_text">
+									</div>
+									<label for="file_add3" class="ip_file btn_srch"><input type="file" id="file_add3" name="file_add">찾기</label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<em>이메일로 답변을 받으실래요?</em>
+								<div class="email_form">
+									<input type="text" name="" id="file_input" class="i_text" style="width:192px;height:28px;"> @ <input type="text" name="" id="file_input" class="i_text" style="width:192px;height:28px;">
+
+									<div class="sel_box v3">
+										<select onchange="alert($(this).val())">
+											<option value="1">옵션1</option>
+											<option value="2">옵션2</option>
+											<option value="3">옵션3</option>
+											<option value="4">옵션4</option>
+										</select>
+									</div>
+									
+
+									<div class="form_item">
+										<span class="custom_form">
+											<input type="radio" id="radio_email" name="radio_email">
+											<label for="radio_email" class="ip_rdo checked"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+												<em></em><span>받을래요</span> 
+											</label>
+										</span>
+										<span class="custom_form">
+											<input type="radio" id="radio_email" name="radio_email">
+											<label for="radio_email" class="ip_rdo"><!-- 라디오 checked인 경우 클래스 추가 : checked -->
+												<em></em><span>안받을래요</span> 
+											</label>
+										</span>
+									</div>
+								</div>
+
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="btn">
+					<a href="#a" class="btn_cancle">취소</a>
+					<a href="#a" class="btn_enroll">등록</a>
+				</div>
+
+			</div>
+
+			<!-- customer_help{e} -->
+		</div>
+		<!-- //content -->
+
+	</div>
+    <!-- //container -->
+    <!-- 장바구니 알림팝업 -->
+	<div class="pop_layer" id="pop_caution">
+		<div class="bg"></div>
+		<div class="pop_wrap">
+			<div class="pop_content">
+				<div class="caution_txt">
+					<span class="ico_spr caution"></span>
+					 <p>
+					 	<!-- 내용수정 -->
+						<strong>해당 서비스는 로그인이 필요합니다.</strong><br>
+						로그인 페이지로 이동하시겠습니까?
+						<!-- 내용수정 -->
+					 </p>
+					 <div class="btn_wrap">
+						<a href="#">취소</a>
+						<a href="javascript:pop_layer_view('#pop_caution', 'close')" class="v2">확인</a>
+					 </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //장바구니 알림팝업 -->
+	<?php include('../00_common/footer.html'); ?>
+
+	<!-- 주문 번호/상품 조회 팝업 -->
+	<div class="pop_layer cs_help" id="pop_type">
+		<div class="bg"></div>
+		<div class="pop_wrap">
+			<div class="pop_header">
+				<h2>주문 번호/상품 조회</h2>
+			</div>
+			<div class="pop_content">
+				<!-- tab_menu{s} -->
+				<ul class="tab_sub2">
+					<li class="active"><a href="#">주문 번호</a></li>
+					<li><a href="#">상품 검색</a></li>
+				</ul>
+				<!-- schedule{s} -->
+				<div class="form_schd">
+					<ul class="list_date">
+	                          <li class="active"><a href="#" class="btn_black">3개월</a></li>
+	                          <li><a href="#" class="btn_black">6개월</a></li>
+	                          <li><a href="#" class="btn_black">1년</a></li>
+	                      </ul>
+
+	                      <div class="inquiry_date">
+	                        <input type="text" id="datepicker" value="2016.02.01" class="ip_txt">
+	                        <script type="text/javascript">
+	                            $(document).ready(function(){
+	                                $( "#datepicker" ).datepicker({
+	                                showOn: "button",
+	                                buttonImage: "",
+	                                buttonImageOnly: false,
+	                                buttonText: "배송일 변경",
+	                                dateFormat: 'yy.mm.dd',
+	                                prevText: '이전 달',
+	                                nextText: '다음 달',
+	                                monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+	                                monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+	                                dayNames: ['일','월','화','수','목','금','토'],
+	                                dayNamesShort: ['일','월','화','수','목','금','토'],
+	                                dayNamesMin: ['일','월','화','수','목','금','토'],
+	                                showMonthAfterYear: true,
+	                                yearSuffix: '년',
+	                                disabled: false
+	                                });
+	                            });
+	                        </script>
+	                    </div>
+	                    <span class="txt_hypen">~</span>
+	                    <div class="inquiry_date">
+	                        <input type="text" id="datepicker2" value="2016.02.29" class="ip_txt">
+	                        <script type="text/javascript">
+	                            $(document).ready(function(){
+	                                $( "#datepicker2" ).datepicker({
+	                                showOn: "button",
+	                                buttonImage: "",
+	                                buttonImageOnly: false,
+	                                buttonText: "배송일 변경",
+	                                dateFormat: 'yy.mm.dd',
+	                                prevText: '이전 달',
+	                                nextText: '다음 달',
+	                                monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+	                                monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+	                                dayNames: ['일','월','화','수','목','금','토'],
+	                                dayNamesShort: ['일','월','화','수','목','금','토'],
+	                                dayNamesMin: ['일','월','화','수','목','금','토'],
+	                                showMonthAfterYear: true,
+	                                yearSuffix: '년',
+	                                disabled: false
+	                                });
+	                            });
+	                        </script>
+                   		</div>
+                   		<!-- schedule{e} -->
+                    		<a href="#" class="btn_srch">검색</a>
+				</div>
+				<table class="tble_type3">
+				<colgroup>
+					<col width="15%">
+					<col width="20%">
+					<col width="40%">
+					<col>					
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">주문일자</th>
+						<th scope="col">주문번호</th>
+						<th scope="col" colspan="2">주문 상품명</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>2016.01.21</td>
+						<td>20160121020705</td>
+						<td class="title"><a href="#">진생 로얄 실크 워터리 크림</a></td>
+						<td><a href="#" class="btn_medium white">주문선택</a><a href="#" class="btn_medium white prd">상품선택</a></td>
+					</tr>
+					<tr>
+						<td>2016.05.21</td>
+						<td>20160121020705</td>
+						<td class="title"><a href="#">진생 로얄 실크 워터리 크림 외 2개 </a></td>
+						<td><a href="#" class="btn_medium white">주문선택</a><a href="#" class="btn_medium white prd" >상품선택</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- product_contents{s} -->
+			<div class="contents">
+				* 주문 번호에 해당하는 상품은 최대 5개까지 선택 가능합니다.
+				<ul class="product_lst">
+					<li class="r_first">
+						<a href="#">
+							<div class="img_box">
+								<img src="../../img/tmp/img_order_product01.jpg">
+							</div>
+							<p>크리미 바디워시 - 올리브</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="img_box">
+								<img src="../../img/tmp/img_order_product01.jpg">
+							</div>
+							<p>슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]</p>
+						</a>
+					</li>
+					<li class="r_first">
+						<a href="#">
+							<div class="img_box">
+								<img src="../../img/tmp/img_order_product01.jpg">
+							</div>
+							<p>크리미 바디워시 - 올리브</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="img_box">
+								<img src="../../img/tmp/img_order_product01.jpg">
+							</div>
+							<p>슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]</p>
+						</a>
+					</li>
+				</ul>
+				<div class="btn_inquiry">
+					<a href="#" class="btn_medium">등록</a>
+				</div>
+			</div>
+			<!-- product_contents{e} -->
+			<!-- page_nav{s}-->
+			<div class="page_nav" style="text-align:center">
+                    <a href="" class="btn btn_first">처음</a>
+                    <a href="" class="btn btn_prev3">이전</a>
+                    <ul>
+                        <li><strong>1</strong></li>
+                    </ul>
+                    <a href="" class="btn btn_next3">다음</a>
+                    <a href="" class="btn btn_last">마지막</a>
+                </div>
+                <!-- page_nav{e}-->
+			</div>
+			<a href="#" class="btn_close">닫기</a>
+		</div>
+	</div>
+	<!-- //주문 번호/상품 조회 팝업 -->
+</div>
+<!-- //wrap  -->
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/cs_center.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery_ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.faq_type .list_title .title a').click(function(e){
+			e.preventDefault();
+			var title = $(this).closest('.list_title');
+			var st = title.hasClass('active');
+			if(!st){
+				$('.faq_type .list_title').removeClass('active');
+				$('.faq_type .list_view').removeClass('active');
+				title.addClass('active');
+				title.next().addClass('active');
+			}else{
+				title.removeClass('active');
+				title.next().removeClass('active');
+			}
+		});
+
+		var box = null;
+
+		$('.btn_medium.prd').click(function(){
+
+			var idx = $(this).closest('tr').index();
+			if(box == idx){
+				$('.pop_layer.cs_help .contents').removeClass('active');
+				$(this).removeClass('active');
+				box = null;
+			}else{
+				$('.tble_type3 .prd').removeClass('active');
+				$(this).addClass('active');
+				$('.pop_layer.cs_help .contents').addClass('active');
+				box = idx;
+			}
+
+		});
+
+		$('.product_lst li a').click(function(){
+			$(this).parent('li').toggleClass('active');
+		});
+
+	});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container">
+
+		<!-- content -->
+		<div id="content">
+
+			<!-- sub_navi -->
+			<ol class="sub_navi">
+				<li><a href="#">home</a></li>
+				<li><a href="#">客服中心</a></li>
+				<li>1:1客戶諮詢</li>
+			</ol>
+			<!-- //sub_navi -->
+
+			<div class="sub_tit_wrap">
+				<h2>1:1客戶諮詢</h2>
+			</div>
+
+			<!-- customer_help{s} -->
+
+			<div class="customer_help">
+				<table class="tble_customer">
+					<tbody>
+						<tr>
+							<td>
+								<div class="form_item email_form ">
+									<label for="temp_input" class="i_label" style="position: absolute;">電子信箱地址</label>
+									<input type="text" name="" id="file_input" class="i_text" style="width:200px;height:30px;"> @ <input type="text" name="" id="file_input" class="i_text" style="width:200px;height:30px;">
+									<em>有關諮詢內容的答覆將寄至您的電子信箱</em>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="sel_input">
+									<div class="sel_box">
+										<select onchange="alert($(this).val())">
+											<option value="1">選擇諮詢類型</option>
+											<option value="2">選擇諮詢類型</option>
+											<option value="3">選擇諮詢類型</option>
+											<option value="4">選擇諮詢類型</option>
+										</select>
+									</div>
+									<div class="form_item" style="height:58px">
+										<label for="temp_input" class="i_label" style="position: absolute;">請輸入諮詢主題</label>
+										<input type="text" name="" id="temp_input" class="i_text" style="width:100%; height:30px;">
+										<span class="i_label" style="position: absolute;top:35px;right:0;left:auto;">0/60bytes</span>
+									</div>
+								</div>
+
+								<div class="form_item" style="height:161px">
+									<span class="i_label" style="position: absolute;">請輸入諮詢內容。</span>
+									<textarea name="" id="temp_input" class="i_text" cols="30" rows="10" style="width:100%; height:138px;"></textarea>
+									<span class="i_label" style="position: absolute;top:145px;right:0;left:auto;">0/2,000bytes</span>
+								</div>
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+
+				<div class="btn">
+					<a href="#a" class="btn_cancle">取消</a>
+					<a href="#a" class="btn_enroll">上傳</a>
+				</div>
+
+			</div>
+
+			<!-- customer_help{e} -->
+		</div>
+		<!-- //content -->
+
+	</div>
+    <!-- //container -->
+    <!-- 장바구니 알림팝업 -->
+	<div class="pop_layer" id="pop_caution">
+		<div class="bg"></div>
+		<div class="pop_wrap">
+			<div class="pop_content">
+				<div class="caution_txt">
+					<span class="ico_spr caution"></span>
+					 <p>
+					 	<!-- 내용수정 -->
+						<strong>해당 서비스는 로그인이 필요합니다.</strong><br>
+						로그인 페이지로 이동하시겠습니까?
+						<!-- 내용수정 -->
+					 </p>
+					 <div class="btn_wrap">
+						<a href="#">취소</a>
+						<a href="javascript:pop_layer_view('#pop_caution', 'close')" class="v2">확인</a>
+					 </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //장바구니 알림팝업 -->
+	<?php include('../00_common/footer.html'); ?>
+
+	<!-- 주문 번호/상품 조회 팝업 -->
+	<div class="pop_layer cs_help" id="pop_type">
+		<div class="bg"></div>
+		<div class="pop_wrap">
+			<div class="pop_header">
+				<h2>주문 번호/상품 조회</h2>
+			</div>
+			<div class="pop_content">
+				<!-- tab_menu{s} -->
+				<ul class="tab_sub2">
+					<li class="active"><a href="#">주문 번호</a></li>
+					<li><a href="#">상품 검색</a></li>
+				</ul>
+				<!-- schedule{s} -->
+				<div class="form_schd">
+					<ul class="list_date">
+	                          <li class="active"><a href="#" class="btn_black">3개월</a></li>
+	                          <li><a href="#" class="btn_black">6개월</a></li>
+	                          <li><a href="#" class="btn_black">1년</a></li>
+	                      </ul>
+
+	                      <div class="inquiry_date">
+	                        <input type="text" id="datepicker" value="2016.02.01" class="ip_txt">
+	                        <script type="text/javascript">
+	                            $(document).ready(function(){
+	                                $( "#datepicker" ).datepicker({
+	                                showOn: "button",
+	                                buttonImage: "",
+	                                buttonImageOnly: false,
+	                                buttonText: "배송일 변경",
+	                                dateFormat: 'yy.mm.dd',
+	                                prevText: '이전 달',
+	                                nextText: '다음 달',
+	                                monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+	                                monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+	                                dayNames: ['일','월','화','수','목','금','토'],
+	                                dayNamesShort: ['일','월','화','수','목','금','토'],
+	                                dayNamesMin: ['일','월','화','수','목','금','토'],
+	                                showMonthAfterYear: true,
+	                                yearSuffix: '년',
+	                                disabled: false
+	                                });
+	                            });
+	                        </script>
+	                    </div>
+	                    <span class="txt_hypen">~</span>
+	                    <div class="inquiry_date">
+	                        <input type="text" id="datepicker2" value="2016.02.29" class="ip_txt">
+	                        <script type="text/javascript">
+	                            $(document).ready(function(){
+	                                $( "#datepicker2" ).datepicker({
+	                                showOn: "button",
+	                                buttonImage: "",
+	                                buttonImageOnly: false,
+	                                buttonText: "배송일 변경",
+	                                dateFormat: 'yy.mm.dd',
+	                                prevText: '이전 달',
+	                                nextText: '다음 달',
+	                                monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+	                                monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+	                                dayNames: ['일','월','화','수','목','금','토'],
+	                                dayNamesShort: ['일','월','화','수','목','금','토'],
+	                                dayNamesMin: ['일','월','화','수','목','금','토'],
+	                                showMonthAfterYear: true,
+	                                yearSuffix: '년',
+	                                disabled: false
+	                                });
+	                            });
+	                        </script>
+                   		</div>
+                   		<!-- schedule{e} -->
+                    		<a href="#" class="btn_srch">검색</a>
+				</div>
+				<table class="tble_type3">
+				<colgroup>
+					<col width="15%">
+					<col width="20%">
+					<col width="40%">
+					<col>
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">주문일자</th>
+						<th scope="col">주문번호</th>
+						<th scope="col" colspan="2">주문 상품명</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>2016.01.21</td>
+						<td>20160121020705</td>
+						<td class="title"><a href="#">진생 로얄 실크 워터리 크림</a></td>
+						<td><a href="#" class="btn_medium white">주문선택</a><a href="#" class="btn_medium white prd">상품선택</a></td>
+					</tr>
+					<tr>
+						<td>2016.05.21</td>
+						<td>20160121020705</td>
+						<td class="title"><a href="#">진생 로얄 실크 워터리 크림 외 2개 </a></td>
+						<td><a href="#" class="btn_medium white">주문선택</a><a href="#" class="btn_medium white prd" >상품선택</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- product_contents{s} -->
+			<div class="contents">
+				* 주문 번호에 해당하는 상품은 최대 5개까지 선택 가능합니다.
+				<ul class="product_lst">
+					<li class="r_first">
+						<a href="#">
+							<div class="img_box">
+								<img src="../../img/tmp/img_order_product01.jpg">
+							</div>
+							<p>크리미 바디워시 - 올리브</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="img_box">
+								<img src="../../img/tmp/img_order_product01.jpg">
+							</div>
+							<p>슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]</p>
+						</a>
+					</li>
+					<li class="r_first">
+						<a href="#">
+							<div class="img_box">
+								<img src="../../img/tmp/img_order_product01.jpg">
+							</div>
+							<p>크리미 바디워시 - 올리브</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="img_box">
+								<img src="../../img/tmp/img_order_product01.jpg">
+							</div>
+							<p>슈퍼 아쿠아 맥스 컴비네이션 수분 크림 [복합성용]</p>
+						</a>
+					</li>
+				</ul>
+				<div class="btn_inquiry">
+					<a href="#" class="btn_medium">등록</a>
+				</div>
+			</div>
+			<!-- product_contents{e} -->
+			<!-- page_nav{s}-->
+			<div class="page_nav" style="text-align:center">
+                    <a href="" class="btn btn_first">처음</a>
+                    <a href="" class="btn btn_prev3">이전</a>
+                    <ul>
+                        <li><strong>1</strong></li>
+                    </ul>
+                    <a href="" class="btn btn_next3">다음</a>
+                    <a href="" class="btn btn_last">마지막</a>
+                </div>
+                <!-- page_nav{e}-->
+			</div>
+			<a href="#" class="btn_close">닫기</a>
+		</div>
+	</div>
+	<!-- //주문 번호/상품 조회 팝업 -->
+</div>
+<!-- //wrap  -->
+</body>
+</html>

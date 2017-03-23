@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/event.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var btn_dice = $('.dice_area .btn_dice');
+	var btn_move = $('.dice_area .btn_move');
+	var move_ico = $('.check_point');
+	var dice = $('.dice_area .dice');
+	var dice_num = 0;
+
+	//주사위 버튼 클릭시
+	btn_dice.click(function(e){
+		e.preventDefault();
+		var st = $('.dice_area').hasClass('end');
+		if(st) return false
+
+		var st2 = $('.dice_area').hasClass('mv_end');
+
+		if(st2){
+			alert('오늘의 주사위를 이미 던지셨습니다. (1일 1회) 내일 또 봐요~');
+			return false
+		}
+
+		dice_num = Math.floor(Math.random() * 3 + 1);   //주사위결과값 1~3까지 랜덤
+		dice_motion(dice_num);			
+	});
+
+	// 말이동하기 버튼 클릭시
+	btn_move.click(function(e){
+		e.preventDefault();
+		var num = move_ico.attr('class').substring(14);
+		num = parseInt(num);
+		move_ico.removeClass('mv'+num);
+		num = num + dice_num;
+		move_ico.addClass('mv'+num);
+		var arrive_area = $('.move_area li:eq('+num+')');
+		var arrive_st = arrive_area.hasClass('point');
+		
+		if(arrive_st){
+			var point_num =  arrive_area.attr('class').substring(15);	
+			setTimeout(function(){
+				pop_check_event('point',point_num)
+			}, 1000);
+			//alert('포인트:'+point_num);
+		}else{
+			var ingre_num = arrive_area.attr('class').substring(25,27);			 //2016-07-06//수정
+			$('.stamp_area li.ingre_'+ingre_num).removeClass('no_gain');		
+			var idx = Number(ingre_num)-1;
+			setTimeout(function(){
+				pop_check_event('ingre',idx)
+			}, 1000);
+		}
+		$('.dice_area').removeClass('end');
+		$('.dice_area').addClass('mv_end');
+		arrive_area.addClass('end'); //2016-07-06//추가 
+	});
+
+	//주사위 모션
+	function dice_motion(n){
+		dice.animate({ left: '+2px' }, 100, function () {
+			dice.addClass("dice_t");
+		}).delay(200).animate({ top: '-36px' }, 100, function () {  //2016-07-06//top값수정
+			dice.removeClass("dice_t").addClass("dice_s");
+		}).delay(200).animate({ opacity: 'show' }, 600, function () {
+			dice.removeClass("dice_s").addClass("dice_e");
+		}).delay(100).animate({ left: '-2px', top: '-2px' }, 100, function () {
+			dice.removeClass("dice_e").addClass("dice_" + n);
+			$('.dice_area').addClass('end');
+		});
+	}
+	
+	//말이동후 레이어팝업 및 원료스토리 팝업 
+	function pop_check_event(st,idx){
+		$('#check_event_pop').removeClass('ingre_pop');
+		$('#check_event_pop').removeClass('point_pop');
+		$('#check_event_pop ul li').removeClass('active');
+		if(st == 'point'){
+			idx = Number(idx.substring(1));
+			if(idx == 5) idx = 0;
+			else if(idx == 10) idx=1;
+			else if(idx == 15) idx=2;
+			$('#check_event_pop').addClass('point_pop');
+			$('#check_event_pop ul.point_pop li').eq(idx).addClass('active');
+		}else{		
+			$('#check_event_pop').addClass('ingre_pop');
+			$('#check_event_pop ul.ingre_pop li').eq(idx).addClass('active');
+		}
+		var top = $(window).scrollTop()+200;
+		$('#check_event_pop .pop_wrap').css('top',top+'px');
+		$('#check_event_pop').addClass('open');
+	}
+
+	//원료성분 이미지 클릭
+	$('.stamp_area .ingredient > span').click(function(e){
+		e.preventDefault();
+		var idx = $(this).parent().index();
+		pop_check_event('ingre',idx);
+	});
+	$('.move_area .ingredient > span').click(function(e){
+		e.preventDefault();
+		var idx = Number($(this).parent().attr('class').substring(25,27))-1; //2016-07-06//수정
+		pop_check_event('ingre',idx);
+	});
+});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container">
+
+		<!-- content -->
+		<div id="content">
+
+			<!-- sub_navi -->
+			<ol class="sub_navi">
+				<li><a href="#">home</a></li>
+				<li><a href="#">이벤트</a></li>
+				<li>당첨자 발표</li>
+			</ol>
+			<!-- //sub_navi -->
+
+			<div class="sub_tit_wrap v2">
+				<h2>이벤트</h2>
+				<ul class="tab_sub2">
+					<li><a href="#">진행 중 이벤트</a></li>
+					<li><a href="#">당첨자 발표</a></li>
+					<li><a href="#">진행 종료 이벤트</a></li>
+					<li class="active"><a href="#">출석 체크 이벤트</a></li>
+				</ul>
+			</div>
+			<!-- 2016-07-06//추가(s) -->
+			<div class="check_event_top">
+				<img src="../../img/img_check_event_top.jpg" alt="네이처마블">
+			</div>
+			<!-- 2016-07-06//추가(e) -->
+
+			<!-- check_event_wrap -->
+			<div class="check_event_wrap">
+				
+				<span class="check_point mv0"><span>이동하는 말</span></span> <!-- 전에 출석체크이벤트를 했을경우, 말이이동한 위치를 mv0,mv1~mv35까지 저장시켜 class를 바꿔줌-->
+
+				<!-- 2016-07-11//이동영역성분클래스변경(s) -->
+				<ul class="move_area">
+					<li class="move_00">START!</li>
+					<li class="move_01 point p_5"><span>5P</span></li>
+					<li class="move_02 ingredient ingre_02"><span></span></li>
+					<li class="move_03 point p_10"><span>10P</span></li>
+					<li class="move_04 ingredient ingre_10"><span></span></li>
+					<li class="move_05 ingredient ingre_01"><span></span></li>
+					<li class="move_06 point p_15"><span>15P</span></li>
+					<li class="move_07 ingredient ingre_17"><span></span></li>
+					<li class="move_08 point p_5"><span>5P</span></li>
+					<li class="move_09 ingredient ingre_19 end"><span></span></li><!-- 2016-07-06//획득한부분에 클래스 추가 : end -->
+					<li class="move_10 ingredient ingre_07"><span></span></li>
+					<li class="move_11 point p_5"><span>5P</span></li>
+					<li class="move_12 ingredient ingre_05"><span></span></li>
+					<li class="move_13 ingredient ingre_14"><span></span></li>
+					<li class="move_14 point p_15"><span>15P</span></li>
+					<li class="move_15 ingredient ingre_18 end"><span></span></li><!-- 2016-07-06//획득한부분에 클래스 추가 : end -->
+					<li class="move_16 ingredient ingre_20"><span></span></li>
+					<li class="move_17 point p_15"><span>15P</span></li>
+					<li class="move_18 ingredient ingre_11"><span></span></li>
+					<li class="move_19 ingredient ingre_12"><span></span></li>
+					<li class="move_20 point p_5"><span>5P</span></li>
+					<li class="move_21 ingredient ingre_08"><span></span></li>
+					<li class="move_22 ingredient ingre_06"><span></span></li>
+					<li class="move_23 point p_10"><span>10P</span></li>
+					<li class="move_24 point p_15"><span>15P</span></li>
+					<li class="move_25 ingredient ingre_09"><span></span></li>
+					<li class="move_26 ingredient ingre_04"><span></span></li>
+					<li class="move_27 point p_10"><span>10P</span></li>
+					<li class="move_28 ingredient ingre_03"><span></span></li>
+					<li class="move_29 ingredient ingre_16"><span></span></li>
+					<li class="move_30 point p_10"><span>10P</span></li>
+					<li class="move_31 point p_15"><span>15P</span></li>
+					<li class="move_32 point p_5"><span>5P</span></li>
+					<li class="move_33 ingredient ingre_13"><span></span></li>
+					<li class="move_34 point p_15"><span>15P</span></li>
+					<li class="move_35 ingredient ingre_15"><span></span></li>
+				</ul>
+				<!-- 2016-07-11//이동영역성분클래스변경(e) -->
+
+				<div class="stamp_area">
+					<h3 class="blind">INGREDIENT STAMP</h3>
+					<ul>
+						<li class="ingredient no_gain ingre_01"><span></span></li> <!-- 이미획득한 원료스템프에 클래스 제거 : no_gain -->
+						<li class="ingredient no_gain ingre_02"><span></span></li>
+						<li class="ingredient no_gain ingre_03"><span></span></li>
+						<li class="ingredient no_gain ingre_04"><span></span></li>
+						<li class="ingredient no_gain ingre_05"><span></span></li>
+						<li class="ingredient no_gain ingre_06"><span></span></li>
+						<li class="ingredient no_gain ingre_07"><span></span></li>
+						<li class="ingredient no_gain ingre_08"><span></span></li>
+						<li class="ingredient no_gain ingre_09"><span></span></li>
+						<li class="ingredient no_gain ingre_10"><span></span></li>
+						<li class="ingredient no_gain ingre_11"><span></span></li>
+						<li class="ingredient no_gain ingre_12"><span></span></li>
+						<li class="ingredient no_gain ingre_13"><span></span></li>
+						<li class="ingredient no_gain ingre_14"><span></span></li>
+						<li class="ingredient no_gain ingre_15"><span></span></li>
+						<li class="ingredient no_gain ingre_16"><span></span></li>
+						<li class="ingredient no_gain ingre_17"><span></span></li>
+						<li class="ingredient no_gain ingre_18"><span></span></li>
+						<li class="ingredient no_gain ingre_19"><span></span></li>
+						<li class="ingredient no_gain ingre_20"><span></span></li>
+					</ul>
+				</div>
+				<div class="dice_area"> <!-- 이미 하루에 1번했을시 클래스 추가 : mv_end -->
+					<span class="dice"></span>
+					<a href="#" class="btn_dice">주사위 던지기</a>
+					<a href="#" class="btn_move">말 이동하기</a>
+				</div>
+				<div class="score_area">
+					<h3 class="blind">누적 현황</h3>
+					<dl>
+						<dt class="blind">포인트</dt>
+						<dd>500<span class="blind">점</span></dd>
+					</dl>
+					<dl>
+						<dt class="blind">원료 스탬프</dt>
+						<dd>14<span class="blind">개</span></dd>
+					</dl>
+				</div>
+			</div>
+			<!-- //check_event_wrap -->
+
+			<!-- 2016-07-06//추가(s) -->
+			<dl class="guide_box check_guide">
+				<dt><span class="check"></span>네이처 마블 이벤트 안내</dt>
+				<dd>
+					<ul class="list_type">
+						<li>ID당 PC/모바일/앱 포함 1일 1회 참여할 수 있습니다.</li>
+						<li>매달 1일 게임이 리셋됩니다.</li>
+						<li>지급된 쿠폰은 [마이페이지>쇼핑 혜택>쿠폰 조회]에서 확인하실 수 있습니다.</li>
+						<li>해당 이벤트는 당사 사정에 따라 변경될 수 있습니다.</li>
+					</ul>
+				</dd>
+			</dl>
+			<!-- 2016-07-06//추가(e) -->
+      </div>
+
+
+
+		</div>
+		<!-- //content -->
+
+	</div>
+    <!-- //container -->
+
+	<div class="pop_layer" id="check_event_pop">
+		<div class="bg"></div>
+
+		<div class="pop_wrap">
+			<ul class="ingre_pop">
+				<li><a href="#"><img src="../../img/img_ingredient_01.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_02.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_03.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_04.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_05.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_06.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_07.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_08.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_09.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_10.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_11.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_12.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_13.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_14.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_15.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_16.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_17.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_18.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_19.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../../img/img_ingredient_20.jpg" alt=""></a></li>
+			</ul>
+
+			<ul class="point_pop">
+				<li><img src="../../img/img_point_05.jpg" alt=""></li>
+				<li><img src="../../img/img_point_10.jpg" alt=""></li>
+				<li><img src="../../img/img_point_15.jpg" alt=""></li>
+			</ul>
+
+			<a href="#" class="btn_close">닫기</a>
+		</div>
+	</div>
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>

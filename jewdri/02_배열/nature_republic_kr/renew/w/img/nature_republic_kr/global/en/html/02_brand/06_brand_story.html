@@ -1,0 +1,977 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/brand.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+// 2016-12-08//이미지 가로 정렬 함수 추가(s)
+function img_range(obj){
+	var w = obj.width;
+	if(w > 244){
+		var resize_w = w - 244;
+		obj.style.marginLeft = -resize_w/2+'px';
+	}
+}
+// 2016-12-08//이미지 가로 정렬 함수 추가(e)
+
+$(document).ready(function(){
+	$('.material_story .material_slide').flexslider({
+		animation: 'slide',
+		animationSpeed: 1000,
+		slideshowSpeed: 10000, 
+		directionNav: true,
+		controlNav: false
+	});
+
+	// 2016-11-10//연혁js추가(s)
+	var li_list;
+	function hide(){
+		
+		li_list = $('li.active .history_timline').children('li');
+		console.log(li_list.length);
+		if(li_list.length <= 5){
+			$(li_list).parents('ol').siblings('.btn_more').hide();
+		}
+	}
+
+	hide();
+	// 2016-11-10//연혁js추가(e)
+
+
+	$('.brand_visual').addClass('active');
+
+	$('.nature_history .tab_menu .year li a').click(function(e){
+		e.preventDefault();
+		$('.nature_history .tab_menu .year li').removeClass();
+		$(this).parents('li').addClass('active');
+		var idx = $(this).parents('li').index();
+		// alert(idx);
+		$('.tab_content>ol>li').removeClass();
+		$('.tab_content>ol>li').eq(idx).addClass('active');
+		// 2016-11-10//연혁js추가(s)
+		hide();
+		// 2016-11-10//연혁js추가(e)
+
+	});
+
+	// 스크롤모션
+
+	$(window).scroll(function(){
+		var h = $(window).scrollTop();
+
+		var obj1_offset = $('.core_value ol li:eq(0)').offset().top-700;
+		var obj2_offset = $('.core_value ol li:eq(1)').offset().top-700;
+		var obj3_offset = $('.core_value ol li:eq(2)').offset().top-700;
+		var obj4_offset = $('.core_value ol li:eq(3)').offset().top-700;
+
+
+		if(h >= obj1_offset) $('.core_value ol li:eq(0)').addClass('active');
+		if(h >= obj2_offset) $('.core_value ol li:eq(1)').addClass('active');
+		if(h >= obj3_offset) $('.core_value ol li:eq(2)').addClass('active');
+		if(h >= obj4_offset) $('.core_value ol li:eq(3)').addClass('active');
+
+	});
+
+	// 연혁 더보기
+
+
+	// 2016-11-10//연혁 js수정(s)
+	$('.nature_history .tab_content .btn_more.arrow').click(function(){
+		var li_item = $(this).siblings('.history_timline').children('li');
+		$(li_item).addClass('show');
+		$(this).hide();
+	});
+	// 2016-11-10//연혁 js수정(e)
+
+});
+
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+
+    <!-- 2016-12-08//구조변경(s) -->
+	<div id="container">
+		<h2 class="blind">브랜드 스토리</h2>
+		<div id="content" class="story">
+			<!-- sub_navi -->
+			<ol class="sub_navi">
+				<li><a href="#">home</a></li>
+				<li><a href="#">브랜드</a></li>
+				<li>브랜드 스토리</li>
+			</ol>
+			<!-- //sub_navi -->
+		</div>
+		<div class="brand_visual">
+			<h1><img src="../../img/brand_logo.png" alt=""></h1>
+			<!-- 2016-12-08//추가(s) -->
+			<!-- 2016-12-20//수정(s) -->
+			<p class="main_title">
+				NATURE REPUBLIC is a natural brand that finds and shares the energy of life from the pristine nature around the world
+			</p>
+			<!-- 2016-12-20//수정(e) -->
+			<!-- 2016-12-08//추가(e) -->
+			<p class="desc">
+				NATURE REPUBLIC is the brand of naturalists that provides heath and enjoyment to the lives of customers through beauty energy<br>discovered from the world's most pristine nature. Learn about beautiful stories that revive the planet and life.
+			</p>
+			<!-- 2016-12-26//모노그램 삭제(s) -->
+			<!-- <div class="nr_logo"></div> -->
+			<!-- 2016-12-26//모노그램 삭제(e) -->
+		</div>
+		<!-- //brand_visual -->
+		<!-- 2016-12-08//구조변경(e) -->
+
+		<div class="core_value">
+
+			<!-- 2016-12-08//수정(s) -->
+			<!-- 2016-12-20//수정(s) -->
+			<div class="brand_subtitle">
+				<h3><strong>Our Promise</strong><!--span class="sub_title">우리의 약속</span--></h3>
+			</div>
+			<!-- 2016-12-20//수정(e) -->
+			<!-- 2016-12-08//수정(e) -->
+
+			<div class="w_cont">
+				<ol>
+					<li class="value_lst01">
+						<div class="value_image"><img src="../../img/value_img01.jpg" alt=""></div>
+						<div class="value_content">
+							<p class="sub_title"><strong>01</strong><em>Pure Nature</em></p>
+							<p class="main_title">The embodiment of nature</p>
+							<p class="desc">
+								NATURE REPUBLIC believes in the perfection of the nature.<br>
+								It aims to discover gifts from pristine nature around the world and<br>to provide them in the most natural state to customers.
+							</p>
+						</div>
+					</li>
+					<li class="value_lst02">
+						<div class="value_content">
+							<p class="sub_title"><strong>02</strong><em>For Everyone</em></p>
+							<!-- 2016-12-20//수정(s) -->
+							<p class="main_title">For everyone to enjoy</p>
+							<!-- 2016-12-20//수정(e) -->
+							<!-- 타이틀 번역 필요 -->
+							<p class="desc">
+								NATURE REPUBLIC provides reasonably-priced products to customers<br>by finding the balance between quality and price in order<br>for everybody to fully enjoy its products.<br>Through NATURE REPUBLIC's products and brand,<br>people of the world will be able to enjoy the gift of the nature.
+							</p>
+						</div>
+						<div class="value_image"><img src="../../img/value_img02.jpg" alt=""></div>
+					</li>
+					<li class="value_lst03">
+						<div class="value_image"><img src="../../img/value_img03.jpg" alt=""></div>
+						<div class="value_content">
+							<p class="sub_title"><strong>03</strong><em>Originality</em></p>
+							<p class="main_title">With advanced sensibility and conviction,</p>
+							<p class="desc">
+								NATURE REPUBLIC explores the pristine nature of the world and derives<br>new inspiration as we serve our customers around the world.<br>
+								We research products resembling nature without imitating others<br>while retaining the pride of being the leader in natural cosmetic products.
+							</p>
+						</div>
+					</li>
+					<li class="value_lst04">
+						<div class="value_content">
+							<p class="sub_title"><strong>04</strong><em>Coummunity</em></p>
+							<!-- 2016-12-20//수정(s) -->
+							<p class="main_title">Communicate with each other</p>
+							<!-- 2016-12-20//수정(e) -->
+							<!-- 타이틀 번역 필요 -->
+							<p class="desc">NATURE REPUBLIC enjoys engaging with our customers<br>and partners and continuouslyimproves products and<br>experiences at our storesin order to share enjoyment and benefits with them</p>
+						</div>
+						<div class="value_image"><img src="../../img/value_img04.jpg" alt=""></div>
+					</li>
+				</ol>
+			</div>
+		</div>
+		<!-- //core_value -->
+
+		<div class="material_story">
+
+
+			<!-- 2016-12-08//수정(s) -->
+			<!-- 2016-12-20//수정(s) -->
+			<div class="brand_subtitle">
+				<h3><strong>Our Ingredients</strong><!-- span class="sub_title">The Story of Ingredients</span--></h3>
+			</div>
+			<div class="brand_subdesc">
+				<p class="main_desc">
+					Experience <strong>beauty energy discovered from the world's most pristine nature</strong>
+				</p>
+				<!-- 2016-12-20//수정(s) -->
+				<p class="sub_desc">
+					Discover 10 kinds of raw ingredients, such as aloe vera, deep seawater, snail mucus, calendula, argan, baobab tree seed, oxygen water, shea butter, ginseng, green leaf, for yourself.
+				</p>
+			</div>
+			<!-- 2016-12-20//수정(e) -->
+			<!-- 2016-12-08//수정(e) -->
+
+			<div class="material_story_inner">
+				
+				<div class="w_cont">
+					<!-- 2016-12-08//삭제(s) -->
+					<!-- <h4><img src="../../img/material_story_title.png" alt=""></h4> -->
+					<!-- 2016-12-08//삭제(e) -->
+					<div class="material_slide">
+						<div class="btn_wrap right">
+							<a href="#" class="btn_large arrow">View All Ingredients<span class="arrow_right"></span></a>
+						</div>
+
+						<ul class="slides">
+							<li>
+								<ul class="material_list">
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>
+															Fresh green tea leaves grown by receiving the energy of morning sunlight
+														</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/aloevera.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<!-- <em>Aloe vera</em> -->
+												<strong>Aloe veraAloe veraAloe veraAloe veraAloe veraAloe veraAloe veraAloe veraAloe vera</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>Contains only precious ingredients</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/ginseng.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<!-- <em>Ginseng royal silk</em> -->
+												<strong>Ginseng royal silk</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>The jewel of Africa from the Sahara Desert</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/sheabutter.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<!-- <em>Share butter</em> -->
+												<strong>Share butter</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>The 5,000-year old tree from Madagascar</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/baobab.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<!-- <em>Baobab</em> -->
+												<strong>Baobab</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>The herb resembling the hot sun is resistant against UV rays</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/calendula.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<!-- <em>Calendula</em> -->
+												<strong>Calendula</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>Fresh green tea leaves grown by receiving the energy of morning sunlight</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/green_tea.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<!-- <em>Green Tea</em> -->
+												<strong>Green Tea</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>God-sent gold from Morocco</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/argan.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<!-- <em>Argan</em> -->
+												<strong>Argan</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>Revitalizing solution from pristine nature</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/snail.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<!-- <em>Snail</em> -->
+												<strong>Snail</strong>
+											</p>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<!-- //slide_list -->
+							<li>
+								<ul class="material_list">
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>
+															Fresh green tea leaves grown by receiving the energy of morning sunlight
+														</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/aloevera.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<!-- <em>Aloe vera</em> -->
+												<strong>Aloe vera</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>Contains only precious ingredients</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/ginseng.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<!-- <em>Ginseng royal silk</em> -->
+												<strong>Ginseng royal silk</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>The jewel of Africa from the Sahara Desert</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/sheabutter.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<!-- <em>Share butter</em> -->
+												<strong>Share butter</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>The 5,000-year old tree from Madagascar</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/baobab.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<!-- <em>Baobab</em> -->
+												<strong>Baobab</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>The herb resembling the hot sun is resistant against UV rays</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/calendula.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<!-- <em>Calendula</em> -->
+												<strong>Calendula</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>Fresh green tea leaves grown by receiving the energy of morning sunlight</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/green_tea.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<!-- <em>Green Tea</em> -->
+												<strong>Green Tea</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>God-sent gold from Morocco</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/argan.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<!-- <em>Argan</em> -->
+												<strong>Argan</strong>
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="material_img">
+												<div class="dim">
+													<span>
+														<p>Revitalizing solution from pristine nature</p>
+													</span>
+												</div>
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+												<img src="../../img/material/snail.png" alt="" onload="img_range(this)">
+												<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+											</div>
+											<p class="material_name">
+												<!-- <em>Snail</em> -->
+												<strong>Snail</strong>
+											</p>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<!-- //slide_list -->
+						</ul>
+						<!-- //slides -->
+					</div>
+					<!-- //material_list -->
+				</div>
+
+			</div>
+			<!-- //material_story_inner -->
+			
+		</div>
+		<!-- //material_story -->
+
+		<div class="nature_history">
+			<!-- 2016-12-08//수정(s) -->
+			<h3>NATURE REPUBLIC History</h3>
+			<!-- 2016-12-08//수정(e) -->
+			<div class="w_cont">
+				<div class="tab_menu">
+					<ol class="year">
+						<li><a href="#">2016</a></li>
+						<li><a href="#">2015</a></li>
+						<li class="active"><a href="#">2014</a></li>
+						<li><a href="#">2013</a></li>
+						<li><a href="#">2012</a></li>
+						<li><a href="#">2011</a></li>
+						<li><a href="#">2010</a></li>
+						<li><a href="#">2009</a></li>
+					</ol>
+				</div>
+				<!-- /tab_menu -->
+
+				<div class="tab_content">
+					<ol>
+						<li>
+							<div class="history_image"><img src="../../img/brand_history_image01.jpg" alt=""></div>
+							<ol class="history_timline">
+								<li class="left show">
+									<div>
+										<p class="date">2016<em>01</em></p>
+										<p class="history_content">새 브랜드 슬로건 ‘자연으로의 여정’ 선포</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2016<em>02</em></p>
+										<p class="history_content"><span class="ico ico_flag01"></span><span>홍콩 1호점 오픈</span></p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2016<em>03</em></p>
+										<p class="history_content">EXO(엑소) 홍콩 팬사인회 개최(몽콕 1호점)</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2016<em>06</em></p>
+										<p class="history_content">
+											중국 온라인 쇼핑몰 ‘알로에베라 92% 수딩젤’ <br>
+											하루 동안 100만 개 판매 기록
+										</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2016<em>08</em></p>
+										<p class="history_content">
+											‘2016 얼루어 뷰티 어워드’<br>헤어 샴푸, 프라이머 부문 위너(WINNER) 2관왕
+											<em>아르간 에센셜 딥케어 샴푸, 보테니컬 그린티 포어 프라이머</em>
+										</p>
+									</div>
+								</li>
+								<!-- //목록 5개까지 보여지기 -->
+
+								<li class="left">
+									<div>
+										<p class="date">2016<em>01</em></p>
+										<p class="history_content">새 브랜드 슬로건 ‘자연으로의 여정’ 선포</p>
+									</div>
+								</li>
+								<li class="right">
+									<div>
+										<p class="date">2016<em>02</em></p>
+										<p class="history_content"><span class="ico ico_flag01"></span>홍콩 1호점 오픈</p>
+									</div>
+								</li>
+								<li class="left">
+									<div>
+										<p class="date">2016<em>03</em></p>
+										<p class="history_content">EXO(엑소) 홍콩 팬사인회 개최(몽콕 1호점)</p>
+									</div>
+								</li>
+								<li class="right">
+									<div>
+										<p class="date">2016<em>06</em></p>
+										<p class="history_content">
+											중국 온라인 쇼핑몰 ‘알로에베라 92% 수딩젤’ <br>
+											하루 동안 100만 개 판매 기록
+										</p>
+									</div>
+								</li>
+								<li class="left">
+									<div>
+										<p class="date">2016<em>08</em></p>
+										<p class="history_content">
+											‘2016 얼루어 뷰티 어워드’<br>헤어 샴푸, 프라이머 부문 위너(WINNER) 2관왕
+											<em>아르간 에센셜 딥케어 샴푸, 보테니컬 그린티 포어 프라이머</em>
+										</p>
+									</div>
+								</li>
+								<!-- //숨기기 -->
+
+								<li class="left">
+									<div>
+										<p class="date">2016<em>01</em></p>
+										<p class="history_content">새 브랜드 슬로건 ‘자연으로의 여정’ 선포</p>
+									</div>
+								</li>
+								<li class="right">
+									<div>
+										<p class="date">2016<em>02</em></p>
+										<p class="history_content"><span class="ico ico_flag01"></span>홍콩 1호점 오픈</p>
+									</div>
+								</li>
+								<li class="left">
+									<div>
+										<p class="date">2016<em>03</em></p>
+										<p class="history_content">EXO(엑소) 홍콩 팬사인회 개최(몽콕 1호점)</p>
+									</div>
+								</li>
+								<li class="right">
+									<div>
+										<p class="date">2016<em>06</em></p>
+										<p class="history_content">
+											중국 온라인 쇼핑몰 ‘알로에베라 92% 수딩젤’ <br>
+											하루 동안 100만 개 판매 기록
+										</p>
+									</div>
+								</li>
+								<li class="left">
+									<div>
+										<p class="date">2016<em>08</em></p>
+										<p class="history_content">
+											‘2016 얼루어 뷰티 어워드’<br>헤어 샴푸, 프라이머 부문 위너(WINNER) 2관왕
+											<em>아르간 에센셜 딥케어 샴푸, 보테니컬 그린티 포어 프라이머</em>
+										</p>
+									</div>
+								</li>
+								<!-- //숨기기 -->
+							</ol>
+							<a href="#a" class="btn_more arrow">View more<span></span></a>
+						</li>
+						<!-- //tab_list -->
+						<li>
+							<div class="history_image"><img src="../../img/brand_history_image01.jpg" alt=""></div>
+							<ol class="history_timline">
+								<li class="left show">
+									<div>
+										<p class="date">2015<em>01</em></p>
+										<p class="history_content">Soothing & Moisture Aloe Vera 92% Soothing Gel received the best prize, Gold Prize, at the Golden Beauty Awards, hosted by China's largest online shopping mall, T-MallL<br>Soothing & Moisture Aloe Vera 92% Soothing Gel and Argan Essential Deep Care Hair Essence were selected as the best products at the Most Asia Beauty Awards</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2015<em>04</em></p>
+										<p class="history_content">Operates 680 stores in Korea and independent stores in 120 locations in 14 countries (Japan, USA, Taiwan, Thailand, Philippines, Cambodia, Malaysia, Indonesia, Mongolia, Vietnam, Myanmar, Macao, Hong Kong)</p>
+									</div>
+								</li>
+								<!-- 5개까지 보이기: 클래스에 show 추가 -->
+							</ol>
+							<a href="#a" class="btn_more arrow">View more<span></span></a>
+						</li>
+						<!-- //tab_list -->
+						<li class="active">
+							<div class="history_image"><img src="../../img/brand_history_image01.jpg" alt=""></div>
+							<ol class="history_timline">
+								<li class="left show">
+									<div>
+										<p class="date">2014<em>01</em></p>
+										<p class="history_content">Declared a new brand slogan "A journey into nature"</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2014<em>02</em></p>
+										<p class="history_content"><span class="ico ico_flag01"></span><span>Opened Store No. 1 in Hong Kong</span></p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2014<em>03</em></p>
+										<p class="history_content">Held a fan signing event with EXO in Hong Kong (Store No. 1 in Hong Kong)</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2014<em>06</em></p>
+										<p class="history_content">‘Soothing & Moisture Aloe Vera 92% Soothing Gel’ sold one million units in one day via Chinese online shopping mall</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2014<em>08</em></p>
+										<p class="history_content">Korea's first prestigious beauty award ceremony Received two awards in the category of hair shampoo and primer at the 2014 Allure Best of Beauty Award
+											<em>Argan Essential Deep Care Shampoo, Botanical Green Tea Pore Primer</em>
+										</p>
+									</div>
+								</li>
+								
+								<!-- //목록 5개까지 보여지기 -->
+								<li class="right">
+									<div>
+										<p class="date">2014<em>11</em></p>
+										<p class="history_content">Opened an Eco-friendly flagship store in Myeongdong UNESCO Store<br>Representative organizer of Initial Public Offering (IPO) selected Daishin Securities Co., Ltd.</p>
+									</div>
+								</li>
+								<li class="left">
+									<div>
+										<p class="date">2014<em>12</em></p>
+										<p class="history_content">Received the 10 Million Dollar Export Tower in celebration of the 51st Trade Day<em>*Hosted by the Korea International Trade Association</em></p>
+									</div>
+								</li>
+								<!-- //숨기기 -->
+							</ol>
+							<a href="#a" class="btn_more arrow">View more<span></span></a>
+						</li>
+						<!-- //tab_list -->
+						<li>
+							<div class="history_image"><img src="../../img/brand_history_image01.jpg" alt=""></div>
+							<ol class="history_timline">
+								<li class="left show">
+									<div>
+										<p class="date">2013<em>02</em></p>
+										<p class="history_content">Received the Gold Prize in the category of package at the 'iF Design Award 2013' in Germany for the first time in the cosmetics industry<em>*Friends Hand Cream</em></p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2013<em>03</em></p>
+										<p class="history_content">Opened store No. 1 in Vietnam</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2013<em>05</em></p>
+										<p class="history_content">Opened store No. 1 in Myanmar</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2013<em>07</em></p>
+										<p class="history_content">Received the Grand Prize in the category of design at the  ‘IDEA(International Design Excellence Awards) 2013’ in the US <em>*‘Argan 20˚’ line, ‘Eco Calendar’</em>
+										</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2013<em>08</em></p>
+										<p class="history_content">Received the Grand Prize in the category of design at the Red Dot Design Award 2013 in Germany<em>*‘Argan 20˚’ line,<br>‘Phyto Origin’ line,<br> ‘Happy Mate Shoes Spray’ line,<br>‘Perfume de Nature’ line</em><br>Signed an exclusive model contract with Tae-yeon of Girls' Generation and EXO<br><br>Implemented the Green Membership System
+										</p>
+									</div>
+								</li>
+								<!-- //목록 5개까지 보여지기: 클래스 show추가 -->
+								<li class="right">
+									<div>
+										<p class="date">2013<em>10</em></p>
+										<p class="history_content">Received the Grand Prize in the category of packaging at the Red Dot Design Award 2013<em>*‘Happy Mate Shoes Spray’ line</em></p>
+									</div>
+								</li>
+								<li class="left">
+									<div>
+										<p class="date">2013<em>12</em></p>
+										<p class="history_content">Held an EXO fan signing event<br>(an outdoor stage on Dongseong-ro in Daegu and at Myeongdong World Store in Seoul)</p>
+									</div>
+								</li>
+								<!-- //숨기기 -->
+							</ol>
+							<a href="#a" class="btn_more arrow">View more<span></span></a>
+						</li>
+						<!-- //tab_list -->
+						<li>
+							<div class="history_image"><img src="../../img/brand_history_image01.jpg" alt=""></div>
+							<ol class="history_timline">
+								<li class="left show">
+									<div>
+										<p class="date">2012<em>01</em></p>
+										<p class="history_content">The company's shopping mall received the Grand Prize in the category of shopping malls at ‘2012 Web Award Korea’</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2012<em>04</em></p>
+										<p class="history_content">Opened store No. 1 in Mongolia</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2012<em>06</em></p>
+										<p class="history_content">Held a local press conference to celebrate its first anniversary of launch in Japan and opened a store in Tokyo<br><br>Signed an exclusive model contract with Shin Se-kyung</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2012<em>09</em></p>
+										<p class="history_content">Opened store No. 1 in Hawaii, US<br>Earned USFDA approval for 200 products</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2012<em>10</em></p>
+										<p class="history_content">Opened store No. 1 in Indonesia</p>
+									</div>
+								</li>
+								<!-- //목록 5개까지 보여지기: show클래스 추가 -->
+
+								<li class="right">
+									<div>
+										<p class="date">2012<em>12</em></p>
+										<p class="history_content">Opened Store No. 2 in New Jersey, US<br>Received an award in the category of packaging at the 'International Forum Design Awards 2013' in Germany <em>Friends Hand Cream’, ‘Forever Lasting’ line,<br>‘Pleasure Garden Homme’ Line</em></p>
+									</div>
+								</li>
+								<!-- //숨기기 -->
+							</ol>
+							<a href="#a" class="btn_more arrow">View more<span></span></a>
+						</li>
+						<!-- //tab_list -->
+						<li>
+							<div class="history_image"><img src="../../img/brand_history_image01.jpg" alt=""></div>
+							<ol class="history_timline">
+								<li class="left show">
+									<div>
+										<p class="date">2011<em>03</em></p>
+										<p class="history_content">Opened store No. 1 in Cambodia</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2011<em>04</em></p>
+										<p class="history_content">Signed an exclusive model contract with Jang Keun-suk</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2011<em>06</em></p>
+										<p class="history_content">Official entry into the Japanese market, the largest cosmetic market in Asia<br>Signed an exclusive model contract with three members of Kara (Goo Ha-ra, Park Gyu-ri, Kang Ji-young)</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2011<em>08</em></p>
+										<p class="history_content">Held a large customer appreciation event with its exclusive model Jang Keun-suk to celebrate the beginning of product sales in Japan</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2011<em>10</em></p>
+										<p class="history_content">Opened store No. 1 in Philippines<br><br>Selected as a winner during the 2011 Good Design (GD)<br>event hosted by the Ministry of Knowledge Economy and organized by the Korea Institute of Design Promotion<em>**A total of five products such as Cell Boosting Homme Line<br>and Collagen Dream 80 Skin Booster</em></p>
+									</div>
+								</li>
+								<!-- //목록 5개까지 보여지기: 클래스에 show 추가 -->
+
+								<li class="right">
+									<div>
+										<p class="date">2011<em>12</em></p>
+										<p class="history_content">Recorded a profit within 2 years since its founding<br>Held a customer appreciation event in Japan with three members of Kara</p>
+									</div>
+								</li>
+								<!-- //숨기기 -->
+							</ol>
+							<a href="#a" class="btn_more arrow">View more<span></span></a>
+						</li>
+						<!-- //tab_list -->
+						<li>
+							<div class="history_image"><img src="../../img/brand_history_image01.jpg" alt=""></div>
+							<ol class="history_timline">
+								<li class="left show">
+									<div>
+										<p class="date">2010<em>01</em></p>
+										<p class="history_content">Opened store No. 1 in Malaysia</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2010<em>03</em></p>
+										<p class="history_content">Appointed Jeong Un-ho as CEO of the company</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2010<em>05</em></p>
+										<p class="history_content">Opened more than 100 stores in Korea</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2010<em>09</em></p>
+										<p class="history_content">Signed an exclusive model contract with JYJ (Jaejung, Yoochun, Junsu)</p>
+									</div>
+								</li>
+								<!-- //5개까지 보이기: show클래스 추가 -->
+							</ol>
+							<a href="#a" class="btn_more arrow">View more<span></span></a>
+						</li>
+						<!-- //tab_list -->
+						<li>
+							<div class="history_image"><img src="../../img/brand_history_image01.jpg" alt=""></div>
+							<ol class="history_timline">
+								<li class="left show">
+									<div>
+										<p class="date">2009<em>03</em></p>
+										<p class="history_content">Official launch with the opening of Myeongdong Store<br>Signed an exclusive model contract with Rain (Jung Ji-hoon)</p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2009<em>06</em></p>
+										<p class="history_content">Opened store No. 1 in Taiwan</p>
+									</div>
+								</li>
+								<li class="left show">
+									<div>
+										<p class="date">2009<em>07</em></p>
+										<p class="history_content">Opened Myeongdong World Store<em>*The most expensive real estate in Korea</em></p>
+									</div>
+								</li>
+								<li class="right show">
+									<div>
+										<p class="date">2009<em>10</em></p>
+										<p class="history_content">Opened store No. 1 in Thailand</p>
+									</div>
+								</li>
+								<!-- //목록 5개까지 보여지기: show클래스 추가 -->
+							</ol>
+							<a href="#a" class="btn_more arrow">View more<span></span></a>
+						</li>
+						<!-- //tab_list -->
+					</ol>
+				</div>
+			</div>
+		</div>
+
+	</div>
+    <!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>

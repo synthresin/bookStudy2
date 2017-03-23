@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/brand.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+
+// 2016-12-08//이미지 가로 정렬 함수 추가(s)
+function img_range(obj){
+	var w = obj.width;
+	if(w > 244){
+		var resize_w = w - 244;
+		obj.style.marginLeft = -resize_w/2+'px';
+	}
+}
+// 2016-12-08//이미지 가로 정렬 함수 추가(e)
+
+$(document).ready(function(){
+
+	var item_w = 0;
+	var mv_w = 0;
+	$('.op_img_list').each(function(){
+		var list = $(this).find('ul');
+		var size = list.children('li').length;
+		item_w = $('.product_list > li .pro_over .option .op_img_list ul li span').css('width');
+		item_w = parseInt(item_w);
+		mv_w = item_w*5;
+		var w = item_w*size;
+	});		
+	//2016-06-07//텍스트옵션및수정(s)
+
+	$('.product_list > li').bind('mouseover focus',function(){
+		$('.product_list > li').removeClass('active');
+		$(this).addClass('active');
+		var op_list = $(this).find('.option');
+
+		op_list.find('.op_img_list ul').each(function(){
+			var w = 0;
+			$(this).find('li').each(function(){
+				w = w+ $(this).width();
+			});
+			$(this).css('width',w+'px');
+		});
+
+		op_list.find('.op_text_list ul').each(function(){
+			var w = 0;
+			var margin = 3;
+			$(this).find('li').each(function(){
+				w = (w+margin) + $(this).width();
+			});
+			$(this).css('width',w+'px');
+		});
+	});
+
+	$('.product_list > li').bind('mouseleave blur',function(){
+		$('.product_list > li').removeClass('active');
+	});
+
+	$('.pro_over .op_img_list li span').click(function(e){
+		e.preventDefault();
+		var op_list = $(this).closest('.op_img_list');
+		var idx = $(this).parent().index();
+		op_list.find('li').removeClass('active');
+		op_list.find('li').eq(idx).addClass('active');
+		op_list.next().find('li').removeClass('active');
+		op_list.next().find('li').eq(idx).addClass('active');
+	});	
+	
+	$('.pro_over .btn_direct').click(function(e){
+		e.preventDefault();
+		var direct = $(this).hasClass('prev');
+		var list = $(this).closest('.option').find('div').hasClass('op_text_list');
+		if(!list){		//이미지옵션
+			list = $(this).closest('.option').find('.op_img_list ul');
+			if(direct){
+				if(list.css('left') == '0px') return false;
+				list.animate({'left':'+='+mv_w+'px'},150);
+			}else{
+				var size = list.children('li').length;
+				var w = Math.ceil(size/5);
+				w = w-1;
+				if(list.css('left') ==  -(mv_w*w)+'px') return false;
+				list.animate({'left':'-='+mv_w+'px'},150);
+			}
+		}else{		//텍스트옵션
+			list = $(this).closest('.option').find('.op_text_list ul');
+			var last_mv = (Math.floor(list.width()/152))*152;
+			if(direct){
+				if(list.css('left') == '0px') return false;
+				list.animate({'left':'+='+152+'px'},150);
+			}else{
+				if(list.css('left') ==  -last_mv+'px') return false;
+				list.animate({'left':'-='+152+'px'},150);
+			}
+		}
+	});		
+	
+	$('.pro_over .op_text_list li span').click(function(e){
+		e.preventDefault();
+		var op_list = $(this).closest('.op_text_list');
+		var idx = $(this).parent().index();
+		op_list.find('li').removeClass('active');
+		op_list.find('li').eq(idx).addClass('active');
+		op_list.next().find('li').removeClass('active');
+		op_list.next().find('li').eq(idx).addClass('active');
+	});
+	//2016-06-07//텍스트옵션및수정(e)
+
+
+});
+
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container">
+		<h2 class="blind">브랜드 스토리</h2>
+		<div id="content" class="story">
+			<!-- sub_navi -->
+			<ol class="sub_navi">
+				<li><a href="#">home</a></li>
+				<li><a href="#">브랜드</a></li>
+				<li>브랜드 스토리</li>
+			</ol>
+			<!-- //sub_navi -->
+		</div>
+		<!-- //content -->
+
+		<div class="material_story_visual">
+			<h3><img src="../../img/material_logo.png" alt=""></h3>
+		</div>
+		<!-- //material_list_visual -->
+
+		<div class="material_lst_container">
+			<div class="w_cont">
+				<div class="title_group">
+					<p class="main_title">Material story</p>
+				</div>
+
+				<ul class="mstory_list">
+					<li>
+						<a href="#">
+							<div class="mstory_card">
+								<div class="mstroy_img">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+									<img src="../../img/material/aloevera.png" alt="" onload="img_range(this)">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+								</div>
+								<div class="mstroy_content">
+									<div class="mstory_name">
+										<em>Aloe vera</em>
+										<!-- <p>알로에 베라</p> -->
+									</div>
+									<p class="mstory_desc">A gift from the nature of<br> California</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="mstory_card">
+								<div class="mstroy_img">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+									<img src="../../img/material/ginseng.png" alt="" onload="img_range(this)">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+								</div>
+								<div class="mstroy_content">
+									<div class="mstory_name">
+										<em>Ginseng royal silk</em>
+										<!-- <p>진생 로얄</p> -->
+									</div>
+									<p class="mstory_desc">Contains only<br>precious ingredients</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="mstory_card">
+								<div class="mstroy_img">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+									<img src="../../img/material/sheabutter.png" alt="" onload="img_range(this)">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+								</div>
+								<div class="mstroy_content">
+									<div class="mstory_name">
+										<em>Shea butter</em>
+										<!-- <p>쉐어버터</p> -->
+									</div>
+									<p class="mstory_desc">The jewel of Africa<br>from the Sahara Desert</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="mstory_card">
+								<div class="mstroy_img">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+									<img src="../../img/material/baobab.png" alt="" onload="img_range(this)">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+								</div>
+								<div class="mstroy_content">
+									<div class="mstory_name">
+										<em>Baobab</em>
+										<!-- <p>바오밥</p> -->
+									</div>
+									<p class="mstory_desc">The 5,000-year old tree<br> from Madagascar</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="mstory_card">
+								<div class="mstroy_img">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+									<img src="../../img/material/calendula.png" alt="" onload="img_range(this)">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+								</div>
+								<div class="mstroy_content">
+									<div class="mstory_name">
+										<em>Calendula</em>
+										<!-- <p>카렌듈라</p> -->
+									</div>
+									<p class="mstory_desc">The herb resembling the hot sun is resistant<br>against UV rays</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="mstory_card">
+								<div class="mstroy_img">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+									<img src="../../img/material/green_tea.png" alt="" onload="img_range(this)">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+								</div>
+								<div class="mstroy_content">
+									<div class="mstory_name">
+										<em>Green tea</em>
+										<!-- <p>그린티</p> -->
+									</div>
+									<p class="mstory_desc">Fresh green tea leaves grown<br>by receiving the energy of morning sunlight</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="mstory_card">
+								<div class="mstroy_img">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+									<img src="../../img/material/argan.png" alt="" onload="img_range(this)">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+								</div>
+								<div class="mstroy_content">
+									<div class="mstory_name">
+										<em>Argan</em>
+										<!-- <p>아르간</p> -->
+									</div>
+									<p class="mstory_desc">God-sent gold<br>from Morocco</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="mstory_card">
+								<div class="mstroy_img">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+									<img src="../../img/material/snail.png" alt="" onload="img_range(this)">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+								</div>
+								<div class="mstroy_content">
+									<div class="mstory_name">
+										<em>Snail</em>
+										<!-- <p>달팽이</p> -->
+									</div>
+									<p class="mstory_desc">Revitalizing solution<br>from pristine nature</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="mstory_card">
+								<div class="mstroy_img">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+									<img src="../../img/material/deepsea.png" alt="" onload="img_range(this)">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+								</div>
+								<div class="mstroy_content">
+									<div class="mstory_name">
+										<em>Deep sea water</em>
+										<!-- <p>해양심층수</p> -->
+									</div>
+									<p class="mstory_desc">Hawaiian Kona pure moisture, a gift from the sea<br>awoken after 2000 years of sleep</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="mstory_card">
+								<div class="mstroy_img">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(s) -->
+									<img src="../../img/material/oxygen.png" alt="" onload="img_range(this)">
+									<!-- 216-12-08//원료 이미지마다 onload 함수 추가(e) -->
+								</div>
+								<div class="mstroy_content">
+									<div class="mstory_name">
+										<em>Oxygen water</em>
+										<!-- <p>산소수</p> -->
+									</div>
+									<p class="mstory_desc">2천년 잠에서 깨어난 바다의 선물<br>하와이 코나 청정 수분</p>
+									<!-- 번역 필요 -->
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+
+
+
+	</div>
+    <!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>

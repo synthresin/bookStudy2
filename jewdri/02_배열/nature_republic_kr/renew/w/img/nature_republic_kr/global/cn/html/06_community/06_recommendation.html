@@ -1,0 +1,761 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/community.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//2016-06-08//수정(s)
+		$('.recomm_list li > dl > .id .user_info').hover(function(){
+			$(this).siblings('span').children('span').removeClass('active');
+			$(this).children('span').toggleClass('active');
+		});
+
+		$('.recomm_list li > dl > .id .sns_share').mouseenter(function(){
+			$(this).siblings('span').children('span').removeClass('active');
+			$(this).children('span').addClass('active');
+		});
+
+		$('.recomm_list li > dl > .id .sns_share .detail').mouseleave(function(){
+			$(this).removeClass('active');
+		});
+		//2016-06-08//수정(e)
+
+		//2016-06-08//수정(s)
+		$('#content .btn_wrap .aside_l>a').click(function(){
+			$(this).toggleClass('active');
+		});
+		//2016-06-08//수정(e)
+	});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container">
+
+		<!-- content -->
+		<div id="content">
+
+			<!-- sub_navi -->
+			<ol class="sub_navi">
+				<li><a href="#">home</a></li>
+				<li><a href="#">커뮤니티</a></li>
+				<li>이거 어때</li>
+			</ol>
+			<!-- //sub_navi -->
+			<div class="sub_tit_wrap">
+				<h2>이거 어때</h2>
+			</div>
+
+			<!-- btn_wrap -->
+			<div class="btn_wrap v2">
+				<span class="aside_l">
+					<a href="#" class="btn_medium grey3">작성하기</a>
+					<a href="#" class="best"><span class="best"></span>내 질문 보기</a><!-- 2016-06-08//클래스추가 -->
+				</span>
+				<span class="aside_r">
+					<a href="#" class="btn_srch btn_spr"><span class="blind">검색</span></a>
+					<div class="search">
+						<input type="text">
+						<a href="#"></a>
+					</div>
+				</span>
+			</div>
+			<!-- //btn_wrap -->
+
+			<!-- list -->
+			<ul class="recomm_list">
+				<li class="r_first recomm_vs">
+					<dl>
+						<dt>
+							<strong class="reomm_q">Q</strong>수분 부족형 지성 피부라서, 오후 시간만 되면 기름이 번지르르 합니다ㅠㅠ
+							불가리안 로즈 모이스처 수분크림 후기가 좋아서 이 참에 갈아타보려고 하는데 제 피부에도 맞을까요?
+						</dt>
+						<dd class="id">
+							<em>ar3****</em>
+							<span class="user_info">
+								<span class="detail">
+									<dl class="type">
+										<dt>피부타입</dt>
+										<dd>20대</dd>
+										<dd>여</dd>
+										<dd>모든타입</dd>
+									</dl>
+									<dl class="worry">
+										<dt>피부고민</dt>
+										<dd>화이트닝/피부톤개선</dd>
+									</dl>
+								</span>
+							</span>
+							<span href="#" class="sns_share">
+								<!-- 2016-06-03//수정(s) -->
+								<span class="detail">
+									<dl>
+										<dt>공유하기</dt>
+										<dd><a href="#a" class="btn_facebook">facebook</a></dd>
+										<dd><a href="#a" class="btn_kakao">kakao</a></dd>
+										<dd><a href="#a" class="btn_share">link</a></dd>
+									</dl>
+								</span>
+								<!-- 2016-06-03//수정(e) -->
+							</span>
+						</dd>
+						<!-- 2016-05-27//수정(s) -->
+						<dd class="adjust">
+							<a href="#a" class="modify">수정</a>
+							<a href="#a" class="delete">삭제</a>
+						</dd>
+						<!-- 2016-05-27//수정(e) -->
+						<dd class="contents">
+							<a href="#">
+								<img src="../../img/tmp/recomm_prd1.jpg" alt="">
+								<dl>
+									<dt>네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++</dt>
+									<dd><span class="ico_spr like_it2"></span><span>26</span><span class="recomm active">추천</span></dd> <!-- 2016-07-13//투표시클래스추가 -->
+								</dl>
+								<!--2016-06-03/삭제//div class="like_text">
+									<span class="bg"></span>
+									<em>
+										네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++에 투표하시겠습니까?
+										<span class="ico_spr check"></span>
+										<strong>좋아요!</strong>
+									</em>
+								</div-->
+							</a>
+							<span class="ico_spr vs"><span class="blind">VS</span></span>
+							<a href="#">
+								<img src="../../img/tmp/recomm_prd1.jpg" alt="">
+								<dl>
+									<dt>네이처 오리진 씨씨 틴티드 SPF30 PA++</dt>
+									<dd><span class="ico_spr like_it"></span><span>9</span><span class="recomm">추천</span></dd>
+								</dl>
+								<!--2016-06-03/삭제//div class="like_text">
+									<span class="bg"></span>
+									<em>
+										네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++에 투표하시겠습니까?
+										<span class="ico_spr check"></span>
+										<strong>좋아요!</strong>
+									</em>
+								</div-->
+							</a>
+						</dd>
+					</dl>	
+				</li>
+				<li class="recomm_sub">
+					<dl>
+						<dt>
+							<strong class="reomm_q">Q</strong>수분 부족형 지성피부인데 리얼 스퀴즈 앰플 도움이 될까요? 
+						</dt>
+						<dd class="id"><em>ar3****</em>
+							<span class="user_info">
+								<span class="detail">
+									<dl class="type">
+										<dt>피부타입</dt>
+										<dd>20대</dd>
+										<dd>여</dd>
+										<dd>모든타입</dd>
+									</dl>
+									<dl class="worry">
+										<dt>피부고민</dt>
+										<dd>화이트닝/피부톤개선</dd>
+									</dl>
+								</span>
+							</span>
+							<span href="#" class="sns_share">
+								<!-- 2016-06-03//수정(s) -->
+								<span class="detail">
+									<dl>
+										<dt>공유하기</dt>
+										<dd><a href="#a" class="btn_facebook">facebook</a></dd>
+										<dd><a href="#a" class="btn_kakao">kakao</a></dd>
+										<dd><a href="#a" class="btn_share">link</a></dd>
+									</dl>
+								</span>
+								<!-- 2016-06-03//수정(e) -->
+							</span>
+						</dd>
+						<!-- 2016-05-27//수정(s) -->
+						<dd class="adjust">
+							<a href="#a" class="modify">수정</a>
+							<a href="#a" class="delete">삭제</a>
+						</dd>
+						<!-- 2016-05-27//수정(e) -->
+						<dd class="contents">
+							<img src="../../img/tmp/recomm_prd2.jpg" alt="">
+							<dl>
+								<dt>슈퍼 아쿠아 맥스 프레시 수분 크림 [지성용]</dt>
+								<dd class="r_first"><span class="ico_spr like_it"></span><span>18</span><a href="#a" class="recomm">추천</a></dd>
+								<dd><span class="ico_spr like_it"></span><span>5</span><a href="#a" class="recomm no active">비추천</a></dd><!-- 2016-07-13//투표시클래스추가 -->
+							</dl>
+						</dd>
+					</dl>
+				</li>
+				<li class="recomm_sub">
+					<dl>
+						<dt>
+							<strong class="reomm_q">Q</strong>수분 부족형 지성피부인데 리얼 스퀴즈 앰플 도움이 될까요? 
+						</dt>
+						<dd class="id"><em>ar3****</em>
+							<span class="user_info">
+								<span class="detail">
+									<dl class="type">
+										<dt>피부타입</dt>
+										<dd>20대</dd>
+										<dd>여</dd>
+										<dd>모든타입</dd>
+									</dl>
+									<dl class="worry">
+										<dt>피부고민</dt>
+										<dd>화이트닝/피부톤개선</dd>
+									</dl>
+								</span>
+							</span>
+							<span href="#" class="sns_share">
+								<!-- 2016-06-03//수정(s) -->
+								<span class="detail">
+									<dl>
+										<dt>공유하기</dt>
+										<dd><a href="#a" class="btn_facebook">facebook</a></dd>
+										<dd><a href="#a" class="btn_kakao">kakao</a></dd>
+										<dd><a href="#a" class="btn_share">link</a></dd>
+									</dl>
+								</span>
+								<!-- 2016-06-03//수정(e) -->
+							</span>
+						</dd>
+						<dd class="contents">
+							<img src="../../img/tmp/recomm_prd2.jpg" alt="">
+							<dl>
+								<dt>슈퍼 아쿠아 맥스 프레시 수분 크림 [지성용]</dt>
+								<dd class="r_first"><span class="ico_spr like_it"></span><span>18</span><a href="#a" class="recomm">추천</a></dd>
+								<dd><span class="ico_spr like_it"></span><span>5</span><a href="#a" class="recomm no">비추천</a></dd>
+							</dl>
+						</dd>
+					</dl>
+				</li>
+				<li class="r_first recomm_vs">
+					<dl>
+						<dt>
+							<strong class="reomm_q">Q</strong>수분 부족형 지성 피부라서, 오후 시간만 되면 기름이 번지르르 합니다ㅠㅠ
+							불가리안 로즈 모이스처 수분크림 후기가 좋아서 이 참에 갈아타보려고 하는데 제 피부에도 맞을까요?
+						</dt>
+						<dd class="id">
+							<em>ar3****</em>
+							<span class="user_info">
+								<span class="detail">
+									<dl class="type">
+										<dt>피부타입</dt>
+										<dd>20대</dd>
+										<dd>여</dd>
+										<dd>모든타입</dd>
+									</dl>
+									<dl class="worry">
+										<dt>피부고민</dt>
+										<dd>화이트닝/피부톤개선</dd>
+									</dl>
+								</span>
+							</span>
+							<span href="#" class="sns_share">
+								<!-- 2016-06-03//수정(s) -->
+								<span class="detail">
+									<dl>
+										<dt>공유하기</dt>
+										<dd><a href="#a" class="btn_facebook">facebook</a></dd>
+										<dd><a href="#a" class="btn_kakao">kakao</a></dd>
+										<dd><a href="#a" class="btn_share">link</a></dd>
+									</dl>
+								</span>
+								<!-- 2016-06-03//수정(e) -->
+							</span>
+						</dd>
+						<dd class="contents">
+							<a href="#">
+								<img src="../../img/tmp/recomm_prd1.jpg" alt="">
+								<dl>
+									<dt>네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++</dt>
+									<dd><span class="ico_spr like_it2"></span><span>26</span><span class="recomm">추천</span></dd>
+								</dl>
+								<!--2016-06-03/삭제//div class="like_text">
+									<span class="bg"></span>
+									<em>
+										네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++에 투표하시겠습니까?
+										<span class="ico_spr check"></span>
+										<strong>좋아요!</strong>
+									</em>
+								</div-->
+							</a>
+							<span class="ico_spr vs"><span class="blind">VS</span></span>
+							<a href="#">
+								<img src="../../img/tmp/recomm_prd1.jpg" alt="">
+								<dl>
+									<dt>네이처 오리진 씨씨 틴티드 SPF30 PA++</dt>
+									<dd><span class="ico_spr like_it"></span><span>9</span><span class="recomm">추천</span></dd>
+								</dl>
+								<!--2016-06-03/삭제//div class="like_text">
+									<span class="bg"></span>
+									<em>
+										네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++에 투표하시겠습니까?
+										<span class="ico_spr check"></span>
+										<strong>좋아요!</strong>
+									</em>
+								</div-->
+							</a>
+						</dd>
+					</dl>	
+				</li>
+				<li class="recomm_vs">
+					<dl>
+						<dt>
+							<strong class="reomm_q">Q</strong>수분 부족형 지성 피부라서, 오후 시간만 되면 기름이 번지르르 합니다ㅠㅠ
+							불가리안 로즈 모이스처 수분크림 후기가 좋아서 이 참에 갈아타보려고 하는데 제 피부에도 맞을까요?
+						</dt>
+						<dd class="id">
+							<em>ar3****</em>
+							<span class="user_info">
+								<span class="detail">
+									<dl class="type">
+										<dt>피부타입</dt>
+										<dd>20대</dd>
+										<dd>여</dd>
+										<dd>모든타입</dd>
+									</dl>
+									<dl class="worry">
+										<dt>피부고민</dt>
+										<dd>화이트닝/피부톤개선</dd>
+									</dl>
+								</span>
+							</span>
+							<span href="#" class="sns_share">
+								<!-- 2016-06-03//수정(s) -->
+								<span class="detail">
+									<dl>
+										<dt>공유하기</dt>
+										<dd><a href="#a" class="btn_facebook">facebook</a></dd>
+										<dd><a href="#a" class="btn_kakao">kakao</a></dd>
+										<dd><a href="#a" class="btn_share">link</a></dd>
+									</dl>
+								</span>
+								<!-- 2016-06-03//수정(e) -->
+							</span>
+						</dd>
+						<dd class="contents">
+							<a href="#">
+								<img src="../../img/tmp/recomm_prd1.jpg" alt="">
+								<dl>
+									<dt>네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++</dt>
+									<dd><span class="ico_spr like_it2"></span><span>26</span><span class="recomm">추천</span></dd>
+								</dl>
+								<!--2016-06-03/삭제//div class="like_text">
+									<span class="bg"></span>
+									<em>
+										네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++에 투표하시겠습니까?
+										<span class="ico_spr check"></span>
+										<strong>좋아요!</strong>
+									</em>
+								</div-->
+							</a>
+							<span class="ico_spr vs"><span class="blind">VS</span></span>
+							<a href="#">
+								<img src="../../img/tmp/recomm_prd1.jpg" alt="">
+								<dl>
+									<dt>네이처 오리진 씨씨 틴티드 SPF30 PA++</dt>
+									<dd><span class="ico_spr like_it"></span><span>9</span><span class="recomm">추천</span></dd>
+								</dl>
+								<!--2016-06-03/삭제//div class="like_text">
+									<span class="bg"></span>
+									<em>
+										네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++에 투표하시겠습니까?
+										<span class="ico_spr check"></span>
+										<strong>좋아요!</strong>
+									</em>
+								</div-->
+							</a>
+						</dd>
+					</dl>	
+				</li>
+				<li class="r_first recomm_sub">
+					<dl>
+						<dt>
+							<strong class="reomm_q">Q</strong>수분 부족형 지성피부인데 리얼 스퀴즈 앰플 도움이 될까요? 
+						</dt>
+						<dd class="id"><em>ar3****</em>
+							<span class="user_info">
+								<span class="detail">
+									<dl class="type">
+										<dt>피부타입</dt>
+										<dd>20대</dd>
+										<dd>여</dd>
+										<dd>모든타입</dd>
+									</dl>
+									<dl class="worry">
+										<dt>피부고민</dt>
+										<dd>화이트닝/피부톤개선</dd>
+									</dl>
+								</span>
+							</span>
+							<span href="#" class="sns_share">
+								<!-- 2016-06-03//수정(s) -->
+								<span class="detail">
+									<dl>
+										<dt>공유하기</dt>
+										<dd><a href="#a" class="btn_facebook">facebook</a></dd>
+										<dd><a href="#a" class="btn_kakao">kakao</a></dd>
+										<dd><a href="#a" class="btn_share">link</a></dd>
+									</dl>
+								</span>
+								<!-- 2016-06-03//수정(e) -->
+							</span>
+						</dd>
+						<dd class="contents">
+							<img src="../../img/tmp/recomm_prd2.jpg" alt="">
+							<dl>
+								<dt>슈퍼 아쿠아 맥스 프레시 수분 크림 [지성용]</dt>
+								<dd class="r_first"><span class="ico_spr like_it"></span><span>18</span><a href="#a" class="recomm">추천</a></dd>
+								<dd><span class="ico_spr like_it"></span><span>5</span><a href="#a" class="recomm no">비추천</a></dd>
+							</dl>
+						</dd>
+					</dl>
+				</li>
+				<li class="recomm_sub">
+					<dl>
+						<dt>
+							<strong class="reomm_q">Q</strong>수분 부족형 지성피부인데 리얼 스퀴즈 앰플 도움이 될까요? 
+						</dt>
+						<dd class="id"><em>ar3****</em>
+							<span class="user_info">
+								<span class="detail">
+									<dl class="type">
+										<dt>피부타입</dt>
+										<dd>20대</dd>
+										<dd>여</dd>
+										<dd>모든타입</dd>
+									</dl>
+									<dl class="worry">
+										<dt>피부고민</dt>
+										<dd>화이트닝/피부톤개선</dd>
+									</dl>
+								</span>
+							</span>
+							<span href="#" class="sns_share">
+								<!-- 2016-06-03//수정(s) -->
+								<span class="detail">
+									<dl>
+										<dt>공유하기</dt>
+										<dd><a href="#a" class="btn_facebook">facebook</a></dd>
+										<dd><a href="#a" class="btn_kakao">kakao</a></dd>
+										<dd><a href="#a" class="btn_share">link</a></dd>
+									</dl>
+								</span>
+								<!-- 2016-06-03//수정(e) -->
+							</span>
+						</dd>
+						<dd class="contents">
+							<img src="../../img/tmp/recomm_prd2.jpg" alt="">
+							<dl>
+								<dt>슈퍼 아쿠아 맥스 프레시 수분 크림 [지성용]</dt>
+								<dd class="r_first"><span class="ico_spr like_it"></span><span>18</span><a href="#a" class="recomm">추천</a></dd>
+								<dd><span class="ico_spr like_it"></span><span>5</span><a href="#a" class="recomm no">비추천</a></dd>
+							</dl>
+						</dd>
+					</dl>
+				</li>
+				<li class="recomm_vs">
+					<dl>
+						<dt>
+							<strong class="reomm_q">Q</strong>수분 부족형 지성 피부라서, 오후 시간만 되면 기름이 번지르르 합니다ㅠㅠ
+							불가리안 로즈 모이스처 수분크림 후기가 좋아서 이 참에 갈아타보려고 하는데 제 피부에도 맞을까요?
+						</dt>
+						<dd class="id">
+							<em>ar3****</em>
+							<span class="user_info">
+								<span class="detail">
+									<dl class="type">
+										<dt>피부타입</dt>
+										<dd>20대</dd>
+										<dd>여</dd>
+										<dd>모든타입</dd>
+									</dl>
+									<dl class="worry">
+										<dt>피부고민</dt>
+										<dd>화이트닝/피부톤개선</dd>
+									</dl>
+								</span>
+							</span>
+							<span href="#" class="sns_share">
+								<!-- 2016-06-03//수정(s) -->
+								<span class="detail">
+									<dl>
+										<dt>공유하기</dt>
+										<dd><a href="#a" class="btn_facebook">facebook</a></dd>
+										<dd><a href="#a" class="btn_kakao">kakao</a></dd>
+										<dd><a href="#a" class="btn_share">link</a></dd>
+									</dl>
+								</span>
+								<!-- 2016-06-03//수정(e) -->
+							</span>
+						</dd>
+						<dd class="contents">
+							<a href="#">
+								<img src="../../img/tmp/recomm_prd1.jpg" alt="">
+								<dl>
+									<dt>네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++</dt>
+									<dd><span class="ico_spr like_it2"></span><span>26</span><span class="recomm">추천</span></dd>
+								</dl>
+								<!--2016-06-03/삭제//div class="like_text">
+									<span class="bg"></span>
+									<em>
+										네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++에 투표하시겠습니까?
+										<span class="ico_spr check"></span>
+										<strong>좋아요!</strong>
+									</em>
+								</div-->
+							</a>
+							<span class="ico_spr vs"><span class="blind">VS</span></span>
+							<a href="#">
+								<img src="../../img/tmp/recomm_prd1.jpg" alt="">
+								<dl>
+									<dt>네이처 오리진 씨씨 틴티드 SPF30 PA++</dt>
+									<dd><span class="ico_spr like_it"></span><span>9</span><span class="recomm">추천</span></dd>
+								</dl>
+								<!--2016-06-03/삭제//div class="like_text">
+									<span class="bg"></span>
+									<em>
+										네이처 오리진 콜라겐 비비크림 오리지널 SPF25 PA++에 투표하시겠습니까?
+										<span class="ico_spr check"></span>
+										<strong>좋아요!</strong>
+									</em>
+								</div-->
+							</a>
+						</dd>
+					</dl>	
+				</li>
+				<li class="r_first recomm_sub">
+					<dl>
+						<dt>
+							<strong class="reomm_q">Q</strong>수분 부족형 지성피부인데 리얼 스퀴즈 앰플 도움이 될까요? 
+						</dt>
+						<dd class="id"><em>ar3****</em>
+							<span class="user_info">
+								<span class="detail">
+									<dl class="type">
+										<dt>피부타입</dt>
+										<dd>20대</dd>
+										<dd>여</dd>
+										<dd>모든타입</dd>
+									</dl>
+									<dl class="worry">
+										<dt>피부고민</dt>
+										<dd>화이트닝/피부톤개선</dd>
+									</dl>
+								</span>
+							</span>
+							<span href="#" class="sns_share">
+								<!-- 2016-06-03//수정(s) -->
+								<span class="detail">
+									<dl>
+										<dt>공유하기</dt>
+										<dd><a href="#a" class="btn_facebook">facebook</a></dd>
+										<dd><a href="#a" class="btn_kakao">kakao</a></dd>
+										<dd><a href="#a" class="btn_share">link</a></dd>
+									</dl>
+								</span>
+								<!-- 2016-06-03//수정(e) -->
+							</span>
+						</dd>
+						<dd class="contents">
+							<img src="../../img/tmp/recomm_prd2.jpg" alt="">
+							<dl>
+								<dt>슈퍼 아쿠아 맥스 프레시 수분 크림 [지성용]</dt>
+								<dd class="r_first"><span class="ico_spr like_it"></span><span>18</span><a href="#a" class="recomm">추천</a></dd>
+								<dd><span class="ico_spr like_it"></span><span>5</span><a href="#a" class="recomm no">비추천</a></dd>
+							</dl>
+						</dd>
+					</dl>
+				</li>
+				<li class="recomm_sub">
+					<dl>
+						<dt>
+							<strong class="reomm_q">Q</strong>수분 부족형 지성피부인데 리얼 스퀴즈 앰플 도움이 될까요? 
+						</dt>
+						<dd class="id"><em>ar3****</em>
+							<span class="user_info">
+								<span class="detail">
+									<dl class="type">
+										<dt>피부타입</dt>
+										<dd>20대</dd>
+										<dd>여</dd>
+										<dd>모든타입</dd>
+									</dl>
+									<dl class="worry">
+										<dt>피부고민</dt>
+										<dd>화이트닝/피부톤개선</dd>
+									</dl>
+								</span>
+							</span>
+							<span href="#" class="sns_share">
+								<!-- 2016-06-03//수정(s) -->
+								<span class="detail">
+									<dl>
+										<dt>공유하기</dt>
+										<dd><a href="#a" class="btn_facebook">facebook</a></dd>
+										<dd><a href="#a" class="btn_kakao">kakao</a></dd>
+										<dd><a href="#a" class="btn_share">link</a></dd>
+									</dl>
+								</span>
+								<!-- 2016-06-03//수정(e) -->
+							</span>
+						</dd>
+						<dd class="contents">
+							<img src="../../img/tmp/recomm_prd2.jpg" alt="">
+							<dl>
+								<dt>슈퍼 아쿠아 맥스 프레시 수분 크림 [지성용]</dt>
+								<dd class="r_first"><span class="ico_spr like_it"></span><span>18</span><a href="#a" class="recomm">추천</a></dd>
+								<dd><span class="ico_spr like_it"></span><span>5</span><a href="#a" class="recomm no">비추천</a></dd>
+							</dl>
+						</dd>
+					</dl>
+				</li>
+				<li class="recomm_sub">
+					<dl>
+						<dt>
+							<strong class="reomm_q">Q</strong>수분 부족형 지성피부인데 리얼 스퀴즈 앰플 도움이 될까요? 
+						</dt>
+						<dd class="id"><em>ar3****</em>
+							<span class="user_info">
+								<span class="detail">
+									<dl class="type">
+										<dt>피부타입</dt>
+										<dd>20대</dd>
+										<dd>여</dd>
+										<dd>모든타입</dd>
+									</dl>
+									<dl class="worry">
+										<dt>피부고민</dt>
+										<dd>화이트닝/피부톤개선</dd>
+									</dl>
+								</span>
+							</span>
+							<span href="#" class="sns_share">
+								<!-- 2016-06-03//수정(s) -->
+								<span class="detail">
+									<dl>
+										<dt>공유하기</dt>
+										<dd><a href="#a" class="btn_facebook">facebook</a></dd>
+										<dd><a href="#a" class="btn_kakao">kakao</a></dd>
+										<dd><a href="#a" class="btn_share">link</a></dd>
+									</dl>
+								</span>
+								<!-- 2016-06-03//수정(e) -->
+							</span>
+						</dd>
+						<dd class="contents">
+							<img src="../../img/tmp/recomm_prd2.jpg" alt="">
+							<dl>
+								<dt>슈퍼 아쿠아 맥스 프레시 수분 크림 [지성용]</dt>
+								<dd class="r_first"><span class="ico_spr like_it"></span><span>18</span><a href="#a" class="recomm">추천</a></dd>
+								<dd><span class="ico_spr like_it"></span><span>5</span><a href="#a" class="recomm no">비추천</a></dd>
+							</dl>
+						</dd>
+					</dl>
+				</li>
+				<li class="recomm_sub">
+					<dl>
+						<dt>
+							<strong class="reomm_q">Q</strong>수분 부족형 지성피부인데 리얼 스퀴즈 앰플 도움이 될까요? 
+						</dt>
+						<dd class="id"><em>ar3****</em>
+							<span class="user_info">
+								<span class="detail">
+									<dl class="type">
+										<dt>피부타입</dt>
+										<dd>20대</dd>
+										<dd>여</dd>
+										<dd>모든타입</dd>
+									</dl>
+									<dl class="worry">
+										<dt>피부고민</dt>
+										<dd>화이트닝/피부톤개선</dd>
+									</dl>
+								</span>
+							</span>
+							<span href="#" class="sns_share">
+								<!-- 2016-06-03//수정(s) -->
+								<span class="detail">
+									<dl>
+										<dt>공유하기</dt>
+										<dd><a href="#a" class="btn_facebook">facebook</a></dd>
+										<dd><a href="#a" class="btn_kakao">kakao</a></dd>
+										<dd><a href="#a" class="btn_share">link</a></dd>
+									</dl>
+								</span>
+								<!-- 2016-06-03//수정(e) -->
+							</span>
+						</dd>
+						<dd class="contents">
+							<img src="../../img/tmp/recomm_prd2.jpg" alt="">
+							<dl>
+								<dt>슈퍼 아쿠아 맥스 프레시 수분 크림 [지성용]</dt>
+								<dd class="r_first"><span class="ico_spr like_it"></span><span>18</span><a href="#a" class="recomm">추천</a></dd>
+								<dd><span class="ico_spr like_it"></span><span>5</span><a href="#a" class="recomm no">비추천</a></dd>
+							</dl>
+						</dd>
+					</dl>
+				</li>
+			</ul>
+			<!-- //list -->
+			<a href="#a" class="btn_more arrow">더보기<span></span></a>
+		</div>
+		<!-- //content -->
+
+	</div>
+    <!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+
+	<!-- 레이이팝업2 -->
+	<div class="pop_layer" id="pop_type2">
+		<div class="bg"></div>
+		<div class="pop_wrap">
+			<div class="pop_header">
+				<h2>김주하, 황금 케어 지금 시작하세요.</h2>
+				<div class="info">
+					<span class="date">2016.01.30</span>
+					<span><span class="ico_spr hit"></span>32</span>
+				</div>
+			</div>
+			<div class="pop_content">
+				<!-- thum_video -->
+				<div class="vd_player" style="width:736px; height:403px">
+					<a href="#" class="btn_play">
+						<img src="../../img/tmp/img_them_vd.jpg" alt="">
+					</a>
+					<div class="video">
+						<embed src="http://code.d2.co.kr/nature_republic/demo2/pc/vd/vd.mp4" width="100%" height="100%">
+					</div>
+				</div>
+				<!-- //thum_video -->
+				‘진생 로얄 실크’ 라인의 새로운 뮤즈, 김주하 아나운서!<br>
+				그녀의 ‘진생 로얄 실크 워터리 크림’ TV CF 를 공개합니다.<br><br>
+
+				미모와 지성을 겸비한 김주하 아나운서가익숙한 정장 차림을 벗고 아름다운 드레스를 입은 여신으로 대변신 ♥<br><br>
+
+				김주하 아나운서가 우연히 사용해보고 제품력에 반한 것이 브랜드 모델로의 인연까지 이어지게 되었다고 하는데요,<br>그녀가 극찬한 진생 로얄 실크 워터리 크림 TVCF를 지금 만나보세요!^^<br><br>
+
+				“자연의 귀한 원료로 누구보다 빛나는 피부, 황금 케어, 지금 시작하세요!”
+			</div>
+			<a href="#" class="btn_close">닫기</a>
+		</div>
+	</div>
+	<!-- //레이이팝업2 -->
+</div>
+<!-- //wrap  -->
+</body>
+</html>

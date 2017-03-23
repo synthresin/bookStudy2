@@ -1,0 +1,346 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>NATURE REPUBLIC</title>
+<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
+<link rel="stylesheet" type="text/css" href="../../css/cs_center.css">
+<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../js/selectbox.js"></script>
+<script type="text/javascript" src="../../js/ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.faq_type .list_title .title a').click(function(e){
+			e.preventDefault();
+			var title = $(this).closest('.list_title');
+			var st = title.hasClass('active');
+			if(!st){
+				$('.faq_type .list_title').removeClass('active');
+				$('.faq_type .list_view').removeClass('active');
+				title.addClass('active');
+				title.next().addClass('active');
+			}else{
+				title.removeClass('active');
+				title.next().removeClass('active');
+			}
+		});
+	});
+</script>
+</head>
+<body>
+<!-- wrap  -->
+<div id="wrap">
+	<?php include('../00_common/header.html'); ?>
+    <!-- container -->
+	<div id="container">
+
+		<!-- content -->
+		<div id="content">
+
+			<!-- sub_navi -->
+			<ol class="sub_navi">
+				<li><a href="#">home</a></li>
+				<li><a href="#">고객센터</a></li>
+				<li>FAQ</li>
+			</ol>
+			<!-- //sub_navi -->
+
+			<div class="sub_tit_wrap v2">
+				<h2>FAQ</h2>
+			</div>
+
+			<!-- faq_area -->
+			<div class="faq_area">
+				<div class="faq_srch">
+					<dl>
+						<dt><label for="temp_input2">FAQ검색</label></dt>
+						<dd><input type="text" name="" id="temp_input2" class="i_text"></dd>
+						<dd><a href="#" class="btn_srch">검색</a></dd>
+					</dl>
+				</div>
+
+				<!-- 2016-06-07//수정(s) -->
+				<ul class="tab_sub">
+					<li class="active"><a href="#">전체</a></li>
+					<li><a href="#">주문/결제</a></li>
+					<li><a href="#">배송</a></li>
+					<li><a href="#">취소/환불/반품</a></li>
+					<li><a href="#">상품문의</a></li>
+					<li><a href="#">회원정보</a></li>
+					<li><a href="#">포인트/쿠폰/상품권</a></li>
+					<li><a href="#">매장 이용</a></li><!-- 2016-07-12//띄어쓰기변경 -->
+					<li><a href="#">기타</a></li>
+				</ul>
+				<!-- 2016-06-07//수정(e) -->
+
+				<table class="faq_type tble_type4">
+					<colgroup>
+						<col width="10%">
+						<col width="19%">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr class="list_title">
+							<td>
+								373
+							</td>
+							<td class="category">
+								 주문/결제
+							</td>
+							<td class="title"><span></span><a href="#">개인정보 변경은 어떻게 하나요?</a></td>
+						</tr>
+						<tr class="list_view faq">
+							<td colspan="3">
+								<p>실시간 계좌이체란,<br>
+								전자상거래 시 팝업창을 통해 은행으로 직접 연결되어 결제(납부)대금을 고객님의 계좌에서<br>
+								실시간으로 이체를 할 수 있으며, 결제완료 시 실시간 입금 처리가 되는 안전하고 편리한 서비스 입니다.<br><br>
+
+								결제 시 필요한 입금 정보는 은행으로 자동 전송되어<br>고객님께서는 출금 계좌의 정보만 입력하시면 됩니다.<br>
+								고객님께서 입력하신 계좌정보는 이용기관을 통하지 않고 은행이 직접 관리하므로 안전합니다.<br><br>
+
+								답변이 충분하지 않으시다면 1:1 고객문의를 이용해주세요. <a href="#a" class="cs_txt">1:1 고객문의</a></p>
+							</td>
+						</tr>
+						<tr class="list_title">
+							<td>
+								373
+							</td>
+							<td class="category">
+								배송	
+							</td>
+							<td class="title"><span></span><a href="#">주문정보는 어디에서 확인할 수 있나요?</a></td>
+						</tr>
+						<tr class="list_view faq">
+							<td colspan="3">
+								<p>실시간 계좌이체란,<br>
+								전자상거래 시 팝업창을 통해 은행으로 직접 연결되어 결제(납부)대금을 고객님의 계좌에서<br>
+								실시간으로 이체를 할 수 있으며, 결제완료 시 실시간 입금 처리가 되는 안전하고 편리한 서비스 입니다.<br><br>
+
+								결제 시 필요한 입금 정보는 은행으로 자동 전송되어<br>고객님께서는 출금 계좌의 정보만 입력하시면 됩니다.<br>
+								고객님께서 입력하신 계좌정보는 이용기관을 통하지 않고 은행이 직접 관리하므로 안전합니다.<br><br>
+
+								답변이 충분하지 않으시다면 1:1 고객문의를 이용해주세요. <a href="#a" class="cs_txt">1:1 고객문의</a></p>
+							</td>
+						</tr>
+						<tr class="list_title active">
+							<td>
+								372
+							</td>
+							<td class="category">
+								취소/환불/반품	
+							</td>
+							<td class="title"><span></span><a href="#">네이처리퍼블릭의 포인트란 무엇인가요? 네이처리퍼블릭의 포인트란 무엇인가요? 네이처리퍼블릭의 포인트란 무엇인가요? 네이처리퍼블릭의 포인트란 무엇인가요?</a></td>
+						</tr>
+						<tr class="list_view active faq">
+							<td colspan="3">
+								<p>실시간 계좌이체란,<br>
+								전자상거래 시 팝업창을 통해 은행으로 직접 연결되어 결제(납부)대금을 고객님의 계좌에서<br>
+								실시간으로 이체를 할 수 있으며, 결제완료 시 실시간 입금 처리가 되는 안전하고 편리한 서비스 입니다.<br><br>
+
+								결제 시 필요한 입금 정보는 은행으로 자동 전송되어<br>고객님께서는 출금 계좌의 정보만 입력하시면 됩니다.<br>
+								고객님께서 입력하신 계좌정보는 이용기관을 통하지 않고 은행이 직접 관리하므로 안전합니다.<br><br>
+
+								답변이 충분하지 않으시다면 1:1 고객문의를 이용해주세요. <a href="#a" class="cs_txt">1:1 고객문의</a></p>
+							</td>
+						</tr>
+						<!-- list -->
+						<tr class="list_title">
+							<td>
+								371
+							</td>
+							<td class="category">
+								상품문의	
+							</td>
+							<td class="title"><span></span><a href="#">[상품준비중] 이라는 문구가 뜨는데 무슨 뜻인지 모르겠어요.</a></td>
+						</tr>
+						<tr class="list_view faq">
+							<td colspan="4">
+								<p>실시간 계좌이체란,<br>
+								전자상거래 시 팝업창을 통해 은행으로 직접 연결되어 결제(납부)대금을 고객님의 계좌에서<br>
+								실시간으로 이체를 할 수 있으며, 결제완료 시 실시간 입금 처리가 되는 안전하고 편리한 서비스 입니다.<br><br>
+
+								결제 시 필요한 입금 정보는 은행으로 자동 전송되어<br>고객님께서는 출금 계좌의 정보만 입력하시면 됩니다.<br>
+								고객님께서 입력하신 계좌정보는 이용기관을 통하지 않고 은행이 직접 관리하므로 안전합니다.<br><br>
+
+								답변이 충분하지 않으시다면 1:1 고객문의를 이용해주세요. <a href="#a" class="cs_txt">1:1 고객문의</a></p>
+							</td>
+						</tr>
+						<!-- //list -->
+						<!-- list -->
+						<tr class="list_title">
+							<td>
+								370
+							</td>
+							<td class="category">
+								회원/서비스	
+							</td>
+							<td class="title"><span></span><a href="#">네이처리퍼블릭 모바일상품권은 어디에서 구매 또는 선물 할 수 있나요?</a></td>
+						</tr>
+						<tr class="list_view faq">
+							<td colspan="4">
+								<p>실시간 계좌이체란,<br>
+								전자상거래 시 팝업창을 통해 은행으로 직접 연결되어 결제(납부)대금을 고객님의 계좌에서<br>
+								실시간으로 이체를 할 수 있으며, 결제완료 시 실시간 입금 처리가 되는 안전하고 편리한 서비스 입니다.<br><br>
+
+								결제 시 필요한 입금 정보는 은행으로 자동 전송되어<br>고객님께서는 출금 계좌의 정보만 입력하시면 됩니다.<br>
+								고객님께서 입력하신 계좌정보는 이용기관을 통하지 않고 은행이 직접 관리하므로 안전합니다.<br><br>
+
+								답변이 충분하지 않으시다면 1:1 고객문의를 이용해주세요. <a href="#a" class="cs_txt">1:1 고객문의</a></p>
+							</td>
+						</tr>
+						<!-- //list -->
+						<!-- list -->
+						<tr class="list_title">
+							<td>
+								369
+							</td>
+							<td class="category">
+								포인트/적립	
+							</td>
+							<td class="title"><span></span><a href="#">네이처리퍼블릭 제품의 사용 순서는 어떻게 되나요?</a></td>
+						</tr>
+						<tr class="list_view faq">
+							<td colspan="4">
+								<p>실시간 계좌이체란,<br>
+								전자상거래 시 팝업창을 통해 은행으로 직접 연결되어 결제(납부)대금을 고객님의 계좌에서<br>
+								실시간으로 이체를 할 수 있으며, 결제완료 시 실시간 입금 처리가 되는 안전하고 편리한 서비스 입니다.<br><br>
+
+								결제 시 필요한 입금 정보는 은행으로 자동 전송되어<br>고객님께서는 출금 계좌의 정보만 입력하시면 됩니다.<br>
+								고객님께서 입력하신 계좌정보는 이용기관을 통하지 않고 은행이 직접 관리하므로 안전합니다.<br><br>
+
+								답변이 충분하지 않으시다면 1:1 고객문의를 이용해주세요. <a href="#a" class="cs_txt">1:1 고객문의</a></p>
+							</td>
+						</tr>
+						<!-- //list -->
+						<!-- list -->
+						<tr class="list_title">
+							<td>
+								368
+							</td>
+							<td class="category">
+								매장	
+							</td>
+							<td class="title"><span></span><a href="#">사은품이 조금밖에 안 왔어요.  / 사은품이 안왔어요.</a></td>
+						</tr>
+						<tr class="list_view faq">
+							<td colspan="4">
+								<p>실시간 계좌이체란,<br>
+								전자상거래 시 팝업창을 통해 은행으로 직접 연결되어 결제(납부)대금을 고객님의 계좌에서<br>
+								실시간으로 이체를 할 수 있으며, 결제완료 시 실시간 입금 처리가 되는 안전하고 편리한 서비스 입니다.<br><br>
+
+								결제 시 필요한 입금 정보는 은행으로 자동 전송되어<br>고객님께서는 출금 계좌의 정보만 입력하시면 됩니다.<br>
+								고객님께서 입력하신 계좌정보는 이용기관을 통하지 않고 은행이 직접 관리하므로 안전합니다.<br><br>
+
+								답변이 충분하지 않으시다면 1:1 고객문의를 이용해주세요. <a href="#a" class="cs_txt">1:1 고객문의</a></p>
+							</td>
+						</tr>
+						<!-- //list -->
+						<!-- list -->
+						<tr class="list_title">
+							<td>
+								367
+							</td>
+							<td class="category">
+								기타	
+							</td>
+							<td class="title"><span></span><a href="#">네이처리퍼블릭의 매장들은 어디에 있나요?</a></td>
+						</tr>
+						<tr class="list_view faq">
+							<td colspan="4">
+								<p>실시간 계좌이체란,<br>
+								전자상거래 시 팝업창을 통해 은행으로 직접 연결되어 결제(납부)대금을 고객님의 계좌에서<br>
+								실시간으로 이체를 할 수 있으며, 결제완료 시 실시간 입금 처리가 되는 안전하고 편리한 서비스 입니다.<br><br>
+
+								결제 시 필요한 입금 정보는 은행으로 자동 전송되어<br>고객님께서는 출금 계좌의 정보만 입력하시면 됩니다.<br>
+								고객님께서 입력하신 계좌정보는 이용기관을 통하지 않고 은행이 직접 관리하므로 안전합니다.<br><br>
+
+								답변이 충분하지 않으시다면 1:1 고객문의를 이용해주세요. <a href="#a" class="cs_txt">1:1 고객문의</a></p>
+							</td>
+						</tr>
+						<!-- //list -->
+						<!-- list -->
+						<tr class="list_title">
+							<td>
+								366
+							</td>
+							<td class="category">
+								주문/결제
+							</td>
+							<td class="title"><span></span><a href="#">주문정보는 어디에서 확인할 수 있나요?</a></td>
+						</tr>
+						<tr class="list_view faq">
+							<td colspan="4">
+								<p>실시간 계좌이체란,<br>
+								전자상거래 시 팝업창을 통해 은행으로 직접 연결되어 결제(납부)대금을 고객님의 계좌에서<br>
+								실시간으로 이체를 할 수 있으며, 결제완료 시 실시간 입금 처리가 되는 안전하고 편리한 서비스 입니다.<br><br>
+
+								결제 시 필요한 입금 정보는 은행으로 자동 전송되어<br>고객님께서는 출금 계좌의 정보만 입력하시면 됩니다.<br>
+								고객님께서 입력하신 계좌정보는 이용기관을 통하지 않고 은행이 직접 관리하므로 안전합니다.<br><br>
+
+								답변이 충분하지 않으시다면 1:1 고객문의를 이용해주세요. <a href="#a" class="cs_txt">1:1 고객문의</a></p>
+							</td>
+						</tr>
+						<!-- //list -->
+						<!-- list -->
+						<tr class="list_title">
+							<td>
+								365
+							</td>
+							<td class="category">
+								배송
+							</td>
+							<td class="title"><span></span><a href="#">주문정보는 어디에서 확인할 수 있나요?</a></td>
+						</tr>
+						<tr class="list_view faq">
+							<td colspan="4">
+								<p>실시간 계좌이체란,<br>
+								전자상거래 시 팝업창을 통해 은행으로 직접 연결되어 결제(납부)대금을 고객님의 계좌에서<br>
+								실시간으로 이체를 할 수 있으며, 결제완료 시 실시간 입금 처리가 되는 안전하고 편리한 서비스 입니다.<br><br>
+
+								결제 시 필요한 입금 정보는 은행으로 자동 전송되어<br>고객님께서는 출금 계좌의 정보만 입력하시면 됩니다.<br>
+								고객님께서 입력하신 계좌정보는 이용기관을 통하지 않고 은행이 직접 관리하므로 안전합니다.<br><br>
+
+								답변이 충분하지 않으시다면 1:1 고객문의를 이용해주세요. <a href="#a" class="cs_txt">1:1 고객문의</a></p>
+							</td>
+						</tr>
+						<!-- //list -->
+
+					</tbody>
+				</table>
+
+			<div class="page_nav" style="text-align:center">
+                    <a href="" class="btn btn_first">처음</a>
+                    <a href="" class="btn btn_prev3">이전</a>
+                    <ul>
+                        <li><strong>1</strong></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">8</a></li>
+                        <li><a href="#">9</a></li>
+                        <li><a href="#">10</a></li>
+                    </ul>
+                    <a href="" class="btn btn_next3">다음</a>
+                    <a href="" class="btn btn_last">마지막</a>
+                </div>
+
+			</div>
+			
+			<!-- //faq_area -->
+
+			<!-- list -->
+			<!-- //list -->
+		</div>
+		<!-- //content -->
+
+	</div>
+    <!-- //container -->
+	<?php include('../00_common/footer.html'); ?>
+</div>
+<!-- //wrap  -->
+</body>
+</html>
