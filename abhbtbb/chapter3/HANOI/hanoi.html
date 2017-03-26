@@ -12,93 +12,33 @@
     </style>
 </head>
 <body>
-    <div id="result">
+    <!--
+        Hanoi.hanoiFunc(디스크 숫자, 1, 3)를 통해서는 콘솔에서만 확인이 됩니다.
+        Hanoi.startHanoi(디스크숫자) 를 통해서 실행 가능합니다. 
+        그외의 함수는 클로져로 처리되어 접근이 되지는 않습니다. 즉 위의 2개만 외부에서 접근이 됩니다. 
+        
+        Hanoi.startHanoi는 makeStacks를 통해서 스택을 3개를 하나의 배열로 만들어서, 콜백함수로 viewStacks와 함께 
+        hanoiFuncStack에 전달합니다. hanoiFuncStack에는 다시 디스크 숫자, 결과 나타낼 DOM 객체, 첫 스택 렌더링
+        그리고 core 함수를 호출합니다. 이 core 함수가 스택버전 하노이 탑 메소드 입니다.
+        여기서 재귀 호출을 하면서 viewStacks를 callBack으로 호출하고 이 함수가 중간 중간 그 결과값을 화면에 그립니다.
+        
+        viewStacks는 그릴 대상을 DOM으로 가져온뒤, 2중 for문을 통해서 문자열로 먼저 저장하고
+        마지막에 innerHTML에 그립니다. viewStacks는 재귀함수가 다 끝나기 전까지 계속 호출하기 때문에
+        +=를 사용해서 중첩해서 그려지도록 만들었습니다.
+        
+        여기 소스를 보면 제가 callBack을 넣은것이 보일 것입니다.
+        startHanoi에서 viewStacks 콜백함수로 넘겨 주었는데, 그 이후 보이는 모든 callBack 인자에 viewStacks가 들어갑니다.
+        나중에 viewStacks대신 다른 함수를 추가해서 그것을 적용하고 싶다면 일단 만든 다음에 startHanoi의 viewStacks대신 그 함수를
+        넣으면 됩니다. 원래는 callBack이라고 적힌 곳에는 전부 viewStacks가 적혀 잇어 호출했었기에 메소드가 바뀌면 그 부분을 전부
+        고쳐야 했지만 그럴필요가 없어진 것입니다. 이러한 방식을 콜백 함수를 이용해서 의존성을 느슨하게 만든다고 합니다.
 
+        viewStacks 대신할 함수에서 주의할 점은 makeStacks에서 만들어진 객체를 인자로 보내야 한다는 점이 있습니다.
+    -->
+    
+    <div id="result">
     </div>
     
 </body>
 <script src="../Stack.js"></script>
-<script>
-    // 하노이 탑 푸는 재귀 알고리즘 [ 일반버전 ]
-    function hanoiFunc( disk, from, to) {
-		if( !disk ) return ;
-		var temp = 6 - from - to;  
-		hanoiFunc( disk-1, from, temp );
-		console.log(`${disk}번 디스크를 ${from} 에서 ${to}로 이동`);
-		hanoiFunc( disk-1, temp, to);
-    }
-
-    // 하노이 탑 푸는 재귀 알고리즘 [ 스택을 이용 ] 
-    function core(disk, from, to, container) {
-        if( !disk ) return;
-        var temp = 6 - from - to;
-
-        // 재귀 호출
-        core( disk-1, from, temp, container );
-        container[to].add( container[from].out() );
-        viewStacks(container);
-        core( disk-1, temp, to, container );
-    }
-
-    // 하노이에 필요한 stack 만들기
-    function makeStacks(number) {
-        
-        // 혼란을 줄이기 위해서 하나의 안쓰는 스택을 만들어서 1,2,3을 맞춘다.
-        var stacks = [0,1,2,3].map( x=> new Stack() );
-        for( var i = number; i > 0; i--) {
-            stacks[1].add(i);
-        }
-        return stacks;
-    }
-
-    // 스택을 이용한 하노이 탑 함수 종합
-    function hanoiFuncStack(stacks) {
-        // 스택1, 스택2, 스택3을 만들기
-        var disks = stacks[1].len();
-
-        // 화면 초기화, 시작상태 렌더링
-        document.getElementById('result').innerHTML = "";
-        viewStacks(stacks);
-
-        // 하노이 재귀 알고리즘
-        core( disks, 1, 3, stacks );
-
-    }
-
-    // 스택 상태를 화면에 뿌려주는 형태, 아쉽게도 아이디에 의존성을 가지고 있다.
-    function viewStacks(stacks) {
-
-        // 결과를 그릴 대상
-        var result = document.getElementById('result');
-
-        //템플릿
-        var stackTemplates = ['{stack1}','{stack2}','{stack3}'];
-        var TEMPLATE1 = '<div class="container">\
-                            <div class="first">{stack1}</div>\
-                            <div class="second">{stack2}</div>\
-                            <div class="third">{stack3}</div>\
-                        </div>';
-        var TEMPLATE2 = '<div> [{{data}}] </div>';
-
-        // 저장할 곳
-        var temp1 = TEMPLATE1;
-        var temp2 = "";
-
-        // 3개의 스택 각각에서 다시 값들을 순회하면서 입력해야 하므로 2중 for 문을 쓴다.
-        for( var i = 1; i < 4; i++ ) {
-            for( var j = stacks[i].len() * 1 - 1; j > -1; j--) {
-                temp2 += TEMPLATE2.replace('{{data}}', stacks[i]._stack[j] );
-            }
-            temp1 = temp1.replace( stackTemplates[i-1], temp2 );
-            temp2 = "";
-        }
-        result.innerHTML += temp1;
-    }
-
-    // 시작함수. 여기에 원하는 디스크 숫자를 넣으면 작동이 시작된다.
-    function startHanoi(disks) {
-        hanoiFuncStack( makeStacks(disks) );
-    }
-
-</script>
+<script src="./hanoi.js"></script>
 </html>
