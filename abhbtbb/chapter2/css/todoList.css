@@ -1,0 +1,6 @@
+.oneLine { margin-top:10px; }
+.oneLine .oneImportant { float:left; width:7%; background-color:aliceblue; padding:1%;}
+.oneLine .oneContent { float:left; width:80%; background-color:aqua; padding:1%;}
+.onLine::after { content:""; clear:both }
+
+/* ::는 ie7에서는 작동안됨 */
