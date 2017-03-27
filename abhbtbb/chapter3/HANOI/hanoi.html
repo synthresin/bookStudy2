@@ -34,11 +34,24 @@
 
         viewStacks 대신할 함수에서 주의할 점은 makeStacks에서 만들어진 객체를 인자로 보내야 한다는 점이 있습니다.
     -->
-    
+    <div>
+        하노이탑 디스크 갯수 : <input type="text" id="diskNumber" type="input"> <input type="button" onclick="start()" value="시작">
+    </div>
     <div id="result">
     </div>
     
 </body>
 <script src="../Stack.js"></script>
 <script src="./hanoi.js"></script>
+<script> 
+function start() {
+    var diskNum = document.getElementById('diskNumber').value * 1;
+    if( typeof diskNum === "number" && diskNum.toString() !== "NaN"  ) {
+        if( diskNum < 10) Hanoi.startHanoi(diskNum);
+        else alert('9이하의 수만 해주세요. 10이상은 시간이 많이 걸립니다.');
+    } else {
+        alert( '숫자만 넣어주세요' );
+    } 
+}
+</script>
 </html>
