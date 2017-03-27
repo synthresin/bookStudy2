@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        .oneLine { margin-top:10px; }
-        .oneLine .oneImportant { float:left; width:7%; background-color:aliceblue; padding:1%;}
-        .oneLine .oneContent { float:left; width:80%; background-color:aqua; padding:1%;}
-        .onLine::after { content:""; clear:bothaqua}
-    </style>
+    <link rel="stylesheet" href="../css/todoList.css">
 </head>
 <body>
 
@@ -31,24 +26,9 @@
     <section class="todoLists" id="todoLists">
     </section>
 
+
 </body>
-<script src="../js/todoList.js"></script>
-<script>
-    var todoSubmit      = document.getElementById('todoSubmit'),
-        todoDelete      = document.getElementById('todoDelete'),
-        todoImportant   = document.getElementById('todoImportant'),
-        todoContent     = document.getElementById('todoContent');
-
-    todoSubmit.addEventListener('click', function() {
-        TodoList.setList( todoImportant.value, todoContent.value );
-        TodoList.displayList('todoLists');
-    });
-
-    todoDelete.addEventListener('click', function() {
-        var delList =  TodoList.checkChecked('check')
-        TodoList.delList( delList );
-        TodoList.displayList('todoLists');
-    })
-
-</script>
+<!--<script src="../js/todoApp.js"></script>
+<script src="../js/todoList.js"></script>-->
+<script src="../js/totaltest.js"></script>
 </html>
