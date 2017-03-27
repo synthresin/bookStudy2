@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		function PriorityQueue() {
+
+			var items = [];
+
+			function QueueElement (element, priority) { // {1}
+				this.element = element;
+				this.priority = priority;
+			}
+			this.enqueue = function(element, priority) {
+				var queueElement = new QueueElement(element, priority);
+				if (this.isEmpty()) {
+					items.push(queueElement); // {2}
+				} else {
+					var added = false;
+					for (var i = 0; i < items.length; i++) {
+						if (queueElement.priority < items[i].priority) {
+							console.log('queueElement', queueElement);
+							items.splice(i,0,queueElement); // {3} 인덱스 i번째 0번만,queueElement 복사
+							added = true;
+							break;
+						}
+					}
+					if (!added) { // {5}
+						items.push(queueElement);
+					}
+				}
+			};
+		}
+
+		var priorityQueue = new PriorityQueue();
+		priorityQueue.enqueue("John", 2);
+		priorityQueue.enqueue("Jack", 1);
+		priorityQueue.enqueue("Camila", 1);
+		priorityQueue.print();
+	</script>
+</body>
+</html>

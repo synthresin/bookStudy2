@@ -46,7 +46,7 @@
 
     /* 삭제 배열을 받아서 각각을 삭제 처리 */
     TodoList.delList = function( delArray ) {
-        delArray.map( function(x) {
+        delArray.map( x => {
             for( var i = 0; i < List.length; i++) {
                 if( List[i].iNum === +x ) { TodoList.delOne( i );}
             }
@@ -73,11 +73,13 @@
     TodoList.checkChecked = function( className ) {
         var checkList   = document.getElementsByClassName( className ),
             checkedList = Array.prototype.filter.call(checkList, function(x){return x.checked});
-            
-        return checkedList.map( function(x) { return x.previousSibling.value } );
+
+        return checkedList.map( x => x.previousSibling.value );
     }
 
-    /* TodoList 네임스페이스에 추가 */
     container.TodoList = TodoList;
 
 })(window);
+
+
+TodoList.displayList('todoLists');
