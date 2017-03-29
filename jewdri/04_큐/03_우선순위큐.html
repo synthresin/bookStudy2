@@ -1,0 +1,199 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name ="format-detection" content ="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>큐(Queue) 우선순위큐</title>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<style>
+.wrap{padding:10px 20px;}
+table{margin-top:20px;}
+form{margin-top:20px;}
+form fieldset{width:400px;border:2px solid #efefef;}
+form legend{font-size:16px;font-weight:600;}
+form ul{margin-top:10px;}
+form li{position:relative;margin-top:10px;padding-left:15px;}
+form li:before{display:inline-block;position:relative;top:0;left:0;content:'-';}
+form button{display:block;width:300px;height:30px;margin:10px auto;background:#000;color:#fff;text-align:center;line-height:30px;font-size:16px;}
+.btn_end{display:block;width:300px;height:30px;margin-top:10px;background:#efefef;color:#333;text-align:center;line-height:30px;font-size:16px;font-weight:600;}
+</style>
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/priorityQueue.js"></script>
+<script type="text/javascript">
+	//책에있는부분 (s)
+	var priorityQueue = new PriorityQueue();
+	priorityQueue.enqueue('John',2);
+	priorityQueue.enqueue('Jack',1);
+	priorityQueue.enqueue('Camila',1);
+	priorityQueue.print();
+	//책에있는부분 (e)
+
+	var addData = [{
+		content:'레이아웃,A 레이아웃 선택->B 레이아웃으로 변경->다시 A레이아웃을 선택하면 캔버스영역에 레이아웃이 정상 출력되지 않음,공통,박효신',
+		prio:1
+	},
+	{
+		content:'레이아웃,A 레이아웃 선택->B 레이아웃으로 변경->다시 A레이아웃을 선택하면 캔버스영역에 레이아웃이 정상 출력되지 않음,공통,박효신',
+		prio:2
+	}];
+
+	//오류리포트 클래스
+	function ErrorReport(area){
+		this.addCont = null;
+		this.list = null;
+		this.viewArea = null;
+		this.init(area);
+		this.listTemplate = '<tr><td>{type}</td><td>{text}</td><td>{test}</td><td>{user}</td><td{isClass}>{priority}</td></tr>';
+	}
+
+	ErrorReport.prototype.init = function(area){
+		this.list =  new PriorityQueue();
+		this.viewArea = $(area);
+	}
+
+	ErrorReport.prototype.addList = function(){
+		this.list.enqueue(this.addCont.content, this.addCont.prio);
+	}
+
+	ErrorReport.prototype.delList = function(){
+		this.list.dequeue();
+	}
+
+	ErrorReport.prototype.viewList = function(){
+		var listContent = '';
+		if(!this.list.isEmpty()){
+			for(var i=0; i < this.list.size(); i++){
+				var tempList = this.listTemplate;
+				var cont = this.list.items[i].element.split(',');
+				var prio = this.list.items[i].priority;
+				tempList = tempList.replace('{type}',cont[0])
+									.replace('{text}',cont[1])
+									.replace('{test}',cont[2])
+									.replace('{user}',cont[3]);
+				if(prio == 1){
+					tempList = tempList.replace('{isClass}',' class="priority"')
+										.replace('{priority}','상');
+				}else{
+					var txt = '';
+					prio == 2 ? txt = '중' : txt = '하';
+					console.log(txt);
+					tempList = tempList.replace('{priority}',txt);
+					tempList = tempList.replace('{isClass}','');
+				}
+				console.log(tempList);
+				listContent += tempList;
+			}
+		}else{
+			listContent = '<tr><td colspan="5">오류리스트가 없습니다.</td></tr>';
+		}
+		this.viewArea.html(listContent);
+	}
+	var errorList = null;
+	$(document).ready(function(){
+
+		errorList = new ErrorReport('.tble_type2 tbody');
+		for(var i=0; i < addData.length; i++){
+			errorList.addCont = addData[i];
+			errorList.addList();
+		}
+		errorList.list.print();
+		errorList.viewList();
+	});
+
+	function addList(){
+		//유효성검사 안함
+		var type = $('#type').val();
+		var test = $('#test').val();
+		var user = $('#user').val();
+		var priority = parseInt($('#priority').val());
+		var txt = $('#txt').val();
+
+		var tmpData = {
+			content: type+','+txt+','+test+','+user,
+			prio:priority
+		}
+		console.log(tmpData);
+		errorList.addCont = tmpData;
+		errorList.addList();
+		errorList.viewList();
+
+	}
+
+	function delList(){
+		errorList.delList();
+		errorList.viewList();
+	}
+</script>
+</head>
+<body class="wrap">
+	<header><h1>프로젝트 오류사항 리스트업</h1></header>
+	<table class="tble_type2">
+		<colgroup>
+			<col style="width:10%">
+			<col>
+			<col style="width:10%">
+			<col style="width:10%">
+			<col style="width:10%">
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col">구분</th>
+				<th scope="col">오류내용</th>
+				<th scope="col">테스트환경</th>
+				<th scope="col">작성자</th>
+				<th scope="col">우선순위</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td colspan="5">오류리스트가 없습니다.</td>
+			</tr>
+		</tbody>
+	</table>
+	<button type="button" class="btn_end" onclick="delList();">해결</button>
+
+	<form action="">
+		<fieldset>
+			<legend>오류사항 입력</legend>
+			<ul>
+				<li>
+					<label for="type">구분</label>
+					<select id="type">
+						<option value="레이아웃">레이아웃</option>
+						<option value="결제">결제</option>
+						<option value="글등록">글등록</option>
+						<option value="기타">기타</option>
+					</select>
+				</li>
+				<li>
+					<label for="test">테스트환경</label>
+					<select id="test">
+						<option value="IOS">IOS</option>
+						<option value="안드로이드">안드로이드</option>
+						<option value="공통">공통</option>
+					</select>
+				</li>
+				<li>
+					<label for="user">작성자</label>
+					<input type="text" id="user">
+				</li>
+				<li>
+					<label for="priority">우선순위</label>
+					<select id="priority">
+						<option value="1">상</option>
+						<option value="2">중</option>
+						<option value="3">하</option>
+					</select>
+				</li>
+				<li>
+					<label for="txt">오류내용</label>
+					<textarea id="txt" cols="50" rows="5"></textarea>
+				</li>
+			</ul>
+			<button type="button" onclick="addList();">등록</button>
+		</fieldset>
+	</form>
+</body>
+</html>

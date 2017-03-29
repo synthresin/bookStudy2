@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name ="format-detection" content ="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<title>큐(Queue) 클래스</title>
+<script type="text/javascript">
+	function Queue(){
+		this.items = [];
+	}
+
+	Queue.prototype.enqueue = function(element){
+		this.items.push(element);
+	}
+
+	Queue.prototype.dequeue = function(){
+		return this.items.shift();
+	}
+
+	Queue.prototype.front = function(){
+		return this.items[0];
+	}
+
+	Queue.prototype.isEmpty = function(){
+		return this.items.length == 0;
+	}
+
+	Queue.prototype.size = function(){
+		return this.items.length;
+	}
+
+	Queue.prototype.print = function(){
+		console.log(this.items.toString());
+	}
+
+	var test = new Queue();
+	test.enqueue(2);
+	test.enqueue(3);
+	test.enqueue(4);
+	var temp = test.items;
+	console.log(temp);
+
+	test.dequeue();
+	test.print();
+
+</script>
+</head>
+<body>
+</body>
+</html>
