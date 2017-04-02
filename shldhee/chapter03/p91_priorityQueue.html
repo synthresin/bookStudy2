@@ -36,6 +36,36 @@
 					}
 				}
 			};
+
+			this.dequeue = function(element) {
+				return items.shift();
+			};
+
+			// 큐의 첫번째 원소 반환
+			this.front = function() {
+				return items[0];
+			};
+
+			// Queue 비어있는지 확인
+			this.isEmpty = function() {
+				return items.length == 0;
+			};
+
+			// Queue 비우기
+			this.clear = function() {
+				items = [];
+			};
+
+			// Queue 길이
+			this.size = function() {
+				return items.length;
+			};
+
+			// 디버깅용
+			this.print = function() {
+				console.log(items.toString());
+			};
+
 		}
 
 		var priorityQueue = new PriorityQueue();
