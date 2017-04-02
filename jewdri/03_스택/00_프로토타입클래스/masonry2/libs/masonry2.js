@@ -96,7 +96,8 @@
             list.css({left:pos[i].x, top:pos[i].y});
         }
         var contWidth = (this.listWidth*this.colGrid)+(this.itemMargin*(this.colGrid-1));
-        this.listItem.parent().css('width',contWidth+'px');
+        var contHeight = parseInt(this.listItem.eq(max-1).css('height')) + pos[max-1].y;
+        this.listItem.parent().css('width',contWidth+'px').css('height',contHeight+'px');
     }
 
     Gallery.prototype.compareTop = function(a,b){
