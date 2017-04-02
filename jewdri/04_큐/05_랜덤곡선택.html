@@ -85,7 +85,9 @@ button{display:block;width:300px;height:30px;margin:20px 0;background:#000;color
 		for(var i =0; i < this.turnNum; i++){
 			this.playList.enqueue(this.playList.dequeue());
 		}
+		console.log(this.playList.items);
 		var pick = this.playList.dequeue(); //랜덤으로 재생할 곡
+		
 		this.nowPlay.find('span').html(pick.title);
 		this.nowPlay.find('em').html('- '+pick.artist);
 
@@ -109,7 +111,7 @@ button{display:block;width:300px;height:30px;margin:20px 0;background:#000;color
 
 		this.notPlayList.enqueue(pick);
 		this.viewList(this.notPlayArea, this.notPlayList);
-		if(this.notPlayList.size() > this.notPlayNum-1){
+		if(this.notPlayList.size() > this.notPlayNum){
 			var temp = this.notPlayList.dequeue();
 			this.playList.enqueue(temp);
 		}
@@ -121,6 +123,7 @@ button{display:block;width:300px;height:30px;margin:20px 0;background:#000;color
 
 		$('.nowPlay button').click(function(){
 			random.srchPlay();
+			random.turnNum =  Math.floor(Math.random()*20+1);
 		});
 
 		$('.notPlay button').click(function(){

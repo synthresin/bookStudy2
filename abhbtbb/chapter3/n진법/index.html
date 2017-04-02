@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="targetNumber" placeholder="원하는 숫자"> 을
+        <input type="text" id="nSystem" placeholder="1~36"> 진법 
+        <input type="button" id="convertButton" value="변환">
+
+    </div>
+    <div id="content">
+        <div>결과 값</div>
+        <div id="result"></div>
+    </div>
+    
+</body>
+<script src="../Stack.js"></script>
+<script src="./nSystem.js"></script>
+<script>
+    function $(selector){return document.querySelector(selector); }
+
+    var targetNumber = $('#targetNumber');
+    var nSystem = $('#nSystem');
+    var button = $('#convertButton');
+    var result = $('#result');
+
+    button.onclick = function() {
+        result.innerHTML = NS.convert10toN( nSystem.value, targetNumber.value);
+    };
+
+
+
+</script>
+</html>
