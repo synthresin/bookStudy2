@@ -1,6 +1,8 @@
+
+/* * * * * * * * * * * * * * * * * *  Pstack 모듈 * * * * * * * * * * * * * * * * * * */
 (function(module){
     var module = module || window;
-    var PIN = module.PIN || {};
+    var Pstack = module.Pstack || {};
 
 
     /* 스택을 상속한 변형 스택 ============================================================================== */
@@ -34,68 +36,86 @@
 
 
 
-    module.PIN = PIN;
-})(window)
-
-// 경로, 뛰워줄 영역 ID, 그리드 숫자, 그리드 담을 배열
-var IMG_PATH = "./img/";
-var targetId = "cardContainer";
+    module.Pstack = Pstack;
+})(window);
 
 
 
-var displayWidth = "1200px";
-var gridNumber = 4;
-var grids = [];
-var cardContainer = "";
-
-/* 템플릿 관련 ============================================================================== */
-
-var cardName = ["imageSrc","title","content","userId"]
-var itemTemplate = '<li class="card">\
-                        <img class="image" src="{{imageSrc}}">\
-                        <dl>\
-                            <dt class="title">{{title}}</dt>\
-                            <dd class="content">{{content}}</dd>\
-                            <dd class="user_id">{{userId}}</dd>\
-                        </dl>\
-                    </li>';
+/* * * * * * * * * * * * * * * * * *  PINTER 모듈 * * * * * * * * * * * * * * * * * * */
+(function(module){
+    var module = module || window;
+    var PINTER = module.PINTER || {};
 
 
-function makeTemplate(data) {
-    var temp = itemTemplate;
-    for( var i = 0; i < cardName.length; i++) {
-        temp = temp.replace("{{"+cardName[i]+"}}", data[cardName[i]]);
+    // 경로, 뛰워줄 영역 ID, 그리드 숫자, 그리드 담을 배열
+    var IMG_PATH = "./img/";
+    var targetId = "cardContainer";
+
+
+
+    var displayWidth = "1200px";
+    var gridNumber = 4;
+    var grids = [];
+    var cardContainer = "";
+
+    /* 템플릿 관련 ============================================================================== */
+
+    var cardName = ["imageSrc","title","content","userId"]
+    var itemTemplate = '<li class="card">\
+                            <img class="image" src="{{imageSrc}}">\
+                            <dl>\
+                                <dt class="title">{{title}}</dt>\
+                                <dd class="content">{{content}}</dd>\
+                                <dd class="user_id">{{userId}}</dd>\
+                            </dl>\
+                        </li>';
+
+
+    function makeTemplate(data) {
+        var temp = itemTemplate;
+        for( var i = 0; i < cardName.length; i++) {
+            temp = temp.replace("{{"+cardName[i]+"}}", data[cardName[i]]);
+        }
+        return temp;
     }
-    return temp;
-}
 
-function makeView(datas, id) {
-    var templates = datas.map( x => makeTemplate(x)).join('\n');
-    var cardContainer = document.getElementById(id);
-    cardContainer.innerHTML = templates;
-    return cardContainer;
-}
-
-
-function makeGrids(number, targetId) {
-    var temp = [];
-    for(var i = 0; i < number; i++) {
-        temp.push(new Pstack(targetId));
+    function makeView(datas, id) {
+        var templates = datas.map( x => makeTemplate(x)).join('\n');
+        var cardContainer = document.getElementById(id);
+        cardContainer.innerHTML = templates;
+        return cardContainer;
     }
-    return temp;
-}
 
-/* 실행 관련 ============================================================================== */
 
-grids = makeGrids(4, targetId);
-cardContainer = makeView(cardData, targetId);
-var cardChildren = cardContainer.children;
+    function makeGrids(number, targetId) {
+        var temp = [];
+        for(var i = 0; i < number; i++) {
+            temp.push(new Pstack(targetId));
+        }
+        return temp;
+    }
 
-var num1 = 0;
-while( cardChildren.length > 0 ) {
-    grids[num1%4].addDom(cardChildren[0]);
-    num1++;
-}
-num1 = 0;
+    /* 실행 관련 ============================================================================== */
 
-grids.map( x => x.makeView());
+    grids = makeGrids(4, targetId);
+    cardContainer = makeView(cardData, targetId);
+    var cardChildren = cardContainer.children;
+
+    var num1 = 0;
+    while( cardChildren.length > 0 ) {
+        grids[num1%4].addDom(cardChildren[0]);
+        num1++;
+    }
+    num1 = 0;
+
+    grids.map( x => x.makeView());
+
+
+
+
+
+
+
+    module.PINTER = PINTER;
+
+})(window);
