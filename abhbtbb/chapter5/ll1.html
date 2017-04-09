@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        기본적인 연결 리스트<br/>
+        <input type="text" id="oneData" placeholder="값을 입력하세요"><br/>
+        <input type="text" id="oneIndex" placeholder="인덱스를 입력하세요">
+        <button id="onePush">입력</button>
+    </div>
+    <br/>
+    <div>
+        <input type="text" id="delIndex" placeholder="삭제 인덱스를 입력하세요">
+        <button id="oneDelete">삭제</button>
+    </div>
+    <div>
+        <input type="text" id="delIndex2" placeholder="삭제 항목를 입력하세요">
+        <button id="oneDelete2">삭제</button>
+    </div>
+    <script>
+        window.onload = function () {
+            var ll1 = new LinkedList();
+            window.ll1 = ll1;
+            function getDOM(something) {
+                return document.querySelector(something);
+            }
+
+            function drawData(oneLL) {
+                var lists = oneLL.popData();
+                var template = '<p>[ {{element}} ]</p>';
+                var temp = lists.map(x => template.replace('{{element}}', x)).join("");
+                getDOM('#showData').innerHTML = temp;
+            }
+
+            var onePush = getDOM('#onePush');
+
+            onePush.onclick = function () {
+                var oneData = getDOM('#oneData').value;
+                var oneIndex = getDOM('#oneIndex').value.trim();
+                // oneIndex가 없으면 insert 실행
+                if (oneIndex === "") {
+                    ll1.append(oneData);
+                } else {
+                    ll1.insert(oneIndex, oneData);
+                }
+                drawData(ll1);
+            }
+
+            var oneDelete = getDOM('#oneDelete');
+
+            oneDelete.onclick = function () {
+                var delIndex = getDOM('#delIndex').value.trim();
+                if (delIndex === "") {
+                    ll1.remove();
+                } else {
+                    ll1.removeAt(delIndex);
+                }
+                drawData(ll1);
+            }
+            var oneDelete2 = getDOM('#oneDelete2');
+
+            oneDelete2.onclick = function () {
+                var delIndex = getDOM('#delIndex2').value.trim();
+                if (delIndex === "") {
+                    ll1.remove();
+                } else {
+                    ll1.remove(delIndex);
+                }
+                drawData(ll1);
+            }
+
+        }
+    </script>
+    <div id="showData"></div>
+
+</body>
+<script src="./js/ll1.js"></script>
+
+</html>
