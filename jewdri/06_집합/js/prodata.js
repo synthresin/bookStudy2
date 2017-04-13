@@ -34,6 +34,7 @@ Productdata.prototype.init = function(listarea, list){
 
             tagList += listTemplate.replace('{img}',list[i].img).replace('{name}',list[i].name).replace('{tag}',tempTag);
         }
+        $(listarea).prev('p').remove();
         $(listarea).html(tagList);
     }else{
         tagList ='<p>리스트가 없습니다.</p>'

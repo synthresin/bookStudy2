@@ -25,54 +25,222 @@ var proInfo = [
         name:'상품2',
         img:'img/pro_02.png',
         price:2000,
-        tag: ['하의','black','운동','여자']
+        tag: ['하의','black','운동','여자','성인']
     },
      {
         name:'상품3',
         img:'img/pro_03.png',
         price:2000,
-        tag: ['상의','black','운동','여자']
+        tag: ['상의','black','운동','여자','성인']
     },
      {
         name:'상품4',
         img:'img/pro_04.png',
         price:2000,
-        tag: ['상의','white','라이프','여자']
+        tag: ['상의','white','라이프','여자','성인']
     },
      {
         name:'상품5',
         img:'img/pro_05.png',
         price:2000,
-        tag: ['상의','pink','라이프','여자']
+        tag: ['상의','pink','라이프','여자','성인']
+    },
+     {
+        name:'상품6',
+        img:'img/pro_06.png',
+        price:2000,
+        tag: ['상의','black','라이프','여자','성인']
+    },
+     {
+        name:'상품7',
+        img:'img/pro_07.png',
+        price:2000,
+        tag: ['상의','pink','운동','여자','성인']
     },
      {
         name:'상품8',
         img:'img/pro_08.png',
         price:2000,
-        tag: ['신발','black','라이프','공용']
+        tag: ['신발','black','운동','공용','성인']
+    },
+     {
+        name:'상품9',
+        img:'img/pro_09.png',
+        price:2000,
+        tag: ['신발','white','라이프','공용','성인']
+    },
+     {
+        name:'상품10',
+        img:'img/pro_10.png',
+        price:2000,
+        tag: ['신발','white','운동','공용','성인']
+    },
+     {
+        name:'상품11',
+        img:'img/pro_11.png',
+        price:2000,
+        tag: ['모자','blue','운동','공용','성인']
+    },
+     {
+        name:'상품12',
+        img:'img/pro_12.png',
+        price:2000,
+        tag: ['모자','red','라이프','공용','성인']
+    },
+     {
+        name:'상품13',
+        img:'img/pro_13.png',
+        price:2000,
+        tag: ['상의','black','라이프','여자','성인']
+    },
+     {
+        name:'상품14',
+        img:'img/pro_14.png',
+        price:2000,
+        tag: ['하의','pink','운동','여자','성인']
+    },
+     {
+        name:'상품15',
+        img:'img/pro_15.png',
+        price:2000,
+        tag: ['하의','black','운동','여자','성인']
+    },
+     {
+        name:'상품16',
+        img:'img/pro_16.png',
+        price:2000,
+        tag: ['신발','red','라이프','남자','성인']
+    },
+     {
+        name:'상품17',
+        img:'img/pro_17.png',
+        price:2000,
+        tag: ['신발','black','red','라이프','공용','성인']
     },
      {
         name:'상품18',
         img:'img/pro_18.png',
         price:2000,
-        tag: ['상의','white','운동','남자']
+        tag: ['상의','white','운동','남자','성인']
+    },
+     {
+        name:'상품19',
+        img:'img/pro_19.png',
+        price:2000,
+        tag: ['상의','black','운동','남자','성인']
+    },
+     {
+        name:'상품20',
+        img:'img/pro_20.png',
+        price:2000,
+        tag: ['상의','blue','운동','남자','성인']
+    },
+     {
+        name:'상품21',
+        img:'img/pro_21.png',
+        price:2000,
+        tag: ['하의','black','운동','남자','성인']
+    },
+     {
+        name:'상품22',
+        img:'img/pro_22.png',
+        price:2000,
+        tag: ['상의','red','운동','남자','성인']
+    },
+     {
+        name:'상품23',
+        img:'img/pro_23.png',
+        price:2000,
+        tag: ['가방','purple','운동','라이프','공용','성인']
+    },
+     {
+        name:'상품24',
+        img:'img/pro_24.png',
+        price:2000,
+        tag: ['시계','white','운동','라이프','공용','성인']
+    },
+     {
+        name:'상품25',
+        img:'img/pro_25.png',
+        price:2000,
+        tag: ['상의','white','라이프','남자','성인']
+    }
+    ,
+     {
+        name:'상품26',
+        img:'img/pro_26.png',
+        price:2000,
+        tag: ['상의','pink','라이프','키즈','여자']
+    }
+    ,
+     {
+        name:'상품27',
+        img:'img/pro_27.png',
+        price:2000,
+        tag: ['신발','black','라이프','키즈','공용']
+    }
+    ,
+     {
+        name:'상품28',
+        img:'img/pro_28.png',
+        price:2000,
+        tag: ['상의','pink','라이프','키즈','여자']
+    }
+     ,
+     {
+        name:'상품29',
+        img:'img/pro_29.png',
+        price:2000,
+        tag: ['상의','black','라이프','키즈','남자']
+    }
+     ,
+     {
+        name:'상품30',
+        img:'img/pro_30.png',
+        price:2000,
+        tag: ['상의','blue','라이프','키즈','남자']
+    }
+     ,
+     {
+        name:'상품31',
+        img:'img/pro_31.png',
+        price:2000,
+        tag: ['하의','blue','라이프','키즈','남자']
+    }
+     ,
+     {
+        name:'상품32',
+        img:'img/pro_32.png',
+        price:2000,
+        tag: ['하의','pink','라이프','키즈','여자']
     }
 ];
-
 $(window).on('load',function(){
+    $('.pro_list').Gallery({
+        items: $('.pro_list li'),
+        col:5,
+        itemWidth:300,
+        itemMargin:10
+    });/**/
+});
+$(document).ready(function(){
     var proManager = new Productdata(proInfo,'.pro_list');
+
     /*
     proManager.addSrch('운동');
     proManager.addSrch('하의');
     proManager.addSrch('blue');
     proManager.andSrch();
     proManager.orSrch();*/
+    var num = $('.pro_list li').length;
+    /*
     $('.pro_list').Gallery({
         items: $('.pro_list li'),
-        col:4,
+        col:5,
         itemWidth:300,
         itemMargin:10
-    });
+    });*/
+
 
     $('.filter ul li a').click(function(e){
         e.preventDefault();
@@ -89,8 +257,8 @@ $(window).on('load',function(){
         else proManager.orSrch();
 
         var num = $('.pro_list li').length;
-        var Cols = 4;
-        if(num < 4)  Cols = num;
+        var Cols = 5;
+        if(num < 5)  Cols = num;
         if(num != 0){
             $('.pro_list').Gallery({
                 items: $('.pro_list li'),
@@ -103,70 +271,32 @@ $(window).on('load',function(){
     });
 });
 </script>
-<script type="text/javascript">
-    //책의 set클래스 사용
-	var set = new Set();
-
-	console.log('set에 1추가 :'+set.add(1));
-
-	console.log('set안에 값  보기 :'+set.values());
-    console.log('set안에 1이 있나? '+set.has(1));
-    console.log('set size? '+set.size());
-    console.log('ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ');
-    console.log('set에 2추가 :'+set.add(2));
-    console.log('set안에 값  보기 :'+set.values());
-    console.log('set안에 2이 있나? '+set.has(2));
-    console.log('set size? '+set.size());
-    console.log('ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ');
-    console.log('set에 1삭제  :'+set.remove(1));
-    console.log('set안에 값  보기 :'+set.values());
-    console.log('ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ');
-    console.log('set에 2삭제  :'+set.remove(2));
-    console.log('set안에 값  보기 :'+set.values());
-    console.log('ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ');
-
-
-    var setA = new Set();
-    setA.add(1);
-    setA.add(2);
-    setA.add(3);
-    var setB = new Set();
-    setB.add(3);
-    setB.add(4);
-    setB.add(5);
-    setB.add(6);
-    var setC = new Set();
-    setC.add(3);
-    setC.add(4);
-    console.log('집합A '+setA.values());
-    console.log('집합B '+setB.values());
-    console.log('집합C '+setB.values());
-    var unionAB = setA.union(setB);
-    console.log('합집합 '+unionAB.values());
-    var intersectionAB = setA.intersection(setB);
-    console.log('교집합 '+intersectionAB.values());
-    var differenceAB = setA.difference(setB)
-    console.log('차집합 '+differenceAB.values());
-
-    console.log('집합 A는 집합 B의 부분집합인가? '+setA.subset(setB));
-    console.log('집합 C는 집합 B의 부분집합인가? '+setC.subset(setB));
-</script>
 </head>
 <div class="wrap">
     <header>
         <h1>나이키 상품</h1>
+        <a href="#"></a>
         <div class="filter">
             <ul>
                 <li><a href="#">#하의</a></li>
                 <li><a href="#">#상의</a></li>
                 <li><a href="#">#모자</a></li>
                 <li><a href="#">#신발</a></li>
+                <li><a href="#">#가방</a></li>
+                <li><a href="#">#시계</a></li>
+                <li><a href="#">#운동</a></li>
+                <li><a href="#">#라이프</a></li>
                 <li><a href="#">#blue</a></li>
                 <li><a href="#">#black</a></li>
                 <li><a href="#">#white</a></li>
                 <li><a href="#">#pink</a></li>
+                <li><a href="#">#red</a></li>
+                <li><a href="#">#purple</a></li>
                 <li><a href="#">#여자</a></li>
                 <li><a href="#">#남자</a></li>
+                <li><a href="#">#공용</a></li>
+                <li><a href="#">#성인</a></li>
+                <li><a href="#">#키즈</a></li>
             </ul>
             <button data-sort="and">AND 검색</button>
             <button data-sort="or">OR 검색</button>
@@ -174,133 +304,28 @@ $(window).on('load',function(){
     </header>
     <section class="content">
         <ul class="item_list pro_list">
-            <li>
+             <li>
                 <a href="#">
-                    <img src="img/pro_01.png" alt="">
+                    <img src="img/pro_23.png" alt="">
                     <dl>
                         <dt>
-                           상품1
+                           제목제목제목제목
                         </dt>
                         <dd>
-                            <span>#하의</span><span>#blue</span><span>#여자</span><span>#운동복</span><span>#하의</span><span>#blue</span><span>#여자</span><span>#운동복</span><span>#하의</span><span>#blue</span><span>#여자</span><span>#운동복</span>
+                            내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약
                         </dd>
                     </dl>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="img/pro_02.png" alt="">
+                    <img src="img/pro_23.png" alt="">
                     <dl>
                         <dt>
-                           상품2
+                           제목제목제목제목
                         </dt>
                         <dd>
-                            내용요약내용요약
-                        </dd>
-                    </dl>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="img/pro_03.png" alt="">
-                    <dl>
-                        <dt>
-                           상품3
-                        </dt>
-                        <dd>
-                            내용요약내용요약
-                        </dd>
-                    </dl>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="img/pro_04.png" alt="">
-                    <dl>
-                        <dt>
-                           상품4
-                        </dt>
-                        <dd>
-                            내용요약내용요약
-                        </dd>
-                    </dl>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                   <img src="img/pro_05.png" alt="">
-                    <dl>
-                        <dt>
-                           상품5
-                        </dt>
-                        <dd>
-                            내용요약내용요약
-                        </dd>
-                    </dl>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="img/pro_06.png" alt="">
-                    <dl>
-                        <dt>
-                           상품6
-                        </dt>
-                        <dd>
-                            내용요약내용요약
-                        </dd>
-                    </dl>
-                </a>
-
-            </li>
-            <li>
-                <a href="#">
-                    <img src="img/pro_07.png" alt="">
-                    <dl>
-                        <dt>
-                           상품7
-                        </dt>
-                        <dd>
-                            내용요약내용요약
-                        </dd>
-                    </dl>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="img/pro_08.png" alt="">
-                    <dl>
-                        <dt>
-                           상품8
-                        </dt>
-                        <dd>
-                            내용요약내용요약
-                        </dd>
-                    </dl>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="img/pro_09.png" alt="">
-                    <dl>
-                        <dt>
-                           상품9
-                        </dt>
-                        <dd>
-                            내용요약내용요약
-                        </dd>
-                    </dl>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="img/pro_10.png" alt="">
-                    <dl>
-                        <dt>
-                           상품10
-                        </dt>
-                        <dd>
-                            내용요약내용요약
+                            내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약내용요약
                         </dd>
                     </dl>
                 </a>
