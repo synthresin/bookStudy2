@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Set</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // 집합은 정렬되지 않은 컬렉션으로 원소는 반복되지 않는다.
+        // 객체로 구현 객체는 동일한 키로 여러 프로퍼티를 가질 수는 없으므로 집합에서 원소가 중복되지 않는 특성이 보장된다.
+
+        function Set() {
+            var items = {};
+
+            // 객체가 어떤 프로퍼티가 있는 조사한다. true or false로 반환
+            this.has = function(value) {
+                return value in items;
+            };
+            this.has = function(value) {
+                return items.hasOwnProperty(value);
+            }
+
+            // value가 집합에 포함되어있는 확인 후 원소를 추가
+            this.add = function(value) {
+                if (!this.has(value)) {
+                    items[value] = value; // 키와 값을 동일하게 하는 이유는 나중에 값을 찾을 때 편하다.
+                    console.log(items);
+                    return true;
+                }
+                return false;
+            };
+
+            // 삭제할 원소가 집합에 존재하는지 확인 후 원소를 삭제
+            this.remove = function(value) {
+                if(this.has(value)) { // 원소값이 존재하면
+                    delete items[value]; // 삭제
+                    return true;
+                }
+                return false;
+            };
+
+            // items에 빈 객체를 할당해 초기화한다.
+            this.clear = function() {
+                items = {};
+            };
+
+            // size 메소드는 구하는법
+            // 1. add, remov 메소드에 length변수를 넣어 실행될때마다 값을 변경
+            // 2. Object 클래스에 내장된 함수이용 IE9 이상 (Object.keys(obj) 객체의 모든 프로퍼티의 키값을 배열로 변환한다.)
+            /*
+            var a = {
+                    name: "LEE",
+                    age: 13,
+                    city: "Seoul"
+                }
+            a; //Object {name: "LEE", age: 13, city: "Seoul"}
+            Object.keys(a); // ["name", "age", "city"]
+            */
+            this.size = function () {
+                return Object.keys(items).length;
+            }
+
+            // 3. items의 프로퍼티 개수를 센다.
+            this.sizeLegacy = function() {
+                var count = 0;
+                for (var prop in items) {
+                    if(items.hasOwnProperty(prop)) // 삭제해도 가능?
+                        count++;
+                }
+                return count;
+            };
+
+            // 모든 프로퍼티를 추출 key 값 = 원소 값
+            this.values = function() {
+                return Object.keys(items);
+            }
+
+            this.valuesLegacy = function() {
+                var keys = [];
+                for(var key in items) { // 프로퍼티를 순회할때마다 배열에 추가
+                    keys.push(key);
+                }
+                return keys;
+            };
+
+
+        }
+    /*    Set.prototype.has = function(value) {
+            return items.hasOwnProperty(value);
+        }
+        Set.prototype.add = function(value) {
+            return items.hasOwnProperty(value);
+        }*/
+
+        var set = new Set();
+
+        set.add(1);
+        console.log(set.values()); // [1]
+        console.log(set.has(1)); // true
+        console.log(set.size()); // 1
+
+        set.add(2);
+        console.log(set.values());
+        console.log(set.has(2));
+        console.log(set.size());
+
+        set.remove(1);
+        console.log(set.values()); // [2]
+
+        set.remove(2);
+        console.log(set.values()); // []
+
+
+    </script>
+</body>
+</html>
