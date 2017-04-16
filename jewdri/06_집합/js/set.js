@@ -50,7 +50,7 @@ Set.prototype.values = function(){
 Set.prototype.valueLegacy = function(){
     var keys = [];
     for(var key in this.items){
-        keys.push(key);
+        keys.push(key);	//여기 hasOwnproperty를 해야하지않나. 
     }
     return keys;
 }
