@@ -85,7 +85,64 @@
                 return keys;
             };
 
+			this.union = function(otherSet) {
+				var unionSet = new Set();
 
+				var values = this.values(); // Set()가르킨다
+				for (var i=0; i<values.length; i++) {
+					unionSet.add(values[i]);
+				}
+				console.log("values",values);
+
+				values = otherSet.values();
+				for (var i=0; i<values.length; i++) {
+					unionSet.add(values[i]);
+				}
+
+				return unionSet;
+			};
+
+			this.intersection = function(otherSet) {
+				var intersectionSet = new Set();
+
+				var values = this.values();
+
+				for (var i=0; i<values.length; i++) {
+					if (otherSet.has(values[i])) {
+						intersectionSet.add(values[i]);
+					}
+				}
+
+				return intersectionSet;
+			};
+
+			this.difference = function(otherSet) {
+				var differenceSet = new Set();
+
+				var values = this.values();
+				for (var i=0; i<values.length; i++) {
+					if (!otherSet.has(values[i])) {
+						differenceSet.add(values[i]);
+					}
+				}
+
+				return differenceSet;
+			};
+
+			this.subset = function(otherSet) {
+
+				if (this.size() > otherSet.size()) {
+					return false;
+				} else {
+					var values = this.values();
+					for (var i=0; i<values.length; i++) {
+						if(!otherSet.has(values[i])) {
+							return false;
+						}
+					}
+					return true;
+				}
+			}
         }
     /*    Set.prototype.has = function(value) {
             return items.hasOwnProperty(value);
@@ -96,7 +153,7 @@
 
         var set = new Set();
 
-        set.add(1);
+/*        set.add(1);
         console.log(set.values()); // [1]
         console.log(set.has(1)); // true
         console.log(set.size()); // 1
@@ -111,8 +168,70 @@
 
         set.remove(2);
         console.log(set.values()); // []
+*/
+/*
+		//합집합
+		var setA = new Set();
+		setA.add(1);
+		setA.add(2);
+		setA.add(3);
 
+		var setB = new Set();
+		setB.add(3);
+		setB.add(4);
+		setB.add(5);
+		setB.add(6);
 
+		var unionAB = setA.union(setB);
+		console.log('unionAB.values()', unionAB.values());
+*/
+/*
+		//교집합
+		var setA = new Set();
+		setA.add(1);
+		setA.add(2);
+		setA.add(3);
+
+		var setB = new Set();
+		setB.add(2);
+		setB.add(3);
+		setB.add(4);
+
+		var intersectionAB = setA.intersection(setB);
+		console.log(intersectionAB.values());
+*/
+/*
+		//차집합
+		var setA = new Set();
+		setA.add(1);
+		setA.add(2);
+		setA.add(3);
+
+		var setB = new Set();
+		setB.add(2);
+		setB.add(3);
+		setB.add(4);
+
+		var differenceAB = setA.difference(setB);
+		console.log(differenceAB.values());
+*/
+
+		var setA = new Set();
+		setA.add(1);
+		setA.add(2);
+
+		var setB = new Set();
+		setB.add(1);
+		setB.add(2);
+		setB.add(3);
+
+		var setC = new Set();
+		setC.add(2);
+		setC.add(3);
+		setC.add(4);
+
+		console.log('setA.subset(setB)', setA.subset(setB));
+		console.log('setA.subset(setC)', setA.subset(setC));
     </script>
 </body>
 </html>
