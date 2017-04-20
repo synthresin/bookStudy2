@@ -53,6 +53,13 @@ var myBook = {
         group: ['PB','슈퍼카트TF','네이처TF'],
         active: false
     },
+    이설란 : {
+        name: '이설란',
+        phone: '010-1234-1234',
+        email: 'frida@d2.com',
+        group: ['PB','슈퍼카트TF','네이처TF'],
+        active: false
+    }
 }
  function Addressbook(data, area){
     this._addrBook = new Dictionary();   //딕셔너리를
@@ -85,9 +92,27 @@ var myBook = {
     }
     if(isDel)this.displayBook();
  }
-Addressbook.prototype.srch = function(key){
+Addressbook.prototype.srch = function(key ,type){
     // key 값으로 get!
-  }
+    if(type === 'name'){
+        for(var k in this._addrBook.items){
+            this._addrBook.items[k].active = false;
+            if(this._addrBook.items[k].name == key){
+                this._addrBook.items[k].active = true;
+            }
+         }
+    }else{
+        for(var k in this._addrBook.items){
+            this._addrBook.items[k].active = false;
+            for(var i=0; i < this._addrBook.items[k].group.length; i++){
+                if(this._addrBook.items[k].group[i] == key){
+                    this._addrBook.items[k].active = true;
+                }
+            }
+         }
+    }
+    this.displayBook();
+}
 //화면에 주소록 view
 Addressbook.prototype.displayBook = function(){
     var listTemplate = '<tr{active}>\
@@ -183,6 +208,15 @@ $(document).ready(function(){
         myAddress.del(selList);
     });
 
+    //검색
+    $('.srch_area .btn_srch').click(function(e){
+        e.preventDefault();
+        var srchType = $('.srch_area select').val();
+        var srchTxt = $('.srch_area #srchTxt').val();
+        myAddress.srch(srchTxt,srchType);
+
+    });
+
 
 
     function setSelected(type, key){
@@ -231,10 +265,10 @@ $(document).ready(function(){
                 <fieldset>
                     <legend>주소록 검색</legend>
                     <select>
-                        <option>그룹</option>
-                        <option>이름</option>
+                        <option value="group">그룹</option>
+                        <option value="name">이름</option>
                     </select>
-                    <input type="text" id="srchTxt" name="srchTxt">
+                    <input type="text" id="srchTxt" name="srchTxt" placeholder="검색은 한개만 검색가능(동일어로 검색)">
                     <a href="#" class="btn_srch">검색</a>
                 </fieldset>
             </form>

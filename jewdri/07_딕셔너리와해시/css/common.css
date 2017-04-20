@@ -49,7 +49,7 @@ table{width:100%;border-collapse:collapse;table-layout:fixed; border-spacing:0}
 .address_area table tbody .active td{background:yellow;}
 .address_area .srch_area{margin:10px 0;padding:10px;border:1px solid #c6c6c6;}
 .address_area .srch_area select{width:100px;height:30px;border:1px solid #c6c6c6;line-height:30px;vertical-align:middle;}
-.address_area .srch_area input{width:200px;padding:0 10px;border:1px solid #c6c6c6;line-height:28px;vertical-align:middle;}
+.address_area .srch_area input{width:300px;padding:0 10px;border:1px solid #c6c6c6;line-height:28px;vertical-align:middle;}
 .address_area .srch_area a{display:inline-block;height:30px;padding:0 10px;line-height:30px;font-size:14px;background:#efefef;color:#000;vertical-align:middle;}
 .address_area .btn_wrap{overflow:hidden;margin-top:10px;}
 .address_area .btn_wrap a{display:inline-block;height:30px;padding:0 10px;line-height:30px;font-size:14px;background:#efefef;color:#000;}
