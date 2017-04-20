@@ -54,5 +54,55 @@ function HashTable_chaining() {
     }
 
     this.put = function( key, value ) {
+        var position = LHCode( key );
+
+        if( table[position] === undefined ) {
+            table[position] = new LinkedList();
+        }
+        table[position].append( new ValuePair( key, value ) );
     }
+
+    this.get = function( key ) {
+        debugger;
+        var position = LHCode( key );
+        if( table[position] !== undefined ) {
+            var current = table[position].getHead();
+            while( current !== null ) {
+                if( current.element.key == key ) {
+                    return current.element.value;
+                }
+                current = current.next;
+            }
+        }
+    }
+}
+
+function LinkedList() {
+    this.start = null,
+    this.end = null,
+    this.length = 0
+}
+LinkedList.prototype = {
+    node : function( value ) {
+        this.element = value;
+        this.next = null;
+    },
+    append : function ( value ) {
+        if( this.start === null ) {
+            this.start = new this.node(value);
+            this.end = this.start;
+        } else {
+            this.end.next = new this.node(value);
+            this.end = this.end.next;
+            this.end.next = null;
+        }
+        this.length++;
+    },
+    getHead : function() {
+        return this.start;
+    },
+
+    remove : function ( number ) {
+        pass;
+    },
 }
