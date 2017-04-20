@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function HashTable() {
+            this.table = {};
+        }
+
+        var loseloseHasCode = function (key) {
+            var hash = 0;
+            for (var i = 0; length = key.length i < key.length; i++) {
+                hash += key.charCodeAt(i);
+            }
+            return hash % 37;
+        }
+
+        HashTable.prototype = {
+            constructor : HashTable,
+            put : function(key, value) {
+                var position = loseloseHasCode(key);
+                console.log(`${position} - ${key}`);
+                this.table[position] = value;
+            },
+
+            get : function(key) {
+                return this.table[loseloseHasCode(key)];
+            },
+
+            remove : function(key) {
+                this.table[loseloseHasCode(key)]  = undefined;
+            }
+        }
+
+        var hash = new HashTable();
+        has.put('Gandalf', 'gandalf@email.com');
+        has.put('Messi', 'Messi@email.com');
+        has.put('dybala', 'dybala@email.com');
+    </script>
+</body>
+</html>
