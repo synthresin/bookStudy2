@@ -1,97 +1,3 @@
-
-function HashTableChaining() {
-    this.table = [];
-
-    var ValuePair = function(key, value) {
-        this.key = key;
-        this.value = value;
-    };
-
-    ValuePair.prototype = {
-        constructor : ValuePair,
-        toString : function() {
-            return '[' + this.key + ' - ' + this.value + ']';
-            //return `[${this.key} - ${this.value}]`;
-        }
-    };
-}
-
-var loseloseHasCode = function (key) {
-    var hash = 0;
-    for (var i = 0, length = key.length; i < length; i++) {
-        hash += key.charCodeAt(i);
-    }
-    return hash % 37;
-}
-
-HashTableChaining.prototype = {
-    constructor : HashTableChaining,
-    put : function(key, value) {
-        var position = loseloseHasCode(key);
-        
-        if (this.table[position] == undefined) {
-            this.table[position] == new LinkedList();
-        }
-        this.table[position].append(new ValuePair(key, value));
-    },
-
-    get : function(key) {
-        var position = loseloseHasCode(key);
-
-        if(this.table[position] !== undefeind) {
-            var current = this.table[position].getHead();
-
-            while(current.next) {
-                if(current.element.key === key) {
-                    return current.element.value;
-                }
-                current = current.next;
-            }
-
-            if (current.element.key === key) {
-                return current.element.value;
-            }
-        }
-        return undefined;
-    },
-
-    remove : function(key) {
-        var position = loseloseHasCode(key);
-
-        if (this.table[position] !== undefined) {
-            var current = this.table[position].getHead();
-            while(current.next) {
-                if (current.element.key === key) {
-                    table[position].remove(current.element);
-                    if(table[position].isEmpty()) {
-                        table[position] = undefined;
-                    }
-                    return true;
-                }
-                current = current.next
-            }
-
-            if (current.element.key === key) {
-                this.table[position].remove(current.element);
-                if (this.table[position].isEmpty()) {
-                    this.table[position] = undefined;
-                }
-                return ture;
-            }
-        }
-        return false;
-    },
-
-    print : function () {
-        for (var i = 0; i < this.table.length; i += 1 ) {
-            if (this.table[i] !== undefined) {
-                console.log(`${i}: ${this.table[i]}`);
-            }
-        }
-    }
-};
-
-
 function LinkedList() {
 
     var Node = function(element) {
@@ -222,16 +128,8 @@ function LinkedList() {
         return head;
     };
 };
-
-var hash = new HashTableChaining();
-hash.put('Gandalf', 'gandalf@email.com');
-hash.put('Messi', 'Messi@email.com');
-hash.put('dybala', 'dybala@email.com');
-/*
-console.log(hash.get('Gandalf'));
-console.log(hash.get('Messi'));
-
-hash.remove('Gandalf');
-console.log(hash.get('Gandalf'));
-*/
-hash.print();
+var list = new LinkedList();
+list.append(10);
+list.append(1);
+list.append(5);
+list.insert(2,18);
