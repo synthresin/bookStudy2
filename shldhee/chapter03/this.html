@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 객체의 메서드 호출할때 this 바인딩(참조) : this는 자신을 호출한 객체에 바인딩(참조)된다.
+
+		var myObject = {
+			name : 'foo',
+			sayName : function() {
+				console.log('this.name', this.name);
+			}
+		};
+
+		var otherObject = {
+			name: 'bar'
+		};
+
+		otherObject.sayName = myObject.sayName;
+
+		myObject.sayName(); //foo
+		otherObject.sayName(); //bar
+
+		// 함수를 호출할 때 this 바인딩(참조) : this는 전역 객체에 바인딩(참조) * 브라우저에서 자바스크립트를 실행하는 경우 전역 객체는 window 객체가 된다.
+
+		var test = 'this is test';
+		console.log('window.test', window.test);
+
+		var sayFoo = function() {
+			console.log('this.test', this.test);
+		}
+
+		sayFoo(); // this is test
+
+		// 함수 호출에선 this 바인딩은 내부함수를 호출하였을때도 그대로 적용
+
+		var value = 100;
+		var f1 = {
+			value: 1,
+			func1: function() {
+				this.value += 1;
+				console.log('func1() called. this.value : ' + this.value);
+
+				// func2() 내부함수
+				func2 = function () {
+					this.value += 1;
+					console.log('func2() called. this.value : ' + this.value);
+				}
+
+				func2();
+			}
+		};
+		f1.func1();
+
+		// 내부 함수가 this를 참조하는 자바스크립트의 한계를 극복할려면 부모함수의 this를 내부 함수가 접근 가능한 다른 변수에 저장
+		var value_ = 100;
+
+		var f1_ = {
+			value: 1,
+			func1_ : function() {
+				var that = this;
+
+				this.value += 1;
+				console.log('func1() called. this.value : ' + this.value);
+
+				func2_ = function() {
+					that.value += 1;
+					console.log('func2() called. this.value : ' + that.value);
+				}
+
+				func2_();
+			}
+		};
+
+		f1_.func1_();
+
+		/* 생성자 함수를 호출할 때 this 바인딩(참조) :
+			1. 빈 객체 생성 및 this 바인딩
+			2. this를 통한 프로퍼티 생성
+			3. 생선된 객체 리턴
+
+
+			1. 일단 오브젝트를 하나 생성한 뒤
+			2. new 뒤에 지정된 함수의 프로토타입을 방금 생성한 오브젝트의 __proto__에 참조로 잡아준다.
+			3. 그런 후 방금 생성한 오브젝트를 new 뒤의 함수에게 컨텍스트로 전달하여 호출한다.
+		*/
+
+		var Person = function (name) {
+			this.name = name;
+		};
+
+		var foo = new Person('foo'); // 빈 객체 생ㅅ성
+		console.log('foo.name', foo.name); // foo
+
+
+	</script>
+</body>
+</html>
