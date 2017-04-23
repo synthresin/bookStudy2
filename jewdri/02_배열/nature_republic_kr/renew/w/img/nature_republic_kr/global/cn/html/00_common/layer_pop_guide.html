@@ -1,173 +1,0 @@
-<!DOCTYPE HTML>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<title>NATURE REPUBLIC</title>
-<link rel="stylesheet" type="text/css" href="../../css/notosans.css">
-<link rel="stylesheet" type="text/css" href="../../css/common.css">
-<script type="text/javascript" src="../../js/jquery-1.10.1.min.js"></script>
-<script type="text/javascript" src="../../js/selectbox.js"></script>
-<script type="text/javascript" src="../../js/ui.js"></script>
-<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
-<script type="text/javascript">
-</script>
-<style type="text/css">
-	#container {width:1036px; margin:0 auto} 
-	.guide_navi {position:fixed; right:0; bottom:0; z-index:100; width:300px; background:#70953f; font-size:400; font-size:14px; color:#fff }
-	.guide_navi li { padding:10px;}
-	.guide_navi li a {color:#fff; font-size:14px; font-weight:bold}
-	.guide_section {border:1px solid #000; padding:10px; line-height:20px}
-	.guide_section > h2 {margin-bottom:20px; padding-bottom:20px; border-bottom:2px solid #000; background:#efefef; color:#000; font-weight:600}
-	.guide_section h3 {border-bottom:1px solid #000; padding-bottom:10px; margin:10px 0; font-size:15px; color:#000; font-weight:600; border:1px solid #ddd }
-	.box {display:inline-block; margin:5px}
-	.view_source {background:#efefef; font-size:14px; font-weight:bold; color:#000; padding:20px}
-	p {margin:5px 0; font-size:14px}
-</style>
-</head>
-<body>
-<!-- wrap  -->
-<div id="wrap">
-	<?php include('../00_common/header.html'); ?>
-    <!-- container -->
-	<div id="container">
-		<div class="guide_section">
-			<h2>레이어팝업 공통가이드 </h2>
-
-			   <ul>
-					<li>
-						- 레이어팝업 공통 스크립트 : <a href="http://code.d2.co.kr/nature_republic/renew/w/js/ui.js" target="_blank">/home/code/www/nature_republic/renew/w/js/ui.js</a>
-					</li>
-					<li>
-						- 주석 : <strong style="color:#f00">//레이어팝업(s),   //레이어팝업(e)</strong> 사이
-					</li>
-					<li>
-						- 레이어팝업열고닫기함수 공통 : pop_layer_view(layer, st)<br >
-							&nbsp;&nbsp;&gt;파라미터 layer: 해당레이어아이디값 문자열로,<br >
-							&nbsp;&nbsp;&gt;파라미터st: 레이어를 열기/닫기 (열기는 null, 닫기는 'close' 문자열로)
-					</li>
-					<li>
-						- 레이어팝업열기 함수 : pop_layer_view(해당레이어아이디값);
-					</li>
-					<li>
-						- 레이어팝업닫기 함수 : pop_layer_view(해당레이어아이디값,'close');
-					</li>
-			   </ul>
-
-			   <h3>레이어팝업 함수 호출 예시 </h3>
-
-				<h4>- 레이어팝업열기</h4>
-				<a href="javascript:pop_layer_view('#pop_type');">일반레이어팝업열기</a>
-				<div class="view_source">
-					&lt;a href=&quot;javascript:pop_layer_view(&#039;#pop_type&#039;);&quot;&gt;레이어팝업열기&lt;/a&gt;
-				</div>
-
-				<a href="javascript:pop_layer_view('#pop_type2');">타이틀아래에텍스트있는레이어팝업열기</a>
-				<div class="view_source">
-					&lt;a href=&quot;javascript:pop_layer_view(&#039;#pop_type2&#039;);&quot;&gt;타이틀아래에텍스트있는레이어팝업열기&lt;/a&gt;
-				</div>
-
-				<a href="javascript:pop_layer_view('#pop_type3');">알림레이어팝업열기</a>
-				<div class="view_source">
-					&lt;a href=&quot;javascript:pop_layer_view(&#039;#pop_type3&#039;);&quot;&gt;타이틀아래에텍스트있는레이어팝업열기&lt;/a&gt;
-				</div>
-			   
-
-			   <h4>- 레이어팝업닫기</h4>
-			  
-			   <p>* 아래 이미지의 레이어팝업 내 닫기버튼은 공통이벤트 (/home/code/www/nature_republic/renew/w/js/ui.js)</p><br >
-			    <img src="../../img/tmp/ex1.png" alt=""><br ><br >
-
-			   <p>* 자동적으로 프로그램처리후, 레이어팝업을 닫을땐 공통닫기함수 사용 :</p><br >
-			    <div class="view_source">
-					pop_layer_view('#pop_type','close');
-			   </div>
-			   <p>(#pop_type 은 해당 레이어팝업의 아이디)</p>
-
-
-			   <h4>- 레이어팝업 마크업 위치 </h4>
-			    <img src="../../img/tmp/ex2.png" alt=""><br ><br >
-			   <p> * 레이어팝업 마크업 위치는 #wrap 의 한단계 아래 자식에 넣기.</p>
-			   <p> * 레이어팝업 마크업 위치는 #header, #container, #footer와 형제.</p>
-			   <p> * 각 레이어마다, 식별할수 있는 id값 부여 </p>
-		</div>
-		<!-- //content -->
-	</div>
-    <!-- //container -->
-	<?php include('../00_common/footer.html'); ?>
-
-	<!-- 레이이팝업1 -->
-	<div class="pop_layer" id="pop_type">
-		<div class="bg"></div>
-		<div class="pop_wrap">
-			<div class="pop_header">
-				<h2>김주하, 황금 케어 지금 시작하세요.</h2>
-			</div>
-			<div class="pop_content">
-				‘진생 로얄 실크’ 라인의 새로운 뮤즈, 김주하 아나운서!
-				그녀의 ‘진생 로얄 실크 워터리 크림’ TV CF 를 공개합니다.
-
-				미모와 지성을 겸비한 김주하 아나운서가익숙한 정장 차림을 벗고 아름다운 드레스를 입은 여신으로 대변신 ♥
-
-				김주하 아나운서가 우연히 사용해보고 제품력에 반한 것이브랜드 모델로의 인연까지 이어지게 되었다고 하는데요,
-				그녀가 극찬한 진생 로얄 실크 워터리 크림 TVCF를 지금 만나보세요!^^
-
-				“자연의 귀한 원료로 누구보다 빛나는 피부,황금 케어, 지금 시작하세요!”
-			</div>
-			<a href="#" class="btn_close">닫기</a>
-		</div>
-	</div>
-	<!-- //레이이팝업1 -->
-
-	<!-- 레이이팝업2 -->
-	<div class="pop_layer" id="pop_type2">
-		<div class="bg"></div>
-		<div class="pop_wrap">
-			<div class="pop_header">
-				<h2>김주하, 황금 케어 지금 시작하세요.</h2>
-				<div class="info">
-					<span class="date">2016.01.30</span>
-					<span><span class="ico_spr hit"></span>32</span>
-				</div>
-			</div>
-			<div class="pop_content">
-				‘진생 로얄 실크’ 라인의 새로운 뮤즈, 김주하 아나운서!
-				그녀의 ‘진생 로얄 실크 워터리 크림’ TV CF 를 공개합니다.
-
-				미모와 지성을 겸비한 김주하 아나운서가익숙한 정장 차림을 벗고 아름다운 드레스를 입은 여신으로 대변신 ♥
-
-				김주하 아나운서가 우연히 사용해보고 제품력에 반한 것이브랜드 모델로의 인연까지 이어지게 되었다고 하는데요,
-				그녀가 극찬한 진생 로얄 실크 워터리 크림 TVCF를 지금 만나보세요!^^
-
-				“자연의 귀한 원료로 누구보다 빛나는 피부,황금 케어, 지금 시작하세요!”
-			</div>
-			<a href="#" class="btn_close">닫기</a>
-		</div>
-	</div>
-	<!-- //레이이팝업2 -->
-
-	<!-- 레이이팝업3 -->
-	<div class="pop_layer" id="pop_type3">
-		<div class="bg"></div>
-		<div class="pop_wrap">
-			<div class="pop_content">
-				<div class="caution_txt">
-					<span class="ico_spr caution"></span>
-					 <p>
-						<strong><em>배쓰 앤 네이처 바디 로션</em>은 세트 행사 상품입니다. </strong><br>
-						현재 선택하신 수량은 세트 할인 행사 적용을 받지 못합니다.<br>
-						계속 진행하시겠습니까?
-					 </p>
-					 <div class="btn_wrap">
-						<a href="#">취소</a>
-						<a href="#" class="v2">확인</a>
-					 </div>
-				</div>
-			</div>
-			<a href="#" class="btn_close">닫기</a>
-		</div>
-	</div>
-	<!-- //레이이팝업3 -->
-</div>
-<!-- //wrap  -->
-</body>
-</html>
