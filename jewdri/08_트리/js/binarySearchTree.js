@@ -2,12 +2,12 @@
     this.key = key;
     this.left = null;
     this.right = null;
-    this.depth = 0;
 }
 
 function BinarySearchTree(area){
-   this.root = null;
-   this.area = $(area);
+    this.root = null;
+    this.area = $(area);
+    this.depth = null;
 }
 // 트리에 키 삽입하기
 BinarySearchTree.prototype.insert = function(key){
@@ -74,27 +74,28 @@ BinarySearchTree.prototype.postOrderTraverseNode = function(node, callback, type
 }
 //트리그리기
 BinarySearchTree.prototype.treeView = function(){
-    var tag = '<ol class="tree"><li class="now"><span>'+this.root.key+'</span></li></ol>';
+    var tag = '<ol class="tree"><li class="depth0"><span>'+this.root.key+'</span></li></ol>';
     this.area.append(tag);
     this.treeViewNode(this.root,0);
+    this.depth = 0;
 }
-BinarySearchTree.prototype.treeViewNode = function(node,depth){
-    var Uidepth = depth + 1;
-    console.log(Uidepth);
+BinarySearchTree.prototype.treeViewNode = function(node,depStep){
+    var Uidepth = depStep + 1;
     var depthClass = 'depth'+Uidepth;
     var tag = '<ol class="'+depthClass+'">';
     if(node.left != null){
-        tag += '<li><span>'+node.left.key+'</span></li>';
+        tag += '<li class="'+depthClass+'left"><span>'+node.left.key+'</span></li>';
+        //if(Uidepth == 1) this.treeViewNode(node.left,Uidepth);
     }
     if(node.right != null){
-        tag += '<li><span>'+node.right.key+'</span></li>';
+        tag += '<li class="'+depthClass+'right"><span>'+node.right.key+'</span></li>';
     }
     tag += '</ol>';
-    var area = this.area.find('.now');
-    this.area.find('.now').each(function(){
-        $(this).removeClass('now');
-    });
+    var find = '.depth'+Number(this.depth);
+    console.log(find);
+    var area = this.area.find(find);
     area.append(tag);
+    this.depth = Uidepth;
 
 }
 //최대, 최소값 찾기
