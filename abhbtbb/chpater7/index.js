@@ -2,27 +2,27 @@ function HashTable_basic() {
 
     var table = [];
 
-    this.get = function( key ) { return table[ loseloseHashCode(key) ];};
+    this.get = function (key) { return table[loseloseHashCode(key)]; };
 
-    this.set = function( key, value ) { 
-        var position = loseloseHashCode( key );
-        console.log( position + ' - ' + key );
-        table[ position ] = value;
+    this.set = function (key, value) {
+        var position = loseloseHashCode(key);
+        console.log(position + ' - ' + key);
+        table[position] = value;
     };
 
-    this.remove = function( key ) {
-        table[ loseloseHashCode( key ) ] = undefined;
+    this.remove = function (key) {
+        table[loseloseHashCode(key)] = undefined;
     };
 
-    this.print = function() {
-        table.forEach( ( value, index )=> {
-            if(value !== undefined) console.log( index + " : " + value); 
+    this.print = function () {
+        table.forEach((value, index) => {
+            if (value !== undefined) console.log(index + " : " + value);
         });
     }
 
-    var loseloseHashCode = function( key ) {
+    var loseloseHashCode = function (key) {
         var hash = 0;
-        key.split("").map( a => hash += a.charCodeAt() );
+        key.split("").map(a => hash += a.charCodeAt());
         return hash % 37;
     };
 
@@ -39,34 +39,34 @@ console.log(t1.get('John'));
 function HashTable_chaining() {
     var table = [];
 
-    var ValuePair = function( key, value ) {
+    var ValuePair = function (key, value) {
         this.key = key;
         this.value = value;
-        this.toString = function() { return `[ ${this.key} - ${this.value} ]`; };
+        this.toString = function () { return `[ ${this.key} - ${this.value} ]`; };
     }
 
-    var LHCode = function( key ) {
+    var LHCode = function (key) {
         var hash = 0;
-        for( var i = 0; i < key.length; i++ ) {
+        for (var i = 0; i < key.length; i++) {
             hash += key.charCodeAt(i);
         }
         return hash % 37;
     }
 
-    this.put = function( key, value ) {
-        var position = LHCode( key );
-        if( table[position] === undefined ) {
+    this.put = function (key, value) {
+        var position = LHCode(key);
+        if (table[position] === undefined) {
             table[position] = new LinkedList();
         }
-        table[position].append( new ValuePair( key, value ) );
+        table[position].append(new ValuePair(key, value));
     }
 
-    this.get = function( key ) {
-        var position = LHCode( key );
-        if( table[position] !== undefined ) {
+    this.get = function (key) {
+        var position = LHCode(key);
+        if (table[position] !== undefined) {
             var current = table[position].getHead();
-            while( current !== null ) {
-                if( current.element.key == key ) {
+            while (current !== null) {
+                if (current.element.key == key) {
                     return current.element.value;
                 }
                 current = current.next;
@@ -74,45 +74,36 @@ function HashTable_chaining() {
         }
     }
 
-    this.remove = function( key ) {
-        var position = LHCode( key );
-        if( table[position] !== undefined ) {
+    this.remove = function (key) {
+        var position = LHCode(key);
+        if (table[position] !== undefined) {
             var current = table[position].getHead();
-            while( current !== null ) {
-                if( current.element.key === key ) {
-
+            while (current.next) {
+                if (current.element.key === key) {
+                    table[position].remove(current.element);
+                    if(table[position].isEmpty()) {
+                        table[position] = undefined;
+                    }
+                    return true;
                 }
+                current = current.next;
+            }
+            //처음이나 마지막 원소일 경우
+            if(current.element.key === key) {
+                table[position].remove(current.element);
+                if(table[position].isEmpty()) {
+                    table[position] = undefined;
+                }
+                return true;
             }
         }
+        return false;
     }
 }
 
-function LinkedList() {
-    this.start = null,
-    this.end = null,
-    this.length = 0
-}
-LinkedList.prototype = {
-    node : function( value ) {
-        this.element = value;
-        this.next = null;
-    },
-    append : function ( value ) {
-        if( this.start === null ) {
-            this.start = new this.node(value);
-            this.end = this.start;
-        } else {
-            this.end.next = new this.node(value);
-            this.end = this.end.next;
-            this.end.next = null;
-        }
-        this.length++;
-    },
-    getHead : function() {
-        return this.start;
-    },
-
-    remove : function ( number ) {
-        pass;
-    },
-}
+var t2 = new HashTable_chaining();
+t2.put('GGGG', 'gggg@gmail.com');
+t2.put('YYYY', 'yyyy@gmail.com');
+t2.put('cccc', 'cccc@gmail.com');
+t2.put('John', 'johnsnow@email.com');
+console.log(t2.get('John'));
