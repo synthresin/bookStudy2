@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var isEven = function (x) {
+			console.log(x);
+			//return (x % 2 == 0) ? true : false;
+			return (x % 2 == 0);
+		};
+
+		var numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+		//map메소드는 수행 결과를 새 배열 객체로 변환
+		//원소별로 실행되는 함수 결과를 새 배열로 반환
+		var myMap = numbers.map(isEven);
+		console.log("myMap",myMap);
+
+		//filter메소드는 수행 결과를 새 배열 객체로 변환
+		//함수의 결과 값을 true로 만드는 원소로만 구성된 새 배열 반환
+		var evenNumbers = numbers.filter(isEven);
+		console.log('evenNumbers', evenNumbers);
+	</script>
+</body>
+</html>
