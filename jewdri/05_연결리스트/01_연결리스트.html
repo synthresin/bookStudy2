@@ -1,0 +1,32 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name ="format-detection" content ="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>연결리스트(Linked List)</title>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<script type="text/javascript" src="js/linkedlist.js"></script>
+<script type="text/javascript">
+	var list = new LinkedList();
+	console.log(list);
+
+	list.append(5);
+	list.append(10);
+
+	console.log(list.toString());
+
+	list.removeAt(0);
+	console.log(list.toString());
+
+	list.insert(1,11);
+	console.log(list.toString());
+
+	console.log('11 인덱스 : '+list.indexOf(11));
+	console.log('10 인덱스 : '+list.indexOf(10));
+</script>
+</head>
+<body>
+</body>
+</html>

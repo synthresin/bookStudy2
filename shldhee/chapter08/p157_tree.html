@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tree</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+            포인터가 2개(좌측, 우측) 자식 노드 가리킨다.
+            우선 트리 노드를 표현하는 Node 클래스 선언
+            노드를 원소라 하지 않고 키라고 한다.(트리에서는 키로 노드를 식별)
+
+            제5장 연결리스트랑 비슷
+            즉 자료 구조의 첫 번째 노드를 변수로 선언해서 제어하는 식으로 진행된다.
+            단, 트리에서는 헤드가 아닌 루트라는 점이 다르다.
+
+            메소드
+            insert(key) : 새 키를 삽입
+            search(key) : 해당 키를 가진 노드 존재 여부(true/false반환)
+            inOrderTraverse : 중위 순회(in-order traverse) 방식으로 트리의 전체 노드를 방문한다.
+            preOrderTravers : 전위 순회(pre-order travers) 방식으로 트리의 전체 노드를 방문한다.
+            postOrderTravers : 후위 순회(post-order travers) 방식으로 트리의 전체 노드를 방문한다.
+            min : 트리의 최소 값/키를 반환
+            max : 트리의 최대 값/키를 반환
+            remove(key) : 키를 삭제
+        */
+        function BinarySearchTree() {
+            var Node = function(key) {
+                this.key = key;
+                this.left = null;
+                this.right = null;
+            };
+
+            var root = null;
+
+            // 트리에 키 삽입 (insert)
+            this.insert = function(key) {
+                var newNode = new Node(key); // 1) 새 노드에 해당하는 Node 인스턴스를 생성. 생성자(Node)에는 트리에 추가할 값을 인자로 넘겨주며, left/right 포인터는 null로 초기화한다.
+
+                if( root === null ) { // 2) 추가할 노드가 트리의 최초 노드일 경우, 즉 트리가 비어 있을 때는 이 노드를 루트로 세팅
+                    root = newNode;
+                } else {
+                    insertNode(root, newNode); // 3) 루트를 제외한 다른 위치에 추가하는 일반적인 경우, 다음의 프라이빗 헬퍼 함수 insertNode를 호출한다.
+                }
+            };
+
+            /*
+                트리 순회
+                트리의 모든 노드를 방문해서 각 노드마다 어떤 작업을 수행하는 것을 트리 순회(traversal 또는 워킹walking)
+                순회 방법
+                * 최상단에서 시작 하위 레벨
+                * 최하단에서 시작 상위 레벨
+                * 좌/우중 어느쪽 부터
+                따라서 중위, 전위, 후위 3가지로 분류
+
+                중위 순회
+                중위 순회는 노드를 오름차순, 즉 작은 값에서 큰 값 방향으로 방문
+            */
+            this.inOrderTraverse = function(callback) { // callback에는 노드 방문시 수행할 작업 기술
+                inOrderTraverseNode(root, callback);
+            };
+
+            /*
+                전위 순회
+                전위 순회는 자식 노드보다 노드 자신을 먼저 방문한다.
+                구조화된 문서를 출력할 때 많이 이용한다.
+            */
+            this.preOrderTraverse = function(callback) {
+                preOrderTraverseNode(root, callback);
+            };
+
+            /*
+                후위 순회
+                후위 순회는 자식 노드를노드 자신보다 먼저 방문한다.
+                디렉토리와 서브 디렉토리의 파일 용량을 계산할 때 쓰는 방법이다.
+            */
+            this.postOrderTraverse = function(callback) {
+                postOrderTraverseNode(root, callback);
+            };
+
+            /*
+                트리 노드 검색
+                * 최솟값 찾기
+                * 최댓값 찾기
+                * 특정 값 찾기
+            */
+
+            // 최솟값 찾기
+            this.min = function() {
+                return minNode(root);
+            };
+
+            // 최댓값 찾기
+            this.max = function() {
+                return maxNode(root);
+            };
+
+            // 특정값 찾기
+            this.search = function( key ) {
+                return searchNode(root, key);
+            };
+        }
+
+        // 프라이빗 변수?
+        var insertNode = function(node, newNode) { // node === root, newNode === insertNode
+            if ( newNode.key < node.key ) { // 새로운 노드 < root 노드
+                if ( node.left === null ) {
+                    node.left = newNode; // 좌측이 비어있으면 삽입
+                } else {
+                    insertNode(node.left, newNode); // 좌측 노드, 새로운 노드 -> 재귀함수 : 새로운 노드 < 좌측 노드
+                }
+            } else {
+                if ( node.right === null ) {
+                    node.right = newNode;
+                } else {
+                    insertNode(node.right,newNode);
+                }
+            }
+        }
+        /*
+            재귀함수는 다 끝나고 나서 다음 문 실행 3 끝나고 5 실행
+        */
+        var inOrderTraverseNode = function ( node, callback ) {
+            if ( node !== null ) {
+                inOrderTraverseNode( node.left, callback );
+                callback(node.key);
+                inOrderTraverseNode( node.right, callback );
+            }
+        };
+
+        var postOrderTraverseNode = function (node, callback) {
+            if (node !== null) {
+                postOrderTraverseNode(node.left, callback);
+                postOrderTraverseNode(node.right, callback);
+                callback(node.key);
+            }
+        };
+
+        function printNode(value) {
+            console.log('value', value);
+        }
+
+        var preOrderTraverseNode = function (node, callback) {
+            if ( node !== null ) {
+                callback(node.key);
+                preOrderTraverseNode(node.left, callback);
+                preOrderTraverseNode(node.right, callback);
+            }
+        };
+
+        var minNode = function (node) {
+            if (node) {
+                while (node && node.left !== null) { // node가 있고 node.left가 있을때 실행 따라서 마지막 node일때 반환
+                    node = node.left;
+                }
+                return node.key;
+            }
+            return null;
+        };
+
+        var maxNode = function (node) {
+            if (node) {
+                while( node && node.right !== null ) {
+                    node = node.right;
+                }
+                return node.key;
+            }
+            return null;
+        };
+
+        var searchNode = function(node, key) {
+            if(node === null) {
+                return false;
+            }
+            if(key < node.key) {
+                return searchNode(node.left, key);
+            } else if (key > node.key) {
+                return searchNode(node.right, key);
+            } else {
+                return true;
+            }
+        };
+
+
+
+        var tree = new BinarySearchTree();
+        tree.insert(11);
+        tree.insert(7);
+        tree.insert(15);
+        tree.insert(5);
+        tree.insert(3);
+        tree.insert(9);
+        tree.insert(8);
+        tree.insert(10);
+        tree.insert(13);
+        tree.insert(12);
+        tree.insert(14);
+        tree.insert(20);
+        tree.insert(18);
+        tree.insert(25);
+        tree.insert(6);
+
+        // tree.inOrderTraverse(printNode);
+        // tree.preOrderTraverse(printNode);
+        // tree.postOrderTraverse(printNode);
+        console.log(tree.max());
+
+    </script>
+</body>
+</html>

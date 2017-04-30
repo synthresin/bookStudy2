@@ -1,0 +1,198 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name ="format-detection" content ="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>큐(Queue) : 랜덤곡선택</title>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<style>
+.wrap{padding:0 20px;}
+header{padding:20px;}
+header p{margin-top:10px;}
+section{overflow:hidden;margin-top:20px;}
+section>div{float:left;width:500px;}
+ul{width:300px;margin-top:20px;border:1px solid #666;}
+ul li{border-top:1px solid #666;line-height:30px;padding-left:10px;font-size:15px;font-weight:600;}
+ul li:first-child{border-top:0;}
+ul li.active{background:#0ff;}
+ul li.del{background:#efefef;color:#888;}
+dl{display:inline-block;width:400px;padding:20px;border:1px solid #666;font-size:16px;vertical-align:top;}
+dl dt{display:inline-block;font-weight:600;}
+dl dd{display:inline-block;margin-left:10px;}
+dl dd:before{display:inline-block;content:':';margin-right:10px;}
+button{display:block;width:300px;height:30px;margin:20px 0;background:#000;color:#fff;font-size:16px;color:#fff;font-weight:600;}
+</style>
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/queue.js"></script>
+<script type="text/javascript">
+	var musicList = [
+		{title: '숨', artist:'박효신'},
+		{title: '야생화', artist:'박효신'},
+		{title: '눈의 꽃', artist:'박효신'},
+		{title: '밤편지', artist:'아이유(IU)'},
+		{title: '벚꽃엔딩', artist:'버스커버스커'},
+		{title: 'KNOCK KNOCK', artist:'TWICE(트와이스)'},
+		{title: '오랜 날 오랜 밤', artist:'악동뮤지션(AKMU)'},
+		{title: '첫눈처럼 너에게 가겠다', artist:'에일리'},
+		{title: '아름답다', artist:'하이라이트(Highlight)'},
+		{title: 'Fine', artist:'태연 (TAEYEON)'},
+		{title: 'Beautiful', artist:'크러쉬(CRUSH)'}
+	];
+
+
+	function RandomPlay(playList, playArea, notPlayArea, notPlayNum){
+		this.playList = null;
+		this.notPlayList = null;
+		this.notPlayNum = null;
+		this.listTemplate = null;
+		this.turnNum = null;
+		this.playArea = null;
+		this.notPlayArea = null;
+
+		this.init(playList, playArea, notPlayArea, notPlayNum);
+	}
+	RandomPlay.prototype.init = function(playList, playArea, notPlayArea, notPlayNum){
+		this.playList = new Queue();
+		this.notPlayList = new Queue();
+		this.notPlayNum = notPlayNum;
+		this.turnNum =  Math.floor(Math.random()*20+1);
+		this.listTemplate = '<li><span>{title}</span> <em>- {artist}</em></li>';
+		this.playArea = $(playArea);
+		this.notPlayArea = $(notPlayArea);
+		this.setList(playList);
+		this.nowPlay = $('.nowPlay');
+	}
+	RandomPlay.prototype.setList = function(playList){
+		for(var i=0; i < playList.length; i++){
+			this.playList.enqueue(playList[i]);
+		}
+		this.viewList(this.playArea,this.playList);
+	}
+	RandomPlay.prototype.viewList = function(area,list){
+		var cont = '';
+		area.find('ul').remove();
+		cont += '<ul>';
+		for(var i=0; i < list.size(); i++){
+			cont += this.listTemplate.replace('{title}',list.items[i].title)
+									 .replace('{artist}',list.items[i].artist);
+		}
+		cont += '</ul>';
+		area.append(cont);
+	}
+	RandomPlay.prototype.srchPlay = function(){
+		for(var i =0; i < this.turnNum; i++){
+			this.playList.enqueue(this.playList.dequeue());
+		}
+		console.log(this.playList.items);
+		var pick = this.playList.dequeue(); //랜덤으로 재생할 곡
+		
+		this.nowPlay.find('span').html(pick.title);
+		this.nowPlay.find('em').html('- '+pick.artist);
+
+		var objThis = this;
+		this.playArea.find('li').each(function(){
+			var title = $(this).find('span').html();
+			$(this).removeClass('active');
+			$(this).removeClass('del');
+
+			for(var k= 0; k < objThis.notPlayList.size(); k++){
+				var srch = objThis.notPlayList.items[k].title;
+				if(srch == title){
+					$(this).addClass('del');
+				}
+			}
+
+			if(pick.title == title){
+				$(this).addClass('active');
+			}
+		});
+
+		this.notPlayList.enqueue(pick);
+		this.viewList(this.notPlayArea, this.notPlayList);
+		if(this.notPlayList.size() > this.notPlayNum){
+			var temp = this.notPlayList.dequeue();
+			this.playList.enqueue(temp);
+		}
+
+	}
+
+	$(document).ready(function(){
+		var random = new RandomPlay(musicList, '.play_list','.recent_list', 5);
+
+		$('.nowPlay button').click(function(){
+			random.srchPlay();
+			random.turnNum =  Math.floor(Math.random()*20+1);
+		});
+
+		$('.notPlay button').click(function(){
+			var num = parseInt($('#setNum').val());
+			random.init(musicList, '.play_list','.recent_list', num);
+			random.notPlayArea.find('h2 span').html(num);
+		});
+	})
+</script>
+</head>
+<body class="wrap">
+	<header><h1>노래 랜덤 재생</h1></header>
+	<dl>
+		<dt>현재 재생곡</dt>
+		<dd class="nowPlay"><span></span> <em></em> <button>재생</button></dd>
+	</dl>
+
+	<dl>
+		<dt>사용자 랜덤제외 설정</dt>
+		<dd class="notPlay">최근에 재생한 <input type="text" id="setNum" value="5">곡 제외 <button>설정</button></dd>
+	</dl>
+
+	<section>
+		<div class="play_list">
+			<h2>노래 재생 목록</h2>
+			<!--
+			<ul>
+				<li class="active">
+					<span>숨</span> <em>- 박효신</em>
+				</li>
+				<li>
+					<span>야생화</span> <em>- 박효신</em>
+				</li>
+				<li>
+					<span>눈의 꽃</span><em>- 박효신</em>
+				</li>
+				<li>
+					<span>밤편지</span> <em>- 아이유(IU)</em>
+				</li>
+				<li>
+					<span>벚꽃엔딩</span> <em>- 버스커버스커</em>
+				</li>
+				<li>
+					<span>KNOCK KNOCK</span> <em>- TWICE(트와이스)</em>
+				</li>
+				<li>
+					<span>아름답다</span> <em>- 하이라이트(Highlight)</em>
+				</li>
+				<li>
+					<span>오랜 날 오랜 밤</span> <em>- 악동뮤지션(AKMU)</em>
+				</li>
+				<li>
+					<span>첫눈처럼 너에게 가겠다</span> <em>- 에일리</em>
+				</li>
+				<li>
+					<span>아름답다</span> <em>- 하이라이트(Highlight)</em>
+				</li>
+				<li>
+					<span>Fine</span> <em>- 태연 (TAEYEON)</em>
+				</li>
+				<li>
+					<span>Beautiful</span> <em>- 크러쉬(CRUSH)</em>
+				</li>
+			</ul>-->
+		</div>
+
+		<div class="recent_list">
+			<h2>최근에 재생한 <span>5</span>곡</h2>
+		</div>
+	</section>
+</body>
+</html>
