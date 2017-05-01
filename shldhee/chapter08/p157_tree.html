@@ -46,6 +46,21 @@
                     insertNode(root, newNode); // 3) 루트를 제외한 다른 위치에 추가하는 일반적인 경우, 다음의 프라이빗 헬퍼 함수 insertNode를 호출한다.
                 }
             };
+            var insertNode = function(node, newNode) { // node === root, newNode === insertNode
+                if ( newNode.key < node.key ) { // 새로운 노드 < root 노드
+                    if ( node.left === null ) {
+                        node.left = newNode; // 좌측이 비어있으면 삽입
+                    } else {
+                        insertNode(node.left, newNode); // 좌측 노드, 새로운 노드 -> 재귀함수 : 새로운 노드 < 좌측 노드
+                    }
+                } else {
+                    if ( node.right === null ) {
+                        node.right = newNode;
+                    } else {
+                        insertNode(node.right,newNode);
+                    }
+                }
+            }
 
             /*
                 트리 순회
@@ -62,7 +77,13 @@
             this.inOrderTraverse = function(callback) { // callback에는 노드 방문시 수행할 작업 기술
                 inOrderTraverseNode(root, callback);
             };
-
+            var inOrderTraverseNode = function ( node, callback ) {
+                if ( node !== null ) {
+                    inOrderTraverseNode( node.left, callback );
+                    callback(node.key);
+                    inOrderTraverseNode( node.right, callback );
+                }
+            };
             /*
                 전위 순회
                 전위 순회는 자식 노드보다 노드 자신을 먼저 방문한다.
@@ -70,6 +91,13 @@
             */
             this.preOrderTraverse = function(callback) {
                 preOrderTraverseNode(root, callback);
+            };
+            var preOrderTraverseNode = function (node, callback) {
+                if ( node !== null ) {
+                    callback(node.key);
+                    preOrderTraverseNode(node.left, callback);
+                    preOrderTraverseNode(node.right, callback);
+                }
             };
 
             /*
@@ -79,6 +107,13 @@
             */
             this.postOrderTraverse = function(callback) {
                 postOrderTraverseNode(root, callback);
+            };
+            var postOrderTraverseNode = function (node, callback) {
+                if (node !== null) {
+                    postOrderTraverseNode(node.left, callback);
+                    postOrderTraverseNode(node.right, callback);
+                    callback(node.key);
+                }
             };
 
             /*
@@ -92,137 +127,51 @@
             this.min = function() {
                 return minNode(root);
             };
+            var minNode = function (node) {
+                if (node) {
+                    while (node && node.left !== null) { // node가 있고 node.left가 있을때 실행 따라서 마지막 node일때 반환
+                        node = node.left;
+                    }
+                    return node.key;
+                }
+                return null;
+            };
 
             // 최댓값 찾기
             this.max = function() {
                 return maxNode(root);
+            };
+            var maxNode = function (node) {
+                if (node) {
+                    while( node && node.right !== null ) {
+                        node = node.right;
+                    }
+                    return node.key;
+                }
+                return null;
             };
 
             // 특정값 찾기
             this.search = function( key ) {
                 return searchNode(root, key);
             };
-
-			// 노드 삭제
-			this.remove = function(key) {
-				root = removeNode(root, key);
-			};
-
-
-        }
-
-        // 프라이빗 변수?
-        var insertNode = function(node, newNode) { // node === root, newNode === insertNode
-            if ( newNode.key < node.key ) { // 새로운 노드 < root 노드
-                if ( node.left === null ) {
-                    node.left = newNode; // 좌측이 비어있으면 삽입
+            var searchNode = function(node, key) {
+                if(node === null) {
+                    return false;
+                }
+                if(key < node.key) {
+                    return searchNode(node.left, key);
+                } else if (key > node.key) {
+                    return searchNode(node.right, key);
                 } else {
-                    insertNode(node.left, newNode); // 좌측 노드, 새로운 노드 -> 재귀함수 : 새로운 노드 < 좌측 노드
+                    return true;
                 }
-            } else {
-                if ( node.right === null ) {
-                    node.right = newNode;
-                } else {
-                    insertNode(node.right,newNode);
-                }
+            };
+
+            var printNode = function(value) {
+                console.log('value', value);
             }
         }
-        /*
-            재귀함수는 다 끝나고 나서 다음 문 실행 3 끝나고 5 실행
-        */
-        var inOrderTraverseNode = function ( node, callback ) {
-            if ( node !== null ) {
-                inOrderTraverseNode( node.left, callback );
-                callback(node.key);
-                inOrderTraverseNode( node.right, callback );
-            }
-        };
-
-        var postOrderTraverseNode = function (node, callback) {
-            if (node !== null) {
-                postOrderTraverseNode(node.left, callback);
-                postOrderTraverseNode(node.right, callback);
-                callback(node.key);
-            }
-        };
-
-        function printNode(value) {
-            console.log('value', value);
-        }
-
-        var preOrderTraverseNode = function (node, callback) {
-            if ( node !== null ) {
-                callback(node.key);
-                preOrderTraverseNode(node.left, callback);
-                preOrderTraverseNode(node.right, callback);
-            }
-        };
-
-        var minNode = function (node) {
-            if (node) {
-                while (node && node.left !== null) { // node가 있고 node.left가 있을때 실행 따라서 마지막 node일때 반환
-                    node = node.left;
-                }
-                return node.key;
-            }
-            return null;
-        };
-
-        var maxNode = function (node) {
-            if (node) {
-                while( node && node.right !== null ) {
-                    node = node.right;
-                }
-                return node.key;
-            }
-            return null;
-        };
-
-        var searchNode = function(node, key) {
-            if(node === null) {
-                return false;
-            }
-            if(key < node.key) {
-                return searchNode(node.left, key);
-            } else if (key > node.key) {
-                return searchNode(node.right, key);
-            } else {
-                return true;
-            }
-        };
-
-		var removeNode = function(node, key) {
-			if (node === null) {
-				return null;
-			}
-			if (key < node.key) {
-				node.left = removeNode(node.left, key);
-				return node;
-			} else if (key > node.key) {
-				node.right = removeNode(node.right, key);
-				return node;
-			} else {
-				if (node.left === null && node.right === null) {
-					node = null;
-					return node;
-				}
-
-				if(node.left === null) {
-					node = node.right;
-					return node;
-				} else if (node.right === null) {
-					node = node.left;
-					return node;
-				}
-
-				var aux = findMinNode(node.right);
-				node.key = aue.key;
-				node.right = removeNode(node.right, aux.key);
-				return node;
-			}
-		};
-
-
 
         var tree = new BinarySearchTree();
         tree.insert(11);
@@ -244,7 +193,7 @@
         // tree.inOrderTraverse(printNode);
         // tree.preOrderTraverse(printNode);
         // tree.postOrderTraverse(printNode);
-        console.log(tree.remove(6));
+        console.log(tree.max());
 
     </script>
 </body>
