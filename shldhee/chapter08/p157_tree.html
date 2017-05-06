@@ -171,6 +171,56 @@
             var printNode = function(value) {
                 console.log('value', value);
             }
+
+			this.remove = function(key) {
+				root = removeNode(root, key);
+			}
+
+
+			var findMinNode = function (node) {
+                if (node) {
+                    while (node && node.left !== null) { // node가 있고 node.left가 있을때 실행 따라서 마지막 node일때 반환
+                        node = node.left;
+                    }
+                    return node;
+                }
+                return null;
+            };
+
+
+			var removeNode = function(node, key) {
+				if( node === null ) {
+					return null;
+				}
+				if (key < node.key) {
+					node.left = removeNode(node.left, key);
+					return node;
+				} else if ( key > node.key ) {
+					node.right = removeNode(node.right, key);
+					return node;
+				} else { // key와 node.key와 같다.
+					// 경우 #1 리프노드
+					if ( node.left === null && node.right === null ) {
+						node = null;
+						return node;
+					}
+
+					// 경우 #2 자식이 하나뿐인 노드
+					if ( node.left === null ) {
+						node = node.right;
+						return node;
+					} else if ( node.right === null ) {
+						node = node.left;
+						return node;
+					}
+
+					// 경우 #3 자식이 둘인 노드
+					var aux = findMinNode(node.right);
+					node.key = aux.key;
+					node.right = removenode(node.right, aux.key);
+					return node;
+				}
+			}
         }
 
         var tree = new BinarySearchTree();
