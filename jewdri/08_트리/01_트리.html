@@ -22,6 +22,9 @@ ol li span+ol li:first-child{margin-top:0;}
 .tree li ol li ol li:after{height:55%;top:-38%;}
 .BST_area{min-height:100px;}
 .now span{background:yellow;}
+.node{display:inline-block;width:30px;height:30px;font-weight:bold;border:2px solid #000;border-radius:100%;font-size:14px;text-align:center;line-height:26px;}
+.node.node_root{display:block;margin:0 auto;}
+.node.node_root:after{display:block;content:'';width:100%;height:10px}
 </style>
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="js/binarySearchTree.js"></script>
@@ -44,7 +47,7 @@ $(document).ready(function(){
     tree.insert(18);
     tree.insert(25);
     tree.insert(6);
-    tree.treeView();
+    //tree.treeView();
 
     console.log('중위순회');
     tree.inOrderTraverse(tree.printNode);
