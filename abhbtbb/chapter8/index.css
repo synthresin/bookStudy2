@@ -1,0 +1,44 @@
+/* reset Css */
+html, body, div, span, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn, em, img, ins, kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary,time, mark, audio, video {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+
+h1{font-size:2.5em;margin-left:10px;margin-top:20px}
+h2{font-size:2em;margin-left:10px;margin-top:15px}
+h3{font-size:1.5em;margin-left:10px;margin-top:10px}
+h4{font-size:1em;margin-left:10px;margin-top:10px}
+p{margin-top:10px;padding:0px 10px;}
+
+.circle{border:1px solid black;display:inline-block; width:20px; border-radius:30px;padding:5px;}
+.circle.inner_node{background-color:lightgreen}
+.circle.outer_node{background-color:lightpink}
+
+.line{position:absolute; width:100px; height:1px; background-color:black;}
+.line.level0to1:nth-child(2n-1){width:15.5%; top:17%; transform:rotate(12deg)}
+.line.level0to1:nth-child(2n){width:15.5%; top:17%; transform:rotate(-12deg)}
+
+.line.level1to2:nth-child(2n-1){width:6%; top:43%; transform:rotate(-28deg)}
+.line.level1to2:nth-child(2n){width:6%; top:43%; transform:rotate(28deg)}
+
+.line.level2to3:nth-child(2n-1){width:2%; top:69%; transform:rotate(40deg)}
+.line.level2to3:nth-child(2n){width:2%; top:69%; transform:rotate(-40deg)}
+
+.picture1{width:665px; margin:20px; position:relative;}
+.picture1 div div{box-sizing: border-box;text-align: center;}
+
+.picture1 .zero div:first-child{float:left;width:20%;}
+.picture1 .zero div:nth-child(n+2){float:left;width:80%}
+.picture1 .zero:after{clear:both;display:block;content:""; }
+
+.picture1 .first div:first-child{float:left;width:20%; }
+.picture1 .first div:nth-child(n+2){float:left;width:40% }
+.picture1 .first:after{clear:both;display:block;content:""; }
+
+.picture1 .second div:first-child{float:left;width:20%; }
+.picture1 .second div:nth-child(n+2){float:left;width:20% }
+.picture1 .second:after{clear:both;display:block;content:""; }
+
+.picture1 .third div:first-child{float:left;width:20%; }
+.picture1 .third div:nth-child(n+2){float:left;width:10% }
+.picture1 .third:after{clear:both;display:block;content:""; }
+
+.description{margin-top:20px;}
+.description ul{list-style-type: disc; margin-left:30px;}

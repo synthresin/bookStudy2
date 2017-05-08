@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <h1>트리 ( TREE )</h1>
+    <div class="discription">
+        <ul>
+            <li>트리는 해시 테이블과 마찬가지로 비순차적 자료구조이다.</li>
+            <li>트리는 계층 구조( hierarchical structure )를 추상화한 모델이다.</li>
+        </ul>
+    </div>
+    <div class="description">
+        <h2>트리 용어</h2>
+        <!-- --------------------- 트리 그림 시작 ----------------------------------- -->
+        <div class="picture1">
+            <div class="zero">
+                <div>레벨0</div>
+                <div><span class="circle inner_node">11</span></div>
+            </div>
+            
+            <hr class="line level0to1" style="left:42%;"/>
+            <hr class="line level0to1" style="left:62.5%;"/>
+
+            <div class="first">
+            <div>레벨1</div>
+            <div><span class="circle inner_node">7</span></div>
+            <div><span class="circle inner_node">15</span></div>
+            </div>
+
+            <hr class="line level1to2" style="left:32%;"/>
+            <hr class="line level1to2" style="left:42%;"/>
+            <hr class="line level1to2" style="left:72%;"/>
+            <hr class="line level1to2" style="left:82%;"/>
+
+            <div class="second">
+                <div>레벨2</div>
+                <div><span class="circle inner_node">5</span></div>
+                <div><span class="circle inner_node">9</span></div>
+                <div><span class="circle inner_node">13</span></div>
+                <div><span class="circle inner_node">20</span></div>
+            </div>
+
+            <hr class="line level2to3"style="left:26.5%;"/>
+            <hr class="line level2to3"style="left:31.5%;"/>
+            <hr class="line level2to3"style="left:46.5%;"/>
+            <hr class="line level2to3"style="left:51.5%;"/>
+            <hr class="line level2to3"style="left:66.5%;"/>
+            <hr class="line level2to3"style="left:71.5%;"/>
+            <hr class="line level2to3"style="left:86.5%;"/>
+            <hr class="line level2to3"style="left:91.5%;"/>
+
+
+            <div class="third">
+                <div>레벨3</div>
+                <div><span class="circle outer_node">3</span></div>
+                <div><span class="circle outer_node">6</span></div>
+                <div><span class="circle outer_node">8</span></div>
+                <div><span class="circle outer_node">10</span></div>
+                <div><span class="circle outer_node">12</span></div>
+                <div><span class="circle outer_node">14</span></div>
+                <div><span class="circle outer_node">18</span></div>
+                <div><span class="circle outer_node">25</span></div>
+            </div>
+        </div>
+        <!-- --------------------- //트리 그림 종료 ----------------------------------- -->
+
+        <p>트리는 부모-자식 관계를 가진 다수의 노드로 구성된다. 트리에서 최상위 노드는 루트( root )라고 한다.
+        노드( node )는 트리의 원소를 의미하며 내부 노드와 외부 노드가 있다.</p>
+
+        <p>내부 노드( internal node )는 1개 이상의 자식을 가진다. (11, 7, 15, 5, 9, 13, 20) </br>
+        외부 노드 ( external node )는 자식이 하나도 없는 노드를 의미하며 리프( leaf )라고도 한다.(3, 6, 8, 10, ... , 25)</p>
+        
+        <p>노드는 조상( ancestor ) 과 후손(descendant )을 가질수 있다. <br/>
+        루프를 제외한 조상은 부모 등의 상위 계층의 노드를, 후손은 자식 등의 하위계층의 노드를 각각 가리킨다.</p>
+
+        <p>서브트리( subtree )는 노드와 후손으로 구성된다. 노드 13, 12, 14가 하나의 서브트리라고 할수 있다.</p>
+
+        <p>노드의 깊이( depth ) 란 조상의 개수이다. 노드 3의 깊이는 조상(5, 7, 11)이므로 3이다.<br/>
+        트리의 높이( height ) 는 깊이의 최대치이다. 트리는 레벨( level )로 구분하기도 한다.<br/>
+        루트는 레벨0, 그 하위 자식은 레벨 1 , 그림속 트리 높이는 3이다.</p>
+    </div>
+
+    <div class="description">
+        <h2>이진 트리와 이진 탐색 트리</h2>
+        <p>이진 트리( binary tree )에서 노드는 좌, 우측에 각각 하나씩, 최대 2개의 자식노드를 갖는다.<br/>
+        노드의 삽입, 조회, 삭제를 효과적으로 할수 있다.</p>
+
+        <p>이진 탐색 트리(* binary search tree )는 이진 트리의 변형으로, 좌측에는 더 작은 값을, 우측에는 더 큰값을 가진다.</p>
+
+        <h3>키 삽입</h3>
+        <p>트리 구조에서 키를 삽입할 때에는 재귀를 이용해서 값이 있는지, 값을 비교해서 적절한 지점을 찾기 전까지 계속 반복을 한다.</p>
+        
+        <h3>트리순회</h3>
+        <p>트리의 모든 노드를 방문해서 각 노드마다 어떤 작업을 수행하는 것으로 traversal 또는 walking 이라고 한다.<br/>
+        기준에 따라서 순회 방법은 중위, 전위, 후위 세가지로 분류된다.</p>
+        
+        <h4>중위 순회</h4>
+        <p>중위 순회( in-order traversal )는 이진탐색트리의 노드를 오름차순( 작은 값 -> 큰 값 ) 으로 탐색한다.</p>
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>
