@@ -73,6 +73,7 @@ BinarySearchTree.prototype.postOrderTraverseNode = function(node, callback, type
     }
 }
 //트리그리기
+/*
 BinarySearchTree.prototype.treeView = function(){
     var tag = '<ol class="tree"><li class="depth0"><span>'+this.root.key+'</span></li></ol>';
     this.area.append(tag);
@@ -97,7 +98,7 @@ BinarySearchTree.prototype.treeViewNode = function(node,depStep){
     area.append(tag);
     this.depth = Uidepth;
 
-}
+}*/
 //최대, 최소값 찾기
 BinarySearchTree.prototype.min = function(){
     return this.minNode(this.root);
