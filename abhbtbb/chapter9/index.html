@@ -39,6 +39,44 @@
             var result = keys.map( key => [ key, adjList.get(key).join(", ") ] );
             console.table(result);
         };
+
+        this.toString = function() {
+            var result = "";
+            vertices.forEach( x => {
+                result += `${x} ==> ${adjList.get(x).join(" ")}\n`;
+            });
+            console.log( result );
+        };
+
+        function bfsColorInit() {
+            var temp = {};
+            vertices.forEach( x => temp[x] = "white" );
+            return temp; 
+        }
+
+        this.bfs = function( v, callback ) {
+            var color = bfsColorInit();
+            var queue = new Queue();
+
+            queue.enqueue( v );
+
+            while( !queue.isempty() ) {
+                var u = queue.dequeue();
+                var neighbors = adjList.get( u );
+
+                color[u] = 'grey';
+                neighbors.forEach( one => {
+                    if( color[one] === 'white' ) {
+                        color[one] = 'grey';
+                        queue.enqueue( one );
+                    }
+                });
+                color[u] = 'black';
+                if( callback ) { callback( u ); }
+            }
+
+
+        }
     }
 
     function Dict() {
@@ -82,6 +120,24 @@
             }
             return temp;
         };
+    }
+
+    function Queue() {
+        var items = [];
+
+        this.enqueue = item => items.push( item );
+        
+        this.dequeue = _ => items.shift();
+        
+        this.front = _ => items[0];
+        
+        this.clear = _ => items = [];
+        
+        this.size = _ => items.length;
+        
+        this.print = _ => console.log( items );
+
+        this.isempty = _ => items.length === 0;
     }
 
     var t1 = new Graph();
