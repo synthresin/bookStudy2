@@ -57,7 +57,10 @@ $(document).ready(function(){
     }
 
     graph.dfs(printNode);
-    graph.DFS(printNode);
+
+	 console.log('DFS 고친거');
+    var DFSresult = graph.DFS(printNode);
+	console.log(DFSresult);
 
     //위상정렬
     console.log('위상정렬');
@@ -73,6 +76,8 @@ $(document).ready(function(){
     topsort.addEdge('C','F');
     topsort.addEdge('F','E');
     var result = topsort.DFS();
+	 console.log('위상정렬result');
+	console.log(result);
 })
 
 

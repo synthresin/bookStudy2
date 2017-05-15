@@ -24,7 +24,7 @@ Graph.prototype.toString = function(){
     return s;
 }
 Graph.prototype.initializeColor = function(){
-    var color = [];
+    var color = {};
     for(var i=0; i<this.vertices.length; i++){
         color[this.vertices[i]] = 'white';
     }
@@ -32,6 +32,8 @@ Graph.prototype.initializeColor = function(){
 }
 Graph.prototype.bfs = function(v, callback){
     var color = this.initializeColor();
+	console.log('color');
+	console.log(color);
     var queue = new Queue();
     queue.enqueue(v);
 
