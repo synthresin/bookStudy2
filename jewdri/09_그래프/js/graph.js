@@ -1,6 +1,9 @@
 ﻿function Graph(){
    this.vertices = [];
    this.adjList = new Dictionary;
+   this.DFStime = 0;       //{1}
+   this.DFSFinished = new stack;
+
 }
 
 Graph.prototype.addVertex = function(v){
@@ -24,7 +27,7 @@ Graph.prototype.toString = function(){
     return s;
 }
 Graph.prototype.initializeColor = function(){
-    var color = [];
+    var color = {};
     for(var i=0; i<this.vertices.length; i++){
         color[this.vertices[i]] = 'white';
     }
@@ -32,6 +35,8 @@ Graph.prototype.initializeColor = function(){
 }
 Graph.prototype.bfs = function(v, callback){
     var color = this.initializeColor();
+	console.log('color');
+	console.log(color);
     var queue = new Queue();
     queue.enqueue(v);
 
@@ -111,13 +116,13 @@ Graph.prototype.dfsVisit = function(u, color, callback){
     color[u] = 'black';
 }
 
-var time = 0;       //{1}
+
 Graph.prototype.DFS = function(){
     var color = this.initializeColor();
     var d = [];          //{2}
     var f = [];
     var p = [];
-    time = 0;
+    this.DFStime = 0;
 
     for(var i=0; i<this.vertices.length; i++){      //{3}
         f[this.vertices[i]] = 0;
@@ -130,17 +135,20 @@ Graph.prototype.DFS = function(){
             this.DFSVisit(this.vertices[i],color,d,f,p);
         }
     }
+
+    var finished = this.DFSFinished.print();
     return{         //{4}
         discovery: d,
         finished: f,
-        predecessors : p
+        predecessors : p,
+        finishedStack : finished
     }
 }
 
 Graph.prototype.DFSVisit = function(u, color, d, f, p){
     console.log('방문'+u);
     color[u] = 'grey';
-    d[u] = ++time;      //{5}
+    d[u] = ++this.DFStime;      //{5}
     var neighbors = this.adjList.get(u);
     for(var i=0; i<neighbors.length; i++){
         var w = neighbors[i];
@@ -150,6 +158,7 @@ Graph.prototype.DFSVisit = function(u, color, d, f, p){
         }
     }
     color[u] = 'black';
-    f[u] = ++time;          //{7}
+    f[u] = ++this.DFStime;          //{7}
+    this.DFSFinished.push(u);
     console.log('탐색'+u);
 }
