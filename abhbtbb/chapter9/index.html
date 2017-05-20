@@ -298,6 +298,19 @@
     t2.addEdge2('C','F');    
     t2.addEdge2('F','E');    
     var result = t2.dfs2();
+
+    var temp = [];
+    var temp2 = [];
+    for(var one in result.finished){
+        temp[result.finished[one]] = one;
+    }
+
+    for( var i = 0; i < temp.length; i++) {
+        if( temp[i] !== undefined )
+            temp2.push( temp[i] );
+    }
+    
+    console.log(temp2.reverse().join("-"));
     
 </script>
 </html>
