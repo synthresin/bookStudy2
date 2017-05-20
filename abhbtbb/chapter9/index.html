@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    function Graph() {
+        var vertices = [];                  // 정점
+        var adjList = new Dict();           // 인접리스트
+
+        this.addVertexs = function( array ) {
+            var len = array.length;
+            for( var i = 0; i < len; i++ ) {
+                this.addVertex( array[i] );
+            }
+        };
+
+        this.addVertex = function(v){       // 정점을 추가하는 메소드
+            vertices.push( v );
+            adjList.set( v, [] );
+        };
+
+        this.addEdge = function(v, w){      // 간선을 추가하는 메소드
+            adjList.get( v ).push( w );
+            adjList.get( w ).push( v );
+        };
+        this.addEdge2 = function(from, to){
+            adjList.get( from ).push( to );
+        }
+
+        this.getAdjList = function( key ) { return adjList.get( key ); }
+
+        this.showVertices = function() {console.log(vertices);};
+
+        this.showAdjLists = function() {
+            var keys = adjList.keys();
+            var result = keys.map( key => [ key, adjList.get(key).join(", ") ] );
+            console.table(result);
+        };
+
+        this.toString = function() {
+            var result = "";
+            vertices.forEach( x => {
+                result += `${x} ==> ${adjList.get(x).join(" ")}\n`;
+            });
+            console.log( result );
+        };
+       
+        /* vertices의 key에 initValue의 값으로 구성된 객체를 리턴한다. */
+        function bfsSomethingInit( initValue ) {
+            var temp = {};
+            vertices.forEach( x => temp[x] = initValue );
+            return temp;
+        };
+
+        
+        this.dfs = function( callback ) {
+            var color = bfsSomethingInit( 'white' );
+
+            for( var i =0; i<vertices.length; i++ ) {
+                if( color[vertices[i]] === 'white' ) {
+                    dfsVisit( vertices[i], color, callback );
+                }
+            }
+        };
+
+        var time = 0;
+        this.dfs2 = function() {
+            var color = bfsSomethingInit( 'white' );
+            var d = {}, f = {}, p = {};
+            time = 0;
+
+            for( var i = 0; i < vertices.length; i++ ) {
+                d[vertices[i]] = 0;
+                f[vertices[i]] = 0;
+                p[vertices[i]] = null;
+            }
+            for( i = 0; i<vertices.length; i++ ) {
+                if( color[vertices[i]] === 'white' ) {
+                    dfsVisit2( vertices[i], color, d, f, p );
+                }
+            }
+            return {
+                discovery : d,
+                finished : f,
+                predecessors:p
+            }
+        };
+
+        var dfsVisit2 = function( u, color, d, f, p ) {
+            console.log( '방문 ' + u );
+            color[u] = 'grey';
+            d[u] = ++time;
+            var neighbors = adjList.get(u);
+            for( var i = 0; i<neighbors.length; i++ ) {
+                var w = neighbors[i];
+                if( color[w] === 'white' ) {
+                    p[w] = u;
+                    dfsVisit2( w, color, d, f, p );
+                }
+            }
+            color[u] = 'black';
+            f[u] = ++time;
+            console.log('탐색 ' + u + ' 방문시간 ' + d[u] + ' 탐색시간 ' + f[u]);
+        }
+
+
+        var dfsVisit = function( u, color, callback ) {
+            color[u] = 'grey';
+            if( callback ) {callback(u);}
+
+            var neighbors = adjList.get(u);
+            for( var i = 0; i < neighbors.length; i++ ) {
+                var w = neighbors[i];
+                if( color[w] === 'white') { dfsVisit(w, color, callback ); }
+            }
+            color[u] = 'black';
+        };
+
+
+        this.bfs = function( v, callback ) {
+            if( vertices.indexOf(v) < 0 ) { throw Error(`${v} 는 존재하지 않는 노드입니다.`);}
+
+            var color = bfsSomethingInit("white");
+            var queue = new Queue();
+
+            queue.enqueue( v );
+            while( !queue.isEmpty() ) {
+                var u = queue.dequeue();
+                var neighbors = adjList.get( u );
+
+                color[u] = 'grey';
+                neighbors.forEach( one => {
+                    if( color[one] === 'white' ) {
+                        color[one] = 'grey';
+                        queue.enqueue( one );
+                    }
+                });
+                color[u] = 'black';
+                if( callback ) { callback(u); }
+            }
+        };
+
+        this.bfs2 = function( v ) {
+            var color = bfsSomethingInit("white");
+            var queue = new Queue();
+            var d = {}, pred = {};      // d : 거리, pred : 이전 선행자
+
+            queue.enqueue( v );
+            d = bfsSomethingInit( 0 );
+            pred = bfsSomethingInit( null );
+
+            while( !queue.isEmpty() ) {
+                var u = queue.dequeue();
+                var neighbors = adjList.get( u );
+                color[u] = 'grey';
+                neighbors.forEach( one => {
+                    if( color[one] === 'white' ) {
+                        color[one] = 'grey';
+                        d[one] = d[u] + 1;
+                        pred[one] = u;
+                        queue.enqueue( one );
+                    }
+                });
+                color[u] = 'black';
+            }
+            return { distances : d, predecessors : pred };
+        };
+
+        this.shortestWay = function( target ) {
+            var fromVertex = target;
+            var sPath = this.bfs2( fromVertex );
+
+            vertices.forEach( toVertex => {
+                var path = new Stack();
+                for( var v = toVertex; v !== fromVertex; v = sPath.predecessors[v] ) {
+                    path.push( v );
+                }
+
+                path.push( fromVertex );
+
+                var s = path.pop();
+                while( !path.isEmpty() ) {
+                    s += "-" + path.pop();
+                }
+                console.log(s);
+
+            });
+        };
+
+
+
+    }
+
+    function Dict() {
+        var items = {};
+
+        this.has = function( key ) { return key in items; };
+
+        this.getItems = function() { return items; };
+
+        this.get = function( key ) { return items[key]; };
+
+        this.clear = function() { items = {}; };
+
+        this.size = function() { return this.keys().length; };
+
+        this.set = function( key, value ) { 
+            items[key] = value; 
+            return this.has(key) && this.get(key) === value;
+        };
+        
+        this.remove = function( key ) {
+            if( this.has( key ) ) {
+                delete(items[key]); 
+                return true;
+            }
+            return false;
+        };
+        
+        this.keys = function() { 
+            var temp = [];
+            for( one in items) {
+                if( items.hasOwnProperty(one) ) temp.push(one);
+            }
+            return temp;
+        };
+
+        this.values = function() {
+            var temp = [];
+            for( one in items) {
+                if( items.hasOwnProperty(one) ) temp.push( items[one] );
+            }
+            return temp;
+        };
+    }
+
+    function Queue() {
+        var items = [];
+
+        this.enqueue=item=>items.push( item );
+        
+        this.dequeue=_=>items.shift();
+        
+        this.front=_=>items[0];
+        
+        this.clear=_=>items = [];
+        
+        this.size=_=>items.length;
+        
+        this.print=_=>console.log( items );
+
+        this.isEmpty=_=>items.length === 0;
+    }
+
+    function Stack() {
+        var items = [];
+
+        this.push =_=>{items.push(_);};
+
+        this.pop =_=>{return items.pop();};
+
+        this.peek =_=>{return items[items.length-1];};
+
+        this.isEmpty =_=>{return items.length === 0};
+
+        this.size =_=>{return items.length;};
+
+        this.clear =_=>{items = [];};
+
+        this.print =_=>{console.log(items);};
+    }
+
+    var t1 = new Graph();
+    t1.addVertexs(['A','B','C','D','E','F','G','H', 'I']);
+    t1.addEdge('A','B');
+    t1.addEdge('A','C');
+    t1.addEdge('A','D');
+    t1.addEdge('B','E');
+    t1.addEdge('B','F');
+    t1.addEdge('C','D');
+    t1.addEdge('C','G');
+    t1.addEdge('D','G');
+    t1.addEdge('D','H');
+    t1.addEdge('E','I');
+
+    var t2 = new Graph();
+    t2.addVertexs(['A','B','C','D','E','F']);
+    t2.addEdge2('A','C');    
+    t2.addEdge2('A','D');    
+    t2.addEdge2('B','D');    
+    t2.addEdge2('B','E');    
+    t2.addEdge2('C','F');    
+    t2.addEdge2('F','E');    
+    var result = t2.dfs2();
+    
+</script>
+</html>

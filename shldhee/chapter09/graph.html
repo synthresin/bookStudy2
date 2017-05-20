@@ -11,56 +11,44 @@
         function Graph () {
             function Queue() {
     			var items = [];
-
     			// 큐의 마지막 원소 추가
     			this.enqueue = function(element) {
     				items.push(element);
     			};
-
     			// shift 메소드는 0번째 위치의 요소를 제거 하고 연이은 나머지 값들의 위치를 한칸 씩 앞으로 당깁니다. 그리고 제거된 값을 반환 합니다.  만약 배열의 length가 0이라면 undefined를 리턴 합니다.
     			// 큐의 첫번째 원소 반환후 삭제
     			this.dequeue = function(element) {
     				return items.shift();
     			};
-
     			// 큐의 첫번째 원소 반환
     			this.front = function() {
     				return items[0];
     			};
-
     			// Queue 비어있는지 확인
     			this.isEmpty = function() {
     				return items.length == 0;
     			};
-
     			// Queue 비우기
     			this.clear = function() {
     				items = [];
     			};
-
     			// Queue 길이
     			this.size = function() {
     				return items.length;
     			};
-
     			// 디버깅용
     			this.print = function() {
     				console.log(items.toString());
     			};
-
     		}
-
             function Dictionary() {
                 var items = {};
-
                 this.has = function(key) {
                     return key in items;
                 }
-
                 this.set = function(key, value) {
                     items[key] = value;
                 };
-
                 this.remove = function(key) {
                     if (this.has(key)) {
                         delete items[key];
@@ -68,11 +56,9 @@
                     }
                     return false;
                 }
-
                 this.get = function(key) {
                     return this.has(key) ? items[key] : undefined;
                 }
-
                 this.values = function() {
                     var values = [];
                     for (var k in items) {
@@ -85,19 +71,6 @@
                 this.clear = function() {
                     items = {};
                 };
-
-                // size 메소드는 구하는법
-                // 1. add, remov 메소드에 length변수를 넣어 실행될때마다 값을 변경
-                // 2. Object 클래스에 내장된 함수이용 IE9 이상 (Object.keys(obj) 객체의 모든 프로퍼티의 키값을 배열로 변환한다.)
-                /*
-                var a = {
-                        name: "LEE",
-                        age: 13,
-                        city: "Seoul"
-                    }
-                a; //Object {name: "LEE", age: 13, city: "Seoul"}
-                Object.keys(a); // ["name", "age", "city"]
-                */
                 this.size = function () {
                     return Object.keys(items).length;
                 }
@@ -109,33 +82,29 @@
                     }
                     return count;
                 };
-
                 this.keys = function () {
                     return Object.keys(items);
                 };
-
                 this.getItems = function() {
                     return items;
                 }
             }
-
             var vertices = [];
             var adjList = new Dictionary();
-
             this.addVertex = function(v) {
                 vertices.push(v);
                 adjList.set(v, []);
+				console.log(adjList.get(v));
             }
-
             this.addEdge = function(v, w) {
                 adjList.get(v).push(w);
                 adjList.get(w).push(v);
             }
-
             this.toString = function() {
                 var s = '';
                 for (var i = 0; i < vertices.length; i++) {
                     s += vertices[i] + ' -> ';
+					console.log(vertices[i]);
                     var neighbors = adjList.get(vertices[i]);
                     for (var j = 0; j < neighbors.length; j++) {
                         s += neighbors[j] + ' ';
@@ -144,7 +113,6 @@
                 }
                 return s;
             };
-
             var initializeColor = function () {
                 var color = [];
                 for (var i = 0; i < vertices.length; i++) {
@@ -152,17 +120,15 @@
                 }
                 return color;
             };
-
             this.bfs = function(v, callback) {
                 var color = initializeColor(),
                     queue = new Queue();
                 queue.enqueue(v);
-
                 while (!queue.isEmpty()) {
                     var u = queue.dequeue(), // 맨 앞 정점 추출
                         neighbors = adjList.get(u); // 인접리스트를 가져온다.
                     color[u] = 'grey';
-                    for ( var i = ; i < neighbors.length; i++) {
+                    for ( var i = 0; i < neighbors.length; i++) {
                         var w = neighbors[i];
                         if (color[w] === 'white') {
                             color[w] = 'grey'
@@ -175,8 +141,40 @@
                     }
                 }
             };
-        }
+			this.BFS = function(v) {
+                var color = initializeColor(),
+                    queue = new Queue();
+					d = [],
+					pred = [];
+                queue.enqueue(v);
+				for (var i = 0; i < vertices.length; i++ ) {
+					d[vertices[i]] = 0;
+					pred[vertices[i]] = null;
+				}
+                while (!queue.isEmpty()) {
+                    var u = queue.dequeue(), // 맨 앞 정점 추출
+                        neighbors = adjList.get(u); // 인접리스트를 가져온다.
+                    color[u] = 'grey';
+                    for ( var i = 0; i < neighbors.length; i++) {
+                        var w = neighbors[i];
+                        if (color[w] === 'white') {
+                            color[w] = 'grey'
+							d[w] = d[u] + 1;
+							pred[w] = u;
+                            queue.enqueue(w);
+                        }
+                    }
+                    color[u] = 'black';
+                    if (callback) {
+                        callback(u);
+                    }
+                }
+            };
 
+        }
+		function printNode(value) {
+			console.log('탐색한 정점: ' + value);
+		}
         var graph = new Graph();
         var myVertices = ['A','B','C','D','E','F','G','H','I'];
         for (var i = 0; i < myVertices.length; i++) {
@@ -192,8 +190,8 @@
         graph.addEdge('B', 'E');
         graph.addEdge('B', 'F');
         graph.addEdge('E', 'I');
-
         console.log(graph.toString());
+		graph.bfs(myVertices[0], printNode);
     </script>
 </body>
 </html>
