@@ -160,9 +160,9 @@
 
                 while (!queue.isEmpty()) {
                     var u = queue.dequeue(), // 맨 앞 정점 추출
-                        neighbors = adjList.get(u); // 인접리스트를 가져온다.
+                    neighbors = adjList.get(u); // 인접리스트를 가져온다.
                     color[u] = 'grey';
-                    for ( var i = ; i < neighbors.length; i++) {
+                    for ( var i = 0; i < neighbors.length; i++) {
                         var w = neighbors[i];
                         if (color[w] === 'white') {
                             color[w] = 'grey'
@@ -174,6 +174,79 @@
                         callback(u);
                     }
                 }
+            };
+            this.BFS = function(v, callback) {
+                var color = initializeColor(),
+                    queue = new Queue(),
+                    d = [],
+                    pred = [];
+                queue.enqueue(v);
+
+                for (var i = 0; i < vertices.length; i++) {
+                    d[vertices[i]] = 0;
+                    pred[vertices[i]] = null;
+                }
+
+                while (!queue.isEmpty()) {
+                    var u = queue.dequeue(), // 맨 앞 정점 추출
+                    neighbors = adjList.get(u); // 인접리스트를 가져온다.
+                    color[u] = 'grey';
+                    for ( var i = 0; i < neighbors.length; i++) {
+                        var w = neighbors[i];
+                        if (color[w] === 'white') {
+                            color[w] = 'grey'
+                            d[w] = d[u] + 1; // b:1, c:1, d:1
+                            pred[w] = u; // b: a, c: a, d: a
+                            queue.enqueue(w);
+                        }
+                    }
+                    color[u] = 'black';
+                }
+                return {
+                    distances: d,
+                    predecessors: pred
+                };
+            };
+        }
+        function printNode(value) {
+            console.log('탐색한 정점: ', value);
+        }
+        function Stack() {
+
+            var items = [];
+
+            // 스택 꼭대기에 element 추가
+            this.push = function(element) {
+                items.push(element);
+            };
+
+            // Stack 꼭대기 element 반환하고 Stack에서 삭제
+            this.pop = function() {
+                return items.pop();
+            };
+
+            // Stack 꼭대기에 있는 element 반환하되 Stack은 변경하지 않는다.(element 삭제 하지 않는다.)
+            this.peek = function() {
+                return items[items.length-1];
+            };
+
+            // Stack에 element가 하나도 없으면 true, Stack의 크기가 0보다 크면 false를 반환한다.
+            this.isEmpty = function() {
+                return items.length == 0;
+            };
+
+            // Stack의 개수를 반환
+            this.size = function() {
+                return items.length;
+            };
+
+            // Stack 모든 element를 삭제
+            this.clear = function() {
+                items = [];
+            };
+
+            this.print = function() {
+                console.log(items.toString());
             };
         }
 
@@ -193,7 +266,25 @@
         graph.addEdge('B', 'F');
         graph.addEdge('E', 'I');
 
-        console.log(graph.toString());
+        //console.log(graph.toString());
+
+        var shortestPahtA = graph.BFS(myVertices[0]);
+        console.log(shortestPahtA);
+
+        var fromVertex = myVertices[0];
+        for ( var i=1; i<myVertices.length; i++) {
+            var toVertex = myVertices[i],
+            path = new Stack();
+            for (var v = toVertex; v!== fromVertex; v=shortestPahtA.predecessors[v]) {
+                path.push(v);
+            }
+            path.push(fromVertex);
+            var s = path.pop();
+            while (!path.isEmpty()) {
+                s += ' - ' + path.pop();
+            }
+            console.log(s);
+        }
     </script>
 </body>
 </html>
