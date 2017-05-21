@@ -82,10 +82,13 @@ $(document).ready(function(){
 
     var max_depth = dapth.sort(maxDepth);
     console.log(max_depth[max_depth.length-1]);
-    $('#myGraph').css('height',(max_depth[max_depth.length-1]*200)+'px');
+    $('#myGraph').css('height',(max_depth[max_depth.length-1]*200)+'px');		//max값을 가져와 200씩 3단으로 크기를 정함. 
     var w = parseInt($('#myGraph').css('width'));
     var nodeTemplate = '<circle cx="{x}" cy="{y}" r="40" stroke="black" stroke-width="3" fill="white" />';
     var lineTemplate = '<path d="M {strX} {strY} l {endX} {endY}" stroke="black"  stroke-width="3" fill="none" />';
+	//x좌표는 w에서 (하나의 경우 가운데에 오기떄문에 반나눠줌. )
+	//n개일경우, w/n*몇번째인지 곱해주기(몇번째인수보다 좀작게...)
+	//y좌표는,  60(일정크기) +150*depth(차수)
     $('#myGraph').html(nodeTemplate.replace('{x}',w/2).replace('{y}',60)+'<text x="'+(w/2-5)+'" y="'+60+'" fill="black" tra>A</text>'+
         lineTemplate.replace('{strX}',w/2).replace('{strY}',60).replace('{endX}',(w/3)-(w/2)).replace('{endY}',(60+150)-60)+
         nodeTemplate.replace('{x}',w/3).replace('{y}',60+150)+'<text x="'+(w/3-5)+'" y="'+(60+150)+'" fill="black" tra>B</text>'+
@@ -97,6 +100,7 @@ $(document).ready(function(){
         nodeTemplate.replace('{x}',(w/4)*3.5).replace('{y}',60+(150*2))+'<text x="'+((w/4)*3.5-5)+'" y="'+(60+(150*2))+'" fill="black" tra>H</text>'+
         nodeTemplate.replace('{x}',(w/2)).replace('{y}',60+(150*3))+'<text x="'+((w/2)-5)+'" y="'+(60+(150*3))+'" fill="black" tra>I</text>');
 
+	//text의 x좌표, y좌표를 가져와 라인그릴려고.
     var pos = new Dictionary();
     $('#myGraph text').each(function(){
         var node =$(this).html();
